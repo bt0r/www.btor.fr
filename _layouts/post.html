@@ -7,7 +7,7 @@ layout: default
       <div class="grid-small">
         <h2 itemprop="name headline">{{ page.title }}</h2>
 
-        <time class="post__date" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%-d %b %Y" }}</time>
+        <time class="post__date" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%d/%m/%Y" }}</time>
       </div>
     </div>
 
@@ -42,7 +42,7 @@ layout: default
           {% for author in page.author %}
             {% assign authorDetails = site.author | where: "name", author %}
             {% if forloop.first == true %}
-              <span class="post__author">Posted by
+              <span class="post__author">Posté par
             {% else %}
               <span class="post__author">&amp;
             {% endif %}
@@ -63,7 +63,7 @@ layout: default
 {% if relatedTag %}
   <section class="related section-padding">
     <div class="grid-xlarge">
-      <h2 class="related__title">Related</h2>
+      <h2 class="related__title"></h2>
       <div class="related__container">
         {% for post in site.tags[relatedTag] limit: 3 %}
           <article class="related__post">

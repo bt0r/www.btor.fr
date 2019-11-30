@@ -4,3 +4,25 @@
 .js-overflow {
   overflow: hidden;
 }
+.quisuisje {
+  display:flex;
+  img.me {
+    margin-right: 2em;
+    width: 250px;
+    height: 300px;
+  }
+}
+.left{
+  flex:1;
+}
+.right {
+  flex:1;
+}
+.emote {
+  vertical-align: top;
+  width: 30px;
+  height: 30px;
+  display: inline !important;
+  margin-right: 2px !important;
+
+}

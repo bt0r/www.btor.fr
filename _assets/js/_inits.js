@@ -11,6 +11,8 @@ import MailChimp from './components/_mailChimp.js';
 import { miscFlexVid, miscZoom, miscSocialShare } from './components/_miscellaneous.js';
 import PageTransition from './components/_pageTransition.js';
 import Popup from './components/_popup.js';
+import Age from './components/_age';
+import Emote from './components/_emote';
 
 // ----------------------------------------------
 // Inits
@@ -41,4 +43,9 @@ $(() => {
     Popup.init();
   }
 
+  if($('.age').length){
+    Age.init();
+  }
+
+    Emote.init();
 });
