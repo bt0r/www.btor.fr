@@ -4,10 +4,10 @@
     <title>btor.fr</title>
     <description>Passionné d'informatique, de développement web &amp; applicatif depuis plus de 10 ans. Je partage mon quotidien de tech !
 </description>
-    <link>http://localhost:4000</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 01 Dec 2019 15:02:29 +0100</pubDate>
-    <lastBuildDate>Sun, 01 Dec 2019 15:02:29 +0100</lastBuildDate>
+    <link>https://btor.fr</link>
+    <atom:link href="https://btor.fr/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 01 Dec 2019 15:07:42 +0100</pubDate>
+    <lastBuildDate>Sun, 01 Dec 2019 15:07:42 +0100</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -373,8 +373,8 @@ Maintenant éditons notre &lt;code class=&quot;highlighter-rouge&quot;&gt;script
 Si vous avez aimé cet article ou que vous désirez avoir plus d’informations (voir même d’autres articles dans la même veine, &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose&lt;/code&gt;, docker avancé, &lt;code class=&quot;highlighter-rouge&quot;&gt;kubernetes&lt;/code&gt; etc..) faites le moi savoir :D&lt;/p&gt;
 </description>
         <pubDate>Wed, 03 Jul 2019 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/2019/07/03/docker-bases-tuto/</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/07/03/docker-bases-tuto/</guid>
+        <link>https://btor.fr/2019/07/03/docker-bases-tuto/</link>
+        <guid isPermaLink="true">https://btor.fr/2019/07/03/docker-bases-tuto/</guid>
         
         <category>Infrastructure</category>
         
@@ -425,8 +425,8 @@ J’ai également testé avec PUBG, sans succès le jeu se lance mais rien ne s�
 &lt;p&gt;Cette solution peut dépanner si le jeu est supporté et si vous disposez d’un bon matériel, néanmoins, elle ne permet pas de jouer à tous les jeux windows.&lt;/p&gt;
 </description>
         <pubDate>Sun, 02 Sep 2018 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/2018/09/02/jouer-jeux-linux-windows/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/09/02/jouer-jeux-linux-windows/</guid>
+        <link>https://btor.fr/2018/09/02/jouer-jeux-linux-windows/</link>
+        <guid isPermaLink="true">https://btor.fr/2018/09/02/jouer-jeux-linux-windows/</guid>
         
         <category>Tutorial</category>
         
@@ -705,8 +705,8 @@ Au final, après avoir passé 2 semaines sur Rome,Pise, Florence et les cinque t
 Je recommande vivement de visiter Rome et ses environs, en organisant votre voyage à l’avance vous pouvez faire pas mal d’économies.&lt;/p&gt;
 </description>
         <pubDate>Sat, 01 Sep 2018 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/2018/09/01/italie-cinque-terre/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/09/01/italie-cinque-terre/</guid>
+        <link>https://btor.fr/2018/09/01/italie-cinque-terre/</link>
+        <guid isPermaLink="true">https://btor.fr/2018/09/01/italie-cinque-terre/</guid>
         
         <category>Voyage</category>
         
@@ -799,8 +799,8 @@ Quand tout à coup, j’ai eu l’idée de refaire mon écran de chargement twit
 &lt;p&gt;Peace !&lt;/p&gt;
 </description>
         <pubDate>Tue, 17 Apr 2018 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/2018/04/17/kdenlive-green-screen/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/04/17/kdenlive-green-screen/</guid>
+        <link>https://btor.fr/2018/04/17/kdenlive-green-screen/</link>
+        <guid isPermaLink="true">https://btor.fr/2018/04/17/kdenlive-green-screen/</guid>
         
         <category>Photos &amp; Vidéo</category>
         
@@ -1019,8 +1019,8 @@ Ce message est à destination de marlène
 &lt;/ul&gt;
 </description>
         <pubDate>Tue, 17 Apr 2018 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/2018/04/17/chiffrer-donnees-gpg/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/04/17/chiffrer-donnees-gpg/</guid>
+        <link>https://btor.fr/2018/04/17/chiffrer-donnees-gpg/</link>
+        <guid isPermaLink="true">https://btor.fr/2018/04/17/chiffrer-donnees-gpg/</guid>
         
         <category>Sécurité</category>
         
@@ -1143,8 +1143,8 @@ A noté que ce bouton “Mining details” n’est disponible qu’en cours de m
 &lt;p&gt;Si vous avez la moindre question, n’hésitez pas à en parler dans les commentaires, j’y répondrai volontiers.&lt;/p&gt;
 </description>
         <pubDate>Fri, 12 Jan 2018 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/2018/01/12/bitcoin-twitch/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/01/12/bitcoin-twitch/</guid>
+        <link>https://btor.fr/2018/01/12/bitcoin-twitch/</link>
+        <guid isPermaLink="true">https://btor.fr/2018/01/12/bitcoin-twitch/</guid>
         
         <category>Twitch</category>
         
@@ -1226,8 +1226,8 @@ Je trouve cette FAQ assez clair, mon coté méfiant me laisse imaginer les pires
 &lt;p&gt;Pour conclure, en dehors de l’aspect vie privé qui peut être problématique pour certains. Cette enceinte Home Mini est vraiment de bonne facture pour son prix (60€ TTC), facile d’utilisation et facile à paramétrer. C’est un must-have du geek !&lt;/p&gt;
 </description>
         <pubDate>Sun, 24 Sep 2017 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/2017/09/24/google-home-mini/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/09/24/google-home-mini/</guid>
+        <link>https://btor.fr/2017/09/24/google-home-mini/</link>
+        <guid isPermaLink="true">https://btor.fr/2017/09/24/google-home-mini/</guid>
         
         <category>Materiel</category>
         
@@ -1367,8 +1367,8 @@ J’attends de voir ce que razer va faire (échange ou réparation) et je vous f
 &lt;p&gt;L’ordinateur est désormais vendu, après 2 retours au SAV pour cet histoire d’écran qui scintillait et d’autres petits soucis (tactile qui s’active tout seul alors que je touche pas l’écran, problème avec l’UEFI pour installer linux etc..)&lt;/p&gt;
 </description>
         <pubDate>Mon, 18 Sep 2017 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/2017/09/18/razer-stealth-blade/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/09/18/razer-stealth-blade/</guid>
+        <link>https://btor.fr/2017/09/18/razer-stealth-blade/</link>
+        <guid isPermaLink="true">https://btor.fr/2017/09/18/razer-stealth-blade/</guid>
         
         <category>Materiel</category>
         
