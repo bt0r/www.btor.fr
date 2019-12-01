@@ -6,9 +6,136 @@
 </description>
     <link>http://localhost:4000</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 01 Dec 2019 11:53:19 +0100</pubDate>
-    <lastBuildDate>Sun, 01 Dec 2019 11:53:19 +0100</lastBuildDate>
+    <pubDate>Sun, 01 Dec 2019 13:58:13 +0100</pubDate>
+    <lastBuildDate>Sun, 01 Dec 2019 13:58:13 +0100</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>Docker en pratique, la suite</title>
+        <description>&lt;pre&gt;&lt;code class=&quot;language-PHP&quot;&gt;echo $var.&quot;test&quot;;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Dans mon dernier article je vous expliquais les bases de docker, partons du principe que vous avez donc ces bases (docker push/pull/exec/ps/kill…) et que vous désirez aller un peu plus loin avec Docker. Il vous manque surement énormément d’informations pour vraiment utiliser Docker, dans cet article j’y répondrais et vous aurez de quoi avoir votre première stack docker fonctionnelle (promis ca ne sera pas long, seulement 223 pages éhéh).&lt;/p&gt;
+
+&lt;p&gt;Commençons par nous poser la bonne question, pourquoi utiliser Docker ? &lt;em&gt;Il parait que c’est cool&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Dans quel contexte ? &lt;em&gt;Ma stack de dev ? en production ?&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Répond t-il a tout nos besoins ? &lt;em&gt;Surement pas&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;La conteneurisation va nous permettre de lancer des processus dans un environnement cloisonné (oui je sais, je me répète). Autrement dit, si vous avez l’habitude d’installer votre stack local à la main, à base de &lt;code class=&quot;highlighter-rouge&quot;&gt;apt install apache2 ... &lt;/code&gt; ou autre, vous ne voyez surement pas l’intérêt de passer sur docker et pourtant ! dans énormément de cas docker peut vous aider. J’ai eu récemment le cas au travail où un développeur mobile ne connaissait pas Docker (ou juste de nom) et ne l’utilisait pas parcequ’il en voyait pas forcément l’utilité. En ayant pris connaissance des fonctionnalités apportées par Docker ainsi qu’une petite présentation bien ficelée ( #JaiUnMelonHorsNorme ), il a fini par trouvé Docker indispensable.&lt;/p&gt;
+
+&lt;p&gt;Voici quelques exemples d’utilisations de docker :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;En tant que développeur web, vous avez votre bon vieux LAMP (Linux, Apache, Mysql, Php) classique, c’est cool mais comment font les nouveaux dévs quand ils arrivent dans votre team ? Ils réinstallent la stack complète à la main ? Quid du développeur qui utilise mac alors que toi tu utilises Windows ? C’est à ce moment là que Docker est utile, un fichier de configuration pour tout le monde et en 2 clicks, la stack est montée.&lt;/li&gt;
+  &lt;li&gt;En tant que devsOps, tu es souvent amené à alterner entre Python et Go, puis parfois, tu as besoin de gérer plusieurs versions de python, de go, au sein de la même machine. Pourquoi s’embêter avec une installation manuelle quand tu peux juste faire un &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run golang:1.11.11&lt;/code&gt;  &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run golang:1.12.6&lt;/code&gt;  &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run python:2.7-stretch&lt;/code&gt;  &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run python:3.7.3-stretch&lt;/code&gt; ?&lt;/li&gt;
+  &lt;li&gt;En tant que pentester vous utilisez différents outils d’intrusion et vous travaillez sur une faille PhpMyAdmin, comment tester facilement votre exploit sur différentes versions ? DOCKERRRRRRR&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Des exemples comme ceux-là il en existe un paquet, le plus important n’est pas d’utiliser docker parce que c’est sexy mais d’arriver à comprendre ce qu’il va vous apporter.&lt;/p&gt;
+
+&lt;h1 id=&quot;docker-en-stack-de-développement&quot;&gt;Docker en stack de développement&lt;/h1&gt;
+&lt;p&gt;Maintenant que nous avons les différents cas d’utilisation, prenons un des cas qui m’a concerné et qui est surement LE cas par excellence de docker : La stack de développement&lt;/p&gt;
+
+&lt;p&gt;Historiquement, on téléchargeait notre petit LAMP, MAMP, WAMP et on développait dans notre coin pépouze.
+Ca marche mais c’est vite chiant, on peut souvent avoir un soucis isolé d’un autre dév parcequ’il n’est pas sur le même système d’exploitation, n’a pas mis la même configuration etc.. Grâce à Docker, on va avoir la même configuration, cross-platform et surtout on aura tous les mêmes erreurs de merde quand ça plantera ET CA C’EST COOL !&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://media.giphy.com/media/3oxRmGXbquXKz6DNPq/giphy.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;le-besoin&quot;&gt;Le besoin&lt;/h2&gt;
+&lt;p&gt;On va prendre en compte une stack de développement web classique, un bon vieux LAMP ! On a donc besoin :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;D’un serveur web, apache ou nginx&lt;/li&gt;
+  &lt;li&gt;D’un process PHP-FPM&lt;/li&gt;
+  &lt;li&gt;D’une base MySQL, PostgreSQL ou autre&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;La première chose à faire dans ce cas là est de rechercher si les technos sont disponibles sur Docker (via le docker hub). Après recherche, on trouve donc :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;https://hub.docker.com/_/php pour PHP&lt;/li&gt;
+  &lt;li&gt;https://hub.docker.com/_/mysql pour MySQL&lt;/li&gt;
+  &lt;li&gt;https://hub.docker.com/_/nginx pour Nginx&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Bingo, on a déjà de quoi faire pour créer notre stack.&lt;/p&gt;
+
+&lt;h2 id=&quot;la-pratique&quot;&gt;La pratique&lt;/h2&gt;
+&lt;p&gt;Je vous l’avais expliqué dans l’article précédent, pour lancer un conteneur on utilise &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run&lt;/code&gt; oui mais voilà, c’est vrai mais je vous ai légèrement menti…&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://media.giphy.com/media/2emoe1XUg23rW/giphy.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker run&lt;/code&gt; récupère et lance une image docker, c’est vrai… mais imaginez si on devait faire ça pour tous les processus que vous utilisez ? Ça serait vite chiant  ! &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run php &amp;amp;&amp;amp; docker run mysql &amp;amp;&amp;amp; docker run nginx&lt;/code&gt; etc… Puis comme je vous l’ai dit, les conteneurs ont une durée de vie limité, on les lance, ils s’arrêtent et la donnée à l’intérieur de celui-ci est effacée. Comment faire pour utiliser une base de donnée ? ou même juste votre code source pour qu’il soit interprété par PHP ?&lt;/p&gt;
+
+&lt;p&gt;En réalité, Docker ne se limite pas à 4 commandes push/run/pull/exec, vous pouvez gérer bien plus de choses comme le réseau entre vos conteneurs, monter des volumes de fichiers, gérer vos entrées /etc/hosts etc..&lt;/p&gt;
+
+&lt;p&gt;C’est exactement la même chose que la configuration d’une machine virtuelle sauf qu’on enlève l’aspect &quot;matériel&quot;, on ne gère pas la mémoire qu’on attribue à notre conteneur, ni même son espace disque. Par contre, on peut gérer l’espace disque ou la mémoire qu’on alloue à la machine virtuelle docker (dans le cas d’un DockerForMac par exemple)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/docker-pratique-outils/settings.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Commençons par la création du conteneur nginx, notre process nginx va avoir besoin d’une configuration de base pour fonctionner (bah ouai, il faut bien qu’il sache où est notre code source et comment il doit l’interpréter) Pour faciliter la relecture et la compréhension, j’ai fait un repository github avec tout le code https://github.com/bt0r/docker-article.&lt;/p&gt;
+
+&lt;p&gt;Revenons sur ce l’image docker que j’ai crée:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-BASH&quot;&gt;FROM nginx:1.17.1-alpine
+
+RUN mkdir -p /var/www/btor.fr
+
+COPY ./config/btor.fr /etc/nginx/sites-available/
+
+WORKDIR /var/www/btor.fr
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;Je ne reviens pas sur le détail du fichier de configuration nginx, c’est un fichier basique&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Avec cette image, on voit bien qu’il n’y a rien dedans, on récupère juste nginx, on copie un fichier de configuration, on crée le répertoire &lt;code class=&quot;highlighter-rouge&quot;&gt;/var/www/btor.fr&lt;/code&gt; et on le définit comme répertoire par défaut. 
+Parfait, mais comment dire à nginx d’afficher notre page web ?&lt;/p&gt;
+
+&lt;p&gt;La solution est de monter un volume pour que ces fichiers soient non pas copiés mon montés à la volée.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Rendez vous dans votre répertoire &lt;code class=&quot;highlighter-rouge&quot;&gt;docker/nginx&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Taper &lt;code class=&quot;highlighter-rouge&quot;&gt;docker build . -t btor/nginx&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Puis ` docker run -d -v ~/www/docker-article/web:/var/www/btor.fr btor/nginx` (attention au chemin du répertoire web)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Votre conteneur devrait se lancer et afficher un hash (qui correspond à l’ID du conteneur). Vérifions avec un &lt;code class=&quot;highlighter-rouge&quot;&gt;docker ps&lt;/code&gt; :&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES
+e4c925076a14        btor/nginx          \&quot;nginx -g 'daemon of…\&quot;   4 seconds ago       Up 3 seconds        80/tcp                   relaxed_wescoff
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Notre conteneur nginx fonctionne bien, le volume à l’air d’avoir été pris en compte. On va donc le vérifier :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-BASH&quot;&gt;btor@dev$ docker exec &amp;lt;containerID&amp;gt; ls
+index.php
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Bingo, le volume a bien été monté et les fichiers disponibles dans &lt;code class=&quot;highlighter-rouge&quot;&gt;/web&lt;/code&gt; sont bien dans le répertoire &lt;code class=&quot;highlighter-rouge&quot;&gt;/var/www/btor.fr&lt;/code&gt; du conteneur.&lt;/p&gt;
+
+&lt;p&gt;Maintenant que notre conteneur a bien les bons fichiers, essayons d’y accéder en HTTP. 
+Première étape :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-BASH&quot;&gt;btor@deb$ docker exec &amp;lt;container_id&amp;gt;  wget localhost -O-
+...
+&amp;lt;h1&amp;gt;Welcome to nginx!&amp;lt;/h1&amp;gt;
+&amp;lt;p&amp;gt;If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.&amp;lt;/p&amp;gt;
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Notre conteneur nous répond bien avec la page par défaut de NGINX mais pas de php, logique ! nous avons monté un volume de fichier mais aucun conteneur PHP n’existe.&lt;/p&gt;
+
+&lt;p&gt;Les volumes
+Ports&lt;/p&gt;
+
+&lt;p&gt;Docker-compose&lt;/p&gt;
+</description>
+        <pubDate>Sun, 01 Dec 2019 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/2019/12/01/docker-la-suite/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/12/01/docker-la-suite/</guid>
+        
+        <category>Infrastructure</category>
+        
+        
+      </item>
     
       <item>
         <title>Docker, les bases</title>

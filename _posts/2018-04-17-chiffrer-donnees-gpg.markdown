@@ -41,14 +41,14 @@ Dans cet exemple j'utilise GPG sur ubuntu 16.04 libre à vous d'utiliser GPG sur
 
 ### 🔑 Création des clefs
 La première étape consiste à générer des clefs. Pour se faire, rien de plus simple :
-```SHELL
+```shell
 marlene@pc:~$ gpg2 --full-gen-key
 ```
 Il existe 2 commandes pour générer des clefs, celle présente ci-dessus ainsi que `gpg2 --gen-key`, cette dernière permet de lancer l'étape de génération de clef par défaut, elle vous demandera simplement un nom, un email et vous générera un couple de clefs RSA en 2048 bits. Pratique, rapide mais ne vous permet pas choisir le type de clef désiré ni même sa robustesse.
 J'opte donc pour `--full-gen-key` afin de générer une clef 4096 bits en RSA.
 
 Vous devriez avoir donc ceci :
-```SHELL
+```shell
 gpg (GnuPG) 2.1.11; Copyright (C) 2016 Free Software Foundation, Inc.
 This is free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.
@@ -61,14 +61,14 @@ Sélectionnez le type de clef désiré :
 Quel est votre choix ?
 ```
 A cette question, choisissez la valeur par défaut : RSA et RSA
-```SHELL
+```shell
 Quel est votre choix ? 1
 les clefs RSA peuvent faire une taille comprise entre 1024 et 4096 bits.
 Quelle taille de clef désirez-vous ? (2048) 4096
 ```
 Plus votre taille de clef est grande, plus celle-ci est robuste, optez donc pour une clef de 4096 bits.
 
-```SHELL
+```shell
 La taille demandée est 4096 bits
 Veuillez indiquer le temps pendant lequel cette clef devrait être valable.
          0 = la clef n'expire pas
@@ -82,14 +82,14 @@ Gros dilemme, **par défaut la clef n'expire pas** c'est à dire que vous pourre
 En fonction de l'utilisation de GPG (chiffrement personnel de vos photos de vacances ou chiffrement de données professionnelles) vous aurez tout intérêt à faire en sorte que votre clef expire dans 6 mois, 1 an ou plus. 
 
 Libre à vous de choisir la durée de validité, dans mon cas je reste sur une clef qui n'expire jamais.
-```SHELL
+```shell
 Pendant combien de temps la clef est-elle valable ? (0) 
 La clef n'expire pas du tout
 Est-ce correct ? (o/N) o
 ```
 Validez en tapant `o` puis entrer
 
-```SHELL
+```shell
 GnuPG doit construire une identité pour identifier la clef.
 
 Nom réel : Marlène DURAND
@@ -104,7 +104,7 @@ ou (O)ui/(Q)uitter ? O
 ```
 GPG va ensuite vous demander quelques informations vous concernant comme votre nom, email et un commentaire sur la clef.  Remplissez les et validez en tapant `O` puis entrer
 
-```SHELL
+```shell
 De nombreux octets aléatoires doivent être générés. Vous devriez faire
 autre chose (taper au clavier, déplacer la souris, utiliser les disques)
 pendant la génération de nombres premiers ; cela donne au générateur de
@@ -113,7 +113,7 @@ nombres aléatoires une meilleure chance d'obtenir suffisamment d'entropie.
 GPG vous demandera de définir une passphrase (un mot de passe quoi) afin de générer les clefs. Faites en sorte de mettre un mot de passe complexe afin de garantir sa robustesse, et accessoirement souvenez-vous du mot de passe ... ça pourrait être utile pour la suite ?
 
 La génération peut prendre quelques minutes, faites couler un café, raconter votre weekend à vos collègues et revenez après ?
-```SHELL
+```shell
 gpg: clef AC907F30 marquée de confiance ultime.
 gpg: revocation certificate stored as '/home/btor/.gnupg/openpgp-revocs.d/C826A880D01D7EE90D7785A28B728B0DAC907F30.rev'
 les clefs publique et secrète ont été créées et signées.
@@ -130,7 +130,7 @@ sub   rsa4096/6969D94F 2018-04-16 []
 La génération terminée, vous devriez avoir un récapitulatif des clefs qui ont été générées.
 
 Pour vérifier les clefs disponibles dans votre trousseau GPG, tapez `gpg2 --list-keys`
-```SHELL
+```shell
 marlene@pc:~$ gpg2 --list-keys
 gpg: vérification de la base de confiance
 gpg: marginals needed: 3  completes needed: 1  trust model: PGP
@@ -147,20 +147,20 @@ sub   rsa4096/6969D94F 2018-04-16 [E]
 Maintenant que nos clefs sont générées, nous allons **envoyer notre clef publique à tout nos correspondants**.
 
 Pour extraire votre clef publique, tapez : 
-```SHELL
+```shell
 marlene@pc:~$ gpg2 --armor --export marlene.durand@gmail.com > marlene.asc
 ```
 Pensez à remplacer marlene.durand@gmail.com par l'email de votre clef
 
 Par défaut, GPG vous exporte la clef publique, si vous désirez exporter la clef privée pour la mettre sur un autre serveur par exemple, vous devrez utiliser : 
-```SHELL
+```shell
 marlene@pc:~$ gpg2 --armor --export-secret-keys marlene.durand@gmail.com > marlene_private.asc
 ```
 Notez que l'option --armor permet de convertir la sortie (par défaut binaire) en ASCII.
 
 ### 🔒 Chiffrer un fichier
 Commençons par créer un fichier d'exemple sur le pc d'Arthur :
-```SHELL
+```shell
 arthur@pc:~$ echo "Ce message est à destination de marlène" > message
 arthur@pc:~$ cat message
 Ce message est à destination de marlène
@@ -168,7 +168,7 @@ Ce message est à destination de marlène
 Arthur dispose de la clef publique de Marlène, ils peuvent désormais l'utiliser pour chiffrer tout type de fichier.
 Importons la clef de Marlène dans le trousseau GPG d'Arthur :
 
-```SHELL
+```shell
 arthur@pc:~$ gpg2 --import marlene.asc 
 gpg: clef AC907F30 : clef publique « Marlène DURAND <marlene.durand@gmail.com> » importée
 gpg:       Quantité totale traitée : 1
@@ -176,7 +176,7 @@ gpg:                     importées : 1  (RSA: 1)
 ```
 Pour chiffrer le fichier "message", il suffit d'utiliser cette commande : 
 
-```SHELL
+```shell
 arthur@pc:~$ gpg2 --output message.gpg --encrypt --armor --recipient marlene.durand@gmail.com message
 gpg: 6969D94F : aucune assurance que la clef appartienne vraiment à l'utilisateur nommé.
 
@@ -195,7 +195,7 @@ Un fichier message.gpg a été généré, c'est ce fichier qui sera mis à dispo
 
 ### 🔓 Déchiffrement
 Marlène reçoit le fichier "message.gpg" et doit le déchiffrer, rien de plus simple ! Il suffit de taper : 
-```SHELL
+```shell
 marlene@pc:~$ gpg2 --decrypt arthur.gpg 
 gpg: chiffré avec une clef RSA de 4096 bits, identifiant 6969D94F, créée le 2018-04-16
       « Marlène DURAND <marlene.durand@gmail.com> »

@@ -134,7 +134,7 @@ Jusqu’à présent nous avons récupéré des images docker déjà crée, mais 
 Commençons par faire notre premier fichier **Dockerfile**:
 - Créer un fichier nommé  `Dockerfile` et y ajouter : 
 
-```DOCKERFILE
+```dockerfile
 FROM debian:jessie
 
 RUN echo "toto"
@@ -150,7 +150,7 @@ Pour lancer le build d'une image, il suffit d'utiliser la commande `docker build
 
 Voici le retour de la commande: 
 
-```BASH
+```bash
  btor@dev$  docker build -f test/Dockerfile .
 Sending build context to Docker daemon  3.928MB
 Step 1/2 : FROM debian:jessie
@@ -218,7 +218,7 @@ Première étape, votre `Dockerfile` doit être versionné avec github (ou autre
 La deuxième étape est toute simple, pour chaque version de votre image, vous allez lui appliquer un `tag` et l'envoyer sur le hub docker.
 
 Faisons un essai avec ce Dockerfile: 
-```BASH
+```bash
 FROM debian:jessie
 LABEL maintainer="Thibaut BAYER<bt0r>"
 RUN echo "Bienvenue sur votre première image docker"
@@ -228,7 +228,7 @@ ENTRYPOINT ["/root/script.sh"]
 ```
 Au même endroit que le Dockerfile, créez un fichier nommé `script.sh` avec ceci à l'intérieur
 
-```BASH
+```bash
 #!/bin/bash
 echo "WOW ca marche"
 ```
@@ -237,7 +237,7 @@ Lancons le build de l'image :
 docker build .
 ```
 Ce qui nous donne 
-```BASH
+```bash
 Sending build context to Docker daemon  3.072kB
 Step 1/6 : FROM debian:jessie
  ---> d69ffb5f6cbf
@@ -269,7 +269,7 @@ Notre image est crée en local, on peut l’exécuter en faisant `docker run 1fa
 
 Et si on la tagguait ? Pour tagguer, il suffit d'utiliser l'option `-t` :
 
-```BASH
+```bash
 $ docker build . -t btor/wow
 
 Sending build context to Docker daemon  3.072kB
@@ -300,14 +300,14 @@ On note ici que j'ai utilisé : `btor` comme nom de compte docker hub, `wow` com
 
 Pour spécifier une version, on peut tout simplement ajouter `:v1` par exemple, ce qui donnerait 
 
-```BASH
+```bash
 docker build . -t <vous>/wow:v1
 ```
 La version peut s'appeller de n'importe quelle facon `10.1`, `v1`, `v1-alpha` ...
 
 Notre image en v1 crée en local, il serait temps de l'envoyer sur le docker hub en tapant `docker push <vous>/wow:v1` (pensez à remplacer `<vous>` par votre nom de compte docker hub que ce soit pour vos builds ou vos push sinon vous n'aurez pas les droits d'envoyer sur un repository dont vous n'êtes pas le propriétaire)
 
-```BASH
+```bash
 docker push <vous>/wow:v1
 The push refers to repository [docker.io/<vous>/wow]
 abd25ccbce1b: Pushed 
