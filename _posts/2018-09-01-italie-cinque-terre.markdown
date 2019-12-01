@@ -26,7 +26,7 @@ L'aller-retour pour Rome coûtait ~230€/personne, l'hôtel pour Rome (5 jours)
 # 🛫 Description du voyage
 Je me suis chargé d'organisé le voyage, une bonne partie de la première semaine était dédiée à Rome et au Vatican puis ensuite on prenait la direction de Florence pour rejoindre notre deuxième hôtel situé vers Sarzana afin d'être proche de Florence, Pise et des Cinque Terre. La deuxième semaine était plus axée détente au soleil, je savais qu'on serait un peu fatigué à marcher dans Rome donc je voulais un petit moment de pause avant de rentrer sur Paris et de reprendre le travail.
 
-![](/assets/images/voyage-italie/map.png)
+![](/assets/images/voyage-italie/map.jpg)
 
 Voici le détail exact du trip: 
 
@@ -167,7 +167,6 @@ Seul petit bémol en bon Français râleur, les boutiques de souvenirs en intern
 ![](/assets/images/voyage-italie/rome/vatican/15.jpg)
 ![](/assets/images/voyage-italie/rome/vatican/16.jpg)
 ![](/assets/images/voyage-italie/rome/vatican/17.jpg)
-![](/assets/images/voyage-italie/rome/vatican/18.jpg)
 ![](/assets/images/voyage-italie/rome/vatican/19.jpg)
 ![](/assets/images/voyage-italie/rome/vatican/20.jpg)
 ![](/assets/images/voyage-italie/rome/vatican/01.jpg)
@@ -229,7 +228,7 @@ Pour organiser mes voyages je regarde souvent les articles du Routard ou les poi
 # ☀️ Visite des Cinque Terre
 La meilleur partie ! Fin des visites, des rush et du mauvais temps. Place aux paysages côtiers, aux plages, au bronzage ! ?
 Qu'est ce que les Cinque Terre ? 
->  ![](/assets/images/voyage-italie/cinque-terre/map.png) 
+>  ![](/assets/images/voyage-italie/cinque-terre/map.jpg) 
 > 
 > Les Cinque Terre (en ligure : Çinque Taere, « Cinq Terres ») forment une partie de la côte de la Riviera italienne, dans la Ligurie, à l'ouest de la ville de La Spezia. Les Cinque Terre comprennent cinq villages : d'ouest en est, Monterosso al Mare, Vernazza, Corniglia, Manarola et Riomaggiore qui sont rattachés au parc national des Cinque Terre créé en 19991.
 

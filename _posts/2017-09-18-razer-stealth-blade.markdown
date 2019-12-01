@@ -3,7 +3,7 @@ layout: post
 title: "Test: Razer stealth blade"
 date: 2017-09-18
 description: 
-image: /assets/images/razer-stealth-blade/main.jpeg
+image: /assets/images/razer-stealth-blade/main.jpg
 author: Thibaut BAYER
 tags: 
   - Materiel
@@ -28,7 +28,7 @@ Malheureusement, chaque laptop avait un défaut qui ne me donnait pas envie de f
 # 💪🏻 La bête, Razer Blade Stealth
 Puis un jour, par pur hasard, je tombe sur un produit Razer, le [BLADE STEALTH MOTHA FU\*\*\* !](https://www.amazon.fr/gp/product/B0779XH77P/ref=as_li_tl?ie=UTF8&camp=1642&creative=6746&creativeASIN=B0779XH77P&linkCode=as2&tag=btor-21&linkId=28b67a5557dfdea1962ce4ba85c7f847)
 
-![Désolé pour la qualité des photos :D ](/assets/images/razer-stealth-blade/5.JPG)
+![Désolé pour la qualité des photos :D ](/assets/images/razer-stealth-blade/5.jpg)
 
 Alors pourquoi avoir choisi celui-ci ?
 #### Les performances !
@@ -55,15 +55,15 @@ Je ne ferais pas de vidéo/photo du packaging complet parce-que beaucoup le font
 
 Quelques photos de comparaison avec mon téléphone Xiaomi Redmi 3 et mon ancien laptop
 
-![](/assets/images/razer-stealth-blade/9.JPG)
-![](/assets/images/razer-stealth-blade/10.JPG)
-![](/assets/images/razer-stealth-blade/4.JPG)
-![](/assets/images/razer-stealth-blade/4.1.JPG)
+![](/assets/images/razer-stealth-blade/9.jpg)
+![](/assets/images/razer-stealth-blade/10.jpg)
+![](/assets/images/razer-stealth-blade/4.jpg)
+![](/assets/images/razer-stealth-blade/4.1.jpg)
 
 Ainsi qu'un aperçu de ce que donne les traces de doigts sans avoir forcément les mains grasses
 
-![](/assets/images/razer-stealth-blade/7.JPG)
-![](/assets/images/razer-stealth-blade/8.JPG)
+![](/assets/images/razer-stealth-blade/7.jpg)
+![](/assets/images/razer-stealth-blade/8.jpg)
 
 # 📌 Conclusion
 En un mot, **S-A-T-I-S-F-A-C-T-I-O-N !** 

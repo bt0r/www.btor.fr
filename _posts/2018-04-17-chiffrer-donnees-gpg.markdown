@@ -3,7 +3,7 @@ layout: post
 title: "Chiffrer ses données avec GPG en CLI"
 date: 2018-04-17
 description: 
-image: /assets/images/gpg/main.png
+image: /assets/images/gpg/main.jpg
 author: Thibaut BAYER
 tags: 
   - Sécurité
@@ -24,7 +24,7 @@ Le fonctionnement est assez simple, voici l'exemple typique d'échange de donné
 * Marlène utilise alors **sa clef privée pour déchiffrer** le message/fichier d'Arthur. 
 
 
-![](/assets/images/gpg/GPG.png)
+![](/assets/images/gpg/GPG.jpg)
 
 > Cliquez sur l'image pour l'afficher en grand
 

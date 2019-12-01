@@ -3,7 +3,7 @@ layout: post
 title: "Test: Google Home Mini"
 date: 2017-09-24
 description:
-image: /assets/images/google-home-mini/main.png
+image: /assets/images/google-home-mini/main.jpg
 author: Thibaut BAYER
 tags:
   - Materiel
@@ -33,7 +33,7 @@ Puis voilà qu'un jour, je tombe sur une offre d'ampoule [Xiaomi Yeelight](https
 Pourquoi vous ai-je introduit ces ampoules sur un article de la Google Home Mini ? Tout simplement parce-que ce produit prend tout son sens avec d'autres objets connectés. Par défaut la Google Home Mini ne fait que vous écouter et vous répondre, rien de plus . Mais quel est le rendu quand on le couple à des ampoules, des volets électriques, le chauffage, la porte de votre garage ?
 Jugez par vous même via une petite démonstration vidéo :
 
-![](/assets/images/google-home-mini/2.png)
+![](/assets/images/google-home-mini/2.jpg)
 
 [Cliquez ici pour voir la vidéo youtube](https://youtu.be/tyaVDoQAvlw)
 
@@ -62,7 +62,7 @@ Et concernant la collecte de données:
 
 Je vous recommande vivement d'aller lire la FAQ de Google, on y découvre pas mal de chose, comme le fait que Google vous mets à disposition votre historique de recherche, vos ordres à la Home Mini, les applications mobiles que vous avez utilisés etc.
 
-![](/assets/images/google-home-mini/my-activity.png)
+![](/assets/images/google-home-mini/my-activity.jpg)
 [Voir "My Activity"](https://myactivity.google.com/myactivity)
 Tout ça pour dire que Google ne se cache pas de l'utilisation des données (en prenant soin de justifier que ça reste à des fins d'optimisation).
 Je trouve cette FAQ assez clair, mon coté méfiant me laisse imaginer les pires scénarios catastrophe possibles concernant l'utilisation de nos données privés mais pour autant, je reste un geek et partant du principe que nos informations sont déjà divulguées à grande échelles via divers équipements informatique (téléphone, ordinateur, badges, carte bancaires etc.) je me dis que dans le fond, si ils ont envie de m'écouter chanter "[La macarena](https://www.youtube.com/watch?v=anzzNp8HlVQ)" sous la douche, c'est vraiment qu'ils ont plus rien à foutre ?
