@@ -28,14 +28,14 @@ Il existe deux types d'hyperviseur:
 
 - **L'hyperviseur de type 2**: 
 
-![](https://btor.fr/img/upload/docker-la-totale/hyperviseur_type_2.png)
+![](/assets/images/docker-bases/hyperviseur_type_2.png)
 _Source wikipédia_
 
 Vous les connaissez certainement sans savoir qu'ils sont de type 2:  VirtualBox et VMWare workstation. Le type 2 veut dire que l'hyperviseur a besoin d'un système d'exploitation "hôte" (maitre) pour fonctionner. Par exemple, vous ne pouvez pas lancer Virtualbox seul sans Windows ou Ubuntu.
 
 - **L'hyperviseur de type 1**: 
 
-![](https://btor.fr/img/upload/docker-la-totale/hyperviseur_type_1.png)
+![](/assets/images/docker-bases/hyperviseur_type_1.png)
 _Source wikipédia_
 
 A la différence du type 2, le type 1 fonctionne directement comme un "système hôte" et se charge de communiquer directement avec le matériel.

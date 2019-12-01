@@ -4,10 +4,10 @@
     <title>btor.fr</title>
     <description>Passionné d'informatique, de développement web &amp; applicatif depuis plus de 10 ans. Je partage mon quotidien de tech !
 </description>
-    <link>https://btor.fr</link>
-    <atom:link href="https://btor.fr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 01 Dec 2019 01:44:35 +0100</pubDate>
-    <lastBuildDate>Sun, 01 Dec 2019 01:44:35 +0100</lastBuildDate>
+    <link>http://localhost:4000</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 01 Dec 2019 11:34:43 +0100</pubDate>
+    <lastBuildDate>Sun, 01 Dec 2019 11:34:43 +0100</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -35,7 +35,7 @@ Si vous avez déjà un niveau avancé avec Docker, cet article n’est pas fait 
   &lt;li&gt;&lt;strong&gt;L’hyperviseur de type 2&lt;/strong&gt;:&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://btor.fr/img/upload/docker-la-totale/hyperviseur_type_2.png&quot; alt=&quot;&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/docker-bases/hyperviseur_type_2.png&quot; alt=&quot;&quot; /&gt;
 &lt;em&gt;Source wikipédia&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Vous les connaissez certainement sans savoir qu’ils sont de type 2:  VirtualBox et VMWare workstation. Le type 2 veut dire que l’hyperviseur a besoin d’un système d’exploitation “hôte” (maitre) pour fonctionner. Par exemple, vous ne pouvez pas lancer Virtualbox seul sans Windows ou Ubuntu.&lt;/p&gt;
@@ -44,7 +44,7 @@ Si vous avez déjà un niveau avancé avec Docker, cet article n’est pas fait 
   &lt;li&gt;&lt;strong&gt;L’hyperviseur de type 1&lt;/strong&gt;:&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://btor.fr/img/upload/docker-la-totale/hyperviseur_type_1.png&quot; alt=&quot;&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/docker-bases/hyperviseur_type_1.png&quot; alt=&quot;&quot; /&gt;
 &lt;em&gt;Source wikipédia&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;A la différence du type 2, le type 1 fonctionne directement comme un “système hôte” et se charge de communiquer directement avec le matériel.
@@ -373,8 +373,8 @@ Maintenant éditons notre &lt;code class=&quot;highlighter-rouge&quot;&gt;script
 Si vous avez aimé cet article ou que vous désirez avoir plus d’informations (voir même d’autres articles dans la même veine, &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose&lt;/code&gt;, docker avancé, &lt;code class=&quot;highlighter-rouge&quot;&gt;kubernetes&lt;/code&gt; etc..) faites le moi savoir :D&lt;/p&gt;
 </description>
         <pubDate>Wed, 03 Jul 2019 00:00:00 +0200</pubDate>
-        <link>https://btor.fr/2019/07/03/docker-bases-tuto/</link>
-        <guid isPermaLink="true">https://btor.fr/2019/07/03/docker-bases-tuto/</guid>
+        <link>http://localhost:4000/2019/07/03/docker-bases-tuto/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/07/03/docker-bases-tuto/</guid>
         
         <category>Infrastructure</category>
         
@@ -425,8 +425,8 @@ J’ai également testé avec PUBG, sans succès le jeu se lance mais rien ne s�
 &lt;p&gt;Cette solution peut dépanner si le jeu est supporté et si vous disposez d’un bon matériel, néanmoins, elle ne permet pas de jouer à tous les jeux windows.&lt;/p&gt;
 </description>
         <pubDate>Sun, 02 Sep 2018 00:00:00 +0200</pubDate>
-        <link>https://btor.fr/2018/09/02/jouer-jeux-linux-windows/</link>
-        <guid isPermaLink="true">https://btor.fr/2018/09/02/jouer-jeux-linux-windows/</guid>
+        <link>http://localhost:4000/2018/09/02/jouer-jeux-linux-windows/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/09/02/jouer-jeux-linux-windows/</guid>
         
         <category>Tutorial</category>
         
@@ -705,8 +705,8 @@ Au final, après avoir passé 2 semaines sur Rome,Pise, Florence et les cinque t
 Je recommande vivement de visiter Rome et ses environs, en organisant votre voyage à l’avance vous pouvez faire pas mal d’économies.&lt;/p&gt;
 </description>
         <pubDate>Sat, 01 Sep 2018 00:00:00 +0200</pubDate>
-        <link>https://btor.fr/2018/09/01/italie-cinque-terre/</link>
-        <guid isPermaLink="true">https://btor.fr/2018/09/01/italie-cinque-terre/</guid>
+        <link>http://localhost:4000/2018/09/01/italie-cinque-terre/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/09/01/italie-cinque-terre/</guid>
         
         <category>Voyage</category>
         
@@ -799,8 +799,8 @@ Quand tout à coup, j’ai eu l’idée de refaire mon écran de chargement twit
 &lt;p&gt;Peace !&lt;/p&gt;
 </description>
         <pubDate>Tue, 17 Apr 2018 00:00:00 +0200</pubDate>
-        <link>https://btor.fr/2018/04/17/kdenlive-green-screen/</link>
-        <guid isPermaLink="true">https://btor.fr/2018/04/17/kdenlive-green-screen/</guid>
+        <link>http://localhost:4000/2018/04/17/kdenlive-green-screen/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/04/17/kdenlive-green-screen/</guid>
         
         <category>Photos &amp; Vidéo</category>
         
@@ -1019,8 +1019,8 @@ Ce message est à destination de marlène
 &lt;/ul&gt;
 </description>
         <pubDate>Tue, 17 Apr 2018 00:00:00 +0200</pubDate>
-        <link>https://btor.fr/2018/04/17/chiffrer-donnees-gpg/</link>
-        <guid isPermaLink="true">https://btor.fr/2018/04/17/chiffrer-donnees-gpg/</guid>
+        <link>http://localhost:4000/2018/04/17/chiffrer-donnees-gpg/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/04/17/chiffrer-donnees-gpg/</guid>
         
         <category>Sécurité</category>
         
@@ -1082,13 +1082,13 @@ A titre d’exemple, avec ma Nvidia GeForce 970 GTX, NiceHash va majoritairement
 
 &lt;p&gt;Une fois le compte NiceHash crée, vous devrez avoir accès à votre porte feuille, profitez en pour récupérer l’adresse de votre portefeuille disponible ici :&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://btor.fr/img/upload/bitcoin-twitch/wallet.png&quot; alt=&quot;Photos portefeuille&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/bitcoin-twitch/wallet.png&quot; alt=&quot;Photos portefeuille&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Copier cette adresse dans votre presse-papier ou gardez là de coté, elle vous servira pour la prochaine étape.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://miner.nicehash.com/&quot;&gt;? Télécharger&lt;/a&gt; le logiciel de mining sur le site officiel de nicehash , faites bien attention à prendre la version correspondant à votre carte graphique Nvidia ou AMD.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://btor.fr/img/upload/bitcoin-twitch/wallet2.png&quot; alt=&quot;NiceHash application&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/bitcoin-twitch/wallet2.png&quot; alt=&quot;NiceHash application&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Lancer l’application NiceHash, cliquez sur l’icone “Wallet” et coller votre adresse NiceHash que vous avez précédemment copier.
 NiceHash vous demandera certainement de lancer un benchmark afin de connaitre approximativement votre ratio (hashrate) sur les différentes monnaies, si c’est le cas, laissez le tourner et aller boire un café, ça peut prendre quelques minutes…&lt;/p&gt;
@@ -1098,7 +1098,7 @@ NiceHash vous demandera certainement de lancer un benchmark afin de connaitre ap
 &lt;p&gt;Pour miner, c’est très simple, il vous suffit de cliquer sur le bouton vert “Start”. Vous devriez voir l’icone “Start” de transformer en “Stop” et voir vos revenus quotidien dans “Daily estimated earning”. Si vous le désirez, vous pouvez avoir plus de détail sur ce qui est en cours de minage par l’application en cliquant sur “Mining details”, c’est ici qu’on verra le hashrate / seconde, le type d’algorithme ( et donc de monnaie ) qui est miner, le profit par jour par carte graphique ou processeur etc.
 A noté que ce bouton “Mining details” n’est disponible qu’en cours de minage, si le mineur est arrêté le bouton affichera “Hardware details”, ce qui vous permettra de désactiver/activer vos GPU ou vos CPU ( dans mon cas je mine avec CPU + GPU ).&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://btor.fr/img/upload/bitcoin-twitch/mining1.png&quot; alt=&quot;NiceHash application&quot; /&gt;  &lt;img src=&quot;https://btor.fr/img/upload/bitcoin-twitch/mining2.png&quot; alt=&quot;NiceHash application&quot; /&gt;  &lt;img src=&quot;https://btor.fr/img/upload/bitcoin-twitch/mining3.png&quot; alt=&quot;NiceHash application&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/bitcoin-twitch/mining1.png&quot; alt=&quot;NiceHash application&quot; /&gt;  &lt;img src=&quot;/assets/images/bitcoin-twitch/mining2.png&quot; alt=&quot;NiceHash application&quot; /&gt;  &lt;img src=&quot;/assets/images/bitcoin-twitch/mining3.png&quot; alt=&quot;NiceHash application&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;-transfert-vers-coinbase&quot;&gt;🧾 Transfert vers Coinbase&lt;/h3&gt;
 &lt;p&gt;Votre mineur tourne, vous commencez à récoltez vos premiers euros et tout va pour le mieux… Cependant il y a plusieurs choses à prendre en compte (encore, oui je sais …).&lt;/p&gt;
@@ -1117,7 +1117,7 @@ A noté que ce bouton “Mining details” n’est disponible qu’en cours de m
   &lt;li&gt;Vous devrez recevoir un mail de coinbase vous indiquant que vous avez reçu de l’argent de NiceHash&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://btor.fr/img/upload/bitcoin-twitch/wallet3.png&quot; alt=&quot;NiceHash application&quot; /&gt; &lt;img src=&quot;https://btor.fr/img/upload/bitcoin-twitch/withdrawal.png&quot; alt=&quot;NiceHash application&quot; /&gt; &lt;img src=&quot;https://btor.fr/img/upload/bitcoin-twitch/withdrawal2.png&quot; alt=&quot;NiceHash application&quot; /&gt; &lt;img src=&quot;https://btor.fr/img/upload/bitcoin-twitch/coinbase-email.png&quot; alt=&quot;NiceHash application&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/bitcoin-twitch/wallet3.png&quot; alt=&quot;NiceHash application&quot; /&gt; &lt;img src=&quot;/assets/images/bitcoin-twitch/withdrawal.png&quot; alt=&quot;NiceHash application&quot; /&gt; &lt;img src=&quot;/assets/images/bitcoin-twitch/withdrawal2.png&quot; alt=&quot;NiceHash application&quot; /&gt; &lt;img src=&quot;/assets/images/bitcoin-twitch/coinbase-email.png&quot; alt=&quot;NiceHash application&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;-paiement-via-twitch&quot;&gt;💳 Paiement via twitch&lt;/h3&gt;
 &lt;p&gt;Maintenant que nous avons miner et transférer l’argent sur coinbase, il ne nous manque plus qu’a l’utiliser !&lt;/p&gt;
@@ -1128,7 +1128,7 @@ A noté que ce bouton “Mining details” n’est disponible qu’en cours de m
   &lt;li&gt;Si “Coinbase” s’affiche, cliquez dessus, sinon cliquez sur “Afficher plus de modes”  et vous devrez le voir apparaitre&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://btor.fr/img/upload/bitcoin-twitch/twitch-subscribe.png&quot; alt=&quot;NiceHash application&quot; /&gt; &lt;img src=&quot;https://btor.fr/img/upload/bitcoin-twitch/twitch-paiement.png&quot; alt=&quot;NiceHash application&quot; /&gt; &lt;img src=&quot;https://btor.fr/img/upload/bitcoin-twitch/twitch-paiement2.png&quot; alt=&quot;NiceHash application&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/bitcoin-twitch/twitch-subscribe.png&quot; alt=&quot;NiceHash application&quot; /&gt; &lt;img src=&quot;/assets/images/bitcoin-twitch/twitch-paiement.png&quot; alt=&quot;NiceHash application&quot; /&gt; &lt;img src=&quot;/assets/images/bitcoin-twitch/twitch-paiement2.png&quot; alt=&quot;NiceHash application&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Et voilà, vous vous êtes abonné sans même avoir dépensé 1€ (mais quelques minutes à lire et comprendre cet article … ? )&lt;/p&gt;
 
@@ -1143,8 +1143,8 @@ A noté que ce bouton “Mining details” n’est disponible qu’en cours de m
 &lt;p&gt;Si vous avez la moindre question, n’hésitez pas à en parler dans les commentaires, j’y répondrai volontiers.&lt;/p&gt;
 </description>
         <pubDate>Fri, 12 Jan 2018 00:00:00 +0100</pubDate>
-        <link>https://btor.fr/2018/01/12/bitcoin-twitch/</link>
-        <guid isPermaLink="true">https://btor.fr/2018/01/12/bitcoin-twitch/</guid>
+        <link>http://localhost:4000/2018/01/12/bitcoin-twitch/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/01/12/bitcoin-twitch/</guid>
         
         <category>Twitch</category>
         
@@ -1226,8 +1226,8 @@ Je trouve cette FAQ assez clair, mon coté méfiant me laisse imaginer les pires
 &lt;p&gt;Pour conclure, en dehors de l’aspect vie privé qui peut être problématique pour certains. Cette enceinte Home Mini est vraiment de bonne facture pour son prix (60€ TTC), facile d’utilisation et facile à paramétrer. C’est un must-have du geek !&lt;/p&gt;
 </description>
         <pubDate>Sun, 24 Sep 2017 00:00:00 +0200</pubDate>
-        <link>https://btor.fr/2017/09/24/google-home-mini/</link>
-        <guid isPermaLink="true">https://btor.fr/2017/09/24/google-home-mini/</guid>
+        <link>http://localhost:4000/2017/09/24/google-home-mini/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/09/24/google-home-mini/</guid>
         
         <category>Materiel</category>
         
@@ -1367,8 +1367,8 @@ J’attends de voir ce que razer va faire (échange ou réparation) et je vous f
 &lt;p&gt;L’ordinateur est désormais vendu, après 2 retours au SAV pour cet histoire d’écran qui scintillait et d’autres petits soucis (tactile qui s’active tout seul alors que je touche pas l’écran, problème avec l’UEFI pour installer linux etc..)&lt;/p&gt;
 </description>
         <pubDate>Mon, 18 Sep 2017 00:00:00 +0200</pubDate>
-        <link>https://btor.fr/2017/09/18/razer-stealth-blade/</link>
-        <guid isPermaLink="true">https://btor.fr/2017/09/18/razer-stealth-blade/</guid>
+        <link>http://localhost:4000/2017/09/18/razer-stealth-blade/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/09/18/razer-stealth-blade/</guid>
         
         <category>Materiel</category>
         

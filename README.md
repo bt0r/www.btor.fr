@@ -4,4 +4,4 @@
 Repository du site [www.btor.fr](www.btor.fr)
 
 # Credits
-- Thème Jekyll `Barber` crée par [Thomas VAETH](https://github.com/samesies/barber-jekyll)
+- Thème Jekyll `Barber` crée par [Thomas VAETH](https://github.com/samesies/barber-jekyll) et modifié par mes soins

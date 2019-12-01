@@ -63,13 +63,13 @@ Commencer par [créer votre compte nicehash](https://www.nicehash.com/register).
 
 Une fois le compte NiceHash crée, vous devrez avoir accès à votre porte feuille, profitez en pour récupérer l'adresse de votre portefeuille disponible ici :
 
-![Photos portefeuille](https://btor.fr/img/upload/bitcoin-twitch/wallet.png)  
+![Photos portefeuille](/assets/images/bitcoin-twitch/wallet.png)  
 
 Copier cette adresse dans votre presse-papier ou gardez là de coté, elle vous servira pour la prochaine étape.
 
  [? Télécharger](https://miner.nicehash.com/) le logiciel de mining sur le site officiel de nicehash , faites bien attention à prendre la version correspondant à votre carte graphique Nvidia ou AMD.
 
-![NiceHash application](https://btor.fr/img/upload/bitcoin-twitch/wallet2.png)  
+![NiceHash application](/assets/images/bitcoin-twitch/wallet2.png)  
 
 Lancer l'application NiceHash, cliquez sur l'icone "Wallet" et coller votre adresse NiceHash que vous avez précédemment copier.
 NiceHash vous demandera certainement de lancer un benchmark afin de connaitre approximativement votre ratio (hashrate) sur les différentes monnaies, si c'est le cas, laissez le tourner et aller boire un café, ça peut prendre quelques minutes...
@@ -79,7 +79,7 @@ Une fois votre wallet renseigné dans l'application et le benchmark d'effectué,
 Pour miner, c'est très simple, il vous suffit de cliquer sur le bouton vert "Start". Vous devriez voir l'icone "Start" de transformer en "Stop" et voir vos revenus quotidien dans "Daily estimated earning". Si vous le désirez, vous pouvez avoir plus de détail sur ce qui est en cours de minage par l'application en cliquant sur "Mining details", c'est ici qu'on verra le hashrate / seconde, le type d'algorithme ( et donc de monnaie ) qui est miner, le profit par jour par carte graphique ou processeur etc.
 A noté que ce bouton "Mining details" n'est disponible qu'en cours de minage, si le mineur est arrêté le bouton affichera "Hardware details", ce qui vous permettra de désactiver/activer vos GPU ou vos CPU ( dans mon cas je mine avec CPU + GPU ).
 
-![NiceHash application](https://btor.fr/img/upload/bitcoin-twitch/mining1.png)  ![NiceHash application](https://btor.fr/img/upload/bitcoin-twitch/mining2.png)  ![NiceHash application](https://btor.fr/img/upload/bitcoin-twitch/mining3.png)   
+![NiceHash application](/assets/images/bitcoin-twitch/mining1.png)  ![NiceHash application](/assets/images/bitcoin-twitch/mining2.png)  ![NiceHash application](/assets/images/bitcoin-twitch/mining3.png)   
 
 ### 🧾 Transfert vers Coinbase
 Votre mineur tourne, vous commencez à récoltez vos premiers euros et tout va pour le mieux... Cependant il y a plusieurs choses à prendre en compte (encore, oui je sais ...).
@@ -94,7 +94,7 @@ Passons donc au virement Nicehash vers Coinbase (vous pouvez suivre les étapes 
 - Remplissez les divers informations demandées (email de votre compte Coinbase, double authentification etc.) puis valider
 - Vous devrez recevoir un mail de coinbase vous indiquant que vous avez reçu de l'argent de NiceHash
 
-![NiceHash application](https://btor.fr/img/upload/bitcoin-twitch/wallet3.png) ![NiceHash application](https://btor.fr/img/upload/bitcoin-twitch/withdrawal.png) ![NiceHash application](https://btor.fr/img/upload/bitcoin-twitch/withdrawal2.png) ![NiceHash application](https://btor.fr/img/upload/bitcoin-twitch/coinbase-email.png)
+![NiceHash application](/assets/images/bitcoin-twitch/wallet3.png) ![NiceHash application](/assets/images/bitcoin-twitch/withdrawal.png) ![NiceHash application](/assets/images/bitcoin-twitch/withdrawal2.png) ![NiceHash application](/assets/images/bitcoin-twitch/coinbase-email.png)
 
 ### 💳 Paiement via twitch
 Maintenant que nous avons miner et transférer l'argent sur coinbase, il ne nous manque plus qu'a l'utiliser !
@@ -103,7 +103,7 @@ Maintenant que nous avons miner et transférer l'argent sur coinbase, il ne nous
 - Cliquez sur "Choisir un autre moyen de paiement"
 - Si "Coinbase" s'affiche, cliquez dessus, sinon cliquez sur "Afficher plus de modes"  et vous devrez le voir apparaitre 
 
-![NiceHash application](https://btor.fr/img/upload/bitcoin-twitch/twitch-subscribe.png) ![NiceHash application](https://btor.fr/img/upload/bitcoin-twitch/twitch-paiement.png) ![NiceHash application](https://btor.fr/img/upload/bitcoin-twitch/twitch-paiement2.png)
+![NiceHash application](/assets/images/bitcoin-twitch/twitch-subscribe.png) ![NiceHash application](/assets/images/bitcoin-twitch/twitch-paiement.png) ![NiceHash application](/assets/images/bitcoin-twitch/twitch-paiement2.png)
 
 Et voilà, vous vous êtes abonné sans même avoir dépensé 1€ (mais quelques minutes à lire et comprendre cet article ... ? )
 
