@@ -1,4 +1,5 @@
 build:
+	docker-compose run jekyll ./node_modules/.bin/gulp
 	docker-compose run jekyll jekyll build -d docs
 install:
 	docker-compose run --rm jekyll bundle install
