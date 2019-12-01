@@ -6,8 +6,8 @@
 </description>
     <link>https://btor.fr</link>
     <atom:link href="https://btor.fr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 01 Dec 2019 15:09:47 +0100</pubDate>
-    <lastBuildDate>Sun, 01 Dec 2019 15:09:47 +0100</lastBuildDate>
+    <pubDate>Sun, 01 Dec 2019 11:35:59 -0600</pubDate>
+    <lastBuildDate>Sun, 01 Dec 2019 11:35:59 -0600</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -372,7 +372,7 @@ Maintenant éditons notre &lt;code class=&quot;highlighter-rouge&quot;&gt;script
 &lt;p&gt;Vous avez désormais les notions de bases de docker, vous savez comment docker fonctionne, comment récupérer/stoper/lancer/créer/pousser une image. 
 Si vous avez aimé cet article ou que vous désirez avoir plus d’informations (voir même d’autres articles dans la même veine, &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose&lt;/code&gt;, docker avancé, &lt;code class=&quot;highlighter-rouge&quot;&gt;kubernetes&lt;/code&gt; etc..) faites le moi savoir :D&lt;/p&gt;
 </description>
-        <pubDate>Wed, 03 Jul 2019 00:00:00 +0200</pubDate>
+        <pubDate>Wed, 03 Jul 2019 00:00:00 -0500</pubDate>
         <link>https://btor.fr/2019/07/03/docker-bases-tuto/</link>
         <guid isPermaLink="true">https://btor.fr/2019/07/03/docker-bases-tuto/</guid>
         
@@ -412,19 +412,19 @@ Si vous avez aimé cet article ou que vous désirez avoir plus d’informations 
   &lt;li&gt;Validez et redémarrez steam&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/jeux-windows-steam/01.png&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/jeux-windows-steam/02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/jeux-windows-steam/01.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/jeux-windows-steam/02.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Une fois Steam redémarré, l’icône d’installation de vos jeux windows devrait être visible. Il ne vous reste plus qu’à installer votre jeu et à le lancer.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/jeux-windows-steam/03.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/jeux-windows-steam/03.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;J’ai pu testé avec GTA 5 sur steam, le launcher de rockstar ne s’affiche pas correctement donc il m’était impossible de m’authentifier.
 J’ai également testé avec PUBG, sans succès le jeu se lance mais rien ne s’affiche.&lt;/p&gt;
 
 &lt;p&gt;Cette solution peut dépanner si le jeu est supporté et si vous disposez d’un bon matériel, néanmoins, elle ne permet pas de jouer à tous les jeux windows.&lt;/p&gt;
 </description>
-        <pubDate>Sun, 02 Sep 2018 00:00:00 +0200</pubDate>
+        <pubDate>Sun, 02 Sep 2018 00:00:00 -0500</pubDate>
         <link>https://btor.fr/2018/09/02/jouer-jeux-linux-windows/</link>
         <guid isPermaLink="true">https://btor.fr/2018/09/02/jouer-jeux-linux-windows/</guid>
         
@@ -454,7 +454,7 @@ L’aller-retour pour Rome coûtait ~230€/personne, l’hôtel pour Rome (5 jo
 &lt;h1 id=&quot;-description-du-voyage&quot;&gt;🛫 Description du voyage&lt;/h1&gt;
 &lt;p&gt;Je me suis chargé d’organisé le voyage, une bonne partie de la première semaine était dédiée à Rome et au Vatican puis ensuite on prenait la direction de Florence pour rejoindre notre deuxième hôtel situé vers Sarzana afin d’être proche de Florence, Pise et des Cinque Terre. La deuxième semaine était plus axée détente au soleil, je savais qu’on serait un peu fatigué à marcher dans Rome donc je voulais un petit moment de pause avant de rentrer sur Paris et de reprendre le travail.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/voyage-italie/map.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/voyage-italie/map.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Voici le détail exact du trip:&lt;/p&gt;
 
@@ -600,7 +600,6 @@ Seul petit bémol en bon Français râleur, les boutiques de souvenirs en intern
 &lt;img src=&quot;/assets/images/voyage-italie/rome/vatican/15.jpg&quot; alt=&quot;&quot; /&gt;
 &lt;img src=&quot;/assets/images/voyage-italie/rome/vatican/16.jpg&quot; alt=&quot;&quot; /&gt;
 &lt;img src=&quot;/assets/images/voyage-italie/rome/vatican/17.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/vatican/18.jpg&quot; alt=&quot;&quot; /&gt;
 &lt;img src=&quot;/assets/images/voyage-italie/rome/vatican/19.jpg&quot; alt=&quot;&quot; /&gt;
 &lt;img src=&quot;/assets/images/voyage-italie/rome/vatican/20.jpg&quot; alt=&quot;&quot; /&gt;
 &lt;img src=&quot;/assets/images/voyage-italie/rome/vatican/01.jpg&quot; alt=&quot;&quot; /&gt;
@@ -663,7 +662,7 @@ Pour organiser mes voyages je regarde souvent les articles du Routard ou les poi
 &lt;p&gt;La meilleur partie ! Fin des visites, des rush et du mauvais temps. Place aux paysages côtiers, aux plages, au bronzage ! ?
 Qu’est ce que les Cinque Terre ?&lt;/p&gt;
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img src=&quot;/assets/images/voyage-italie/cinque-terre/map.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;/assets/images/voyage-italie/cinque-terre/map.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
   &lt;p&gt;Les Cinque Terre (en ligure : Çinque Taere, « Cinq Terres ») forment une partie de la côte de la Riviera italienne, dans la Ligurie, à l’ouest de la ville de La Spezia. Les Cinque Terre comprennent cinq villages : d’ouest en est, Monterosso al Mare, Vernazza, Corniglia, Manarola et Riomaggiore qui sont rattachés au parc national des Cinque Terre créé en 19991.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -704,7 +703,7 @@ On a opté pour le train, plus pratique et pas si cher que ça (16€/pers pour 
 Au final, après avoir passé 2 semaines sur Rome,Pise, Florence et les cinque terre, nous avons dépensés à peu près 1000€ chacun tout inclus. Ça peut paraître énorme pour 2 semaines mais comme je le disais plus haut il faut re-contextualiser (Appartement plutôt qu’auberge, prix des monuments, voitures avec frais de parking assez élevé, réservation 2 semaines avant, mois d’août etc).&lt;br /&gt;
 Je recommande vivement de visiter Rome et ses environs, en organisant votre voyage à l’avance vous pouvez faire pas mal d’économies.&lt;/p&gt;
 </description>
-        <pubDate>Sat, 01 Sep 2018 00:00:00 +0200</pubDate>
+        <pubDate>Sat, 01 Sep 2018 00:00:00 -0500</pubDate>
         <link>https://btor.fr/2018/09/01/italie-cinque-terre/</link>
         <guid isPermaLink="true">https://btor.fr/2018/09/01/italie-cinque-terre/</guid>
         
@@ -739,42 +738,42 @@ Quand tout à coup, j’ai eu l’idée de refaire mon écran de chargement twit
 
 &lt;p&gt;Dans un premier temps, ouvrez KDEnLive sur un nouveau projet:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/kdenlive-green-screen/01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/kdenlive-green-screen/01.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Dans la fenêtre de gauche en dessous de “Nom”, faite clic-droit puis &lt;code class=&quot;highlighter-rouge&quot;&gt;Ajouter un clip&lt;/code&gt;. Sélectionnez vos vidéos,  dans ce tuto j’utilise &lt;a href=&quot;https://youtu.be/Dq_3bzyccRs&quot;&gt;cette vidéo&lt;/a&gt;  pour l’incrustation fond vert et &lt;a href=&quot;https://www.youtube.com/watch?v=rbUqOPw7w0U&quot;&gt;cette vidéo&lt;/a&gt; en guise de fond.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/kdenlive-green-screen/02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/kdenlive-green-screen/02.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Une fois vos deux vidéos importées, placez les dans la timeline en bas (glisser-déposer) et vous devriez vous retrouver avec quelque chose du style :&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/kdenlive-green-screen/03.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/kdenlive-green-screen/03.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Sur votre vidéo fond vert, ajoutez une &lt;code class=&quot;highlighter-rouge&quot;&gt;transition composite&lt;/code&gt; et étendez là sur toute votre vidéo fond vert.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/kdenlive-green-screen/04.png&quot; alt=&quot;&quot; /&gt; &lt;img src=&quot;/assets/images/kdenlive-green-screen/05.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/kdenlive-green-screen/04.jpg&quot; alt=&quot;&quot; /&gt; &lt;img src=&quot;/assets/images/kdenlive-green-screen/05.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;-1ère-technique&quot;&gt;🐣 1ère technique&lt;/h3&gt;
 &lt;p&gt;La première technique est assez simple et connue de tout le monde, il s’agit d’utiliser le &lt;code class=&quot;highlighter-rouge&quot;&gt;ChromaKey&lt;/code&gt; ou &lt;code class=&quot;highlighter-rouge&quot;&gt;Couleur Clé&lt;/code&gt; sur KDEnLive.&lt;/p&gt;
 
 &lt;p&gt;Cliquez sur votre vidéo fond vert dans la timeline et ajoutez lui un effet &lt;code class=&quot;highlighter-rouge&quot;&gt;Couleur clé&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/kdenlive-green-screen/06.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/kdenlive-green-screen/06.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Cliquez sur l’icone &lt;code class=&quot;highlighter-rouge&quot;&gt;Goutte d'eau&lt;/code&gt; afin de pouvoir sélectionner la couleur à extraire&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/kdenlive-green-screen/07.png&quot; alt=&quot;&quot; /&gt; &lt;img src=&quot;/assets/images/kdenlive-green-screen/08.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/kdenlive-green-screen/07.jpg&quot; alt=&quot;&quot; /&gt; &lt;img src=&quot;/assets/images/kdenlive-green-screen/08.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Vous devriez obtenir ce résultat&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/kdenlive-green-screen/09.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/kdenlive-green-screen/09.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;À mon sens, cette technique est facile mais pas du tout satisfaisante, tout simplement parce que si l’on regarde de plus près. On aperçoit une bordure verte, ce rendu dépend énormément de la qualité de votre vidéo fond vert mais ce type de cas est très fréquent.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/kdenlive-green-screen/10.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/kdenlive-green-screen/10.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Heureusement il existe une solution pour atténuer cette bordure, ajouter l’effet &lt;code class=&quot;highlighter-rouge&quot;&gt;SpillSupress&lt;/code&gt; sur votre vidéo fond vert. Cet effet n’enlèvera pas les pixels vert mais va les “convertir” en gris, comme si la bordure étaient désaturée . Le rendu est déjà beaucoup plus correct.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/kdenlive-green-screen/11.png&quot; alt=&quot;&quot; /&gt; &lt;img src=&quot;/assets/images/kdenlive-green-screen/12.png&quot; alt=&quot;&quot; /&gt; &lt;img src=&quot;/assets/images/kdenlive-green-screen/13.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/kdenlive-green-screen/11.jpg&quot; alt=&quot;&quot; /&gt; &lt;img src=&quot;/assets/images/kdenlive-green-screen/12.jpg&quot; alt=&quot;&quot; /&gt; &lt;img src=&quot;/assets/images/kdenlive-green-screen/13.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Oui mais voilà, si vous regardez encore de plus près, vous pourrez remarquer que quand bien même la bordure verte a été atténuée, elle reste présente et le contour n’est pas lisse.&lt;/p&gt;
 
@@ -783,22 +782,22 @@ Quand tout à coup, j’ai eu l’idée de refaire mon écran de chargement twit
 
 &lt;p&gt;Supprimez l’effet &lt;code class=&quot;highlighter-rouge&quot;&gt;Couleur Clé&lt;/code&gt; ou &lt;code class=&quot;highlighter-rouge&quot;&gt;ChromaKey&lt;/code&gt; et ajoutez les effets &lt;code class=&quot;highlighter-rouge&quot;&gt;Sélection de couleur&lt;/code&gt; et &lt;code class=&quot;highlighter-rouge&quot;&gt;Teinte&lt;/code&gt; puis jouez avec les différentes valeurs (écart, gain, valeur de nuance etc.) et précisez la couleur à supprimer (toujours notre vert, même principe que la 1ère technique).&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/kdenlive-green-screen/15.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/kdenlive-green-screen/15.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Votre incrustation devrait paraître plus fine, plus propre. A noter que j’ai utilisé une teinte en fonction de mon fond assez sombre (noir vers blanc) et c’est d’ailleurs là où nous rencontrons un nouveau problème. Quand notre vidéo de fond va changer et passer à une scène plus claire, la teinte ne vas pas du tout correspondre.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/kdenlive-green-screen/16.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/kdenlive-green-screen/16.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Pour régler ce type de soucis, j’ai coupé ma vidéo fond-vert en deux afin d’appliquer des paramètres différents sur l’effet “Teinte”&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/kdenlive-green-screen/17.png&quot; alt=&quot;&quot; /&gt; &lt;img src=&quot;/assets/images/kdenlive-green-screen/18.png&quot; alt=&quot;&quot; /&gt; &lt;img src=&quot;/assets/images/kdenlive-green-screen/19.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/kdenlive-green-screen/17.jpg&quot; alt=&quot;&quot; /&gt; &lt;img src=&quot;/assets/images/kdenlive-green-screen/18.jpg&quot; alt=&quot;&quot; /&gt; &lt;img src=&quot;/assets/images/kdenlive-green-screen/19.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Je vous laisse voir le rendu finale de ce tutorial et n’hésitez pas à me laisser un commentaire si vous avez des questions.
 &lt;a href=&quot;https://youtu.be/JetxE3jZupA&quot;&gt;Cliquez ici pour voir la vidéo youtube&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Peace !&lt;/p&gt;
 </description>
-        <pubDate>Tue, 17 Apr 2018 00:00:00 +0200</pubDate>
+        <pubDate>Tue, 17 Apr 2018 00:00:00 -0500</pubDate>
         <link>https://btor.fr/2018/04/17/kdenlive-green-screen/</link>
         <guid isPermaLink="true">https://btor.fr/2018/04/17/kdenlive-green-screen/</guid>
         
@@ -833,7 +832,7 @@ Dans cet article nous allons voir comment procéder sans utiliser d’interface 
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/gpg/GPG.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/gpg/GPG.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Cliquez sur l’image pour l’afficher en grand&lt;/p&gt;
@@ -1018,7 +1017,7 @@ Ce message est à destination de marlène
   &lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Tue, 17 Apr 2018 00:00:00 +0200</pubDate>
+        <pubDate>Tue, 17 Apr 2018 00:00:00 -0500</pubDate>
         <link>https://btor.fr/2018/04/17/chiffrer-donnees-gpg/</link>
         <guid isPermaLink="true">https://btor.fr/2018/04/17/chiffrer-donnees-gpg/</guid>
         
@@ -1142,7 +1141,7 @@ A noté que ce bouton “Mining details” n’est disponible qu’en cours de m
 
 &lt;p&gt;Si vous avez la moindre question, n’hésitez pas à en parler dans les commentaires, j’y répondrai volontiers.&lt;/p&gt;
 </description>
-        <pubDate>Fri, 12 Jan 2018 00:00:00 +0100</pubDate>
+        <pubDate>Fri, 12 Jan 2018 00:00:00 -0600</pubDate>
         <link>https://btor.fr/2018/01/12/bitcoin-twitch/</link>
         <guid isPermaLink="true">https://btor.fr/2018/01/12/bitcoin-twitch/</guid>
         
@@ -1182,7 +1181,7 @@ Philips a été une des premières sociétés à se lancer dans le marché des a
 &lt;p&gt;Pourquoi vous ai-je introduit ces ampoules sur un article de la Google Home Mini ? Tout simplement parce-que ce produit prend tout son sens avec d’autres objets connectés. Par défaut la Google Home Mini ne fait que vous écouter et vous répondre, rien de plus . Mais quel est le rendu quand on le couple à des ampoules, des volets électriques, le chauffage, la porte de votre garage ?
 Jugez par vous même via une petite démonstration vidéo :&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/google-home-mini/2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/google-home-mini/2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://youtu.be/tyaVDoQAvlw&quot;&gt;Cliquez ici pour voir la vidéo youtube&lt;/a&gt;&lt;/p&gt;
 
@@ -1218,14 +1217,14 @@ A cette question voici ce que Google répond :&lt;/p&gt;
 
 &lt;p&gt;Je vous recommande vivement d’aller lire la FAQ de Google, on y découvre pas mal de chose, comme le fait que Google vous mets à disposition votre historique de recherche, vos ordres à la Home Mini, les applications mobiles que vous avez utilisés etc.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/google-home-mini/my-activity.png&quot; alt=&quot;&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/google-home-mini/my-activity.jpg&quot; alt=&quot;&quot; /&gt;
 &lt;a href=&quot;https://myactivity.google.com/myactivity&quot;&gt;Voir “My Activity”&lt;/a&gt;
 Tout ça pour dire que Google ne se cache pas de l’utilisation des données (en prenant soin de justifier que ça reste à des fins d’optimisation).
 Je trouve cette FAQ assez clair, mon coté méfiant me laisse imaginer les pires scénarios catastrophe possibles concernant l’utilisation de nos données privés mais pour autant, je reste un geek et partant du principe que nos informations sont déjà divulguées à grande échelles via divers équipements informatique (téléphone, ordinateur, badges, carte bancaires etc.) je me dis que dans le fond, si ils ont envie de m’écouter chanter “&lt;a href=&quot;https://www.youtube.com/watch?v=anzzNp8HlVQ&quot;&gt;La macarena&lt;/a&gt;” sous la douche, c’est vraiment qu’ils ont plus rien à foutre ?&lt;/p&gt;
 
 &lt;p&gt;Pour conclure, en dehors de l’aspect vie privé qui peut être problématique pour certains. Cette enceinte Home Mini est vraiment de bonne facture pour son prix (60€ TTC), facile d’utilisation et facile à paramétrer. C’est un must-have du geek !&lt;/p&gt;
 </description>
-        <pubDate>Sun, 24 Sep 2017 00:00:00 +0200</pubDate>
+        <pubDate>Sun, 24 Sep 2017 00:00:00 -0500</pubDate>
         <link>https://btor.fr/2017/09/24/google-home-mini/</link>
         <guid isPermaLink="true">https://btor.fr/2017/09/24/google-home-mini/</guid>
         
@@ -1262,7 +1261,7 @@ Malheureusement, chaque laptop avait un défaut qui ne me donnait pas envie de f
 &lt;h1 id=&quot;-la-bête-razer-blade-stealth&quot;&gt;💪🏻 La bête, Razer Blade Stealth&lt;/h1&gt;
 &lt;p&gt;Puis un jour, par pur hasard, je tombe sur un produit Razer, le &lt;a href=&quot;https://www.amazon.fr/gp/product/B0779XH77P/ref=as_li_tl?ie=UTF8&amp;amp;camp=1642&amp;amp;creative=6746&amp;amp;creativeASIN=B0779XH77P&amp;amp;linkCode=as2&amp;amp;tag=btor-21&amp;amp;linkId=28b67a5557dfdea1962ce4ba85c7f847&quot;&gt;BLADE STEALTH MOTHA FU*** !&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/razer-stealth-blade/5.JPG&quot; alt=&quot;Désolé pour la qualité des photos :D &quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/razer-stealth-blade/5.jpg&quot; alt=&quot;Désolé pour la qualité des photos :D &quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Alors pourquoi avoir choisi celui-ci ?&lt;/p&gt;
 &lt;h4 id=&quot;les-performances-&quot;&gt;Les performances !&lt;/h4&gt;
@@ -1315,15 +1314,15 @@ Je ne ferais pas de vidéo/photo du packaging complet parce-que beaucoup le font
 
 &lt;p&gt;Quelques photos de comparaison avec mon téléphone Xiaomi Redmi 3 et mon ancien laptop&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/razer-stealth-blade/9.JPG&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/razer-stealth-blade/10.JPG&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/razer-stealth-blade/4.JPG&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/razer-stealth-blade/4.1.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/razer-stealth-blade/9.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/razer-stealth-blade/10.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/razer-stealth-blade/4.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/razer-stealth-blade/4.1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Ainsi qu’un aperçu de ce que donne les traces de doigts sans avoir forcément les mains grasses&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/razer-stealth-blade/7.JPG&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/razer-stealth-blade/8.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/razer-stealth-blade/7.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/razer-stealth-blade/8.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;-conclusion&quot;&gt;📌 Conclusion&lt;/h1&gt;
 &lt;p&gt;En un mot, &lt;strong&gt;S-A-T-I-S-F-A-C-T-I-O-N !&lt;/strong&gt;&lt;/p&gt;
@@ -1366,7 +1365,7 @@ J’attends de voir ce que razer va faire (échange ou réparation) et je vous f
 &lt;h4 id=&quot;edit-bis&quot;&gt;Edit bis&lt;/h4&gt;
 &lt;p&gt;L’ordinateur est désormais vendu, après 2 retours au SAV pour cet histoire d’écran qui scintillait et d’autres petits soucis (tactile qui s’active tout seul alors que je touche pas l’écran, problème avec l’UEFI pour installer linux etc..)&lt;/p&gt;
 </description>
-        <pubDate>Mon, 18 Sep 2017 00:00:00 +0200</pubDate>
+        <pubDate>Mon, 18 Sep 2017 00:00:00 -0500</pubDate>
         <link>https://btor.fr/2017/09/18/razer-stealth-blade/</link>
         <guid isPermaLink="true">https://btor.fr/2017/09/18/razer-stealth-blade/</guid>
         
