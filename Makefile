@@ -7,6 +7,6 @@ install:
 stop:
 	docker-compose down
 start:
-	docker-compose up -d
+	@docker-compose up -d && echo "http://localhost:4000"
 deploy:
 	docker-compose run jekyll jekyll build -d docs
