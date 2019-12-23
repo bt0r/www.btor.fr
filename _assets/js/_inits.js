@@ -13,6 +13,7 @@ import PageTransition from './components/_pageTransition.js';
 import Popup from './components/_popup.js';
 import Age from './components/_age';
 import Emote from './components/_emote';
+import Error from './components/_error';
 
 // ----------------------------------------------
 // Inits
@@ -47,5 +48,9 @@ $(() => {
     Age.init();
   }
 
-    Emote.init();
+  if($('.section-error').length){
+    Error.init();
+  }
+
+  Emote.init();
 });

@@ -2,6 +2,8 @@ build:
 	docker-compose run jekyll ./node_modules/.bin/gulp styles
 	docker-compose run jekyll ./node_modules/.bin/gulp scripts
 	docker-compose run jekyll jekyll build
+watch:
+	docker-compose run jekyll jekyll build --watch
 install:
 	docker-compose run --rm jekyll bundle install
 stop:
