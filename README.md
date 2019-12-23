@@ -1,5 +1,5 @@
 # btor.fr
-![](/assets/images/qui-suis-je/me.png)
+<img src="/assets/images/qui-suis-je/me.jpg" alt="" width="100">
 
 Repository du site [www.btor.fr](www.btor.fr)
 
