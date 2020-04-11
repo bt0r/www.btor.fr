@@ -1,8 +1,7 @@
 const Emote = {
   init () {
     let body = document.body.innerHTML;
-    //document.body.innerHTML = document.body.innerHTML.replace('@@LUL', 'hi');
-    const emotes = [...body.matchAll(/@@([A-Z]+)/)];
+    const emotes = [...body.matchAll(/@@([A-Z]+)/g)];
     emotes.forEach(function(emote) {
       const emoteKey = emote[1];
       const path = `/assets/images/emote/${emoteKey}.png`;
