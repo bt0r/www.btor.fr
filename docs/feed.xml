@@ -6,9 +6,374 @@
 </description>
     <link>https://btor.fr</link>
     <atom:link href="https://btor.fr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 19 Jan 2020 12:42:45 -0600</pubDate>
-    <lastBuildDate>Sun, 19 Jan 2020 12:42:45 -0600</lastBuildDate>
+    <pubDate>Sat, 11 Apr 2020 08:16:54 -0500</pubDate>
+    <lastBuildDate>Sat, 11 Apr 2020 08:16:54 -0500</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>Noteflix: Une extension firefox pour voir les notes Allociné sur Netflix</title>
+        <description>&lt;p&gt;Comme bon nombre d’entre vous, je profite du confinement pour avancer sur des projets personnels.
+Jeudi dernier, après avoir passé près de 4h à coder sur un projet personnel en react-native, je me suis dis :&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt; Et si je me mettais une petite série Netflix ?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Ni une, ni deux, j’ouvre Netflix et commence à chercher LA série qui va me tenir en haleine sur les prochains jours.
+Problème, il m’arrive souvent de tomber sur des séries un peu naze comme &lt;a href=&quot;http://www.allocine.fr/series/ficheserie_gen_cserie=24219.html&quot;&gt;Marianne&lt;/a&gt;, cette bouse comiquo-horrifique @@NO.&lt;/p&gt;
+
+&lt;p&gt;C’est à ce moment précis qu’il me vint à l’esprit une idée de génie&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Ça pourrait être pas mal d’avoir un meilleur indicateur de notes des films et séries netflix !&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://media.giphy.com/media/l0LEIXSRRuv9QQIRNI/giphy.gif&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;
+&lt;em&gt;21h, la décision est prise: Je me lance dans le développement d’une extension firefox pour récupérer les notes &lt;a href=&quot;https://allocine.fr&quot;&gt;allociné&lt;/a&gt; afin de les intégrer à Netflix.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;les-premiers-balbutiements&quot;&gt;Les premiers balbutiements&lt;/h1&gt;
+&lt;p&gt;Quand on commence un nouveau projet, on a toujours envie de commencer fort, d’utiliser la dernière techno à la mode, de ne pas réfléchir et “pisser du code” vite, très vite !&lt;/p&gt;
+
+&lt;p&gt;C’est pourtant tout ce qu’il ne faut pas faire.
+Le plus dur c’est justement de bien réfléchir aux choix techniques, aux risques, à pondérer chaque technos pour ses avantages et inconvénients etc..&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;BREF&lt;/strong&gt;, c’est chiant mais on a souvent pas le choix !&lt;/p&gt;
+
+&lt;p&gt;…&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;SAUF&lt;/strong&gt; quand tu codes une extension Firefox pour un side project dont tu te contrefous de la dernière techno à la mode puisque de toute facon tu feras au mieux du Typescript transpilé pour aller dans un environement cloisonné. @@LUL&lt;/p&gt;
+
+&lt;p&gt;Je n’avais donc pas beaucoup de questions à me poser, je savais que j’allais partir sur du Javascript ou au mieux du Typescript et que le code ne serait pas très complexe étant donné que ça serait qu’un simple appel ajax à l’API d’Allociné.
+Du moins, c’est ce que je croyais @@SAD&lt;/p&gt;
+
+&lt;p&gt;J’avais déjà réalisé une petite extension Firefox sans l’avoir publié sur le store de Mozilla, je partais donc avec un léger avantage de ce côté là. 
+Par contre, je n’avais jamais regardé de près comment fonctionne le site d’allociné. 
+Ce n’est pas un site que je regarde régulièrement mais c’est en général le premier que je vais voir quand je recherche une information sur un film ou une série (d’ou mon choix de l’intégrer à Netflix)&lt;/p&gt;
+
+&lt;p&gt;J’ai donc commencé ce side-project en me faisant un petit repository GitHub avec un bootstrap d’extension pour juste faire mes premiers crash-tests.
+Avant de m’attaquer à Netflix, je voulais m’assurer qu’il était possible de récupérer les notes de films/séries depuis l’API d’allocine.&lt;/p&gt;
+
+&lt;p&gt;Je pars convaincu, serein, frais comme un gardon, bref j’suis chaud @@PROUD&lt;/p&gt;
+
+&lt;p&gt;J’arrive sur le site d’allociné et je commence à investiguer un peu ce qu’il se passe sur le site:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;F12, onglet réseaux, est ce qu’il y a des call XHR au chargement de la page ? Nope ! @@NO&lt;/li&gt;
+  &lt;li&gt;Je regarde les différents input afin de voir si certains marchent en Ajax, bingo ! celui de la barre de recherche fait un call ajax @@HEY&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/noteflix/search_allocine.png&quot; alt=&quot;Barre de recherche Allociné&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Voyons un peu ce que ça donne en recherchant &lt;a href=&quot;http://www.allocine.fr/_/autocomplete/breaking%20bad&quot;&gt;Breaking bad&lt;/a&gt;:&lt;/p&gt;
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;error&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;results&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;entity_type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;series&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;entity_id&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;3517&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;gid&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;series.series._.3517&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;label&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Breaking Bad&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;facet&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;series&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;original_label&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Breaking Bad&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;text_search_data&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;BrBa&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;status&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;viewcount&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;975962&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;irankpopular&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;41&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;browsable&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;last_release&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;data&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;id&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3517&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;year&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;2008&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;is_program&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;poster_path&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\/&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;pictures&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\/&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;19&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\/&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;06&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\/&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;18&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\/&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\/&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\/&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;3956503.jpg&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;creator_name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Vince Gilligan&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;showrunner_name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Vince Gilligan&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;thumbnail&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;http:&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\/\/&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;fr.web.img6.acsta.net&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\/&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;c_75_100&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\/&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;pictures&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\/&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;19&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\/&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;06&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\/&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;18&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\/&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\/&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\/&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;3956503.jpg&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;scores&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;rating_score&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;weekly_rank_score&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;all_time_rank_score&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;genres&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Drama&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;tags&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Series.Type.Series&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Series.Status.Ended&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Info.Genre.Drama&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Format.Color.Color&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;last_updated_at&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;2020-03-27T08:16:53.320000+01:00&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;index&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;search_ac_20200408070105&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;search&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;id&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;series.series._.3517&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;score&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;23897.488&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;sponsored&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;On remarque que le format de réponse est assez light, 3 champs dont un qui nous intéresse &lt;code class=&quot;highlighter-rouge&quot;&gt;results&lt;/code&gt;, qui contient les objets répondant à notre recherche.
+Ces objets peuvent être des films, séries ou des personnalités. C’est déjà une première étape à garder en tête vu qu’on ne voudra que ce qui est films ou séries.&lt;/p&gt;
+
+&lt;p&gt;On y trouve aussi un objet &lt;code class=&quot;highlighter-rouge&quot;&gt;scores&lt;/code&gt;, intéressant !&lt;/p&gt;
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;scores&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;rating_score&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;weekly_rank_score&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;all_time_rank_score&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Parfait, je regarde donc à quoi correspondent ces scores, voir si ils correspondent à ce que je recherche (en l’occurence, les notes des spectateurs).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/noteflix/scores_allocine.png&quot; alt=&quot;Score allociné&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Jeanne @@JEANNE ! Au secours ! D’où proviennent ces scores ? J’ai beau tester avec 2 ou 3 autres films/séries, aucune corrélation n’est envisageable.&lt;/p&gt;
+
+&lt;p&gt;Je continue donc mon investigation en fouinant sur le site mais rien n’y fait, je ne trouve aucune donnée viable via une API. 
+Je décide donc de regarder un peu sur google et je tombe sur le blog d’un certains &lt;a href=&quot;https://wiki.gromez.fr/dev/api/allocine_v3&quot;&gt;Gromez qui parle de l’API d’Allociné&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;L’article est vieux (2013) mais très intéressant, il parle des différents endpoint qu’il a pu trouver en regardant le comportement de l’app mobile via un &lt;a href=&quot;https://fr.wikipedia.org/wiki/Analyseur_de_paquets&quot;&gt;analyseur de paquet&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Malheureusement, l’article étant daté, les liens et token fournis le sont aussi. 
+Je décide donc à mon tour de regarder comment se comporte l’application mobile.&lt;/p&gt;
+
+&lt;h1 id=&quot;analyse-de-paquet&quot;&gt;Analyse de paquet&lt;/h1&gt;
+&lt;p&gt;En général quand je cherche à avoir des infos sur une API, je regarde comment l’application mobile fonctionne. 
+Pour ce faire, je me charge de capturer les paquets IP qui sortent de mon téléphone et je regarde ce qui concerne l’application.&lt;/p&gt;
+
+&lt;p&gt;Auparavant j’utilisais BitShark, une application de capture de flux IP qui me permettait de générer un fichier .pcap que j’ouvrais ensuite dans Wireshark.
+Ca marche mais c’est vite chiant de devoir transférer les .pcap sur un ordinateur pour ensuite faire l’analyse.
+De plus, cette application ne semble plus être dans le store Android.&lt;/p&gt;
+
+&lt;p&gt;En fouinant le store je tombe sur &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.egorovandreyrm.pcapremote&amp;amp;hl=fr&quot;&gt;PCAPRemote&lt;/a&gt; qui a un fonctionnement très basique: il permet de faire de la capture de packet en utilisant sshDump.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt; SSHDump ? Kézako ?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Sshdump va nous permettre de capturer des paquets non pas depuis notre propre machine mais depuis une machine hôte, en l’occurence mon téléphone.
+Le téléphone fait office de serveur et mon wireshark de client, fini les envoies de fichier .pcap d’un device à un autre @@SLT !&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/noteflix/pcap_remote.png&quot; alt=&quot;PCAPRemote&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;L’interface est assez simple, le bouton “play” permet de lancer une capture global du smartphone tandis que le bouton “Play 1” permet de choisir une application spécifique. 
+Pratique pour éviter de filtrer à posteriori sur Wireshark !&lt;/p&gt;
+
+&lt;p&gt;Il suffit ensuite de renseigner l’ip et port de l’hôte (le téléphone) sur wireshark en utilisant l’option &lt;code class=&quot;highlighter-rouge&quot;&gt;SSH remote capture: sshdump&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/noteflix/wireshark_sshdump.png&quot; alt=&quot;Wireshark SSHDump&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Wireshark reçoit désormais les trames IP, j’en profite pour filtrer sur le protocole HTTP afin d’éviter d’être flooder de requêtes inutiles.
+Pendant que mon Wireshark tourne, je manipule un peu l’application allociné afin du générer du traffic, je recherche, click sur des films, change de pages etc.&lt;/p&gt;
+
+&lt;p&gt;Et qu’est ce qui apparait dans Wireshark ? @@LUL&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/noteflix/search_wireshark.png&quot; alt=&quot;PCAPRemote&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;C’est exactement le même endpoint qui était utilisé dans la barre de recherche du site allociné. 
+Dans la capture wireshark je retrouve aussi des appels à des endpoint très similaires de ceux décrit dans l’article de Gromez mais qui ne m’apporte pas les informations que je désire.&lt;/p&gt;
+
+&lt;p&gt;A l’exception d’un, qui lui est intéressant:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://api.allocine.fr/rest/v3/search?filter=movie%2Ctvseries%2Ctheater%2Cperson%2Cvideo%2Cnews%2Cprogram&amp;amp;q=breaking+bad&amp;amp;partner=100ED1DA33EB&amp;amp;mediafmt=mp4-best&amp;amp;profile=large&amp;amp;count=6&amp;amp;format=json&amp;amp;page=1&amp;amp;sed=20200409&amp;amp;sig=%2FCVNs8c77PzCoWiG6WTOoiOa9L4%3D&quot;&gt;http://api.allocine.fr/rest/v3/search?filter=movie%2Ctvseries%2Ctheater%2Cperson%2Cvideo%2Cnews%2Cprogram&amp;amp;q=breaking+bad&amp;amp;partner=100ED1DA33EB&amp;amp;mediafmt=mp4-best&amp;amp;profile=large&amp;amp;count=6&amp;amp;format=json&amp;amp;page=1&amp;amp;sed=20200409&amp;amp;sig=%2FCVNs8c77PzCoWiG6WTOoiOa9L4%3D
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Ce endpoint contient les scores dont j’ai besoin et le lien de la fiche du film ou de la série, c’est plutôt pas mal !&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Problème:&lt;/strong&gt; L’URL changera dans le temps, le code &lt;code class=&quot;highlighter-rouge&quot;&gt;partner&lt;/code&gt; et &lt;code class=&quot;highlighter-rouge&quot;&gt;sig&lt;/code&gt; sont une sorte de credential ou d’identifiant,
+c’est un des constats dont faisait l’objet Gromez dans son article.&lt;/p&gt;
+
+&lt;p&gt;Plus mon investigation dure, plus je me rend compte que je passe beaucoup de temps sur quelque chose qui sera amené à évoluer avec le temps. 
+Du coup, que faire ? utiliser l’API pour récupérer les data ? scraper la page ? dans les deux cas c’est soumis à modifications dans le futur…&lt;/p&gt;
+
+&lt;h1 id=&quot;la-première-release&quot;&gt;La première release&lt;/h1&gt;
+&lt;p&gt;J’ai finalement pris la décision de commencer le développement de l’extension en partant sur un workflow “simple”:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;⬇️&lt;strong&gt;Netflix:&lt;/strong&gt; Récupération du nom du film ou de la série depuis le &lt;a href=&quot;https://fr.wikipedia.org/wiki/Document_Object_Model&quot;&gt;DOM&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;⬇️&lt;strong&gt;Allociné:&lt;/strong&gt; Récupération de l’ID et du type (série ou film) depuis le call API de la barre de recherche. 
+Il est à noter qu’au moment où je récupère le nom de la vidéo sur Netflix, je n’ai pas de call XHR ou d’information dans le DOM qui me permet de récupèrer le type de la vidéo (film/série).&lt;/li&gt;
+  &lt;li&gt;⬇️&lt;strong&gt;Allociné:&lt;/strong&gt; Récupération de la note en visitant la fiche du film/série (scraping simple)&lt;/li&gt;
+  &lt;li&gt;⬇️&lt;strong&gt;NoteFlix:&lt;/strong&gt; Création du DOM avec le score Allociné sous forme de pourcentage et insertion de l’objet DOM dans la page Netflix.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Le workflow fonctionne mais une chose me tracasse… 
+J’ai besoin de connaitre le comportement de l’utilisateur sur Netflix afin de récupérer le DOM qui contient le nom de la vidéo. 
+Si je click sur une vidéo, je veux que le programme cherche la note allociné liée à cette vidéo, pas toutes celles de la page.&lt;/p&gt;
+
+&lt;p&gt;Il y a plusieurs façon de voir les informations d’une série ou d’un film sur Netflix&lt;/p&gt;
+
+&lt;p&gt;En naviguant sur le “board” Netflix
+&lt;img src=&quot;/assets/images/noteflix/jawBone_netflix.png&quot; alt=&quot;Breaking bad - Netflix&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ou en allant directement sur la fiche descriptive de la vidéo
+&lt;img src=&quot;/assets/images/noteflix/jawBone_main_netflix.png&quot; alt=&quot;Breaking bad - Netflix&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;La question à se poser est donc: Comment déclencher la récupération de la note en fonction du comportement de l’utilisateur ?
+Qu’il charge une page ou qu’il click sur une vidéo, le code devra être déclenché à ce moment là.&lt;/p&gt;
+
+&lt;h3 id=&quot;mutationobserver&quot;&gt;MutationObserver&lt;/h3&gt;
+&lt;p&gt;La première idée qui me vient à l’esprit est d’utiliser le &lt;a href=&quot;https://developer.mozilla.org/fr/docs/Web/API/MutationObserver&quot;&gt;MutationObserver&lt;/a&gt;.
+Le &lt;code class=&quot;highlighter-rouge&quot;&gt;MutationObserver&lt;/code&gt; a pour but d’envoyer des évènements dès que le DOM de la page est modifié.&lt;/p&gt;
+
+&lt;p&gt;Ce qui donnerait quelque chose du genre:&lt;/p&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Configuration de l'observer&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;observerConfig&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;childList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Déclenchera un événement si un enfant du noeud est ajouté ou supprimé&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;subtree&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Déclenchera un évènement si les noeuds enfant sont aussi à observer&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;attributes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;characterData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;findRatings&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;mutationsList&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+ &lt;span class=&quot;c1&quot;&gt;// Cette fonction est appelée uniquement quand un évènement est déclenché par le MutationObserver&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;observer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MutationObserver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;findRatings&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// On lui passe la fonction à appeler quand les évènements se délenchent&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;observer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;observe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;observerConfig&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// On lui dit d'écouter sur l'objet 'document' (en gros toute la page)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Parfait, on a notre MutationObserver de prêt, il va nous envoyer des évènements pour déclencher notre code mais il y a toujours quelque chose qui ne va pas…
+Netflix est développé avec React, la page est donc dynamique et va changer très souvent.
+Le risque ? Une surcharge d’évènements ! Si on écoute toutes les modifications du document, on va vite se retrouver avec des évènements déclenchés alors qu’ils ne nous seront d’aucune utilité.
+Par exemple si je glisse ma souris sur mon avatar, un menu apparaitra et un évènement sera déclenché alors que j’aimerais n’avoir que les évènement qui touche aux vidéos.&lt;/p&gt;
+
+&lt;p&gt;Peaufinons un peu notre MutationObserver:&lt;/p&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;observer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;observe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'[role=main]'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;observerConfig&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;On a donc restreint l’observer à n’écouter que ce qu’il se passe dans le bloc principal de Netflix (celui qui contient toutes les vidéos).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/noteflix/mainview_netflix.png&quot; alt=&quot;Main view - Netflix&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;En plus de restreindre l’observer à écouter un noeud DOM spécifique, on va aussi devoir filtrer sur les évènements reçus.&lt;/p&gt;
+
+&lt;p&gt;Voyons pourquoi avec une illustration simple:&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;role=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;main&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;video&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;video&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;video&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;helper&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;footer&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;En écoutant &lt;code class=&quot;highlighter-rouge&quot;&gt;div[role=main]&lt;/code&gt; l’observer enverra des évènements pour chaque ajout/suppression/modifications de ses enfants.
+Si une des &lt;code class=&quot;highlighter-rouge&quot;&gt;div.video&lt;/code&gt; change, un évènement sera déclenché et de même pour &lt;code class=&quot;highlighter-rouge&quot;&gt;div.helper&lt;/code&gt; ou &lt;code class=&quot;highlighter-rouge&quot;&gt;div.footer&lt;/code&gt; alors qu’ils ne nous intéressent pas.&lt;/p&gt;
+
+&lt;p&gt;Quand le MutationObserver est déclenché, il renvoie une liste de &lt;a href=&quot;https://developer.mozilla.org/fr/docs/Web/API/MutationRecord&quot;&gt;MutationRecord&lt;/a&gt;.
+On peut donc encore un peu plus affiner notre code afin qu’il n’accepte que les évènements issus de noeuds qui nous intéressent:&lt;/p&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;findRatings&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;mutationsList&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+ &lt;span class=&quot;c1&quot;&gt;// Cette fonction est appelée uniquement quand un évènement est déclenché par le MutationObserver&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;mutationRecord&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;mutationsList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mutationRecord&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;classList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;contains&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'video'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// Do something ...&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;le-cache&quot;&gt;Le cache&lt;/h3&gt;
+&lt;p&gt;Maintenant que le code se déclenche bien au bon moment je me confronte à un autre problème, celui des appels multiples à allociné.
+Chaque fois que la page est modifiée je vais devoir appeler Allociné pour récupérer les informations de la vidéo, un appel HTTP pouvant prendre du temps, ne serait-ce pas judicieux de faire un système de cache ?
+Je pourrais y stocker les informations et rating liées aux vidéos, si le cache contient la donnée je l’affiche directement et sinon je demande à Allociné l’information.&lt;/p&gt;
+
+&lt;p&gt;Il y a plusieurs moyens de gérer un cache coté navigateur, on peut:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Créer une classe javascript très basique qui s’occuperait de garder les données en mémoire.&lt;/li&gt;
+  &lt;li&gt;Créer un &lt;a href=&quot;https://developer.mozilla.org/fr/docs/Mozilla/Add-ons/WebExtensions/API/cookies/set&quot;&gt;cookie&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Utiliser le &lt;a href=&quot;https://developer.mozilla.org/fr/docs/Web/API/Window/localStorage&quot;&gt;localStorage&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Utiliser le &lt;a href=&quot;https://developer.mozilla.org/fr/docs/Web/API/Window/sessionStorage&quot;&gt;sessionStorage&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Le &lt;strong&gt;Cookie&lt;/strong&gt; étant généralement utilisé pour contenir de l’information qui sera ensuite envoyer au serveur (sessionID, authentification etc.) et n’ayant aucun serveur pour NoteFlix, nous pouvons l’évincer d’office.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;LocalStorage&lt;/strong&gt; nous permet de stocker de la donnée qui perdurera dans le temps, si on coupe et relance son navigateur, le &lt;code class=&quot;highlighter-rouge&quot;&gt;localStorage&lt;/code&gt; sera toujours à l’état avant fermeture du navigateur. 
+Il pourrait convenir à notre besoin mais il faudrait prendre en compte le fait qu’entre chaque version de l’extension, la donnée qui est en cache coté client peut potentiellement être au format de versions antérieurs. 
+Si le model du cache change, il va falloir le purger ou gérer des migrations, un sytème de rétention etc.. ca risque d’ajouter une complexité supplémentaire pour une première version.&lt;/p&gt;
+
+&lt;p&gt;Il nous reste donc la création d’une classe et l’utilisation de &lt;strong&gt;SessionStorage&lt;/strong&gt;. 
+Pour la première release de l’extension je suis parti sur une classe simple puis j’ai rapidement modifiée cette classe pour qu’elle se charge de déléguer la sauvegarde des données au SessionStorage.&lt;/p&gt;
+
+&lt;p&gt;Le &lt;strong&gt;SessionStorage&lt;/strong&gt; n’acceptant que du clé-valeur, ma classe ne se charge que de serializer/désérializer en JSON, voilà comment ca se présente:&lt;/p&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;md5&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'blueimp-md5'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Cache&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prefix&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'noteflix_'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;nx&quot;&gt;save&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;videoInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;videoInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;hashId&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;md5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;videoInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;sessionStorage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prefix&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;videoInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;hashId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;videoInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;videoInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;videoName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;hashId&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;md5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;videoName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sessionStorage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prefix&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;hashId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;nx&quot;&gt;exists&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;videoName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;hashId&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;md5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;videoName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sessionStorage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prefix&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;hashId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h1 id=&quot;le-verdict&quot;&gt;Le verdict&lt;/h1&gt;
+&lt;p&gt;Une fois toute la logique réalisée, j’ai publié l’extension sur &lt;a href=&quot;https://addons.mozilla.org/fr/firefox/addon/noteflix/&quot;&gt;le store de Firefox&lt;/a&gt; puis j’ai rapidement remarqué que le &lt;a href=&quot;#mutationobserver&quot;&gt;MutationObserver&lt;/a&gt; posait problème.
+Parfois l’extension se retrouvait à recevoir 2 ou 3 évènements simultanées pour le même noeud DOM, ou parfois elle ne recevait aucun évènement, du coup elle n’affichait rien.&lt;/p&gt;
+
+&lt;p&gt;Pas top pour un utilisateur qui s’attend à avoir un score d’affiché …&lt;/p&gt;
+
+&lt;p&gt;J’ai donc décidé de retirer le MutationObserver le temps de trouver une solution plus propre et de passer par un simple &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval&quot;&gt;setInterval&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Manager&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'./dom/Manager'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;manager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Manager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;setInterval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;manager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;refreshRatings&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;L’avantage de passer par &lt;code class=&quot;highlighter-rouge&quot;&gt;setInterval&lt;/code&gt;, c’est qu’on ne soucis plus de la modification du DOM (donc du code en moins).
+L’inconvénient c’est que toutes les 2 secondes une partie du code est executée pour vérifier si l’on doit chercher la note allociné ou non.&lt;/p&gt;
+
+&lt;p&gt;Le contrat est rempli, l’extension fait plutôt bien son job 🎉&lt;/p&gt;
+
+&lt;p&gt;J’ai encore quelques nice-to-have à intégrer à l’extension comme par exemple le fait de récupérer le rating allociné directement depuis &lt;a href=&quot;https://developers.google.com/search/docs/guides/intro-structured-data&quot;&gt;les données structurées&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/noteflix/structured_data_allocine.png&quot; alt=&quot;Données structurées - Allociné&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ce qui m’éviterait de récupérer la note en scrapant la page.&lt;/p&gt;
+
+&lt;p&gt;J’envisage aussi de porter l’extension sur Chrome parceque tout le monde n’utilise pas firefox…&lt;/p&gt;
+
+&lt;h3 id=&quot;liens&quot;&gt;Liens&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://addons.mozilla.org/fr/firefox/addon/noteflix/&quot;&gt;Télécharger l’extension pour Firefox&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/bt0r/NoteFlix&quot;&gt;Code source&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 07 Apr 2020 00:00:00 -0500</pubDate>
+        <link>https://btor.fr/2020/04/07/noteflix-allocine-netflix/</link>
+        <guid isPermaLink="true">https://btor.fr/2020/04/07/noteflix-allocine-netflix/</guid>
+        
+        <category>Netflix</category>
+        
+        <category>Firefox</category>
+        
+        <category>Open source</category>
+        
+        <category>Javascript</category>
+        
+        <category>Développment</category>
+        
+        
+      </item>
     
       <item>
         <title>Docker, les bases</title>
