@@ -355,3 +355,7 @@ J'envisage aussi de porter l'extension sur Chrome parceque tout le monde n'utili
 [Télécharger l'extension pour Firefox](https://addons.mozilla.org/fr/firefox/addon/noteflix/)
 
 [Code source](https://github.com/bt0r/NoteFlix)
+
+**Edit:**
+[Télécharger l'extension pour Chrome](https://chrome.google.com/webstore/detail/noteflix/ahoplkcmcgpbkimjhncpnnllgikapjoj?hl=fr)
+

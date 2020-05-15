@@ -6,8 +6,8 @@
 </description>
     <link>https://btor.fr</link>
     <atom:link href="https://btor.fr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 11 Apr 2020 08:16:54 -0500</pubDate>
-    <lastBuildDate>Sat, 11 Apr 2020 08:16:54 -0500</lastBuildDate>
+    <pubDate>Fri, 15 May 2020 07:38:26 -0500</pubDate>
+    <lastBuildDate>Fri, 15 May 2020 07:38:26 -0500</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -357,6 +357,10 @@ L’inconvénient c’est que toutes les 2 secondes une partie du code est exec
 &lt;p&gt;&lt;a href=&quot;https://addons.mozilla.org/fr/firefox/addon/noteflix/&quot;&gt;Télécharger l’extension pour Firefox&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/bt0r/NoteFlix&quot;&gt;Code source&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Edit:&lt;/strong&gt;
+&lt;a href=&quot;https://chrome.google.com/webstore/detail/noteflix/ahoplkcmcgpbkimjhncpnnllgikapjoj?hl=fr&quot;&gt;Télécharger l’extension pour Chrome&lt;/a&gt;&lt;/p&gt;
+
 </description>
         <pubDate>Tue, 07 Apr 2020 00:00:00 -0500</pubDate>
         <link>https://btor.fr/2020/04/07/noteflix-allocine-netflix/</link>
