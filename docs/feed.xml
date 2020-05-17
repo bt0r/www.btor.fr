@@ -6,9 +6,291 @@
 </description>
     <link>https://btor.fr</link>
     <atom:link href="https://btor.fr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 15 May 2020 08:48:51 -0500</pubDate>
-    <lastBuildDate>Fri, 15 May 2020 08:48:51 -0500</lastBuildDate>
+    <pubDate>Sun, 17 May 2020 11:35:22 -0500</pubDate>
+    <lastBuildDate>Sun, 17 May 2020 11:35:22 -0500</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>React Native: Retour d'expérience</title>
+        <description>&lt;p&gt;Vous vous demandez surement pourquoi un développeur back-end parlerait d’une techno front-end ? @@LUL&lt;/p&gt;
+
+&lt;p&gt;Tout simplement parce que nous aussi “les backs” on a le droit de s’amuser avec &lt;del&gt;vos technos de merde&lt;/del&gt;, euh javascript.
+C’est bon je rigole @@SAD&lt;/p&gt;
+
+&lt;p&gt;Depuis un peu plus d’un an je travaille dans une équipe mobile qui se compose de :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Deux développeurs iOS natif (Swift)&lt;/li&gt;
+  &lt;li&gt;Deux développeurs Android natif (Kotlin)&lt;/li&gt;
+  &lt;li&gt;Un développeur front-end (Javascript/Typescript React)&lt;/li&gt;
+  &lt;li&gt;Et un développeur back-end (PHP Symfony, mon binôme)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;J’ai la chance d’avoir une équipe assez hétérogène qui touche un peu à tout, design, infrastructure (K8S, docker), GO, Flutter…
+Tout le monde étend ses connaissances et le partage à l’équipe.&lt;/p&gt;
+
+&lt;p&gt;A force de discuter des projets des uns et des autres (majoritairement axés sur du mobile, ça va de soit), je me suis dis qu’il serait temps que je me mette un peu à jour et que moi aussi je retente “l’expérience mobile”.
+Je dis “Retente” parce que oui, j’ai déjà réalisé une ou deux applications mobiles Android il y a quelques années mais n’en parlons pas … @@LUL&lt;/p&gt;
+&lt;h1 id=&quot;mais-pourquoi-reactnative-&quot;&gt;Mais pourquoi ReactNative ?&lt;/h1&gt;
+&lt;p&gt;La question qui vient &lt;em&gt;normalement&lt;/em&gt; tout de suite à l’esprit c’est : &lt;strong&gt;MAIS POURQUOI REACT NATIVE ?&lt;/strong&gt; @@NO&lt;/p&gt;
+
+&lt;p&gt;Dans un premier temps il est important de comprendre le besoin avant de choisir la techno que l’on utilisera (n’en déplaise aux haters de PHP @@WINK )&lt;/p&gt;
+
+&lt;p&gt;Le besoin est simple, je cherche à développer une application mobile de rencontre @@RS.
+Les critères pour développer cette application sont :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Une application cross-platform iOS / Android&lt;/li&gt;
+  &lt;li&gt;Un temps de développement réduit (c’est un side-project ne l’oublions pas, je ne vais pas passer toutes mes journées dessus)&lt;/li&gt;
+  &lt;li&gt;Un faible coût de mise en place/maintenance (je pars avec un budget de 0€ donc aucun service SaaS payant et aucun prestataire n’est envisageable).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;En prenant en compte ces critères, on peut commencer par lister quelques langages qui pourraient correspondre au besoin :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Tous les langages natifs : iOS/Swift, Android/Kotlin, WindowsPhone/C# @@LUL&lt;/li&gt;
+  &lt;li&gt;Tous les langages web portés sur mobile (Ionic, NativeScript, PhoneGap, React Native)&lt;/li&gt;
+  &lt;li&gt;Flutter&lt;/li&gt;
+  &lt;li&gt;Et sûrement d’autres que je ne connais pas.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Première grosse différence, le &lt;strong&gt;natif&lt;/strong&gt; et le reste. Développer en natif permet d’être au plus proche du système que l’on vise, on s’assure d’avoir de meilleurs performances ainsi qu’un design system cohérent.
+À côté de ça, le natif implique d’apprendre un nouveau langage pour chaque plateforme ciblée. Si je désire une application cross-platform iOS/Android je devrais apprendre Swift ET Kotlin.
+Ce qui rompt un des besoins : &lt;code class=&quot;highlighter-rouge&quot;&gt;coût réduit en développement&lt;/code&gt;.
+Développer une application native me prendrait trop de temps d’apprentissage (apprendre les langages, comprendre les stacks, tools chains etc) en plus de devoir développer deux applications vu que le code ne peut pas être partagé.&lt;/p&gt;
+
+&lt;p&gt;Il reste donc Flutter et les langages web “portés” sur mobile.
+Flutter c’est quoi ? &lt;a href=&quot;https://flutter.dev/&quot;&gt;Flutter&lt;/a&gt; c’est un framework mobile pour développer des applications cross platform en utilisant le langage &lt;a href=&quot;https://dart.dev/&quot;&gt;Dart&lt;/a&gt;.
+C’est développé par Google, c’est beau et ça marche bien.
+Problème, je ne connais pas Dart.
+En soit ce n’est pas &lt;em&gt;vraiment&lt;/em&gt; un problème vu que je pourrais utiliser le même langage pour les deux plateformes iOS/Android mais ca m’ajoute une contrainte comparée aux autres solutions encore disponibles.
+J’évince donc Flutter.&lt;/p&gt;
+
+&lt;h4 id=&quot;quapporte-donc-les-langages-web-portés-sur-mobile-&quot;&gt;Qu’apporte donc les langages web “portés” sur mobile ?&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Contrairement aux langages natifs, on utilise qu’un seul langage (souvent javascript) pour réaliser une seule et même application iOS/Android.&lt;/li&gt;
+  &lt;li&gt;Pour un développeur web (back ou front), le gap d’apprentissage est plus court vu qu’on ne se concentre pas sur le langage (qu’on connait déjà plus ou moins bien).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;lequel-choisir-entre-ionic-phonegap-nativescript-et-reactnative-&quot;&gt;Lequel choisir entre Ionic, PhoneGap, NativeScript et ReactNative ?&lt;/h4&gt;
+&lt;p&gt;Mon choix s’est porté sur ReactNative pour plusieurs raisons :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;L’envie d’utiliser React.&lt;/li&gt;
+  &lt;li&gt;ReactNative a une grosse communauté.&lt;/li&gt;
+  &lt;li&gt;NativeScript semble beaucoup trop récent pour le moment (mais prometteur).&lt;/li&gt;
+  &lt;li&gt;ReactNative est très prisé sur le marché du développement (React aussi, ça tombe bien).&lt;/li&gt;
+  &lt;li&gt;J’exclus PhoneGap et Ionic pour &lt;a href=&quot;https://blog.logrocket.com/react-native-vs-ionic/&quot;&gt;leurs différences d’implémentations&lt;/a&gt; face à ReactNative et NativeScript.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;cest-quoi-reactnative-&quot;&gt;C’est quoi ReactNative ?&lt;/h1&gt;
+&lt;p&gt;ReactNative est un framework de développement mobile qui se base sur &lt;a href=&quot;https://fr.reactjs.org/&quot;&gt;React&lt;/a&gt; (bibliothèque web Javascript), l’idée c’est d’avoir la même API que React mais pour des composants mobiles.&lt;/p&gt;
+
+&lt;p&gt;Les composants ReactNative sont transformés en composant natif de la plateforme mobile cible.
+Par exemple, un composant ReactNative &lt;a href=&quot;https://reactnative.dev/docs/text&quot;&gt;Text&lt;/a&gt; sera transformé en composant &lt;a href=&quot;https://developer.android.com/reference/kotlin/android/widget/TextView&quot;&gt;TextView&lt;/a&gt; sur Android :&lt;/p&gt;
+
+&lt;p&gt;ReactNative&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;Text&amp;gt;&lt;/span&gt;Coucou&lt;span class=&quot;nt&quot;&gt;&amp;lt;/Text&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;donnera sur Android&lt;/p&gt;
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;TextView&lt;/span&gt;
+ &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/text_view_id&quot;&lt;/span&gt;
+ &lt;span class=&quot;na&quot;&gt;android:text=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Coucou&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;ReactNative propose aussi une API pour les composants qui ne sont disponibles que sur une seule plateforme, c’est le cas pour &lt;a href=&quot;https://reactnative.dev/docs/toastandroid#__docusaurus&quot;&gt;ToastAndroid&lt;/a&gt; ou les &lt;a href=&quot;https://reactnative.dev/docs/settings&quot;&gt;SettingsIOS&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.reactnative.guide/3-react-native-internals/3.1-react-native-internals.html&quot;&gt;Plus d’infos sur le fonctionnement même de ReactNative ici&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;la-stack&quot;&gt;La stack&lt;/h1&gt;
+&lt;p&gt;Pour commencer un projet ReactNative vous avez le choix entre ReactNative CLI et Expo. 
+&lt;a href=&quot;https://expo.io/&quot;&gt;Expo&lt;/a&gt; est un kit d’outils pour développer des applications ReactNative plus rapidement, il propose des fonctionnalités en plus de ReactNative.&lt;/p&gt;
+
+&lt;p&gt;ReactNative CLI est tout simplement… ReactNative…@@RS&lt;/p&gt;
+
+&lt;h2 id=&quot;expo-expo-on-rentre-du-boulot&quot;&gt;Expo, expo, on rentre du boulot…&lt;/h2&gt;
+&lt;p&gt;J’ai commencé le développement de l’application en utilisant Expo, l’objectif de celui-ci étant de me simplifier la vie, j’avais tout intérêt à l’utiliser.&lt;/p&gt;
+
+&lt;p&gt;Expo s’impose grâce à deux grosses fonctionnalités :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Vous ne gérez plus vos builds, c’est Expo qui s’en charge ! Pas besoin d’xCode ou d’Android studio.&lt;/li&gt;
+  &lt;li&gt;Vous disposez d’une plus large API contrairement à ReactNative CLI.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Avec Expo, on ne crée pas les builds en local, on demande à Expo de construire notre application pour nous et ça marche de la même façon pour créer les builds de production.
+Malgré la promesse d’Expo, le début a été un peu chaotique pour moi, je trouvais les builds lents et surtout je suis dépendant d’un logiciel tiers pour pouvoir construire et déployer mon application.
+La documentation est assez claire avec ça d’ailleurs :&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;When one of our building machines will be free, it’ll start building your app&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Un autre point frustrant avec Expo est qu’on ne peut pas utiliser de modules natif autre que ceux déjà proposés par Expo.
+Par exemple, si vous désirez utiliser le bluetooth, vous ne pourrez pas @@SAD !
+Vous devrez vous &lt;em&gt;éjecter&lt;/em&gt; d’Expo (&lt;a href=&quot;https://docs.expo.io/expokit/eject/&quot;&gt;en savoir plus sur le procédé d’éjection&lt;/a&gt;) et donc perdre le principal intérêt d’Expo.&lt;/p&gt;
+
+&lt;p&gt;Expo parle d’ailleurs assez bien de ses limitations dans sa documentation, je vous invite à y jeter un oeil &lt;a href=&quot;https://docs.expo.io/introduction/why-not-expo/&quot;&gt;ici&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;J’ai donc rapidement pris la décision de ne pas utiliser Expo et de m’orienter vers une stack “classique” ReactNative CLI, ce qui allait forcément venir avec son lot d’avantages mais aussi d’inconvénients… nous y reviendrons plus tard.&lt;/p&gt;
+&lt;h1 id=&quot;typejavascript-&quot;&gt;(?:Type|Java)script ?&lt;/h1&gt;
+&lt;p&gt;Une autre question à se poser en utilisant ReactNative est sur le choix du langage. Javascript ou Typescript ?&lt;/p&gt;
+
+&lt;p&gt;J’ai déjà eu l’occasion d’utiliser Typescript pour &lt;a href=&quot;https://github.com/bt0r/shellbot&quot;&gt;un projet perso&lt;/a&gt; et cette fois-ci j’ai choisi de ne pas l’utiliser @@WUT.
+La raison va paraitre surement farfelue mais étant donné que je me lance dans un nouveau projet, il va y avoir beaucoup de nouvelles notions à apprendre et je ne veux pas m’imposer une complexité en plus.
+Si l’envie me vient de passer l’application sur Typescript je pourrais toujours y venir plus tard, ça sera du boulot en plus mais c’est un “contrat” que je passe au début du projet.&lt;/p&gt;
+
+&lt;h1 id=&quot;bien-débuter-avec-reactnative&quot;&gt;Bien débuter avec ReactNative&lt;/h1&gt;
+&lt;p&gt;Ne connaissant pas du tout React (et donc ReactNative par la même occasion), j’avais un peu peur de mettre 6 mois à apprendre un nouveau framework sans rien produire de concret.
+Fort heureusement, ReactNative est très accessible.
+La logique globale autour des &lt;strong&gt;Composants&lt;/strong&gt; est très vite acquise et on arrive vite à créer nos premiers écrans @@SLT.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://reactnative.dev/docs/getting-started&quot;&gt;La documentation&lt;/a&gt; est assez bien écrite, on trouve rapidement des bibliothèques qui répondent à nos besoins en fouillant sur google/github/npm…
+Oui mais voilà, tout n’est pas rose @@JEANNE&lt;/p&gt;
+
+&lt;p&gt;Parfois j’ai pu ressentir quelques frustrations, que ce soit par rapport à ReactNative ou par rapport à mes choix personnels.
+Je vais vous faire un petit récapitulatif de ce que j’ai retenu en 4 mois de développement sur ReactNative.&lt;/p&gt;
+
+&lt;h1 id=&quot;les-moins&quot;&gt;Les moins&lt;/h1&gt;
+&lt;h4 id=&quot;la-stack-sans-expo&quot;&gt;La stack sans Expo&lt;/h4&gt;
+&lt;p&gt;Bien que ce soit un choix de ne pas l’utiliser, Expo simplifie vraiment la vie pour la création des builds ou le déploiement.
+Ne pas avoir Expo ca veut dire devoir configurer Android Studio et xCode. Comprendre pourquoi votre projet ne build pas sur xCode et surtout…&lt;strong&gt;COMPRENDRE&lt;/strong&gt; xCode @@JEANNE.
+Avec Android studio je n’ai pas eu de problème vu que la base de l’IDE (IntelliJ) est la même pour tous les langages (PHP, JS, C++, Ruby …) et que globalement il n’y a pas grand-chose à faire, ça marche du premier coup.
+Par contre sur xCode j’ai vraiment du mal.
+Les différences entre projet et workspace, l’interface pas vraiment intuitive, je ne m’attendais pas à ça et malheureusement, il m’est impossible de passer outre @@SAD&lt;/p&gt;
+
+&lt;p&gt;Une fois le projet bien paramétré avec vos premiers builds de lancés, vous rencontrerez un autre problème : &lt;strong&gt;L’ajout de bibliothèques&lt;/strong&gt;.
+Étant livré à vous-même sans Expo, vous devrez installer vous-même les bibliothèques, ça veut dire devoir modifier des fichiers natifs dont vous n’avez aucune idée de comment ils fonctionnent et c’est parfois pénible.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://rnfirebase.io/&quot;&gt;React Native Firebase&lt;/a&gt; fait partie des bibliothèques qui m’ont bien fait dresser les poils lors de la phase d’installation.&lt;/p&gt;
+
+&lt;h4 id=&quot;redux&quot;&gt;Redux&lt;/h4&gt;
+&lt;p&gt;Pour ceux qui ne sont pas familier avec l’univers React, Redux est une bibliothèque fortement utilisée qui permet de gérer les états (les states) de notre application.
+Redux est populaire en partie à cause des “limitations” de React.
+En effet, les &lt;strong&gt;props&lt;/strong&gt; (propriétés de notre composant React) ne sont disponibles qu’en lecture, les &lt;strong&gt;states&lt;/strong&gt; eux, ne sont accessibles qu’au sein même du composant.
+Vous voyez le problème ? Si j’ai un composant qui doit partager son état à un autre composant, comment fais-je ?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;REDUX&lt;/strong&gt; bien sûr !&lt;/p&gt;
+
+&lt;p&gt;Suite à cette problématique j’aurais dû naturellement me diriger vers Redux mais finalement j’ai décidé de ne pas l’utiliser.
+Grâce au &lt;a href=&quot;https://fr.reactjs.org/docs/context.html&quot;&gt;Context&lt;/a&gt; React, j’ai pu éviter d’utiliser Redux afin d’obtenir un état “global” à mon application.
+Ca fonctionne très bien mais je n’arrive pas à être entièrement satisfait de l’implémentation.
+Je me retrouve avec un composant “global” qui contient les différents états que je partage aux composants enfants (principalement l’utilisateur actuellement connecté) et je pense qu’il y a mieux à faire.
+Je n’ai pas encore eu le temps de vraiment tester une implémentation concrète avec Redux mais j’aime bien le cadre qu’il impose avec les actions/reducers/store.
+C’est dans ma todo-list de chose à tester et pourquoi pas à implémenter dans le projet.&lt;/p&gt;
+
+&lt;h4 id=&quot;architecture-du-projet&quot;&gt;Architecture du projet&lt;/h4&gt;
+&lt;p&gt;À titre personnel, j’aime être “guidé” quand je commence un nouveau projet sur une stack que je ne connais pas.
+ReactNative n’arrive pas avec un cadre de développement mais juste avec une API et des commandes système pour créer/construire son projet.
+On se retrouve avec juste un répertoire &lt;em&gt;src&lt;/em&gt; à remplir sans aucunes lignes directrices, c’est dommage.&lt;/p&gt;
+
+&lt;h4 id=&quot;la-documentation-officielle-et-ses-redirections&quot;&gt;La documentation officielle et ses redirections&lt;/h4&gt;
+&lt;p&gt;J’en ai parlé dans un de mes tweet &lt;a href=&quot;https://twitter.com/biiitor/status/1252688090503819264&quot;&gt;ici&lt;/a&gt; mais s’il y a bien un truc qui me rend dingue c’est qu’une bonne partie de l’API n’est plus supporté par facebook directement mais par la communauté.
+Jusque-là pourquoi pas, ça prouve que la communauté est active.
+Le souci vient du fait qu’on se retrouve souvent à devoir naviguer entre les différentes documentations, officielles ou communautaires et à être constamment redirigé. Pénible x2 @@TUBAIZ&lt;/p&gt;
+
+&lt;h4 id=&quot;functional-vs-class-component&quot;&gt;Functional VS Class component&lt;/h4&gt;
+&lt;p&gt;En React il est possible d’écrire ses composants de deux manières :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;En fonction
+    &lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Welcome&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;Hello, &lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;En classe
+    &lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Welcome&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Component&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;Hello, &lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;Historiquement les composants sous forme de fonction n’avaient pas accès au &lt;a href=&quot;https://fr.reactjs.org/docs/state-and-lifecycle.html&quot;&gt;cycle de vie du composant&lt;/a&gt;.
+Ce qui veut dire que dès qu’on voulait utiliser des méthodes du cycle de vie comme &lt;strong&gt;componentDidMount&lt;/strong&gt;, on devait obligatoirement passer par des classes.
+Mais depuis l’arrivée des &lt;a href=&quot;https://fr.reactjs.org/docs/hooks-intro.html&quot;&gt;Hooks&lt;/a&gt; avec React 16.8 ce n’est plus vrai, on peut désormais utiliser &lt;a href=&quot;https://fr.reactjs.org/docs/hooks-state.html&quot;&gt;useState&lt;/a&gt; et &lt;a href=&quot;https://fr.reactjs.org/docs/hooks-effect.html&quot;&gt;useEffect&lt;/a&gt; au sein d’un composant fonctionnel.
+Personnellement je trouve les classes plus digestes que les fonctions avec hooks mais c’est dû au fait que j’ai plus souvent travaillé avec des langages fortement typés et parce que je n’aime pas la &lt;em&gt;magie&lt;/em&gt; qu’offre les hooks.
+React semble mettre en avant les fonctions avec hooks, ce qui me fait réfléchir quant à l’utilisation des classes au sein de mon projet.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;les-animations&quot;&gt;Les animations&lt;/h4&gt;
+&lt;p&gt;Bien qu’une bonne partie des feuilles de style CSS soit portées sous ReactNative, il n’y a pas tout !
+Les animations en font parties.
+ReactNative propose une &lt;a href=&quot;https://reactnative.dev/docs/animations&quot;&gt;API animation&lt;/a&gt; assez complète mais un peu dure à prendre en main quand on cherche à faire des animations un peu complexe.
+J’ai tout de même réussi à réaliser deux ou trois petites animations (bounce, rotation, etc) mais ça risque de prendre un peu de temps avant de bien maitriser l’API.&lt;/p&gt;
+
+&lt;h1 id=&quot;les-plus&quot;&gt;Les plus&lt;/h1&gt;
+&lt;h4 id=&quot;la-stack-sans-expo-bis&quot;&gt;La stack sans Expo (bis)&lt;/h4&gt;
+&lt;p&gt;Ce choix a été difficile au départ mais je ne regrette pas, certes il est plus difficile de devoir tout configurer soit-même en mettant les mains dans xCode mais le fait de ne pas dépendre d’Expo me permet de pouvoir créer mes builds quand je le souhaite sans attendre qu’Expo s’en charge.
+Je peux aussi ajouter les modules que je désire sans me soucier de savoir si ce que je veux faire est supporté par Expo ou non et ça, c’est quand même très plaisant.&lt;/p&gt;
+
+&lt;h4 id=&quot;le-hot-reload&quot;&gt;Le hot reload&lt;/h4&gt;
+&lt;p&gt;Rien d’extra-ordinaire de ce côté là (disponible dans pratiquement toutes les technos modernes) mais c’est toujours bien de le noter.
+C’est une fonctionnalité qu’on apprécie vraiment quand on fait du front : Le &lt;strong&gt;hot-reload&lt;/strong&gt; ou “rechargement à chaud” pour les puristes.
+La modification de notre code source modifie directement notre application sur le téléphone.
+Pas besoin de recréer un build ou de recharger l’application.
+Très pratique quand on travaille sur les vues de notre application @@SLT.&lt;/p&gt;
+
+&lt;h4 id=&quot;css&quot;&gt;CSS&lt;/h4&gt;
+&lt;p&gt;Un des gros avantages de ReactNative est le fait qu’une bonne partie des feuilles de style CSS soient disponibles.
+On peut donc profiter des flexbox pour gérer le positionnement de nos blocs et ça c’est &lt;strong&gt;VRAIMENT&lt;/strong&gt; cool @@BEER !
+Pas de GridBagLayout, ConstraintLayout, etc @@SLT
+L’écriture du CSS passe par une abstraction sous forme d’objet Javascript mais correspond globalement à du CSS en camelCase.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/react-native-retour-experience/css-react-native.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;rendu-iosandroid-identique&quot;&gt;Rendu iOS/Android identique&lt;/h4&gt;
+&lt;p&gt;Ca peut paraitre bête comme argument mais c’est pourtant décisif quand on utilise un framework comme ReactNative.
+Après avoir travaillé intégralement sur un émulateur Android, j’ai voulu exécuter mon application sur iOS pour vérifier si le rendu/comportement était différent sur iOS.
+J’ai été agréablement surpris de voir qu’il n’y avait pas tellement de différences, en dehors de quelques petits bogues sur des ombres en utilisant les &lt;a href=&quot;https://reactnative.dev/docs/shadow-props&quot;&gt;shadow props&lt;/a&gt;, le rendu est identique sur les deux plateformes.
+Il faut néanmoins comprendre comment fonctionnent les plateformes de destination et notamment iOS avec l’arrivée du &lt;del&gt;motch&lt;/del&gt; notch @@LUL
+Vous devrez forcément utiliser les &lt;a href=&quot;https://reactnative.dev/docs/safeareaview&quot;&gt;SafeAreaView&lt;/a&gt; afin que votre vue ne se retrouve pas sous le notch (ou alors ajuster celle-ci).&lt;/p&gt;
+
+&lt;h4 id=&quot;utilisation-des-bonnes-bibliothèques&quot;&gt;Utilisation des bonnes bibliothèques&lt;/h4&gt;
+&lt;p&gt;Bien que Redux manque à la liste, j’ai tout de même réussi à trouver mon bonheur dans plusieurs bibliothèques qui correspondent entièrement à mes besoins :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://reactnavigation.org/&quot;&gt;React Navigation&lt;/a&gt; pour gérer la navigation dans l’application.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://react-native-elements.github.io/react-native-elements&quot;&gt;React Native Elements&lt;/a&gt; pour la gestion du design system.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://rnfirebase.io/&quot;&gt;React Native Firebase&lt;/a&gt; pour l’interaction avec Firestore, Firebase Storage et Firebase Auth.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/crazycodeboy/react-native-splash-screen&quot;&gt;React Native Splash Screen&lt;/a&gt; pour l’intégration d’un splash screen.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/fnando/i18n-js&quot;&gt;i18n.js&lt;/a&gt; pour l’internationalisation.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/manuelbieh/geolib&quot;&gt;Geolib&lt;/a&gt; pour les calculs et conversion de coordonnées GPS.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/sunng87/node-geohash&quot;&gt;nGeoHash&lt;/a&gt; pour la création de hash de coordonnées GPS.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;maquettes&quot;&gt;Maquettes&lt;/h4&gt;
+&lt;p&gt;Au tout début du projet j’ai commencé par réaliser mes premiers écrans sans aucune maquette.
+Ca fonctionnait pas mal sauf que parfois je “bloquais” sur la création de l’interface.
+En discutant avec un collègue, je me suis rendu compte que ça serait pas mal de réaliser des maquettes dès le début afin que ca m’aide à la réalisation de l’application.
+J’ai commencé à utiliser &lt;a href=&quot;https://www.figma.com&quot;&gt;Figma&lt;/a&gt; et ça m’a clairement simplifier la vie !
+Je vous le recommande vivement si vous cherchez un outil pour créer vos maquettes web ou mobile.&lt;/p&gt;
+
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;En conclusion c’est très positif ! ReactNative se veut facile à prendre en main, d’autant plus si vous utiliser Expo.
+ReactNative est une solution pérenne pour réaliser vos applications mobiles cross-platform, la communauté est grande et vous trouverez toujours la bibliothèque dont vous avez besoin.&lt;/p&gt;
+
+&lt;p&gt;Si vous hésitez à utiliser ReactNative, posez-vous les mêmes questions que j’ai pu me poser :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Quelle techno correspond le mieux à mon besoin ?&lt;/li&gt;
+  &lt;li&gt;Quel langage m’intéresse le plus ou me permettrait d’aller plus vite dans la réalisation de mon application ?&lt;/li&gt;
+  &lt;li&gt;Est-ce que je disposerai des bonnes bibliothèques ?&lt;/li&gt;
+  &lt;li&gt;Quel est mon budget et quel est le temps que je veux allouer au développement ?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;En fonction des réponses à celles-ci, vous pourrez vous diriger vers du ReactNative, du Flutter ou du natif @@KJ&lt;/p&gt;
+</description>
+        <pubDate>Fri, 15 May 2020 00:00:00 -0500</pubDate>
+        <link>https://btor.fr/2020/05/15/react-native-retour-experience/</link>
+        <guid isPermaLink="true">https://btor.fr/2020/05/15/react-native-retour-experience/</guid>
+        
+        <category>React</category>
+        
+        <category>React native</category>
+        
+        <category>Javascript</category>
+        
+        <category>Développement</category>
+        
+        <category>Mobile</category>
+        
+        
+      </item>
     
       <item>
         <title>Noteflix: Une extension firefox pour voir les notes Allociné sur Netflix</title>
