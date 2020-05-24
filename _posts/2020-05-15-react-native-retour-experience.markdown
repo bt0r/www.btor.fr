@@ -9,7 +9,7 @@ tags:
   - React
   - React native
   - Javascript
-  - Développement
+  - Developpement
   - Mobile
 ---
 Vous vous demandez surement pourquoi un développeur back-end parlerait d'une techno front-end ? @@LUL 
