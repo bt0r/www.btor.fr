@@ -6,9 +6,90 @@
 </description>
     <link>https://btor.fr</link>
     <atom:link href="https://btor.fr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 17 May 2020 11:35:22 -0500</pubDate>
-    <lastBuildDate>Sun, 17 May 2020 11:35:22 -0500</lastBuildDate>
+    <pubDate>Sun, 24 May 2020 11:40:13 -0500</pubDate>
+    <lastBuildDate>Sun, 24 May 2020 11:40:13 -0500</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>Afficher le titre Spotify en cours de lecture dans OBS (linux)</title>
+        <description>&lt;p&gt;Rares sont les applications de streaming musical qui s’intègrent simplement à OBS (&lt;a href=&quot;https://www.foobar2000.org/&quot;&gt;Foobar&lt;/a&gt; for the win) @@PROUD
+Et pourtant, c’est toujours pratique de pouvoir récupérer la musique que notre streamer préféré (ou pas) est en train de passer.&lt;/p&gt;
+
+&lt;p&gt;Nous allons voir comment intégrer le titre de la chanson en cours de lecture depuis l’application Spotify, directement dans OBS.&lt;/p&gt;
+
+&lt;p&gt;L’astuce réside intégralement sur le fait que spotify affiche le titre de la musique dans son titre de fenêtre.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/spotify-obs-titre-chanson/titre.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Nous allons donc procéder ainsi :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Récupérer le titre de la musique via le titre de la fenêtre de Spotify&lt;/li&gt;
+  &lt;li&gt;Écrire ce titre dans un fichier.&lt;/li&gt;
+  &lt;li&gt;Dire à OBS d’afficher le contenu de ce fichier. C’est tout ! @@WINK&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;installation&quot;&gt;Installation&lt;/h1&gt;
+&lt;p&gt;La première étape consiste à installer &lt;code class=&quot;highlighter-rouge&quot;&gt;wmctrl&lt;/code&gt; et &lt;code class=&quot;highlighter-rouge&quot;&gt;xdotool&lt;/code&gt;, c’est grâce à ces deux commandes qu’on pourra récupérer le titre depuis la CLI.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt install wmctrl xdotool
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;En fonction de votre distribution vous devriez déjà disposer de &lt;code class=&quot;highlighter-rouge&quot;&gt;pgrep&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;head&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;grep&lt;/code&gt; et &lt;code class=&quot;highlighter-rouge&quot;&gt;awk&lt;/code&gt; vous n’avez donc rien d’autres à installer.&lt;/p&gt;
+
+&lt;h1 id=&quot;création-du-script&quot;&gt;Création du script&lt;/h1&gt;
+&lt;p&gt;Je vous mâche le boulot, j’ai déjà fait le script @@RS&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/bash&lt;/span&gt;
+snap run spotify&amp;amp; &lt;span class=&quot;c&quot;&gt;# On lance spotify&lt;/span&gt;
+getSong&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; 
+  &lt;span class=&quot;nv&quot;&gt;pid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;pgrep &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; spotify | &lt;span class=&quot;nb&quot;&gt;head&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; 1&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# On récupère le PID (processus ID) de spotify&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-z&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$pid&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# Pas de PID ? Pas de musiké !&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;then
+    &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;No song playing&quot;&lt;/span&gt; 
+    &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# On vide le fichier de destination pour éviter d'afficher une information erronée&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;else
+    &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;windowId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;wmctrl &lt;span class=&quot;nt&quot;&gt;-lp&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$pid&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;awk&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{print $1}'&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# On récupère l'ID de la fenêtre&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;songName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;xdotool getwindowname &lt;span class=&quot;nv&quot;&gt;$windowId&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# Puis on récupère le titre de la fenêtre grâce à son ID&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;do
+  &lt;/span&gt;getSong
+  &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$songName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# On écrit le résultat dans le fichier de destination, toutes les 10 secondes.&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;sleep &lt;/span&gt;10 &lt;span class=&quot;c&quot;&gt;# Le script réactualisera le titre en cours toutes les 10 secondes&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Vous noterez plusieurs informations importantes :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;On utilise la commande &lt;code class=&quot;highlighter-rouge&quot;&gt;snap run spotify&amp;amp;&lt;/code&gt; dès le début, ce qui veut dire qu’on lance Spotify (via &lt;a href=&quot;https://doc.ubuntu-fr.org/snap&quot;&gt;snap&lt;/a&gt;) et qu’ensuite le script fait son boulot. 
+Je l’ai intégré au script car si vous lancez votre spotify “normalement” vous oublierez la plupart du temps de lancer le script.
+En utilisant ce script, vous n’avez qu’a changé votre raccourci Spotify et le faire pointer vers celui-ci.&lt;/li&gt;
+  &lt;li&gt;Le script s’actualise toutes les 10 secondes &lt;code class=&quot;highlighter-rouge&quot;&gt;sleep 10&lt;/code&gt;, à vous de modifier cette valeur à votre guise.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$1&lt;/code&gt; est utilisé dans le script, ce qui veut dire qu’il y a un argument à passer au script : &lt;strong&gt;Le chemin de destination du fichier !&lt;/strong&gt;, il vous faudra exécuter le script de cette façon &lt;code class=&quot;highlighter-rouge&quot;&gt;sh nom_script.sh /home/btor/songname.txt&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;intégration-à-obs&quot;&gt;Intégration à OBS&lt;/h1&gt;
+&lt;p&gt;Rendez-vous ensuite sur OBS et dans votre scène, ajouter une source texte et sélectionner votre fichier généré par le script :&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/spotify-obs-titre-chanson/obs-ajout-texte.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Et voilà @@KJ&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/spotify-obs-titre-chanson/obs-apercu.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 24 May 2020 00:00:00 -0500</pubDate>
+        <link>https://btor.fr/2020/05/24/spotify-obs-titre-chanson/</link>
+        <guid isPermaLink="true">https://btor.fr/2020/05/24/spotify-obs-titre-chanson/</guid>
+        
+        <category>Spotify</category>
+        
+        <category>OBS</category>
+        
+        <category>Streaming</category>
+        
+        <category>Tutorial</category>
+        
+        
+      </item>
     
       <item>
         <title>React Native: Retour d'expérience</title>
@@ -285,7 +366,7 @@ ReactNative est une solution pérenne pour réaliser vos applications mobiles cr
         
         <category>Javascript</category>
         
-        <category>Développement</category>
+        <category>Developpement</category>
         
         <category>Mobile</category>
         
