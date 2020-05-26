@@ -2,7 +2,7 @@
 </code></pre></div></div><p>En fonction de votre distribution vous devriez déjà disposer de <code class="highlighter-rouge">pgrep</code>, <code class="highlighter-rouge">head</code>, <code class="highlighter-rouge">grep</code> et <code class="highlighter-rouge">awk</code> vous n’avez donc rien d’autres à installer.</p><h1 id="création-du-script">Création du script</h1><p>Je vous mâche le boulot, j’ai déjà fait le script @@RS</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
 snap run spotify&amp; <span class="c"># On lance spotify</span>
 getSong<span class="o">()</span> <span class="o">{</span> 
-  <span class="nv">pid</span><span class="o">=</span><span class="k">$(</span>pgrep <span class="nt">-i</span> spotify | <span class="nb">head</span> <span class="nt">-n</span> 1<span class="k">)</span> <span class="c"># On récupère le PID (processus ID) de spotify</span>
+  <span class="nv">pid</span><span class="o">=</span><span class="k">$(</span>pgrep <span class="nt">-f</span> <span class="s2">"/snap/spotify/.+/usr/share/spotify/spotify$"</span><span class="k">)</span> <span class="c"># On récupère le PID (processus ID) de spotify</span>
   <span class="k">if</span> <span class="o">[</span> <span class="nt">-z</span> <span class="s2">"</span><span class="nv">$pid</span><span class="s2">"</span> <span class="o">]</span> <span class="c"># Pas de PID ? Pas de musiké !</span>
   <span class="k">then
     </span><span class="nb">echo</span> <span class="s2">"No song playing"</span> 
