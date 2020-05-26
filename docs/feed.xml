@@ -6,8 +6,8 @@
 </description>
     <link>https://btor.fr</link>
     <atom:link href="https://btor.fr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 26 May 2020 15:52:32 -0500</pubDate>
-    <lastBuildDate>Tue, 26 May 2020 15:52:32 -0500</lastBuildDate>
+    <pubDate>Tue, 26 May 2020 16:59:58 -0500</pubDate>
+    <lastBuildDate>Tue, 26 May 2020 16:59:58 -0500</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -423,7 +423,7 @@ Avant de m’attaquer à Netflix, je voulais m’assurer qu’il était possible
   &lt;li&gt;Je regarde les différents input afin de voir si certains marchent en Ajax, bingo ! celui de la barre de recherche fait un call ajax @@HEY&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/noteflix/search_allocine.png&quot; alt=&quot;Barre de recherche Allociné&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/noteflix-allocine-netflix/search_allocine.png&quot; alt=&quot;Barre de recherche Allociné&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Voyons un peu ce que ça donne en recherchant &lt;a href=&quot;http://www.allocine.fr/_/autocomplete/breaking%20bad&quot;&gt;Breaking bad&lt;/a&gt;:&lt;/p&gt;
 &lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
@@ -496,7 +496,7 @@ Ces objets peuvent être des films, séries ou des personnalités. C’est déj
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;Parfait, je regarde donc à quoi correspondent ces scores, voir si ils correspondent à ce que je recherche (en l’occurence, les notes des spectateurs).&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/noteflix/scores_allocine.png&quot; alt=&quot;Score allociné&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/noteflix-allocine-netflix/scores_allocine.png&quot; alt=&quot;Score allociné&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Jeanne @@JEANNE ! Au secours ! D’où proviennent ces scores ? J’ai beau tester avec 2 ou 3 autres films/séries, aucune corrélation n’est envisageable.&lt;/p&gt;
 
@@ -525,21 +525,21 @@ De plus, cette application ne semble plus être dans le store Android.&lt;/p&gt;
 &lt;p&gt;Sshdump va nous permettre de capturer des paquets non pas depuis notre propre machine mais depuis une machine hôte, en l’occurence mon téléphone.
 Le téléphone fait office de serveur et mon wireshark de client, fini les envoies de fichier .pcap d’un device à un autre @@SLT !&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/noteflix/pcap_remote.png&quot; alt=&quot;PCAPRemote&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/noteflix-allocine-netflix/pcap_remote.png&quot; alt=&quot;PCAPRemote&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;L’interface est assez simple, le bouton “play” permet de lancer une capture global du smartphone tandis que le bouton “Play 1” permet de choisir une application spécifique. 
 Pratique pour éviter de filtrer à posteriori sur Wireshark !&lt;/p&gt;
 
 &lt;p&gt;Il suffit ensuite de renseigner l’ip et port de l’hôte (le téléphone) sur wireshark en utilisant l’option &lt;code class=&quot;highlighter-rouge&quot;&gt;SSH remote capture: sshdump&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/noteflix/wireshark_sshdump.png&quot; alt=&quot;Wireshark SSHDump&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/noteflix-allocine-netflix/wireshark_sshdump.png&quot; alt=&quot;Wireshark SSHDump&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Wireshark reçoit désormais les trames IP, j’en profite pour filtrer sur le protocole HTTP afin d’éviter d’être flooder de requêtes inutiles.
 Pendant que mon Wireshark tourne, je manipule un peu l’application allociné afin du générer du traffic, je recherche, click sur des films, change de pages etc.&lt;/p&gt;
 
 &lt;p&gt;Et qu’est ce qui apparait dans Wireshark ? @@LUL&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/noteflix/search_wireshark.png&quot; alt=&quot;PCAPRemote&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/noteflix-allocine-netflix/search_wireshark.png&quot; alt=&quot;PCAPRemote&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;C’est exactement le même endpoint qui était utilisé dans la barre de recherche du site allociné. 
 Dans la capture wireshark je retrouve aussi des appels à des endpoint très similaires de ceux décrit dans l’article de Gromez mais qui ne m’apporte pas les informations que je désire.&lt;/p&gt;
@@ -574,10 +574,10 @@ Si je click sur une vidéo, je veux que le programme cherche la note allociné l
 &lt;p&gt;Il y a plusieurs façon de voir les informations d’une série ou d’un film sur Netflix&lt;/p&gt;
 
 &lt;p&gt;En naviguant sur le “board” Netflix
-&lt;img src=&quot;/assets/images/noteflix/jawBone_netflix.png&quot; alt=&quot;Breaking bad - Netflix&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/assets/images/noteflix-allocine-netflix/jawBone_netflix.png&quot; alt=&quot;Breaking bad - Netflix&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Ou en allant directement sur la fiche descriptive de la vidéo
-&lt;img src=&quot;/assets/images/noteflix/jawBone_main_netflix.png&quot; alt=&quot;Breaking bad - Netflix&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/assets/images/noteflix-allocine-netflix/jawBone_main_netflix.png&quot; alt=&quot;Breaking bad - Netflix&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;La question à se poser est donc: Comment déclencher la récupération de la note en fonction du comportement de l’utilisateur ?
 Qu’il charge une page ou qu’il click sur une vidéo, le code devra être déclenché à ce moment là.&lt;/p&gt;
@@ -612,7 +612,7 @@ Par exemple si je glisse ma souris sur mon avatar, un menu apparaitra et un év�
 
 &lt;p&gt;On a donc restreint l’observer à n’écouter que ce qu’il se passe dans le bloc principal de Netflix (celui qui contient toutes les vidéos).&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/noteflix/mainview_netflix.png&quot; alt=&quot;Main view - Netflix&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/noteflix-allocine-netflix/mainview_netflix.png&quot; alt=&quot;Main view - Netflix&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;En plus de restreindre l’observer à écouter un noeud DOM spécifique, on va aussi devoir filtrer sur les évènements reçus.&lt;/p&gt;
 
@@ -710,7 +710,7 @@ L’inconvénient c’est que toutes les 2 secondes une partie du code est exec
 
 &lt;p&gt;J’ai encore quelques nice-to-have à intégrer à l’extension comme par exemple le fait de récupérer le rating allociné directement depuis &lt;a href=&quot;https://developers.google.com/search/docs/guides/intro-structured-data&quot;&gt;les données structurées&lt;/a&gt;:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/noteflix/structured_data_allocine.png&quot; alt=&quot;Données structurées - Allociné&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/noteflix-allocine-netflix/structured_data_allocine.png&quot; alt=&quot;Données structurées - Allociné&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Ce qui m’éviterait de récupérer la note en scrapant la page.&lt;/p&gt;
 
@@ -756,27 +756,27 @@ Si vous avez déjà un niveau avancé avec Docker, cet article n’est pas fait 
 
 &lt;p&gt;&lt;em&gt;Source wikipédia&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;Cool, mais du coup, qu’est ce qu’un conteneur ? Avant d’expliquer le concept de conteneurisation, commençons par comprendre la base: &lt;strong&gt;la virtualisation&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Cool, mais du coup, qu’est-ce qu’un conteneur ? Avant d’expliquer le concept de conteneurisation, commençons par comprendre la base: &lt;strong&gt;la virtualisation&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;-virtualisation-vs-conteneurisation&quot;&gt;🐳 Virtualisation VS Conteneurisation&lt;/h3&gt;
 &lt;p&gt;Ça devrait parler à beaucoup d’entre vous, c’est le fait &lt;strong&gt;d’émuler&lt;/strong&gt; un système d’exploitation dans un autre, par exemple, au sein d’un système d’exploitation Windows 10, j’émule un Linux, un MacOS ou même un Windows 3.1. Le logiciel permettant d’émuler nos systèmes d’exploitation est appelé un &lt;strong&gt;Hyperviseur&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;Il existe deux types d’hyperviseur:&lt;/p&gt;
+&lt;p&gt;Il existe deux types d’hyperviseur :&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;L’hyperviseur de type 2&lt;/strong&gt;:&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;L’hyperviseur de type 2&lt;/strong&gt; :&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/docker-bases/hyperviseur_type_2.png&quot; alt=&quot;&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/docker-bases-tuto/hyperviseur_type_2.png&quot; alt=&quot;&quot; /&gt;
 &lt;em&gt;Source wikipédia&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;Vous les connaissez certainement sans savoir qu’ils sont de type 2:  VirtualBox et VMWare workstation. Le type 2 veut dire que l’hyperviseur a besoin d’un système d’exploitation “hôte” (maitre) pour fonctionner. Par exemple, vous ne pouvez pas lancer Virtualbox seul sans Windows ou Ubuntu.&lt;/p&gt;
+&lt;p&gt;Vous les connaissez certainement sans savoir qu’ils sont de type 2 :  VirtualBox et VMWare workstation. Le type 2 veut dire que l’hyperviseur a besoin d’un système d’exploitation “hôte” (maitre) pour fonctionner. Par exemple, vous ne pouvez pas lancer Virtualbox seul sans Windows ou Ubuntu.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;L’hyperviseur de type 1&lt;/strong&gt;:&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;L’hyperviseur de type 1&lt;/strong&gt; :&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/docker-bases/hyperviseur_type_1.png&quot; alt=&quot;&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/docker-bases-tuto/hyperviseur_type_1.png&quot; alt=&quot;&quot; /&gt;
 &lt;em&gt;Source wikipédia&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;A la différence du type 2, le type 1 fonctionne directement comme un “système hôte” et se charge de communiquer directement avec le matériel.
@@ -851,7 +851,7 @@ Revenons maintenant sur ce que nous avons tapé:&lt;/p&gt;
 
 &lt;p&gt;En d’autres termes, on a demandé à docker de récupérer une image, la lancer et d’exécuter une commande qu’on lui donne (&lt;code class=&quot;highlighter-rouge&quot;&gt;sh&lt;/code&gt;) ! C’est tout !&lt;/p&gt;
 
-&lt;p&gt;Les conteneurs sont sensés avoir une fonction unique, par exemple on pourrait utiliser un conteneur pour lancer un processus nginx, php-fpm, go etc..
+&lt;p&gt;Les conteneurs sont censés avoir une fonction unique, par exemple on pourrait utiliser un conteneur pour lancer un processus nginx, php-fpm, go etc..
 Le conteneur peut lancer cette fonction et se terminer à la fin du processus ou ne jamais s’arrêter (le cas d’un serveur web, d’un worker etc.). Si vous désirez arrêter l’exécution d’un conteneur qui tourne en rond, qui est un worker ou autre vous pouvez utiliser la commande &lt;code class=&quot;highlighter-rouge&quot;&gt;docker kill &amp;lt;hash&amp;gt;&lt;/code&gt; ou &lt;code class=&quot;highlighter-rouge&quot;&gt;docker kill &amp;lt;nom-conteneur&amp;gt;&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Reprenons la même image &lt;code class=&quot;highlighter-rouge&quot;&gt;debian:jessie&lt;/code&gt; mais cette fois-ci nous lui demanderons de lancer le conteneur puis d’exécuter la commande &lt;code class=&quot;highlighter-rouge&quot;&gt;cat /etc/debian_version&lt;/code&gt; sans être en mode interactif.&lt;/p&gt;
@@ -860,7 +860,7 @@ Le conteneur peut lancer cette fonction et se terminer à la fin du processus ou
   &lt;li&gt;La commande renvoie directement &lt;code class=&quot;highlighter-rouge&quot;&gt;8.11&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;Conclusion:&lt;/strong&gt; ` Docker run` va récupérer une image docker puis l’exécuter, on peut exécuter l’image en mode interactif pour interagir dans le conteneur ou tout simplement lancer l’exécution d’une commande/fonction afin d’avoir la réponse directement.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Conclusion :&lt;/strong&gt; ` Docker run` va récupérer une image docker puis l’exécuter, on peut exécuter l’image en mode interactif pour interagir dans le conteneur ou tout simplement lancer l’exécution d’une commande/fonction afin d’avoir la réponse directement.&lt;/p&gt;
 
 &lt;h3 id=&quot;️-exec&quot;&gt;➡️ Exec&lt;/h3&gt;
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;run&lt;/code&gt; nous permettant de récupérer et lancer une image, comment fait-on quand on a un conteneur déjà lancé et qu’on veut exécuter une commande à l’intérieur de celui ci sans forcément passer à chaque fois par le shell ? c’est là qu’&lt;code class=&quot;highlighter-rouge&quot;&gt;exec&lt;/code&gt; intervient.
@@ -875,7 +875,7 @@ Lançons &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run nginx&lt;/co
   &lt;li&gt;Le conteneur répond &lt;code class=&quot;highlighter-rouge&quot;&gt;9.9&lt;/code&gt;, ce qui correspond bien à la version &lt;code class=&quot;highlighter-rouge&quot;&gt;stretch-slim&lt;/code&gt; disponible dans le &lt;a href=&quot;https://github.com/nginxinc/docker-nginx/blob/b749353968a57ebd9da17e12d23f1a5fb62f9de9/mainline/stretch/Dockerfile&quot;&gt;Dockerfile&lt;/a&gt; de nginx&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;Conclusion:&lt;/strong&gt; Il faut faire attention à bien utiliser &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run&lt;/code&gt; et &lt;code class=&quot;highlighter-rouge&quot;&gt;docker exec&lt;/code&gt;, on confond souvent les deux au début. 
+&lt;p&gt;&lt;strong&gt;Conclusion :&lt;/strong&gt; Il faut faire attention à bien utiliser &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run&lt;/code&gt; et &lt;code class=&quot;highlighter-rouge&quot;&gt;docker exec&lt;/code&gt;, on confond souvent les deux au début. 
 &lt;code class=&quot;highlighter-rouge&quot;&gt;run&lt;/code&gt; =&amp;gt; Je récupère et je lance l’image (avec ou sans commande à exécuter) 
 &lt;code class=&quot;highlighter-rouge&quot;&gt;exec&lt;/code&gt; =&amp;gt; Je lance une commande dans un conteneur &lt;strong&gt;déjà&lt;/strong&gt; lancé.&lt;/p&gt;
 
@@ -883,7 +883,7 @@ Lançons &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run nginx&lt;/co
 &lt;p&gt;Nous avons connaissance de quatre commandes docker : &lt;code class=&quot;highlighter-rouge&quot;&gt;run&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;exec&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;pull&lt;/code&gt; et &lt;code class=&quot;highlighter-rouge&quot;&gt;ps&lt;/code&gt;. 
 Jusqu’à présent nous avons récupéré des images docker déjà crée, mais qu’en est-il d’une image qu’on souhaiterait créer ?&lt;/p&gt;
 
-&lt;p&gt;Commençons par faire notre premier fichier &lt;strong&gt;Dockerfile&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;Commençons par faire notre premier fichier &lt;strong&gt;Dockerfile&lt;/strong&gt; :&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Créer un fichier nommé  &lt;code class=&quot;highlighter-rouge&quot;&gt;Dockerfile&lt;/code&gt; et y ajouter :&lt;/li&gt;
 &lt;/ul&gt;
@@ -1144,12 +1144,12 @@ Si vous avez aimé cet article ou que vous désirez avoir plus d’informations 
   &lt;li&gt;Validez et redémarrez steam&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/jeux-windows-steam/01.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/jeux-windows-steam/02.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/jouer-jeux-linux-windows/01.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/jouer-jeux-linux-windows/02.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Une fois Steam redémarré, l’icône d’installation de vos jeux windows devrait être visible. Il ne vous reste plus qu’à installer votre jeu et à le lancer.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/jeux-windows-steam/03.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/jouer-jeux-linux-windows/03.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;J’ai pu testé avec GTA 5 sur steam, le launcher de rockstar ne s’affiche pas correctement donc il m’était impossible de m’authentifier.
 J’ai également testé avec PUBG, sans succès le jeu se lance mais rien ne s’affiche.&lt;/p&gt;
@@ -1163,6 +1163,8 @@ J’ai également testé avec PUBG, sans succès le jeu se lance mais rien ne s�
         <category>Tutorial</category>
         
         <category>Jeux</category>
+        
+        <category>Linux</category>
         
         
       </item>
@@ -1186,7 +1188,7 @@ L’aller-retour pour Rome coûtait ~230€/personne, l’hôtel pour Rome (5 jo
 &lt;h1 id=&quot;-description-du-voyage&quot;&gt;🛫 Description du voyage&lt;/h1&gt;
 &lt;p&gt;Je me suis chargé d’organisé le voyage, une bonne partie de la première semaine était dédiée à Rome et au Vatican puis ensuite on prenait la direction de Florence pour rejoindre notre deuxième hôtel situé vers Sarzana afin d’être proche de Florence, Pise et des Cinque Terre. La deuxième semaine était plus axée détente au soleil, je savais qu’on serait un peu fatigué à marcher dans Rome donc je voulais un petit moment de pause avant de rentrer sur Paris et de reprendre le travail.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/voyage-italie/map.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/italie-cinque-terre/map.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Voici le détail exact du trip:&lt;/p&gt;
 
@@ -1229,68 +1231,68 @@ Voici quelques photos des différentes places/bâtiments qu’on a pu voir.&lt;/
 
 &lt;h3 id=&quot;le-panthéon&quot;&gt;Le Panthéon&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/voyage-italie/rome/pantheon/01.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/pantheon/02.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/pantheon/01.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/pantheon/02.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;la-place-navona&quot;&gt;La place Navona&lt;/h3&gt;
 &lt;p&gt;Pas très loin du Panthéon se trouve la place Navona, c’est ici que nous avons décidé de déjeuner.
 On a voulu faire light en commandant des salades dans un restaurant pas très loin de la place. 
 Soyons clair, c’était DÉGUEULASSE ! La salade baignait dans l’huile, ça n’avait aucun goût.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/voyage-italie/rome/piazza-navona/01.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/piazza-navona/02.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/piazza-navona/03.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/nourriture/06.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/piazza-navona/01.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/piazza-navona/02.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/piazza-navona/03.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/nourriture/06.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;la-fontaine-de-trévi&quot;&gt;La fontaine de trévi&lt;/h3&gt;
 &lt;p&gt;Fontaine très connue et très visitée… Un conseil, si vous voulez faire de belles photos, n’y allez pas en période d’affluence, allez-y tôt le matin pour être sûr d’être tranquille.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/voyage-italie/rome/trevi/01.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/trevi/01.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;la-place-de-spagna&quot;&gt;La place de Spagna&lt;/h3&gt;
 &lt;p&gt;Place très fréquentée aussi, beaucoup de boutiques de luxe, nous avons pris un petit-déjeuner chez babingtons (salon de thé anglais, cher mais très bon) puis nous avons monté les marches pour ensuite nous diriger vers le zoo.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/voyage-italie/rome/piazza-spagna/01.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/piazza-spagna/02.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/piazza-spagna/03.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/piazza-spagna/04.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/nourriture/02.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/nourriture/03.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/nourriture/04.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/nourriture/01.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/piazza-spagna/01.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/piazza-spagna/02.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/piazza-spagna/03.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/piazza-spagna/04.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/nourriture/02.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/nourriture/03.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/nourriture/04.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/nourriture/01.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;le-zoo-et-le-parc-villa-borghese&quot;&gt;Le Zoo et le parc Villa Borghese&lt;/h3&gt;
 &lt;p&gt;Nous avions prévu de nous balader dans le parc Villa Borghese, à l’inverse le zoo n’était pas prévu et honnêtement je ne le recommanderai pas.
 L’entrée coûte 16€/personne, il y a pas mal d’espèces mais très peu d’animaux (un seul éléphant, un tigre, 2/3 ours).  Le coût des activités étant assez élevé sur Rome, je recommanderais plutôt de garder ces 16€ pour autre chose comme le Vatican, un bon restaurant ou un musée.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/voyage-italie/rome/zoo/01.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/zoo/02.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/zoo/03.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/zoo/04.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/zoo/05.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/zoo/06.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/zoo/07.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/zoo/08.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/zoo/09.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/zoo/01.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/zoo/02.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/zoo/03.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/zoo/04.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/zoo/05.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/zoo/06.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/zoo/07.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/zoo/08.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/zoo/09.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;compo-defiori--environs&quot;&gt;Compo de’Fiori &amp;amp; environs&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/voyage-italie/rome/compo-de-fiori/01.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/compo-de-fiori/02.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/compo-de-fiori/03.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/compo-de-fiori/04.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/compo-de-fiori/01.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/compo-de-fiori/02.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/compo-de-fiori/03.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/compo-de-fiori/04.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;la-place-del-popolo&quot;&gt;La place del Popolo&lt;/h3&gt;
 &lt;p&gt;Une des plus belles places de Rome selon moi, j’ai beaucoup aimé. Je n’ai malheureusement pas pensé à prendre plus de photos ?&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/voyage-italie/rome/piazza-del-popolo/01.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/piazza-del-popolo/02.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/piazza-del-popolo/03.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/piazza-del-popolo/01.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/piazza-del-popolo/02.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/piazza-del-popolo/03.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;-nourriture&quot;&gt;🍕 Nourriture&lt;/h3&gt;
 &lt;p&gt;Un des points qui m’intéressait beaucoup en allant à Rome c’est la nourriture. On m’a souvent très bien vendu l’Italie, ses pizzas, glaces, cafés etc.
 J’ai été assez déçu, nous avons réussi à trouver 2/3 restaurants corrects comme la &lt;a href=&quot;https://www.google.com/maps/place/Caffetteria+Gracchi/@41.9080847,12.462418,21z/data=!4m8!1m2!3m1!2sCaffetteria+Gracchi!3m4!1s0x132f605fca04ae23:0x16b066c05ce098c0!8m2!3d41.9080846!4d12.4624182&quot;&gt;pizzeria/cafettaria Gracchi&lt;/a&gt; , &lt;a href=&quot;https://www.google.com/maps/place/Amalfi+Ristoranti+Roma/@41.907092,12.4577438,285m/data=!3m2!1e3!4b1!4m5!3m4!1s0x132f6060e075c9bf:0x7a603e421126c216!8m2!3d41.907092!4d12.458291&quot;&gt;Amalfi Ristoranti&lt;/a&gt; à Rome ou la &lt;a href=&quot;https://www.focacceriacinquecento.com/&quot;&gt;Foccaceria CinqueCento&lt;/a&gt; proche de notre deuxième appartement vers Sarzana mais globalement en dehors des glaces qui sont vraiment bonnes,  nous avons eu du mal à trouver de bonnes pizza ou pâtes. Elles sont souvent très basiques et peu garnis :&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/voyage-italie/rome/nourriture/07.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/nourriture/07.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Peut être que nous sommes un peu trop critique étant donné qu’à Paris on mange déjà très bien et qu’on peut pas vraiment juger sur un échantillon de 4 ou 5 restaurants mais bon. Je m’attendais à mieux.
 Pour le prix, en dehors des gros points touristiques c’est moins cher qu’à Paris. Comptez entre 7€ et 10€ pour une pizza ou un plat de pâtes au restaurant et 1€ à 2€ pour un café espresso.
@@ -1304,10 +1306,10 @@ A la &lt;a href=&quot;https://www.focacceriacinquecento.com/&quot;&gt;Foccaceria
   &lt;li&gt;Pain au four à volonté (mais déjà très bien garnis)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/voyage-italie/rome/nourriture/10.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/nourriture/11.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/nourriture/12.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/nourriture/13.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/nourriture/10.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/nourriture/11.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/nourriture/12.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/nourriture/13.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;C’est loin d’être le moins cher de la région mais rien qu’avec le plat principal on était clairement calés.  Les desserts et le pain au four étaient juste excellents.
 Après avoir été pas mal déçus par les restaurants, on était plutôt contents d’avoir une bonne surprise ?&lt;/p&gt;
@@ -1317,25 +1319,25 @@ Après avoir été pas mal déçus par les restaurants, on était plutôt conten
 C’est une de mes visites préférés sur Rome, j’ai adoré le musée avec ses statues, tableaux, fresques murales et plafonds. Quant à la basilique, outre le fait que c’est un lieu incontournable pour les catholiques, c’est aussi un lieu incontournable pour son architecture c’est juste sublime ! 
 Seul petit bémol en bon Français râleur, les boutiques de souvenirs en interne du Vatican (en haut de la basilique par exemple) qui vendent des chapelets, croix, magnets du pape etc. vendent &lt;strong&gt;exactement&lt;/strong&gt; les mêmes articles que les vendeurs à la sauvette, boutiques de souvenir d’asiatiques/pakistanais. J’ai trouvé ça un peu dommage, ayant déjà eu à faire à ce genre de boutique dans un monastère en Crète. J’avais été agréablement surpris de voir que les moines vendaient des souvenirs, crèmes ou autres entièrement faits maison mais c’était beaucoup moins touristique que le Vatican, ceci explique peut être cela.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/voyage-italie/rome/vatican/02.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/vatican/03.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/vatican/04.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/vatican/05.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/vatican/06.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/vatican/07.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/vatican/08.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/vatican/09.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/vatican/10.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/vatican/11.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/vatican/12.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/vatican/13.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/vatican/15.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/vatican/16.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/vatican/17.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/vatican/19.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/vatican/20.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/vatican/01.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/vatican/14.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/vatican/02.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/vatican/03.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/vatican/04.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/vatican/05.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/vatican/06.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/vatican/07.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/vatican/08.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/vatican/09.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/vatican/10.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/vatican/11.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/vatican/12.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/vatican/13.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/vatican/15.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/vatican/16.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/vatican/17.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/vatican/19.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/vatican/20.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/vatican/01.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/vatican/14.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;️-5ème-jour-colisée-mont-palatin-et-forum-romain&quot;&gt;🏛️ 5ème jour, Colisée, Mont Palatin et Forum Romain&lt;/h2&gt;
 &lt;p&gt;Avant de partir de Rome pour rejoindre Florence, nous nous devions de faire le Colisée, le Mont Palatin et le Forum Romain.
@@ -1343,20 +1345,20 @@ Nous n’avions pas réservés de billets à l’avance donc nous avons tentés 
 Il y avait beaucoup de monde pour rejoindre le Colisée, environ 1h d’attente, c’est passé assez vite malgré la chaleur écrasante.
 On attendait beaucoup du &lt;strong&gt;Colisée&lt;/strong&gt; mais malheureusement on a été pas mal déçus aussi, c’est sympa à faire mais il y a très peu de panneaux descriptifs et traduits en anglais, on contemple les ruines tout en avançant et après 30min de tour on se dit “Bon bah c’est fini, on passe à la suite”.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/voyage-italie/rome/colisee/01.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/colisee/02.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/colisee/01.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/colisee/02.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;On a ensuite enchaîné avec le Mont Palatin et le Forum Romain. A ce stade du séjour on était assez fatigué à force d’enchaîner les visites sous 30°C.
 On a donc fait le tour assez vite sans trop se préoccuper des panneaux de description de chaque bâtiment. On a privilégié les jolis emplacements pour prendre de belles photos tout en faisant le tour. Le tour du Colisée + Mont Palatin + Forum Romain nous aura finalement pris toute l’après midi (avec quelques détours en dehors).&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/voyage-italie/rome/mont-palatin/01.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/mont-palatin/02.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/mont-palatin/01.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/mont-palatin/02.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;dautres-photos-de-rome&quot;&gt;D’autres photos de Rome&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/voyage-italie/rome/rome/25.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/rome/04.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/rome/39.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/rome/rome/40.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/rome/25.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/rome/04.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/rome/39.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/rome/40.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;bilan-de-rome&quot;&gt;Bilan de Rome&lt;/h2&gt;
 &lt;p&gt;C’est sublime ! Je recommande vivement de visiter le Vatican et les différentes places de la ville. Pour un budget serré sur 2 ou 3 jours ça suffit amplement !
@@ -1367,13 +1369,13 @@ Du coté de la nourriture, nous avons été un peu déçu, on s’attendait vrai
 Nous avons pris un train de la gare de Rome Tiburtina vers Firenze S.M.N vers 10h pour pouvoir profiter de Florence toute la journée.
 On a globalement été assez content de visiter florence, c’est un tout autre style architectural comparé à Rome. Mention spéciale pour PonteVecchio qui reste notre coup de cœur avec la Place Michelangelo et sa fameuse statue de David. Les photos sont assez sombres car on a pas trop eu de chance avec la météo, il faisait orageux.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/voyage-italie/florence/01.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/florence/02.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/florence/03.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/florence/04.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/florence/07.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/florence/06.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/florence/05.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/italie-cinque-terre/florence/01.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/florence/02.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/florence/03.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/florence/04.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/florence/07.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/florence/06.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/florence/05.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Florence se visite très bien en une journée, on aurait bien voulu visiter le Jardin de Boboli mais à première vu c’est payant et la météo n’était pas avec nous.
 Après avoir fait le tour de Florence, on a récupéré notre voiture de location vers 18h pour nous diriger vers Sarzana, notre lieu de résidence.&lt;/p&gt;
@@ -1382,19 +1384,19 @@ Après avoir fait le tour de Florence, on a récupéré notre voiture de locatio
 &lt;p&gt;Avant de faire les Cinque terre nous avons passé une demi journée sur Pise, ville emblématique avec sa tour penché à 3°.
 Pour organiser mes voyages je regarde souvent les articles du Routard ou les points clefs à faire sur Google trip. J’ai été assez étonné de voir que Pise n’a pas grand chose d’intéressant à voir contrairement à Rome ou Florence. C’était sympathique de voir la tour et de l’ajouter à sa check-list mais en dehors de la place où se trouve la tour, la cathédrale et le baptistère. On a clairement rien vu ! Moralité, on a passé moins de temps que prévu sur Pise et on a fini notre journée à flâner dans le coin de notre appartement.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/voyage-italie/pise/01.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/pise/02.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/pise/03.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/pise/04.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/pise/06.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/pise/05.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/pise/07.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/italie-cinque-terre/pise/01.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/pise/02.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/pise/03.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/pise/04.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/pise/06.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/pise/05.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/pise/07.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;️-visite-des-cinque-terre&quot;&gt;☀️ Visite des Cinque Terre&lt;/h1&gt;
 &lt;p&gt;La meilleur partie ! Fin des visites, des rush et du mauvais temps. Place aux paysages côtiers, aux plages, au bronzage ! ?
 Qu’est ce que les Cinque Terre ?&lt;/p&gt;
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img src=&quot;/assets/images/voyage-italie/cinque-terre/map.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;/assets/images/italie-cinque-terre/cinque-terre/map.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
   &lt;p&gt;Les Cinque Terre (en ligure : Çinque Taere, « Cinq Terres ») forment une partie de la côte de la Riviera italienne, dans la Ligurie, à l’ouest de la ville de La Spezia. Les Cinque Terre comprennent cinq villages : d’ouest en est, Monterosso al Mare, Vernazza, Corniglia, Manarola et Riomaggiore qui sont rattachés au parc national des Cinque Terre créé en 19991.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1408,27 +1410,27 @@ Qu’est ce que les Cinque Terre ?&lt;/p&gt;
 Pour aller d’un village à un autre il y a plusieurs solutions: En scooter, à pied (via des sentiers de randonnée), en train ou en voiture (mais l’accès y est très restreint). 
 On a opté pour le train, plus pratique et pas si cher que ça (16€/pers pour la journée avec accès illimité). On a vite l’impression d’être en plein Paris tellement il y a du monde dans le train mais une fois la tête dehors (compter environ 2 à 5min de trajet entre chaque village) le paysage prend vraiment le dessus. Les villages sont vivants, colorés et la vue est imprenable.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/voyage-italie/cinque-terre/02.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/cinque-terre/03.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/cinque-terre/05.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/cinque-terre/06.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/cinque-terre/07.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/cinque-terre/08.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/cinque-terre/09.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/cinque-terre/11.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/cinque-terre/13.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/cinque-terre/14.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/cinque-terre/15.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/cinque-terre/16.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/cinque-terre/17.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/cinque-terre/18.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/cinque-terre/19.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/cinque-terre/20.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/cinque-terre/21.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/cinque-terre/04.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/cinque-terre/01.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/cinque-terre/10.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/images/voyage-italie/cinque-terre/12.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/italie-cinque-terre/cinque-terre/02.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/cinque-terre/03.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/cinque-terre/05.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/cinque-terre/06.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/cinque-terre/07.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/cinque-terre/08.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/cinque-terre/09.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/cinque-terre/11.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/cinque-terre/13.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/cinque-terre/14.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/cinque-terre/15.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/cinque-terre/16.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/cinque-terre/17.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/cinque-terre/18.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/cinque-terre/19.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/cinque-terre/20.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/cinque-terre/21.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/cinque-terre/04.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/cinque-terre/01.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/cinque-terre/10.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/italie-cinque-terre/cinque-terre/12.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;bilan&quot;&gt;Bilan&lt;/h1&gt;
 &lt;p&gt;J’ai vraiment adoré ! Quelque peu déçu par la nourriture (même si on a pu se rattraper via certains restaurants) Rome est clairement une ville qui dépasse Paris en termes de monuments. 
@@ -1564,7 +1566,7 @@ Dans cet article nous allons voir comment procéder sans utiliser d’interface 
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/gpg/GPG.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/chiffrer-donnees-gpg/GPG.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Cliquez sur l’image pour l’afficher en grand&lt;/p&gt;

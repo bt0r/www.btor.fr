@@ -2,7 +2,7 @@
 layout: post
 title: "Test: Google Home Mini"
 date: 2017-09-24
-description:
+description: Derrière cette phrase du quotidien se cache en réalité une enceinte connectée, la nouvelle mouture de Google nommée Home Mini.
 image: /assets/images/google-home-mini/main.jpg
 author: Thibaut BAYER
 tags:

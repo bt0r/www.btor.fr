@@ -2,8 +2,8 @@
 layout: post
 title: "Comment s'abonner à une chaine twitch sans dépenser 1€ ?"
 date: 2018-01-12
-description: 
-image: /assets/images/bitcoin-twitch/main.png
+description: Récemment, twitch a étendu ses modes de paiement pour y intégrer ... Le Bitcoin ! Voyons un peu ce qu'on peut faire avec...
+image: /assets/images/bitcoin-twitch/main.jpg
 author: Thibaut BAYER
 tags: 
   - Twitch

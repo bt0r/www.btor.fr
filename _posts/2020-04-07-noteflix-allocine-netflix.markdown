@@ -2,8 +2,8 @@
 layout: post
 title: "Noteflix: Une extension firefox pour voir les notes Allociné sur Netflix"
 date: 2020-04-07
-description: 
-image: /assets/images/noteflix/main.png
+description: Tu trouves que les notes de films/séries netflix sont mauvaises ? J'ai l'extension chrome/firefox qu'il te faut.
+image: /assets/images/noteflix-allocine-netflix/main.jpg
 author: Thibaut BAYER
 tags: 
   - Netflix
@@ -54,7 +54,7 @@ J'arrive sur le site d'allociné et je commence à investiguer un peu ce qu'il s
 - F12, onglet réseaux, est ce qu'il y a des call XHR au chargement de la page ? Nope ! @@NO
 - Je regarde les différents input afin de voir si certains marchent en Ajax, bingo ! celui de la barre de recherche fait un call ajax @@HEY
 
-![Barre de recherche Allociné](/assets/images/noteflix/search_allocine.png){: .center-image}
+![Barre de recherche Allociné](/assets/images/noteflix-allocine-netflix/search_allocine.png){: .center-image}
 
 Voyons un peu ce que ça donne en recherchant [Breaking bad](http://www.allocine.fr/_/autocomplete/breaking%20bad):
 ```json
@@ -129,7 +129,7 @@ On y trouve aussi un objet `scores`, intéressant !
 ```
 Parfait, je regarde donc à quoi correspondent ces scores, voir si ils correspondent à ce que je recherche (en l'occurence, les notes des spectateurs).
 
-![Score allociné](/assets/images/noteflix/scores_allocine.png){: .center-image}
+![Score allociné](/assets/images/noteflix-allocine-netflix/scores_allocine.png){: .center-image}
 
 Jeanne @@JEANNE ! Au secours ! D'où proviennent ces scores ? J'ai beau tester avec 2 ou 3 autres films/séries, aucune corrélation n'est envisageable. 
 
@@ -157,21 +157,21 @@ Sshdump va nous permettre de capturer des paquets non pas depuis notre propre ma
 Le téléphone fait office de serveur et mon wireshark de client, fini les envoies de fichier .pcap d'un device à un autre @@SLT !
 
 
-![PCAPRemote](/assets/images/noteflix/pcap_remote.png){: .center-image}
+![PCAPRemote](/assets/images/noteflix-allocine-netflix/pcap_remote.png){: .center-image}
 
 L'interface est assez simple, le bouton "play" permet de lancer une capture global du smartphone tandis que le bouton "Play 1" permet de choisir une application spécifique. 
 Pratique pour éviter de filtrer à posteriori sur Wireshark !
 
 Il suffit ensuite de renseigner l'ip et port de l'hôte (le téléphone) sur wireshark en utilisant l'option `SSH remote capture: sshdump`
 
-![Wireshark SSHDump](/assets/images/noteflix/wireshark_sshdump.png){: .center-image}
+![Wireshark SSHDump](/assets/images/noteflix-allocine-netflix/wireshark_sshdump.png){: .center-image}
 
 Wireshark reçoit désormais les trames IP, j'en profite pour filtrer sur le protocole HTTP afin d'éviter d'être flooder de requêtes inutiles.
 Pendant que mon Wireshark tourne, je manipule un peu l'application allociné afin du générer du traffic, je recherche, click sur des films, change de pages etc.
 
 Et qu'est ce qui apparait dans Wireshark ? @@LUL
 
-![PCAPRemote](/assets/images/noteflix/search_wireshark.png){: .center-image}
+![PCAPRemote](/assets/images/noteflix-allocine-netflix/search_wireshark.png){: .center-image}
 
 C'est exactement le même endpoint qui était utilisé dans la barre de recherche du site allociné. 
 Dans la capture wireshark je retrouve aussi des appels à des endpoint très similaires de ceux décrit dans l'article de Gromez mais qui ne m'apporte pas les informations que je désire.
@@ -205,10 +205,10 @@ Si je click sur une vidéo, je veux que le programme cherche la note allociné l
 Il y a plusieurs façon de voir les informations d'une série ou d'un film sur Netflix
 
 En naviguant sur le "board" Netflix
-![Breaking bad - Netflix](/assets/images/noteflix/jawBone_netflix.png){: .center-image}
+![Breaking bad - Netflix](/assets/images/noteflix-allocine-netflix/jawBone_netflix.png){: .center-image}
 
 Ou en allant directement sur la fiche descriptive de la vidéo
-![Breaking bad - Netflix](/assets/images/noteflix/jawBone_main_netflix.png){: .center-image}
+![Breaking bad - Netflix](/assets/images/noteflix-allocine-netflix/jawBone_main_netflix.png){: .center-image}
 
 La question à se poser est donc: Comment déclencher la récupération de la note en fonction du comportement de l'utilisateur ?
 Qu'il charge une page ou qu'il click sur une vidéo, le code devra être déclenché à ce moment là.
@@ -245,7 +245,7 @@ observer.observe(document.querySelector('[role=main]'), observerConfig);
 
 On a donc restreint l'observer à n'écouter que ce qu'il se passe dans le bloc principal de Netflix (celui qui contient toutes les vidéos).
 
-![Main view - Netflix](/assets/images/noteflix/mainview_netflix.png){: .center-image}
+![Main view - Netflix](/assets/images/noteflix-allocine-netflix/mainview_netflix.png){: .center-image}
 
 En plus de restreindre l'observer à écouter un noeud DOM spécifique, on va aussi devoir filtrer sur les évènements reçus.
 
@@ -345,7 +345,7 @@ Le contrat est rempli, l'extension fait plutôt bien son job 🎉
 
 J'ai encore quelques nice-to-have à intégrer à l'extension comme par exemple le fait de récupérer le rating allociné directement depuis [les données structurées](https://developers.google.com/search/docs/guides/intro-structured-data):
 
-![Données structurées - Allociné](/assets/images/noteflix/structured_data_allocine.png){: .center-image}
+![Données structurées - Allociné](/assets/images/noteflix-allocine-netflix/structured_data_allocine.png){: .center-image}
 
 Ce qui m'éviterait de récupérer la note en scrapant la page.
 

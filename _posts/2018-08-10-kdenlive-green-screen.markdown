@@ -2,7 +2,7 @@
 layout: post
 title: "Réaliser une incrustation fond vert avec KDEnLive"
 date: 2018-04-17
-description: 
+description: Faire une incrustation fond vert sous photoshop c'est facile mais KDEnLive, comment ça se passe ? voyons-ça..
 image: /assets/images/kdenlive-green-screen/main.jpg
 author: Thibaut BAYER
 tags: 
