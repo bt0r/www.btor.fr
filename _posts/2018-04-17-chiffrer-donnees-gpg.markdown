@@ -2,8 +2,8 @@
 layout: post
 title: "Chiffrer ses données avec GPG en CLI"
 date: 2018-04-17
-description: 
-image: /assets/images/gpg/main.jpg
+description: GPG (GNU Privacy Guard) est une implémentation de OpenPGP, GPG permet de chiffrer/signer des fichiers dans le but d'échanger de l'information en tout sécurité.
+image: /assets/images/chiffrer-donnees-gpg/main.jpg
 author: Thibaut BAYER
 tags: 
   - Sécurité
@@ -24,7 +24,7 @@ Le fonctionnement est assez simple, voici l'exemple typique d'échange de donné
 * Marlène utilise alors **sa clef privée pour déchiffrer** le message/fichier d'Arthur. 
 
 
-![](/assets/images/gpg/GPG.jpg)
+![](/assets/images/chiffrer-donnees-gpg/GPG.jpg)
 
 > Cliquez sur l'image pour l'afficher en grand
 

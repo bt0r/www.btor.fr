@@ -3,7 +3,7 @@ layout: post
 title: "React Native: Retour d'expérience"
 date: 2020-05-15
 description: 
-image: /assets/images/react-native-retour-experience/main.png
+image: /assets/images/react-native-retour-experience/main.jpg
 author: Thibaut BAYER
 tags: 
   - React

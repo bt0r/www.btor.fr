@@ -2,8 +2,8 @@
 layout: post
 title: "Docker, les bases"
 date: 2019-07-03
-description: 
-image: /assets/images/docker-bases/main.png
+description: Tu as entendu parler de Docker sans jamais l'essayer ou tu n'as rien compris ? Voyons un peu comment ça fonctionne.
+image: /assets/images/docker-bases-tuto/main.jpg
 author: Thibaut BAYER
 tags: 
   - Infrastructure
@@ -19,23 +19,23 @@ Si vous avez déjà un niveau avancé avec Docker, cet article n'est pas fait po
 
 _Source wikipédia_
 
-Cool, mais du coup, qu'est ce qu'un conteneur ? Avant d'expliquer le concept de conteneurisation, commençons par comprendre la base: **la virtualisation**. 
+Cool, mais du coup, qu'est-ce qu'un conteneur ? Avant d'expliquer le concept de conteneurisation, commençons par comprendre la base: **la virtualisation**. 
 
 ### 🐳 Virtualisation VS Conteneurisation
 Ça devrait parler à beaucoup d'entre vous, c'est le fait **d'émuler** un système d'exploitation dans un autre, par exemple, au sein d'un système d'exploitation Windows 10, j'émule un Linux, un MacOS ou même un Windows 3.1. Le logiciel permettant d'émuler nos systèmes d'exploitation est appelé un **Hyperviseur**. 
 
-Il existe deux types d'hyperviseur:
+Il existe deux types d'hyperviseur :
 
-- **L'hyperviseur de type 2**: 
+- **L'hyperviseur de type 2** : 
 
-![](/assets/images/docker-bases/hyperviseur_type_2.png)
+![](/assets/images/docker-bases-tuto/hyperviseur_type_2.png)
 _Source wikipédia_
 
-Vous les connaissez certainement sans savoir qu'ils sont de type 2:  VirtualBox et VMWare workstation. Le type 2 veut dire que l'hyperviseur a besoin d'un système d'exploitation "hôte" (maitre) pour fonctionner. Par exemple, vous ne pouvez pas lancer Virtualbox seul sans Windows ou Ubuntu.
+Vous les connaissez certainement sans savoir qu'ils sont de type 2 :  VirtualBox et VMWare workstation. Le type 2 veut dire que l'hyperviseur a besoin d'un système d'exploitation "hôte" (maitre) pour fonctionner. Par exemple, vous ne pouvez pas lancer Virtualbox seul sans Windows ou Ubuntu.
 
-- **L'hyperviseur de type 1**: 
+- **L'hyperviseur de type 1** : 
 
-![](/assets/images/docker-bases/hyperviseur_type_1.png)
+![](/assets/images/docker-bases-tuto/hyperviseur_type_1.png)
 _Source wikipédia_
 
 A la différence du type 2, le type 1 fonctionne directement comme un "système hôte" et se charge de communiquer directement avec le matériel.
@@ -103,14 +103,14 @@ Revenons maintenant sur ce que nous avons tapé:
 
 En d'autres termes, on a demandé à docker de récupérer une image, la lancer et d'exécuter une commande qu'on lui donne (`sh`) ! C'est tout !
 
-Les conteneurs sont sensés avoir une fonction unique, par exemple on pourrait utiliser un conteneur pour lancer un processus nginx, php-fpm, go etc..
+Les conteneurs sont censés avoir une fonction unique, par exemple on pourrait utiliser un conteneur pour lancer un processus nginx, php-fpm, go etc..
 Le conteneur peut lancer cette fonction et se terminer à la fin du processus ou ne jamais s’arrêter (le cas d'un serveur web, d'un worker etc.). Si vous désirez arrêter l'exécution d'un conteneur qui tourne en rond, qui est un worker ou autre vous pouvez utiliser la commande `docker kill <hash>` ou `docker kill <nom-conteneur>`.
 
 Reprenons la même image `debian:jessie` mais cette fois-ci nous lui demanderons de lancer le conteneur puis d’exécuter la commande `cat /etc/debian_version` sans être en mode interactif. 
 - Taper `docker run debian:jessie cat /etc/debian_version`
 - La commande renvoie directement `8.11`
 
-**Conclusion:** ` Docker run` va récupérer une image docker puis l'exécuter, on peut exécuter l'image en mode interactif pour interagir dans le conteneur ou tout simplement lancer l’exécution d'une commande/fonction afin d'avoir la réponse directement.
+**Conclusion :** ` Docker run` va récupérer une image docker puis l'exécuter, on peut exécuter l'image en mode interactif pour interagir dans le conteneur ou tout simplement lancer l’exécution d'une commande/fonction afin d'avoir la réponse directement.
 
 ### ➡️ Exec
 `run` nous permettant de récupérer et lancer une image, comment fait-on quand on a un conteneur déjà lancé et qu'on veut exécuter une commande à l'intérieur de celui ci sans forcément passer à chaque fois par le shell ? c'est là qu'`exec` intervient.
@@ -123,7 +123,7 @@ fdf20b921646  nginx "nginx -g 'daemon of…"   6 seconds ago   Up 4 seconds    8
 - Essayons de récupérer la version de debian en tapant `docker exec happy_jepsen cat /etc/debian_version` (`happy_jepsen` doit être remplacé par le nom de votre conteneur ou son hash, ici `fdf20b921646`)
 - Le conteneur répond `9.9`, ce qui correspond bien à la version `stretch-slim` disponible dans le [Dockerfile](https://github.com/nginxinc/docker-nginx/blob/b749353968a57ebd9da17e12d23f1a5fb62f9de9/mainline/stretch/Dockerfile) de nginx
 
-**Conclusion:** Il faut faire attention à bien utiliser `docker run` et `docker exec`, on confond souvent les deux au début. 
+**Conclusion :** Il faut faire attention à bien utiliser `docker run` et `docker exec`, on confond souvent les deux au début. 
 `run` => Je récupère et je lance l'image (avec ou sans commande à exécuter) 
 `exec` => Je lance une commande dans un conteneur **déjà** lancé.
 
@@ -131,7 +131,7 @@ fdf20b921646  nginx "nginx -g 'daemon of…"   6 seconds ago   Up 4 seconds    8
 Nous avons connaissance de quatre commandes docker : `run`, `exec`, `pull` et `ps`. 
 Jusqu’à présent nous avons récupéré des images docker déjà crée, mais qu'en est-il d'une image qu'on souhaiterait créer ?
 
-Commençons par faire notre premier fichier **Dockerfile**:
+Commençons par faire notre premier fichier **Dockerfile** :
 - Créer un fichier nommé  `Dockerfile` et y ajouter : 
 
 ```dockerfile

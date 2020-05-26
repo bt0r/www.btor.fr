@@ -2,7 +2,7 @@
 layout: post
 title: "Test: Razer stealth blade"
 date: 2017-09-18
-description: 
+description: Razer Stealth Blade, un ultraportable de gamer ? peut être pas ... 
 image: /assets/images/razer-stealth-blade/main.jpg
 author: Thibaut BAYER
 tags: 

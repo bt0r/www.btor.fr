@@ -3,7 +3,7 @@ layout: post
 title: "Afficher le titre Spotify en cours de lecture dans OBS (linux)"
 date: 2020-05-24
 description: Comment afficher le titre en cours de lecture depuis Spotify dans OBS ? et tout ça sous linux ? Facile !
-image: /assets/images/spotify-obs-titre-chanson/main.png
+image: /assets/images/spotify-obs-titre-chanson/main.jpg
 author: Thibaut BAYER
 tags: 
   - Spotify

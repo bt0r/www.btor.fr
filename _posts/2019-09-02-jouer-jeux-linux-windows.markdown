@@ -2,12 +2,13 @@
 layout: post
 title: "Comment jouer à des jeux windows sous linux directement sur Steam"
 date: 2018-09-02
-description: 
-image: /assets/images/jeux-windows-steam/main.jpg
+description: Lancer son jeu préféré sous linux, via steam et en 5 minutes ? c'est possible.
+image: /assets/images/jouer-jeux-linux-windows/main.jpg
 author: Thibaut BAYER
 tags: 
   - Tutorial
   - Jeux
+  - Linux
 ---
 Suite à une discussion avec [Lenny](https://twitter.com/L_nny_) concernant le fait de jouer sous linux via Steam. Il m'a partagé un lien d'une vidéo qui parle du développement d'un logiciel de "portabilité" des jeux windows sous linux directement intégré à Steam ([voir l'article en français](https://www.clubic.com/jeu-video/actualite-844949-valve-solution-jouer-jeux-steam-linux.html))
 
@@ -29,13 +30,13 @@ N'ayant pas trouvé cette fonctionnalité sur steam, j'ai un peu cherché et voi
   - Dans "Compatibility Tool" sélectionnez la dernière version de Proton (3.7-3 au moment où j'écris cet article).
 - Validez et redémarrez steam
 
-![](/assets/images/jeux-windows-steam/01.jpg)
-![](/assets/images/jeux-windows-steam/02.jpg)
+![](/assets/images/jouer-jeux-linux-windows/01.jpg)
+![](/assets/images/jouer-jeux-linux-windows/02.jpg)
 
 
 Une fois Steam redémarré, l'icône d'installation de vos jeux windows devrait être visible. Il ne vous reste plus qu'à installer votre jeu et à le lancer.
 
-![](/assets/images/jeux-windows-steam/03.jpg)
+![](/assets/images/jouer-jeux-linux-windows/03.jpg)
 
 J'ai pu testé avec GTA 5 sur steam, le launcher de rockstar ne s'affiche pas correctement donc il m'était impossible de m'authentifier.
 J'ai également testé avec PUBG, sans succès le jeu se lance mais rien ne s'affiche.
