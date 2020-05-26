@@ -40,7 +40,7 @@ Je vous mâche le boulot, j'ai déjà fait le script @@RS
 #!/bin/bash
 snap run spotify& # On lance spotify
 getSong() { 
-  pid=$(pgrep -i spotify | head -n 1) # On récupère le PID (processus ID) de spotify
+  pid=$(pgrep -f "/snap/spotify/.+/usr/share/spotify/spotify$") # On récupère le PID (processus ID) de spotify
   if [ -z "$pid" ] # Pas de PID ? Pas de musiké !
   then
     echo "No song playing" 
