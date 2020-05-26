@@ -6,8 +6,8 @@
 </description>
     <link>https://btor.fr</link>
     <atom:link href="https://btor.fr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 24 May 2020 11:40:13 -0500</pubDate>
-    <lastBuildDate>Sun, 24 May 2020 11:40:13 -0500</lastBuildDate>
+    <pubDate>Tue, 26 May 2020 15:52:32 -0500</pubDate>
+    <lastBuildDate>Tue, 26 May 2020 15:52:32 -0500</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -40,7 +40,7 @@ Et pourtant, c’est toujours pratique de pouvoir récupérer la musique que not
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/bash&lt;/span&gt;
 snap run spotify&amp;amp; &lt;span class=&quot;c&quot;&gt;# On lance spotify&lt;/span&gt;
 getSong&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; 
-  &lt;span class=&quot;nv&quot;&gt;pid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;pgrep &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; spotify | &lt;span class=&quot;nb&quot;&gt;head&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; 1&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# On récupère le PID (processus ID) de spotify&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;pid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;pgrep &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;/snap/spotify/.+/usr/share/spotify/spotify$&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# On récupère le PID (processus ID) de spotify&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-z&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$pid&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# Pas de PID ? Pas de musiké !&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;then
     &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;No song playing&quot;&lt;/span&gt; 
