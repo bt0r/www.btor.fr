@@ -5,7 +5,7 @@ build:
 watch:
 	docker-compose run jekyll jekyll build --watch
 install:
-	docker-compose run npm install
+	docker-compose run jekyll npm install
 	docker-compose run --rm jekyll bundle install
 stop:
 	docker-compose down

@@ -20,9 +20,10 @@
     max-width: 90vw !important;
     margin-bottom: 6em;
 
-    img {
+    > img {
       flex: 1;
-      object-fit: cover;
+      object-fit: contain;
+      height: 300px;
     }
 
     .right-side {
@@ -32,6 +33,10 @@
 
       @media only screen and (min-width: 768px) {
         padding-left: 20px;
+      }
+
+      @media only screen and (max-width: 768px) {
+        padding-top: 20px;
       }
 
       h5 {
@@ -69,6 +74,10 @@
         margin-top: 10px;
         border-top: 1px solid #e8e8e8;
         background-color: transparent;
+
+        li {
+          color: #333;
+        }
       }
     }
   }
