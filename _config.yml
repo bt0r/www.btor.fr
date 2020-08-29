@@ -22,6 +22,8 @@ social:
     url: https://github.com/bt0r
   - name: twitch
     url: https://twitch.tv/bt0r
+  - name: rss
+    url: https://btor.fr/feed.xml
 
 # Contact settings
 contact_img: /assets/images/logo/logo.dark.small.png
