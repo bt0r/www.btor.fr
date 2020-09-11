@@ -6,9 +6,102 @@
 </description>
     <link>https://btor.fr</link>
     <atom:link href="https://btor.fr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 29 Aug 2020 11:21:53 -0500</pubDate>
-    <lastBuildDate>Sat, 29 Aug 2020 11:21:53 -0500</lastBuildDate>
+    <pubDate>Fri, 11 Sep 2020 06:05:03 -0500</pubDate>
+    <lastBuildDate>Fri, 11 Sep 2020 06:05:03 -0500</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>Logger son front (web ou extension de navigateur) avec Datadog</title>
+        <description>&lt;p&gt;En tant que développeur back-end, j’ai été amené à utiliser &lt;a href=&quot;https://www.datadoghq.com/&quot;&gt;Datadog&lt;/a&gt; pour monitorer mes applications web.
+Logs, Metrics, Monitor, Synthetics tests, Events… 
+J’ai pu tester à peu près tous les services proposés par Datadog, certains m’ont plus, d’autres un peu moins mais globalement je suis assez fan du service proposé par Datadog.&lt;/p&gt;
+
+&lt;p&gt;Un des points qui revient souvent quand on parle de Datadog c’est :&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Ca serait bien de pouvoir monitorer aussi le front !&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Ca tombe bien, depuis fin 2019 Datadog travaille sur &lt;a href=&quot;https://github.com/DataDog/browser-sdk&quot;&gt;Browser-SDK&lt;/a&gt; dont &lt;a href=&quot;https://www.npmjs.com/package/@datadog/browser-logs&quot;&gt;Browser-logs&lt;/a&gt; @@SLT !
+&lt;code class=&quot;highlighter-rouge&quot;&gt;Browser-Logs&lt;/code&gt; est un package NPM à installer qui met à disposition un Logger qui se chargera automatiquement de push les logs à Datadog. 
+C’est simple à mettre en place et en plus on y retrouve toutes les fonctionnalités “classiques” de Datadog comme le fait d’avoir les attributs de GeoIP, User-Agent, Session, HTTP… directement interprété dans Datadog.&lt;/p&gt;
+
+&lt;p&gt;Ca tombe doublement bien puisque j’ai actuellement besoin d’un outil pour logger mon extension &lt;a href=&quot;https://github.com/bt0r/NoteFlix&quot;&gt;Noteflix&lt;/a&gt; @@RS&lt;/p&gt;
+
+&lt;h1 id=&quot;installation&quot;&gt;Installation&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;Pour l’installation c’est simple, il vous suffira d’installer le package &lt;code class=&quot;highlighter-rouge&quot;&gt;browser-logs&lt;/code&gt;
+    &lt;pre&gt;&lt;code class=&quot;language-BASH&quot;&gt;npm install --save @datadog/browser-logs
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Ensuite, vous devrez vous rendre sur Datadog, dans &lt;code class=&quot;highlighter-rouge&quot;&gt;Integrations&lt;/code&gt; &amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;API&lt;/code&gt; puis &lt;code class=&quot;highlighter-rouge&quot;&gt;Client Tokens&lt;/code&gt; (ou directement via &lt;a href=&quot;https://app.datadoghq.com/account/settings#api&quot;&gt;ce lien&lt;/a&gt;)
+ et créer un nouveau token. Garder le dans un coin, il servira bientôt.
+&lt;img src=&quot;/assets/images/logger-front-datadog/1.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Intégrez ensuite l’initialisation du package comme suit :&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;datadogLogs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;clientToken&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&amp;lt;votre token&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Le token que vous avez crée juste avant&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;datacenter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'us'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Le datacenter de destination, &quot;eu&quot; ou &quot;us&quot; &lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;forwardErrorsToLogs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Si vous désirez envoyer les console.error() à datadog&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;sampleRate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Le pourcentage de session que vous voulez surveiller, de 0 à 100 donc.&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;Une fois l’initialisation effectuée, vous pourrez envoyer votre premier log :&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;datadogLogs&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'@datadog/browser-logs'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;datadogLogs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'TEST'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;C’est aussi simple que ça ! L’API fournit par le logger est assez standard, elle vous permet de passer des contextes, créer différents logger etc.&lt;/p&gt;
+
+&lt;h1 id=&quot;à-savoir&quot;&gt;À savoir&lt;/h1&gt;
+&lt;p&gt;Je n’ai pas eu l’occasion de tester ça coté front mais il semblerait que Browser-Logs soit mieux supporté coté front “standard” plutôt que sur les extensions.&lt;/p&gt;
+
+&lt;h2 id=&quot;spécificités-aux-extensions&quot;&gt;Spécificités aux extensions&lt;/h2&gt;
+&lt;p&gt;J’ai effectivement rencontré quelques petits soucis avec l’intégration de Browser-Logs dans mon extension (&lt;a href=&quot;https://github.com/DataDog/browser-sdk/issues/487&quot;&gt;voir cette issue&lt;/a&gt;)&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Les extensions ne disposant pas du même contexte d’exécution qu’une app front classique, Browser-Logs ne fonctionne pas avec l’option &lt;code class=&quot;highlighter-rouge&quot;&gt;forwardErrorsToLogs&lt;/code&gt;, il vous faudra désactiver cette option.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;spécificités-globales&quot;&gt;Spécificités globales&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Après investigation, je me suis rendu compte que le datacenter &lt;code class=&quot;highlighter-rouge&quot;&gt;eu&lt;/code&gt; ne fonctionnait pas (renvoie une 403), c’était peut-être un problème lié à Datadog ou autre mais j’ai dû passer par le Datacenter &lt;code class=&quot;highlighter-rouge&quot;&gt;us&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Qui dit logger, dit “tracking”. Bien que ce ne soit pas spécialement ce que vous espérez faire, c’est ce que les bloqueurs de pub risque d’interpréter.
+J’ai fait quelques tests et il est à noter qu’AdBlock ne semble pas bloquer les appels HTTP issu de Browser-Logs, par contre uBlock est lui plus restrictif et bloque automatiquement tous les appels.
+Vous devrez donc prendre en compte qu’une partie de vos utilisateurs ne seront pas monitorés.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;L’intégration de Datadog pour logger notre application front est assez simple ! 
+Il est à noter qu’il est aussi possible de faire du &lt;a href=&quot;https://docs.datadoghq.com/fr/real_user_monitoring/&quot;&gt;RUM&lt;/a&gt; (Real User Monitoring) en utilisant &lt;a href=&quot;https://www.npmjs.com/package/@datadog/browser-rum&quot;&gt;Browser-RUM&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Vous avez désormais toutes les cartes en main pour monitorer votre application @@BEER&lt;/p&gt;
+
+&lt;h1 id=&quot;liens&quot;&gt;Liens&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/DataDog/browser-sdk&quot;&gt;Browser-Logs sur Github&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://docs.datadoghq.com/fr/logs/log_collection/javascript/?tab=npm&quot;&gt;Documentation Officielle&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/bt0r/NoteFlix/blob/db5cd5ca33ecf84687564bd64d840c55d73bab57/src/logging/Logger.js&quot;&gt;Exemple d’intégration dans une extension&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 11 Sep 2020 00:00:00 -0500</pubDate>
+        <image>https://btor.fr/assets/images/logger-front-datadog/main.jpg</image>
+        <link>https://btor.fr/2020/09/11/logger-front-datadog/</link>
+        <guid isPermaLink="true">https://btor.fr/2020/09/11/logger-front-datadog/</guid>
+        
+        <category>Front-end</category>
+        
+        <category>Datadog</category>
+        
+        <category>Javascript</category>
+        
+        <category>Monitoring</category>
+        
+        
+      </item>
     
       <item>
         <title>Afficher le titre Spotify en cours de lecture dans OBS (linux)</title>
