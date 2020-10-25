@@ -6,16 +6,16 @@
 </description>
     <link>https://btor.fr</link>
     <atom:link href="https://btor.fr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 25 Oct 2020 08:24:18 -0500</pubDate>
-    <lastBuildDate>Sun, 25 Oct 2020 08:24:18 -0500</lastBuildDate>
+    <pubDate>Sun, 25 Oct 2020 13:40:29 -0500</pubDate>
+    <lastBuildDate>Sun, 25 Oct 2020 13:40:29 -0500</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
-        <title>Rétro-ingénierie: Capturer le traffic HTTPS d'une application Android</title>
+        <title>Rétro-ingénierie: Capturer le trafic HTTPS d'une application Android</title>
         <description>&lt;p&gt;@@KJ Salut à toi jeune &lt;del&gt;entrepreneur&lt;/del&gt;, &lt;del&gt;caucasoïde&lt;/del&gt;…
 Oula ! je glisse sur l’actu @@OOPS&lt;/p&gt;
 
-&lt;p&gt;Dans l’article sur &lt;a href=&quot;/2020/04/07/noteflix-allocine-netflix/&quot;&gt;Noteflix&lt;/a&gt; je vous parlais d’une technique pour récupérer le traffic IP à travers une application mobile.
+&lt;p&gt;Dans l’article sur &lt;a href=&quot;/2020/04/07/noteflix-allocine-netflix/&quot;&gt;Noteflix&lt;/a&gt; je vous parlais d’une technique pour récupérer le trafic IP à travers une application mobile.
 L’astuce résidait dans l’utilisation de l’application &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.egorovandreyrm.pcapremote&quot;&gt;PCAPRemote&lt;/a&gt; avec SSHDump et Wireshark pour l’analyse des paquets IP.&lt;/p&gt;
 
 &lt;p&gt;Rappel:&lt;/p&gt;
@@ -42,7 +42,7 @@ Par exemple, lire les communications entre votre machine et les serveurs de Face
 Ça peut être tout type de flux HTTP, HTTPS, FTP, TELNET (ouais bon … @@SAD)&lt;/p&gt;
 
 &lt;p&gt;Prenons l’exemple d’une liaison HTTP classique, pour intercepter ce qu’il se passe sur la liaison nous devons nous trouver au milieu de la liaison.
-Une fois au milieu de la liaison, nous pouvons intercepter le traffic et le lire directement étant donné que HTTP n’est pas chiffré.&lt;/p&gt;
+Une fois au milieu de la liaison, nous pouvons intercepter le trafic et le lire directement étant donné que HTTP n’est pas chiffré.&lt;/p&gt;
 
 &lt;p&gt;Pour HTTPS c’est pareil, on se place au milieu de la liaison mais cette fois-ci nous allons jouer le rôle de &lt;a href=&quot;https://fr.wikipedia.org/wiki/Proxy&quot;&gt;proxy&lt;/a&gt;.
 La “victime” (ici notre application) utilisera un certificat auto-signé, ce qui nous permettra de déchiffrer les paquets que l’on reçoit pour ensuite les renvoyer au destinataire (le serveur).&lt;/p&gt;
@@ -50,7 +50,7 @@ La “victime” (ici notre application) utilisera un certificat auto-signé, ce
 &lt;p&gt;&lt;img src=&quot;/assets/images/retro-ingenierie-capturer-application-android/schema.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;première-tentative&quot;&gt;Première tentative&lt;/h1&gt;
-&lt;p&gt;Nous avions déjà réussi à capturer du traffic HTTP grâce à PCAPRemote, nous pourrions tout simplement faire de même et voir ce qu’il se passe ?&lt;/p&gt;
+&lt;p&gt;Nous avions déjà réussi à capturer du trafic HTTP grâce à PCAPRemote, nous pourrions tout simplement faire de même et voir ce qu’il se passe ?&lt;/p&gt;
 
 &lt;p&gt;Deal @@SLT !&lt;/p&gt;
 
@@ -70,7 +70,7 @@ La “victime” (ici notre application) utilisera un certificat auto-signé, ce
 &lt;h1 id=&quot;les-restrictions&quot;&gt;Les restrictions&lt;/h1&gt;
 &lt;p&gt;Depuis Android 7 Nougat (2016), Google a &lt;a href=&quot;https://android-developers.googleblog.com/2016/07/changes-to-trusted-certificate.html&quot;&gt;ajouté une sécurité&lt;/a&gt; afin de limiter les authorités de certifications (CA) approuvées par défaut par l’application.
 Autrement dit, si l’application ne précise pas elle-même qu’elle autorise des CAs tierce, l’application n’utilisera jamais notre certificat auto-signé. 
-Pas très pratique pour sniffer le traffic… @@NO&lt;/p&gt;
+Pas très pratique pour sniffer le trafic… @@NO&lt;/p&gt;
 
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/ooWd8vV2dCs?controls=0&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot;&gt;&lt;/iframe&gt;
 
@@ -130,7 +130,7 @@ PCAPRemote utilise une fonctionnalité spécifique à Android qui s’appelle &l
 &lt;p&gt;Si vous souhaitez aller un peu plus loin avec le sniffing, je vous recommande de vous orienter vers des outils dédiés comme &lt;a href=&quot;https://portswigger.net/burp/communitydownload&quot;&gt;Burp Suite&lt;/a&gt; ou &lt;a href=&quot;https://www.telerik.com/fiddler&quot;&gt;Fiddler&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Burp est un outil dédié à l’audit de sécurité. 
-Il permet notamment de créer un proxy, capturer le traffic HTTP/HTTPS, pouvoir intercepter/modifier les requêtes, faire des scans de vulnérabilités etc&lt;/p&gt;
+Il permet notamment de créer un proxy, capturer le trafic HTTP/HTTPS, pouvoir intercepter/modifier les requêtes, faire des scans de vulnérabilités etc&lt;/p&gt;
 
 &lt;p&gt;En vous basant sur &lt;a href=&quot;https://portswigger.net/support/configuring-an-android-device-to-work-with-burp&quot;&gt;le tuto officiel&lt;/a&gt; vous pourrez obtenir exactement le même résultat qu’avec PCAPRemote :&lt;/p&gt;
 
