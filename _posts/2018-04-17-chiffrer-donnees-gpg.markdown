@@ -6,7 +6,7 @@ description: GPG (GNU Privacy Guard) est une implémentation de OpenPGP, GPG per
 image: /assets/images/chiffrer-donnees-gpg/main.jpg
 author: Thibaut BAYER
 tags: 
-  - Sécurité
+  - Securite
 ---
 [GPG (GNU Privacy Guard)](https://fr.wikipedia.org/wiki/GNU_Privacy_Guard) est une implémentation de [OpenPGP](https://fr.wikipedia.org/wiki/OpenPGP).
 GPG permet de chiffrer/signer des fichiers dans le but d'échanger de l'information en toute sécurité. 
