@@ -10,7 +10,7 @@ tags:
   - Firefox
   - Open source
   - Javascript
-  - Développment
+  - Developpement
 ---
 Comme bon nombre d'entre vous, je profite du confinement pour avancer sur des projets personnels.
 Jeudi dernier, après avoir passé près de 4h à coder sur un projet personnel en react-native, je me suis dis :
