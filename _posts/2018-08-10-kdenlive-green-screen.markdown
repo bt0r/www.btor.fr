@@ -6,7 +6,7 @@ description: Faire une incrustation fond vert sous photoshop c'est facile mais K
 image: /assets/images/kdenlive-green-screen/main.jpg
 author: Thibaut BAYER
 tags: 
-  - Photos & Vidéo
+  - Photos & Video
   - Tutorial
 ---
 

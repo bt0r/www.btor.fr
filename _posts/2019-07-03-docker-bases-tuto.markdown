@@ -7,7 +7,7 @@ image: /assets/images/docker-bases-tuto/main.jpg
 author: Thibaut BAYER
 tags: 
   - Infrastructure
-  - Système
+  - Systeme
 ---
 Régulièrement je me rends compte que certains développeurs ne sont pas à l'aise avec Docker. C'était aussi mon cas au début, Docker peut paraître complexe et flou au premier abord puis rapidement il devient **indispensable**, mais pourquoi ?
 
