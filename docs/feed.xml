@@ -6,9 +6,130 @@
 </description>
     <link>https://btor.fr</link>
     <atom:link href="https://btor.fr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 29 Jan 2021 07:50:39 -0600</pubDate>
-    <lastBuildDate>Fri, 29 Jan 2021 07:50:39 -0600</lastBuildDate>
+    <pubDate>Sun, 07 Mar 2021 09:54:27 -0600</pubDate>
+    <lastBuildDate>Sun, 07 Mar 2021 09:54:27 -0600</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>Comment envoyer des alertes Datadog dans Discord ?</title>
+        <description>&lt;p&gt;J’en parlais dans un article précédent mais je suis assez fan de Datadog !
+Logs, métriques, moniteurs, tableaux de bords et j’en passe, Datadog est plutôt bien fourni et permet vraiment de gérer intégralement son monitoring.
+Qui dit monitoring, dit monitorer ! &lt;em&gt;(ou “surveiller” si toi pas comprendre la langue de Mary Poppins @@LUL)&lt;/em&gt;
+Un des outils important de Datadog est sa fonction “Monitor” qui permet de créer des alertes en fonction de seuils, variations ou autres critères de déclenchement.
+Ces alertes peuvent être envoyées par mail, sur slack &lt;a href=&quot;https://docs.datadoghq.com/fr/integrations/&quot;&gt;ou d’autres applications&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/comment-envoyer-alertes-datadog-discord/jusquici.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Depuis le COVID, quelques sociétés se sont mises au télétravail avec plus ou moins de succès (on vous voit @@KJ).
+Parmi les gros changements qu’a apportés le télétravail, il y a eu l’arrivée massive de la visio : Meet, Zoom, Livestorm ou même Discord.&lt;/p&gt;
+
+&lt;p&gt;Pour beaucoup de travailleurs &lt;del&gt;du sexe&lt;/del&gt; de la tech @@OUCH, ces outils sont devenus monnaie courante.
+Certaines sociétés en ont d’ailleurs profité pour (parfois) changer leurs outils de communication pour privilégier un Discord plutôt qu’un Slack, notamment pour des raisons de tarification 💸.
+Et c’est là que tu vois le loup arriver ! Discord c’est bien, c’est pratique mais c’est pas aussi bien interconnecté qu’un slack @@SAD notamment quand il s’agit d’envoyer des notifications Datadog sur Discord
+(c’est le sujet de l’article @@RS, ça va j’accouche ! Pas besoin de t’énerver ! @@OOPS)&lt;/p&gt;
+
+&lt;p&gt;Voyons-donc comment envoyer les alertes de nos moniteurs Datadog, directement dans Discord !&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://media1.tenor.com/images/b13a03a18eb819855cd99f22e2cf4433/tenor.gif?itemid=16135073&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Spoiler&lt;/strong&gt; : Si tu connais déjà les webhooks, que t’es une diva du dév’ ou tout autre Apollon de la tech, tu peux directement voir la solution &lt;a href=&quot;#format-du-webhook&quot;&gt;au dernier chapitre&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;les-webhooks&quot;&gt;Les webhooks&lt;/h1&gt;
+&lt;p&gt;Si tu es développeur, tu as forcément entendu parler des webhooks. 
+Un webhook c’est un système qui permet d’envoyer (ou recevoir) des évènements à/depuis une application tierce, en général au travers d’un appel HTTP.
+L’idée derrière le webhook c’est de pouvoir avertir facilement un service tier d’un nouvel évènement sans avoir à se soucier de la pile technique distante.
+En gros, le webhook va effectuer un call HTTP avec le contenu de la notification dans le corps de la requête HTTP.&lt;/p&gt;
+
+&lt;p&gt;Dans notre cas, Datadog doit notifier Discord d’une nouvelle alerte.
+Ca se présente ainsi :
+&lt;img src=&quot;/assets/images/comment-envoyer-alertes-datadog-discord/explication.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Pour se faire, il va nous falloir :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Un webhook Datadog qui envoie la notification&lt;/li&gt;
+  &lt;li&gt;Un webhook Discord qui reçoit la notification&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;créer-le-webhook-coté-discord&quot;&gt;Créer le webhook coté Discord&lt;/h2&gt;
+&lt;p&gt;Pour créer un webhook sur discord, il faut :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Se rendre sur les paramètres d’un salon textuel&lt;/li&gt;
+  &lt;li&gt;Puis aller dans Intégrations &amp;gt; Webhooks &amp;gt; Nouveau Webhook&lt;/li&gt;
+  &lt;li&gt;Copier l’URL du webhook
+&lt;img src=&quot;/assets/images/comment-envoyer-alertes-datadog-discord/webhook-discord.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;En créant ce webhook, Discord nous donne la possibilité de poster des messages dans notre salon &lt;strong&gt;#test&lt;/strong&gt; en appelant l’URL du webhook.&lt;/p&gt;
+
+&lt;h2 id=&quot;créer-le-webhook-datadog&quot;&gt;Créer le webhook Datadog&lt;/h2&gt;
+&lt;p&gt;Maintenant que notre webhook Discord est opérationnel, occupons-nous de créer le webhook coté Datadog.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Rendez-vous sur la page &lt;a href=&quot;https://app.datadoghq.com/account/settings#integrations/webhooks&quot;&gt;d’intégration des webhook&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Créer un webhook
+&lt;img src=&quot;/assets/images/comment-envoyer-alertes-datadog-discord/webhook-datadog.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Le champ &lt;strong&gt;Payload&lt;/strong&gt; est ce qui sera envoyé à chaque fois qu’une nouvelle alerte sera déclenchée.
+Comme je l’expliquais plus haut, l’intérêt du webhook est de faire en sorte de pouvoir communiquer facilement de service-à-service mais en aucun cas avec un format d’échange unique !
+Chaque site/service à sa logique donc les payloads diffèrent en fonction du service qu’on souhaite atteindre.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Mé komen kon fé pou ke Discord komprene Datadog ?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/comment-envoyer-alertes-datadog-discord/rtfm.gif&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;format-du-webhook&quot;&gt;Format du webhook&lt;/h2&gt;
+&lt;p&gt;En temps normal quand un service intègre des webhooks, il est souvent proposé de choisir le service distant afin d’auto-formater le payload en conséquence (ou de mieux interpréter le payload qui sera reçu).
+C’est par exemple le cas avec Discord qui intègre très bien les notifications Github, comment ? Tout simplement en ajoutant &lt;code class=&quot;highlighter-rouge&quot;&gt;/github&lt;/code&gt; à la fin de l’URL du webhook discord.
+Ca marche aussi pour Slack en ajoutant &lt;code class=&quot;highlighter-rouge&quot;&gt;/slack&lt;/code&gt;.
+Malheureusement Discord n’intègre pas ce type de “tips” pour Datadog. 
+Il faut donc formater notre payload Datadog pour qu’il soit conforme aux spécifications Discord et avec les bonnes valeurs.&lt;/p&gt;
+
+&lt;p&gt;Deux références sont nécessaires :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.datadoghq.com/fr/integrations/webhooks/&quot;&gt;Les valeurs disponibles pour les webhooks Datadog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://discord.com/developers/docs/resources/webhook#execute-webhook&quot;&gt;Les spécifications Discord pour l’envoi de webhook&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Avec ces informations on peut désormais ajouter un payload qui ressemble à quelque chose du style :&lt;/p&gt;
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;username&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Datadog&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;avatar_url&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;https://i.postimg.cc/q7gJ7MKm/datadog.png&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;embeds&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;author&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;$ALERT_TITLE&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;$EVENT_TITLE&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;url&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;$LINK&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;$EVENT_MSG&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;color&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;14036294&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Vous pouvez paramétrer votre payload en fonction du style de rendu que vous voulez, par exemple ajouter des catégories dans l’embed, n’envoyer que le texte de l’alerte, ou que le lien etc&lt;/p&gt;
+
+&lt;p&gt;Valider votre webhook Datadog avec le payload modifié, puis rendez-vous sur votre Monitor et ajouter &lt;code class=&quot;highlighter-rouge&quot;&gt;@webhook-&amp;lt;nom du webhook&amp;gt;&lt;/code&gt; dans “Notify your team” ou dans “Say what’s happening”, that’s it !&lt;/p&gt;
+
+&lt;center&gt;Aperçu d'un test de notification&lt;/center&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/comment-envoyer-alertes-datadog-discord/notification-discord.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;J’espère que ce petit tips vous aura aidé @@KJ @@BEER&lt;/p&gt;
+</description>
+        <pubDate>Sun, 07 Mar 2021 00:00:00 -0600</pubDate>
+        <image>https://btor.fr/assets/images/comment-envoyer-alertes-datadog-discord/main.jpg</image>
+        <link>https://btor.fr/2021/03/07/comment-envoyer-alertes-datadog-discord/</link>
+        <guid isPermaLink="true">https://btor.fr/2021/03/07/comment-envoyer-alertes-datadog-discord/</guid>
+        
+        <category>Monitoring</category>
+        
+        <category>Datadog</category>
+        
+        <category>Discord</category>
+        
+        
+      </item>
     
       <item>
         <title>Test: Flexispot ED2, un bureau assis-debout</title>
