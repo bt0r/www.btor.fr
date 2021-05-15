@@ -65,7 +65,7 @@ Depuis Android 7 Nougat (2016), Google a [ajouté une sécurité](https://androi
 Autrement dit, si l'application ne précise pas elle-même qu'elle autorise des CAs tierce, l'application n'utilisera jamais notre certificat auto-signé. 
 Pas très pratique pour sniffer le trafic... @@NO
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ooWd8vV2dCs?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+![](https://media1.tenor.com/images/020c0d4888bfc27d9a3f0c9fbd1bf6b1/tenor.gif?itemid=13854472){: .center-image}
 
 Dans mon cas, je pourrais très bien reconstruire mon application avec les nouvelles recommendations de Google mais ça ne serait pas très fun @@LUL !
 Nous allons donc faire comme si je n'étais pas le développeur de l'application.

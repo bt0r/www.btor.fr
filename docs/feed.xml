@@ -6,8 +6,8 @@
 </description>
     <link>https://btor.fr</link>
     <atom:link href="https://btor.fr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 07 Mar 2021 09:54:27 -0600</pubDate>
-    <lastBuildDate>Sun, 07 Mar 2021 09:54:27 -0600</lastBuildDate>
+    <pubDate>Sat, 15 May 2021 06:14:01 -0500</pubDate>
+    <lastBuildDate>Sat, 15 May 2021 06:14:01 -0500</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -358,7 +358,7 @@ La “victime” (ici notre application) utilisera un certificat auto-signé, ce
 Autrement dit, si l’application ne précise pas elle-même qu’elle autorise des CAs tierce, l’application n’utilisera jamais notre certificat auto-signé. 
 Pas très pratique pour sniffer le trafic… @@NO&lt;/p&gt;
 
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/ooWd8vV2dCs?controls=0&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot;&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;img src=&quot;https://media1.tenor.com/images/020c0d4888bfc27d9a3f0c9fbd1bf6b1/tenor.gif?itemid=13854472&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Dans mon cas, je pourrais très bien reconstruire mon application avec les nouvelles recommendations de Google mais ça ne serait pas très fun @@LUL !
 Nous allons donc faire comme si je n’étais pas le développeur de l’application.&lt;/p&gt;
