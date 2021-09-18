@@ -6,27 +6,27 @@
 </description>
     <link>https://btor.fr</link>
     <atom:link href="https://btor.fr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 15 May 2021 06:14:01 -0500</pubDate>
-    <lastBuildDate>Sat, 15 May 2021 06:14:01 -0500</lastBuildDate>
-    <generator>Jekyll v3.8.6</generator>
+    <pubDate>Sat, 18 Sep 2021 14:24:01 -0500</pubDate>
+    <lastBuildDate>Sat, 18 Sep 2021 14:24:01 -0500</lastBuildDate>
+    <generator>Jekyll v3.9.1</generator>
     
       <item>
         <title>Comment envoyer des alertes Datadog dans Discord ?</title>
         <description>&lt;p&gt;J’en parlais dans un article précédent mais je suis assez fan de Datadog !
 Logs, métriques, moniteurs, tableaux de bords et j’en passe, Datadog est plutôt bien fourni et permet vraiment de gérer intégralement son monitoring.
-Qui dit monitoring, dit monitorer ! &lt;em&gt;(ou “surveiller” si toi pas comprendre la langue de Mary Poppins @@LUL)&lt;/em&gt;
+Qui dit monitoring, dit monitorer ! &lt;em&gt;(ou “surveiller” si toi pas comprendre la langue de Mary Poppins &lt;img src=&quot;/assets/images/emote/LUL.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;)&lt;/em&gt;
 Un des outils important de Datadog est sa fonction “Monitor” qui permet de créer des alertes en fonction de seuils, variations ou autres critères de déclenchement.
 Ces alertes peuvent être envoyées par mail, sur slack &lt;a href=&quot;https://docs.datadoghq.com/fr/integrations/&quot;&gt;ou d’autres applications&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/comment-envoyer-alertes-datadog-discord/jusquici.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Depuis le COVID, quelques sociétés se sont mises au télétravail avec plus ou moins de succès (on vous voit @@KJ).
+&lt;p&gt;Depuis le COVID, quelques sociétés se sont mises au télétravail avec plus ou moins de succès (on vous voit &lt;img src=&quot;/assets/images/emote/KJ.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;).
 Parmi les gros changements qu’a apportés le télétravail, il y a eu l’arrivée massive de la visio : Meet, Zoom, Livestorm ou même Discord.&lt;/p&gt;
 
-&lt;p&gt;Pour beaucoup de travailleurs &lt;del&gt;du sexe&lt;/del&gt; de la tech @@OUCH, ces outils sont devenus monnaie courante.
+&lt;p&gt;Pour beaucoup de travailleurs &lt;del&gt;du sexe&lt;/del&gt; de la tech &lt;img src=&quot;/assets/images/emote/OUCH.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;, ces outils sont devenus monnaie courante.
 Certaines sociétés en ont d’ailleurs profité pour (parfois) changer leurs outils de communication pour privilégier un Discord plutôt qu’un Slack, notamment pour des raisons de tarification 💸.
-Et c’est là que tu vois le loup arriver ! Discord c’est bien, c’est pratique mais c’est pas aussi bien interconnecté qu’un slack @@SAD notamment quand il s’agit d’envoyer des notifications Datadog sur Discord
-(c’est le sujet de l’article @@RS, ça va j’accouche ! Pas besoin de t’énerver ! @@OOPS)&lt;/p&gt;
+Et c’est là que tu vois le loup arriver ! Discord c’est bien, c’est pratique mais c’est pas aussi bien interconnecté qu’un slack &lt;img src=&quot;/assets/images/emote/SAD.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt; notamment quand il s’agit d’envoyer des notifications Datadog sur Discord
+(c’est le sujet de l’article &lt;img src=&quot;/assets/images/emote/RS.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;, ça va j’accouche ! Pas besoin de t’énerver ! &lt;img src=&quot;/assets/images/emote/OOPS.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;)&lt;/p&gt;
 
 &lt;p&gt;Voyons-donc comment envoyer les alertes de nos moniteurs Datadog, directement dans Discord !&lt;/p&gt;
 
@@ -80,8 +80,8 @@ Chaque site/service à sa logique donc les payloads diffèrent en fonction du se
 
 &lt;h2 id=&quot;format-du-webhook&quot;&gt;Format du webhook&lt;/h2&gt;
 &lt;p&gt;En temps normal quand un service intègre des webhooks, il est souvent proposé de choisir le service distant afin d’auto-formater le payload en conséquence (ou de mieux interpréter le payload qui sera reçu).
-C’est par exemple le cas avec Discord qui intègre très bien les notifications Github, comment ? Tout simplement en ajoutant &lt;code class=&quot;highlighter-rouge&quot;&gt;/github&lt;/code&gt; à la fin de l’URL du webhook discord.
-Ca marche aussi pour Slack en ajoutant &lt;code class=&quot;highlighter-rouge&quot;&gt;/slack&lt;/code&gt;.
+C’est par exemple le cas avec Discord qui intègre très bien les notifications Github, comment ? Tout simplement en ajoutant &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/github&lt;/code&gt; à la fin de l’URL du webhook discord.
+Ca marche aussi pour Slack en ajoutant &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/slack&lt;/code&gt;.
 Malheureusement Discord n’intègre pas ce type de “tips” pour Datadog. 
 Il faut donc formater notre payload Datadog pour qu’il soit conforme aux spécifications Discord et avec les bonnes valeurs.&lt;/p&gt;
 
@@ -110,12 +110,12 @@ Il faut donc formater notre payload Datadog pour qu’il soit conforme aux spéc
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;Vous pouvez paramétrer votre payload en fonction du style de rendu que vous voulez, par exemple ajouter des catégories dans l’embed, n’envoyer que le texte de l’alerte, ou que le lien etc&lt;/p&gt;
 
-&lt;p&gt;Valider votre webhook Datadog avec le payload modifié, puis rendez-vous sur votre Monitor et ajouter &lt;code class=&quot;highlighter-rouge&quot;&gt;@webhook-&amp;lt;nom du webhook&amp;gt;&lt;/code&gt; dans “Notify your team” ou dans “Say what’s happening”, that’s it !&lt;/p&gt;
+&lt;p&gt;Valider votre webhook Datadog avec le payload modifié, puis rendez-vous sur votre Monitor et ajouter &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@webhook-&amp;lt;nom du webhook&amp;gt;&lt;/code&gt; dans “Notify your team” ou dans “Say what’s happening”, that’s it !&lt;/p&gt;
 
 &lt;center&gt;Aperçu d'un test de notification&lt;/center&gt;
 &lt;p&gt;&lt;img src=&quot;/assets/images/comment-envoyer-alertes-datadog-discord/notification-discord.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;J’espère que ce petit tips vous aura aidé @@KJ @@BEER&lt;/p&gt;
+&lt;p&gt;J’espère que ce petit tips vous aura aidé &lt;img src=&quot;/assets/images/emote/KJ.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt; &lt;img src=&quot;/assets/images/emote/BEER.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 07 Mar 2021 00:00:00 -0600</pubDate>
         <image>https://btor.fr/assets/images/comment-envoyer-alertes-datadog-discord/main.jpg</image>
@@ -133,16 +133,16 @@ Il faut donc formater notre payload Datadog pour qu’il soit conforme aux spéc
     
       <item>
         <title>Test: Flexispot ED2, un bureau assis-debout</title>
-        <description>&lt;p&gt;Bienvenue en 2021, nouvelle année, nouvelles bonnes résolutions, nouveau parcours de vie, nouvelle femme, nouveau chien, nouveau caleçon … bref nouveau tout ! @@HEY
+        <description>&lt;p&gt;Bienvenue en 2021, nouvelle année, nouvelles bonnes résolutions, nouveau parcours de vie, nouvelle femme, nouveau chien, nouveau caleçon … bref nouveau tout ! &lt;img src=&quot;/assets/images/emote/HEY.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;
 &lt;img src=&quot;https://media.giphy.com/media/26hkhKd2Cp5WMWU1O/giphy.gif&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Nope! @@SAD Derrière le rêve d’une année 2021 meilleure se cache la réalité d’une année 2020 pourrie qui au lieu de s’arrêter au 31 décembre va empiéter sur 2021.&lt;/p&gt;
+&lt;p&gt;Nope! &lt;img src=&quot;/assets/images/emote/SAD.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt; Derrière le rêve d’une année 2021 meilleure se cache la réalité d’une année 2020 pourrie qui au lieu de s’arrêter au 31 décembre va empiéter sur 2021.&lt;/p&gt;
 
 &lt;center&gt;MERCI COVID&lt;/center&gt;
 &lt;p&gt;&lt;img src=&quot;https://media.giphy.com/media/h26R1JMxiqYpwp0rkF/giphy.gif&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;En faisant la rétrospection de cette année 2020, j’ai repensé à toutes ces heures passées devant l’écran, ces heures à coder, à réfléchir, à faire des cyber-apéros, regarder des films … 
-Bref je suis un geek avec une vie de merde qui tourne autour d’un ordinateur @@LUL&lt;/p&gt;
+Bref je suis un geek avec une vie de merde qui tourne autour d’un ordinateur &lt;img src=&quot;/assets/images/emote/LUL.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Je n’ai pas fait le calcul exact du temps passé par jour devant l’écran mais je dois être proche des 10h (facile), 10h à me cramer les yeux et le dos. 
 J’ai beau tenté d’utiliser des logiciels pour me forcer à faire des pauses (notamment la très bonne application &lt;a href=&quot;https://hovancik.net/stretchly/&quot;&gt;Stretchly&lt;/a&gt; sur MacOS), faire du sport etc
@@ -151,7 +151,7 @@ Avec l’arrivée du COVID, le télétravail est de plus en plus démocratisé e
 
 &lt;h1 id=&quot;standing-desk-késako-&quot;&gt;Standing-desk, Késako ?&lt;/h1&gt;
 &lt;p&gt;Depuis pas mal d’années je vois des articles sur les vertus des “Standing-desk” et récemment j’ai eu l’occasion d’en tester au travail et via des amis.
-Qu’est-ce qu’un Standing-desk ? C’est tout simplement un bureau qui permet de travailler debout (ne me remerciez pas pour cette explication @@SLT) 
+Qu’est-ce qu’un Standing-desk ? C’est tout simplement un bureau qui permet de travailler debout (ne me remerciez pas pour cette explication &lt;img src=&quot;/assets/images/emote/SLT.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;) 
 Il en existe sous divers format, certains ne sont que de simples bureaux “surélevés” tandis que d’autres permettent de travailler soit assis, soit debout (par le biais d’une manivelle ou via un boitier électronique permettant de “piloter” la hauteur du bureau)&lt;/p&gt;
 
 &lt;p&gt;Les deux points clés mis en avant par l’utilisation de standing-desk sont :&lt;/p&gt;
@@ -188,7 +188,7 @@ L’armature pèse à elle seule plus de 20 kilos et quand on sort les pièces u
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/flexispot-bureau-assis-debout/flexispot-unboxing2.jpg&quot; alt=&quot;Pièces détachées du bureau&quot; class=&quot;center-image&quot; /&gt;
 &lt;img src=&quot;/assets/images/flexispot-bureau-assis-debout/flexispot-pieces.jpg&quot; alt=&quot;Pièces détachées du bureau sans plastique&quot; class=&quot;center-image&quot; /&gt;
-Toutes les pièces sont en acier en dehors des parties électronique/électrique (Bah oui sinon tu crèves idiot ! @@JAMY)
+Toutes les pièces sont en acier en dehors des parties électronique/électrique (Bah oui sinon tu crèves idiot ! &lt;img src=&quot;/assets/images/emote/JAMY.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;)
 L’installation est assez facile, à l’image d’une notice Ikea en plus simplifiée.
 Il faut compter environ 1 h pour monter le bureau.&lt;/p&gt;
 
@@ -201,16 +201,16 @@ Je n’ai eu aucun problème lors du montage à l’exception d’un point qui n
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/flexispot-bureau-assis-debout/flexispot-boitier.jpg&quot; alt=&quot;Le boitier &amp;quot;central&amp;quot;&quot; class=&quot;center-image&quot; /&gt;
 &lt;img src=&quot;/assets/images/flexispot-bureau-assis-debout/flexispot-retourne.jpg&quot; alt=&quot;Bureau retourné avec contour des zones trouées&quot; class=&quot;center-image&quot; /&gt;
-Lorsque l’armature est montée et qu’il faut fixer le plateau à celle-ci, il est (normalement @@LUL) nécessaire de visser les pieds ET le centre de l’armature au plateau (là où il y a le boitier principal)&lt;/p&gt;
+Lorsque l’armature est montée et qu’il faut fixer le plateau à celle-ci, il est (normalement &lt;img src=&quot;/assets/images/emote/LUL.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;) nécessaire de visser les pieds ET le centre de l’armature au plateau (là où il y a le boitier principal)&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;PROBLÈME :&lt;/strong&gt; Lorsque j’ai tenté de visser le centre de l’armature, les vis traversaient complètement le plateau @@WUT
+&lt;p&gt;&lt;strong&gt;PROBLÈME :&lt;/strong&gt; Lorsque j’ai tenté de visser le centre de l’armature, les vis traversaient complètement le plateau &lt;img src=&quot;/assets/images/emote/WUT.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;
 Bizarrement, ça ne m’a pas trop étonné, c’est le genre de déconvenue qui me pendait au nez. Je soupçonne que le plateau Ikea comprenne un centre “creux” (poreux ou alvéolé) et des bords dans un matériau différent afin de pouvoir visser des pieds ikea “standards”.
 L’autre explication serait que tout le plateau soit poreux de base et que le centre soit plus usé par le temps et donc plus creusé mais j’y crois moyen…
-J’ai donc visser uniquement les pieds (4 vis par pieds) afin d’éviter de trop trouer le plateau (on ne sait jamais vu la daube que c’est… @@SAD) et j’ai fait attention de ne retourner le bureau en ne touchant qu’aux pieds plutôt qu’au plateau.&lt;/p&gt;
+J’ai donc visser uniquement les pieds (4 vis par pieds) afin d’éviter de trop trouer le plateau (on ne sait jamais vu la daube que c’est… &lt;img src=&quot;/assets/images/emote/SAD.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;) et j’ai fait attention de ne retourner le bureau en ne touchant qu’aux pieds plutôt qu’au plateau.&lt;/p&gt;
 &lt;center&gt;&lt;i&gt;Position assise&lt;/i&gt;&lt;/center&gt;
 &lt;p&gt;&lt;img src=&quot;/assets/images/flexispot-bureau-assis-debout/flexispot-assis.jpg&quot; alt=&quot;Bureau position assise&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
 
-&lt;center&gt;&lt;i&gt;Position debout (ouais bon c'est au max, c'est peut être un peu too much @@LUL)&lt;/i&gt;&lt;/center&gt;
+&lt;center&gt;&lt;i&gt;Position debout (ouais bon c'est au max, c'est peut être un peu too much ![](/assets/images/emote/LUL.png){: .emote})&lt;/i&gt;&lt;/center&gt;
 &lt;p&gt;&lt;img src=&quot;/assets/images/flexispot-bureau-assis-debout/flexispot-debout.jpg&quot; alt=&quot;Bureau position debout&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;ressenti-après-une-semaine&quot;&gt;Ressenti après une semaine&lt;/h1&gt;
@@ -218,7 +218,7 @@ J’ai donc visser uniquement les pieds (4 vis par pieds) afin d’éviter de tr
 La première journée je n’ai rien senti de particulier, par contre à partir du lendemain j’ai doublé le temps passé debout (2x 45 minutes le matin, pareil l’après midi)
 et c’est là que j’ai commencé à sentir une légère douleur sous les pieds (surtout les talons). 
 C’est un symptôme connu quand on commence à travailler debout, certaines personnes recommandent d’utiliser un tapis au gel,
-pour le moment j’ai préféré le swag claquette-chaussette comme vous pouvez le voir dans cette vidéo @@WINK&lt;/p&gt;
+pour le moment j’ai préféré le swag claquette-chaussette comme vous pouvez le voir dans cette vidéo &lt;img src=&quot;/assets/images/emote/WINK.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
 
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/ItBA1CKrb1c&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
@@ -259,26 +259,26 @@ Quand j’alterne entre position assis-debout, tout se positionne bien comme il 
 En réalité c’est très simple, quand un moteur ressent une résistance lorsqu’il est actif (lors d’une montée ou d’une descente), il va s’arrêter et aller ensuite dans le sens &lt;strong&gt;INVERSE&lt;/strong&gt; du mouvement actuel.
 Autrement dis, quand le bureau descend et qu’il rencontre un obstacle, le bureau va se mettre à remonter.&lt;/p&gt;
 
-&lt;p&gt;Sur le papier ca parait pas mal, le problème c’est que le mouvement inverse n’est pas égal à la distance parcourue au préalable @@SAD
+&lt;p&gt;Sur le papier ca parait pas mal, le problème c’est que le mouvement inverse n’est pas égal à la distance parcourue au préalable &lt;img src=&quot;/assets/images/emote/SAD.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;
 Donc à votre avis, que se passe-t-il si le système de détection de collision se met en route lorsque mon bureau est en position “debout” ?
 &lt;img src=&quot;https://media.giphy.com/media/26ufi4fh9GwUFuZmo/giphy.gif&quot; alt=&quot;Bureau qui se casse&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Ca casse tout ! Et c’est ce qu’il m’est arrivé @@JEANNE
+&lt;p&gt;Ca casse tout ! Et c’est ce qu’il m’est arrivé &lt;img src=&quot;/assets/images/emote/JEANNE.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;
 &lt;img src=&quot;/assets/images/flexispot-bureau-assis-debout/flexispot-system-collision.jpg&quot; alt=&quot;Une enceinte sur le bureau avec une étagère au dessus&quot; class=&quot;center-image&quot; /&gt;
 Cette photo illustre ce qu’il s’est passé. Le bureau est en position debout, l’enceinte se trouve bien en dessous de l’étagère etc
 Quand j’ai appuyé sur la position “assise” mémorisée sur le Flexispot, le bureau a commencé à descendre (environ 2cm) puis d’un seul coup il s’est mis à remonter mais pas jusqu’au 108 cm (position de départ) mais il est remonté jusqu’à 120 cm !
 En voyant le bureau remonter, j’ai eu le reflex de décaler mon écran pour éviter qu’il fasse une fusion-absorption avec l’étagère au-dessus de lui mais une de mes enceintes s’est retrouvée compresser comme dans une presse hydraulique.
-&lt;strong&gt;Et là croyez-moi, c’est pas aussi satisfaisant que sur les vidéos Youtube&lt;/strong&gt; @@SAD
+&lt;strong&gt;Et là croyez-moi, c’est pas aussi satisfaisant que sur les vidéos Youtube&lt;/strong&gt; &lt;img src=&quot;/assets/images/emote/SAD.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;
 &lt;img src=&quot;/assets/images/flexispot-bureau-assis-debout/flexispot-enceinte.jpg&quot; alt=&quot;L'enceinte cassée suite à la compression du bureau face aux étagères&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Je soupçonne que le système de détection de collision se soit enclenché à cause d’un cable un peu trop “court” qui devait amener à une résistance lors de la descente.
 Le plus chiant dans tous ca, c’est que la détection de collision n’est pas désactivable.&lt;/p&gt;
 &lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;C’est du solide !&lt;/strong&gt; Tellement solide qu’il faudra faire attention aux objets environnant votre bureau afin d’éviter qu’ils finissent écrasés @@KJ.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;C’est du solide !&lt;/strong&gt; Tellement solide qu’il faudra faire attention aux objets environnant votre bureau afin d’éviter qu’ils finissent écrasés &lt;img src=&quot;/assets/images/emote/KJ.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;.&lt;/li&gt;
   &lt;li&gt;C’est &lt;strong&gt;top pour améliorer votre condition physique&lt;/strong&gt;, à condition de ne pas rentrer dans l’excès et de bien alterner les positions assis-debout.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Penser au cable-management !&lt;/strong&gt; Tout vos cables devront être plus longs, il faudra aussi penser à acheter des gaines, voire des goulottes pour faire passer vos cables afin que ça ne dérange pas le mouvement du bureau.
-Ca vous évitera aussi d’avoir comme moi un cable-management digne d’un répartiteur téléphonique France Telecom @@LUL&lt;/li&gt;
+Ca vous évitera aussi d’avoir comme moi un cable-management digne d’un répartiteur téléphonique France Telecom &lt;img src=&quot;/assets/images/emote/LUL.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Pratique pour les grands en position assis&lt;/strong&gt;. C’est confortable de pouvoir gérer la hauteur de son bureau et de ne plus avoir les genoux qui touchent le plateau.&lt;/li&gt;
   &lt;li&gt;Faites attention au plateau utilisé, un plateau Ikea fera bien l’affaire mais &lt;strong&gt;si votre plateau est en bois massif c’est mieux&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ul&gt;
@@ -298,8 +298,8 @@ Ca vous évitera aussi d’avoir comme moi un cable-management digne d’un rép
     
       <item>
         <title>Rétro-ingénierie: Capturer le trafic HTTPS d'une application Android</title>
-        <description>&lt;p&gt;@@KJ Salut à toi jeune &lt;del&gt;entrepreneur&lt;/del&gt;, &lt;del&gt;caucasoïde&lt;/del&gt;…
-Oula ! je glisse sur l’actu @@OOPS&lt;/p&gt;
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/images/emote/KJ.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt; Salut à toi jeune &lt;del&gt;entrepreneur&lt;/del&gt;, &lt;del&gt;caucasoïde&lt;/del&gt;…
+Oula ! je glisse sur l’actu &lt;img src=&quot;/assets/images/emote/OOPS.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Dans l’article sur &lt;a href=&quot;/2020/04/07/noteflix-allocine-netflix/&quot;&gt;Noteflix&lt;/a&gt; je vous parlais d’une technique pour récupérer le trafic IP à travers une application mobile.
 L’astuce résidait dans l’utilisation de l’application &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.egorovandreyrm.pcapremote&quot;&gt;PCAPRemote&lt;/a&gt; avec SSHDump et Wireshark pour l’analyse des paquets IP.&lt;/p&gt;
@@ -313,8 +313,8 @@ PCAPRemote peut vous fournir un fichier .pcap mais aussi faire office de serveur
   &lt;p&gt;Et si on testait avec une application qui contient du HTTPS ?&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Ça tombe bien, j’ai du temps avec le couvre-feu actuel @@SAD. 
-J’enfile donc mon plus beau couvre-chef et je me lance dans le sniffing de &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.btorfr&quot;&gt;ma propre application&lt;/a&gt; @@WINK&lt;/p&gt;
+&lt;p&gt;Ça tombe bien, j’ai du temps avec le couvre-feu actuel &lt;img src=&quot;/assets/images/emote/SAD.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;. 
+J’enfile donc mon plus beau couvre-chef et je me lance dans le sniffing de &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.btorfr&quot;&gt;ma propre application&lt;/a&gt; &lt;img src=&quot;/assets/images/emote/WINK.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;contexte&quot;&gt;Contexte&lt;/h1&gt;
 &lt;p&gt;L’application &lt;strong&gt;btor.fr&lt;/strong&gt; est un très bon cas d’utilisation car elle ne fait rien de complexe.
@@ -325,7 +325,7 @@ Elle se charge de récupérer un flux RSS sur &lt;a href=&quot;http://btor.fr/fe
 &lt;h1 id=&quot;sniffing-ssl&quot;&gt;Sniffing SSL&lt;/h1&gt;
 &lt;p&gt;Le sniffing consiste à lire ce qu’il se passe sur une liaison. 
 Par exemple, lire les communications entre votre machine et les serveurs de Facebook.
-Ça peut être tout type de flux HTTP, HTTPS, FTP, TELNET (ouais bon … @@SAD)&lt;/p&gt;
+Ça peut être tout type de flux HTTP, HTTPS, FTP, TELNET (ouais bon … &lt;img src=&quot;/assets/images/emote/SAD.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;)&lt;/p&gt;
 
 &lt;p&gt;Prenons l’exemple d’une liaison HTTP classique, pour intercepter ce qu’il se passe sur la liaison nous devons nous trouver au milieu de la liaison.
 Une fois au milieu de la liaison, nous pouvons intercepter le trafic et le lire directement étant donné que HTTP n’est pas chiffré.&lt;/p&gt;
@@ -338,7 +338,7 @@ La “victime” (ici notre application) utilisera un certificat auto-signé, ce
 &lt;h1 id=&quot;première-tentative&quot;&gt;Première tentative&lt;/h1&gt;
 &lt;p&gt;Nous avions déjà réussi à capturer du trafic HTTP grâce à PCAPRemote, nous pourrions tout simplement faire de même et voir ce qu’il se passe ?&lt;/p&gt;
 
-&lt;p&gt;Deal @@SLT !&lt;/p&gt;
+&lt;p&gt;Deal &lt;img src=&quot;/assets/images/emote/SLT.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt; !&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Lancer PCAPRemote et configurer-le en fonction de vos préférences (récupération dans un fichier ou via SSHDump)&lt;/li&gt;
@@ -349,18 +349,18 @@ La “victime” (ici notre application) utilisera un certificat auto-signé, ce
   &lt;li&gt;Cliquer sur le logo “Play” pour lancer la capture puis analyser votre fichier .pcap&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Vous ne voyez aucune trame HTTP ? alors que vous avez bien pris le soin de cocher la case &lt;code class=&quot;highlighter-rouge&quot;&gt;Make HTTPS/TLS connections decryptable&lt;/code&gt; ? et vous avez bien installé les certificats ?&lt;/p&gt;
+&lt;p&gt;Vous ne voyez aucune trame HTTP ? alors que vous avez bien pris le soin de cocher la case &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Make HTTPS/TLS connections decryptable&lt;/code&gt; ? et vous avez bien installé les certificats ?&lt;/p&gt;
 
-&lt;p&gt;C’est normal @@LUL&lt;/p&gt;
+&lt;p&gt;C’est normal &lt;img src=&quot;/assets/images/emote/LUL.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;les-restrictions&quot;&gt;Les restrictions&lt;/h1&gt;
 &lt;p&gt;Depuis Android 7 Nougat (2016), Google a &lt;a href=&quot;https://android-developers.googleblog.com/2016/07/changes-to-trusted-certificate.html&quot;&gt;ajouté une sécurité&lt;/a&gt; afin de limiter les authorités de certifications (CA) approuvées par défaut par l’application.
 Autrement dit, si l’application ne précise pas elle-même qu’elle autorise des CAs tierce, l’application n’utilisera jamais notre certificat auto-signé. 
-Pas très pratique pour sniffer le trafic… @@NO&lt;/p&gt;
+Pas très pratique pour sniffer le trafic… &lt;img src=&quot;/assets/images/emote/NO.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://media1.tenor.com/images/020c0d4888bfc27d9a3f0c9fbd1bf6b1/tenor.gif?itemid=13854472&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Dans mon cas, je pourrais très bien reconstruire mon application avec les nouvelles recommendations de Google mais ça ne serait pas très fun @@LUL !
+&lt;p&gt;Dans mon cas, je pourrais très bien reconstruire mon application avec les nouvelles recommendations de Google mais ça ne serait pas très fun &lt;img src=&quot;/assets/images/emote/LUL.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt; !
 Nous allons donc faire comme si je n’étais pas le développeur de l’application.&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -369,15 +369,15 @@ Nous allons donc faire comme si je n’étais pas le développeur de l’applica
 
 &lt;p&gt;&lt;img src=&quot;https://media.giphy.com/media/26FfieBFKHaHCivte/giphy.gif&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;C’est exactement la question que je me suis posé et après quelques recherches je me suis rendu compte qu’il était possible d’injecter une configuration à un APK @@HEY !&lt;/p&gt;
+&lt;p&gt;C’est exactement la question que je me suis posé et après quelques recherches je me suis rendu compte qu’il était possible d’injecter une configuration à un APK &lt;img src=&quot;/assets/images/emote/HEY.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt; !&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Première étape&lt;/strong&gt;, nous devons trouver le fichier APK de l’application :&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;Récupérer l’ID de l’application dans l’URL du &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.btorfr&quot;&gt;PlayStore&lt;/a&gt;, ici &lt;code class=&quot;highlighter-rouge&quot;&gt;com.btorfr&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Récupérer l’ID de l’application dans l’URL du &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.btorfr&quot;&gt;PlayStore&lt;/a&gt;, ici &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;com.btorfr&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;Puis télécharger l’APK via un site type &lt;a href=&quot;https://apps.evozi.com/apk-downloader/?id=com.btorfr&quot;&gt;Evozi&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;Seconde étape&lt;/strong&gt;, nous allons lui injecter la configuration &lt;code class=&quot;highlighter-rouge&quot;&gt;network-security-config&lt;/code&gt; en utilisant &lt;a href=&quot;https://github.com/levyitay/AddSecurityExceptionAndroid&quot;&gt;ce script&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Seconde étape&lt;/strong&gt;, nous allons lui injecter la configuration &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;network-security-config&lt;/code&gt; en utilisant &lt;a href=&quot;https://github.com/levyitay/AddSecurityExceptionAndroid&quot;&gt;ce script&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Rien de plus simple, il suffit de cloner le repository et de lancer :&lt;/p&gt;
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;./addSecurityExceptions.sh com.btorfr.apk
@@ -390,7 +390,7 @@ Dans ce cas, il faudra directement utiliser &lt;a href=&quot;https://github.com/
 &lt;p&gt;Vous devriez avoir une nouvelle version de l’APK disponible dans le répertoire courant.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Troisième étape&lt;/strong&gt;, installer l’APK sur le téléphone. 
-Soit vous l’installez vous-même sur votre téléphone, soit, si vous passez comme moi par un émulateur vous pouvez taper &lt;code class=&quot;highlighter-rouge&quot;&gt;adb install com.btorfr.apk&lt;/code&gt; pour l’installer directement dans l’émulateur.&lt;/p&gt;
+Soit vous l’installez vous-même sur votre téléphone, soit, si vous passez comme moi par un émulateur vous pouvez taper &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;adb install com.btorfr.apk&lt;/code&gt; pour l’installer directement dans l’émulateur.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Quatrième étape&lt;/strong&gt;, Tester ! 
 Notre application est normalement opérationnelle, nous pouvons tester avec PCAPRemote ! 
@@ -400,7 +400,7 @@ Les étapes sont exactement les mêmes qu’en sniffant de l’HTTP à la petite
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/retro-ingenierie-capturer-application-android/wireshark_detail.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Tada @@PROUD ! Nous avons bien notre appel au flux RSS de visible. 
+&lt;p&gt;Tada &lt;img src=&quot;/assets/images/emote/PROUD.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt; ! Nous avons bien notre appel au flux RSS de visible. 
 On peut apercevoir la couche TLS au-dessus d’HTTP, garantie que la liaison est bien chiffrée.&lt;/p&gt;
 
 &lt;h1 id=&quot;aller-plus-loin&quot;&gt;Aller plus loin&lt;/h1&gt;
@@ -463,19 +463,19 @@ J’ai pu tester à peu près tous les services proposés par Datadog, certains 
   &lt;p&gt;Ca serait bien de pouvoir monitorer aussi le front !&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Ca tombe bien, depuis fin 2019 Datadog travaille sur &lt;a href=&quot;https://github.com/DataDog/browser-sdk&quot;&gt;Browser-SDK&lt;/a&gt; dont &lt;a href=&quot;https://www.npmjs.com/package/@datadog/browser-logs&quot;&gt;Browser-logs&lt;/a&gt; @@SLT !
-&lt;code class=&quot;highlighter-rouge&quot;&gt;Browser-Logs&lt;/code&gt; est un package NPM à installer qui met à disposition un Logger qui se chargera automatiquement de push les logs à Datadog. 
+&lt;p&gt;Ca tombe bien, depuis fin 2019 Datadog travaille sur &lt;a href=&quot;https://github.com/DataDog/browser-sdk&quot;&gt;Browser-SDK&lt;/a&gt; dont &lt;a href=&quot;https://www.npmjs.com/package/@datadog/browser-logs&quot;&gt;Browser-logs&lt;/a&gt; &lt;img src=&quot;/assets/images/emote/SLT.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt; !
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Browser-Logs&lt;/code&gt; est un package NPM à installer qui met à disposition un Logger qui se chargera automatiquement de push les logs à Datadog. 
 C’est simple à mettre en place et en plus on y retrouve toutes les fonctionnalités “classiques” de Datadog comme le fait d’avoir les attributs de GeoIP, User-Agent, Session, HTTP… directement interprété dans Datadog.&lt;/p&gt;
 
-&lt;p&gt;Ca tombe doublement bien puisque j’ai actuellement besoin d’un outil pour logger mon extension &lt;a href=&quot;https://github.com/bt0r/NoteFlix&quot;&gt;Noteflix&lt;/a&gt; @@RS&lt;/p&gt;
+&lt;p&gt;Ca tombe doublement bien puisque j’ai actuellement besoin d’un outil pour logger mon extension &lt;a href=&quot;https://github.com/bt0r/NoteFlix&quot;&gt;Noteflix&lt;/a&gt; &lt;img src=&quot;/assets/images/emote/RS.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;installation&quot;&gt;Installation&lt;/h1&gt;
 &lt;ul&gt;
-  &lt;li&gt;Pour l’installation c’est simple, il vous suffira d’installer le package &lt;code class=&quot;highlighter-rouge&quot;&gt;browser-logs&lt;/code&gt;
+  &lt;li&gt;Pour l’installation c’est simple, il vous suffira d’installer le package &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;browser-logs&lt;/code&gt;
     &lt;pre&gt;&lt;code class=&quot;language-BASH&quot;&gt;npm install --save @datadog/browser-logs
 &lt;/code&gt;&lt;/pre&gt;
   &lt;/li&gt;
-  &lt;li&gt;Ensuite, vous devrez vous rendre sur Datadog, dans &lt;code class=&quot;highlighter-rouge&quot;&gt;Integrations&lt;/code&gt; &amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;API&lt;/code&gt; puis &lt;code class=&quot;highlighter-rouge&quot;&gt;Client Tokens&lt;/code&gt; (ou directement via &lt;a href=&quot;https://app.datadoghq.com/account/settings#api&quot;&gt;ce lien&lt;/a&gt;)
+  &lt;li&gt;Ensuite, vous devrez vous rendre sur Datadog, dans &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Integrations&lt;/code&gt; &amp;gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;API&lt;/code&gt; puis &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Client Tokens&lt;/code&gt; (ou directement via &lt;a href=&quot;https://app.datadoghq.com/account/settings#api&quot;&gt;ce lien&lt;/a&gt;)
  et créer un nouveau token. Garder le dans un coin, il servira bientôt.
 &lt;img src=&quot;/assets/images/logger-front-datadog/1.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/li&gt;
   &lt;li&gt;Intégrez ensuite l’initialisation du package comme suit :&lt;/li&gt;
@@ -505,12 +505,12 @@ C’est simple à mettre en place et en plus on y retrouve toutes les fonctionna
 &lt;h2 id=&quot;spécificités-aux-extensions&quot;&gt;Spécificités aux extensions&lt;/h2&gt;
 &lt;p&gt;J’ai effectivement rencontré quelques petits soucis avec l’intégration de Browser-Logs dans mon extension (&lt;a href=&quot;https://github.com/DataDog/browser-sdk/issues/487&quot;&gt;voir cette issue&lt;/a&gt;)&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;Les extensions ne disposant pas du même contexte d’exécution qu’une app front classique, Browser-Logs ne fonctionne pas avec l’option &lt;code class=&quot;highlighter-rouge&quot;&gt;forwardErrorsToLogs&lt;/code&gt;, il vous faudra désactiver cette option.&lt;/li&gt;
+  &lt;li&gt;Les extensions ne disposant pas du même contexte d’exécution qu’une app front classique, Browser-Logs ne fonctionne pas avec l’option &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;forwardErrorsToLogs&lt;/code&gt;, il vous faudra désactiver cette option.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;spécificités-globales&quot;&gt;Spécificités globales&lt;/h2&gt;
 &lt;ul&gt;
-  &lt;li&gt;Après investigation, je me suis rendu compte que le datacenter &lt;code class=&quot;highlighter-rouge&quot;&gt;eu&lt;/code&gt; ne fonctionnait pas (renvoie une 403), c’était peut-être un problème lié à Datadog ou autre mais j’ai dû passer par le Datacenter &lt;code class=&quot;highlighter-rouge&quot;&gt;us&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Après investigation, je me suis rendu compte que le datacenter &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;eu&lt;/code&gt; ne fonctionnait pas (renvoie une 403), c’était peut-être un problème lié à Datadog ou autre mais j’ai dû passer par le Datacenter &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;us&lt;/code&gt;.&lt;/li&gt;
   &lt;li&gt;Qui dit logger, dit “tracking”. Bien que ce ne soit pas spécialement ce que vous espérez faire, c’est ce que les bloqueurs de pub risque d’interpréter.
 J’ai fait quelques tests et il est à noter qu’AdBlock ne semble pas bloquer les appels HTTP issu de Browser-Logs, par contre uBlock est lui plus restrictif et bloque automatiquement tous les appels.
 Vous devrez donc prendre en compte qu’une partie de vos utilisateurs ne seront pas monitorés.&lt;/li&gt;
@@ -520,7 +520,7 @@ Vous devrez donc prendre en compte qu’une partie de vos utilisateurs ne seront
 &lt;p&gt;L’intégration de Datadog pour logger notre application front est assez simple ! 
 Il est à noter qu’il est aussi possible de faire du &lt;a href=&quot;https://docs.datadoghq.com/fr/real_user_monitoring/&quot;&gt;RUM&lt;/a&gt; (Real User Monitoring) en utilisant &lt;a href=&quot;https://www.npmjs.com/package/@datadog/browser-rum&quot;&gt;Browser-RUM&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;Vous avez désormais toutes les cartes en main pour monitorer votre application @@BEER&lt;/p&gt;
+&lt;p&gt;Vous avez désormais toutes les cartes en main pour monitorer votre application &lt;img src=&quot;/assets/images/emote/BEER.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;liens&quot;&gt;Liens&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/DataDog/browser-sdk&quot;&gt;Browser-Logs sur Github&lt;/a&gt;&lt;/p&gt;
@@ -547,7 +547,7 @@ Il est à noter qu’il est aussi possible de faire du &lt;a href=&quot;https://
     
       <item>
         <title>Afficher le titre Spotify en cours de lecture dans OBS (linux)</title>
-        <description>&lt;p&gt;Rares sont les applications de streaming musical qui s’intègrent simplement à OBS (&lt;a href=&quot;https://www.foobar2000.org/&quot;&gt;Foobar&lt;/a&gt; for the win) @@PROUD
+        <description>&lt;p&gt;Rares sont les applications de streaming musical qui s’intègrent simplement à OBS (&lt;a href=&quot;https://www.foobar2000.org/&quot;&gt;Foobar&lt;/a&gt; for the win) &lt;img src=&quot;/assets/images/emote/PROUD.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;
 Et pourtant, c’est toujours pratique de pouvoir récupérer la musique que notre streamer préféré (ou pas) est en train de passer.&lt;/p&gt;
 
 &lt;p&gt;Nous allons voir comment intégrer le titre de la chanson en cours de lecture depuis l’application Spotify, directement dans OBS.&lt;/p&gt;
@@ -560,18 +560,18 @@ Et pourtant, c’est toujours pratique de pouvoir récupérer la musique que not
 &lt;ul&gt;
   &lt;li&gt;Récupérer le titre de la musique via le titre de la fenêtre de Spotify&lt;/li&gt;
   &lt;li&gt;Écrire ce titre dans un fichier.&lt;/li&gt;
-  &lt;li&gt;Dire à OBS d’afficher le contenu de ce fichier. C’est tout ! @@WINK&lt;/li&gt;
+  &lt;li&gt;Dire à OBS d’afficher le contenu de ce fichier. C’est tout ! &lt;img src=&quot;/assets/images/emote/WINK.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&quot;installation&quot;&gt;Installation&lt;/h1&gt;
-&lt;p&gt;La première étape consiste à installer &lt;code class=&quot;highlighter-rouge&quot;&gt;wmctrl&lt;/code&gt; et &lt;code class=&quot;highlighter-rouge&quot;&gt;xdotool&lt;/code&gt;, c’est grâce à ces deux commandes qu’on pourra récupérer le titre depuis la CLI.&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt install wmctrl xdotool
+&lt;p&gt;La première étape consiste à installer &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;wmctrl&lt;/code&gt; et &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;xdotool&lt;/code&gt;, c’est grâce à ces deux commandes qu’on pourra récupérer le titre depuis la CLI.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt install wmctrl xdotool
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;En fonction de votre distribution vous devriez déjà disposer de &lt;code class=&quot;highlighter-rouge&quot;&gt;pgrep&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;head&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;grep&lt;/code&gt; et &lt;code class=&quot;highlighter-rouge&quot;&gt;awk&lt;/code&gt; vous n’avez donc rien d’autres à installer.&lt;/p&gt;
+&lt;p&gt;En fonction de votre distribution vous devriez déjà disposer de &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pgrep&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;head&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;grep&lt;/code&gt; et &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;awk&lt;/code&gt; vous n’avez donc rien d’autres à installer.&lt;/p&gt;
 
 &lt;h1 id=&quot;création-du-script&quot;&gt;Création du script&lt;/h1&gt;
-&lt;p&gt;Je vous mâche le boulot, j’ai déjà fait le script @@RS&lt;/p&gt;
+&lt;p&gt;Je vous mâche le boulot, j’ai déjà fait le script &lt;img src=&quot;/assets/images/emote/RS.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/bash&lt;/span&gt;
 snap run spotify&amp;amp; &lt;span class=&quot;c&quot;&gt;# On lance spotify&lt;/span&gt;
 getSong&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; 
@@ -595,11 +595,11 @@ getSong&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&qu
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;Vous noterez plusieurs informations importantes :&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;On utilise la commande &lt;code class=&quot;highlighter-rouge&quot;&gt;snap run spotify&amp;amp;&lt;/code&gt; dès le début, ce qui veut dire qu’on lance Spotify (via &lt;a href=&quot;https://doc.ubuntu-fr.org/snap&quot;&gt;snap&lt;/a&gt;) et qu’ensuite le script fait son boulot. 
+  &lt;li&gt;On utilise la commande &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;snap run spotify&amp;amp;&lt;/code&gt; dès le début, ce qui veut dire qu’on lance Spotify (via &lt;a href=&quot;https://doc.ubuntu-fr.org/snap&quot;&gt;snap&lt;/a&gt;) et qu’ensuite le script fait son boulot. 
 Je l’ai intégré au script car si vous lancez votre spotify “normalement” vous oublierez la plupart du temps de lancer le script.
 En utilisant ce script, vous n’avez qu’a changé votre raccourci Spotify et le faire pointer vers celui-ci.&lt;/li&gt;
-  &lt;li&gt;Le script s’actualise toutes les 10 secondes &lt;code class=&quot;highlighter-rouge&quot;&gt;sleep 10&lt;/code&gt;, à vous de modifier cette valeur à votre guise.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$1&lt;/code&gt; est utilisé dans le script, ce qui veut dire qu’il y a un argument à passer au script : &lt;strong&gt;Le chemin de destination du fichier !&lt;/strong&gt;, il vous faudra exécuter le script de cette façon &lt;code class=&quot;highlighter-rouge&quot;&gt;sh nom_script.sh /home/btor/songname.txt&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Le script s’actualise toutes les 10 secondes &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sleep 10&lt;/code&gt;, à vous de modifier cette valeur à votre guise.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$1&lt;/code&gt; est utilisé dans le script, ce qui veut dire qu’il y a un argument à passer au script : &lt;strong&gt;Le chemin de destination du fichier !&lt;/strong&gt;, il vous faudra exécuter le script de cette façon &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sh nom_script.sh /home/btor/songname.txt&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&quot;intégration-à-obs&quot;&gt;Intégration à OBS&lt;/h1&gt;
@@ -607,7 +607,7 @@ En utilisant ce script, vous n’avez qu’a changé votre raccourci Spotify et 
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/spotify-obs-titre-chanson/obs-ajout-texte.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Et voilà @@KJ&lt;/p&gt;
+&lt;p&gt;Et voilà &lt;img src=&quot;/assets/images/emote/KJ.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/spotify-obs-titre-chanson/obs-apercu.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 </description>
@@ -629,10 +629,10 @@ En utilisant ce script, vous n’avez qu’a changé votre raccourci Spotify et 
     
       <item>
         <title>React Native: Retour d'expérience</title>
-        <description>&lt;p&gt;Vous vous demandez surement pourquoi un développeur back-end parlerait d’une techno front-end ? @@LUL&lt;/p&gt;
+        <description>&lt;p&gt;Vous vous demandez surement pourquoi un développeur back-end parlerait d’une techno front-end ? &lt;img src=&quot;/assets/images/emote/LUL.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Tout simplement parce que nous aussi “les backs” on a le droit de s’amuser avec &lt;del&gt;vos technos de merde&lt;/del&gt;, euh javascript.
-C’est bon je rigole @@SAD&lt;/p&gt;
+C’est bon je rigole &lt;img src=&quot;/assets/images/emote/SAD.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Depuis un peu plus d’un an je travaille dans une équipe mobile qui se compose de :&lt;/p&gt;
 &lt;ul&gt;
@@ -646,13 +646,13 @@ C’est bon je rigole @@SAD&lt;/p&gt;
 Tout le monde étend ses connaissances et le partage à l’équipe.&lt;/p&gt;
 
 &lt;p&gt;A force de discuter des projets des uns et des autres (majoritairement axés sur du mobile, ça va de soit), je me suis dis qu’il serait temps que je me mette un peu à jour et que moi aussi je retente “l’expérience mobile”.
-Je dis “Retente” parce que oui, j’ai déjà réalisé une ou deux applications mobiles Android il y a quelques années mais n’en parlons pas … @@LUL&lt;/p&gt;
+Je dis “Retente” parce que oui, j’ai déjà réalisé une ou deux applications mobiles Android il y a quelques années mais n’en parlons pas … &lt;img src=&quot;/assets/images/emote/LUL.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
 &lt;h1 id=&quot;mais-pourquoi-reactnative-&quot;&gt;Mais pourquoi ReactNative ?&lt;/h1&gt;
-&lt;p&gt;La question qui vient &lt;em&gt;normalement&lt;/em&gt; tout de suite à l’esprit c’est : &lt;strong&gt;MAIS POURQUOI REACT NATIVE ?&lt;/strong&gt; @@NO&lt;/p&gt;
+&lt;p&gt;La question qui vient &lt;em&gt;normalement&lt;/em&gt; tout de suite à l’esprit c’est : &lt;strong&gt;MAIS POURQUOI REACT NATIVE ?&lt;/strong&gt; &lt;img src=&quot;/assets/images/emote/NO.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Dans un premier temps il est important de comprendre le besoin avant de choisir la techno que l’on utilisera (n’en déplaise aux haters de PHP @@WINK )&lt;/p&gt;
+&lt;p&gt;Dans un premier temps il est important de comprendre le besoin avant de choisir la techno que l’on utilisera (n’en déplaise aux haters de PHP &lt;img src=&quot;/assets/images/emote/WINK.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt; )&lt;/p&gt;
 
-&lt;p&gt;Le besoin est simple, je cherche à développer une application mobile de rencontre @@RS.
+&lt;p&gt;Le besoin est simple, je cherche à développer une application mobile de rencontre &lt;img src=&quot;/assets/images/emote/RS.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;.
 Les critères pour développer cette application sont :&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Une application cross-platform iOS / Android&lt;/li&gt;
@@ -662,7 +662,7 @@ Les critères pour développer cette application sont :&lt;/p&gt;
 
 &lt;p&gt;En prenant en compte ces critères, on peut commencer par lister quelques langages qui pourraient correspondre au besoin :&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;Tous les langages natifs : iOS/Swift, Android/Kotlin, WindowsPhone/C# @@LUL&lt;/li&gt;
+  &lt;li&gt;Tous les langages natifs : iOS/Swift, Android/Kotlin, WindowsPhone/C# &lt;img src=&quot;/assets/images/emote/LUL.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/li&gt;
   &lt;li&gt;Tous les langages web portés sur mobile (Ionic, NativeScript, PhoneGap, React Native)&lt;/li&gt;
   &lt;li&gt;Flutter&lt;/li&gt;
   &lt;li&gt;Et sûrement d’autres que je ne connais pas.&lt;/li&gt;
@@ -670,7 +670,7 @@ Les critères pour développer cette application sont :&lt;/p&gt;
 
 &lt;p&gt;Première grosse différence, le &lt;strong&gt;natif&lt;/strong&gt; et le reste. Développer en natif permet d’être au plus proche du système que l’on vise, on s’assure d’avoir de meilleurs performances ainsi qu’un design system cohérent.
 À côté de ça, le natif implique d’apprendre un nouveau langage pour chaque plateforme ciblée. Si je désire une application cross-platform iOS/Android je devrais apprendre Swift ET Kotlin.
-Ce qui rompt un des besoins : &lt;code class=&quot;highlighter-rouge&quot;&gt;coût réduit en développement&lt;/code&gt;.
+Ce qui rompt un des besoins : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;coût réduit en développement&lt;/code&gt;.
 Développer une application native me prendrait trop de temps d’apprentissage (apprendre les langages, comprendre les stacks, tools chains etc) en plus de devoir développer deux applications vu que le code ne peut pas être partagé.&lt;/p&gt;
 
 &lt;p&gt;Il reste donc Flutter et les langages web “portés” sur mobile.
@@ -721,7 +721,7 @@ Par exemple, un composant ReactNative &lt;a href=&quot;https://reactnative.dev/d
 &lt;p&gt;Pour commencer un projet ReactNative vous avez le choix entre ReactNative CLI et Expo. 
 &lt;a href=&quot;https://expo.io/&quot;&gt;Expo&lt;/a&gt; est un kit d’outils pour développer des applications ReactNative plus rapidement, il propose des fonctionnalités en plus de ReactNative.&lt;/p&gt;
 
-&lt;p&gt;ReactNative CLI est tout simplement… ReactNative…@@RS&lt;/p&gt;
+&lt;p&gt;ReactNative CLI est tout simplement… ReactNative…&lt;img src=&quot;/assets/images/emote/RS.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;expo-expo-on-rentre-du-boulot&quot;&gt;Expo, expo, on rentre du boulot…&lt;/h2&gt;
 &lt;p&gt;J’ai commencé le développement de l’application en utilisant Expo, l’objectif de celui-ci étant de me simplifier la vie, j’avais tout intérêt à l’utiliser.&lt;/p&gt;
@@ -740,7 +740,7 @@ La documentation est assez claire avec ça d’ailleurs :&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Un autre point frustrant avec Expo est qu’on ne peut pas utiliser de modules natif autre que ceux déjà proposés par Expo.
-Par exemple, si vous désirez utiliser le bluetooth, vous ne pourrez pas @@SAD !
+Par exemple, si vous désirez utiliser le bluetooth, vous ne pourrez pas &lt;img src=&quot;/assets/images/emote/SAD.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt; !
 Vous devrez vous &lt;em&gt;éjecter&lt;/em&gt; d’Expo (&lt;a href=&quot;https://docs.expo.io/expokit/eject/&quot;&gt;en savoir plus sur le procédé d’éjection&lt;/a&gt;) et donc perdre le principal intérêt d’Expo.&lt;/p&gt;
 
 &lt;p&gt;Expo parle d’ailleurs assez bien de ses limitations dans sa documentation, je vous invite à y jeter un oeil &lt;a href=&quot;https://docs.expo.io/introduction/why-not-expo/&quot;&gt;ici&lt;/a&gt;.&lt;/p&gt;
@@ -749,17 +749,17 @@ Vous devrez vous &lt;em&gt;éjecter&lt;/em&gt; d’Expo (&lt;a href=&quot;https:
 &lt;h1 id=&quot;typejavascript-&quot;&gt;(?:Type|Java)script ?&lt;/h1&gt;
 &lt;p&gt;Une autre question à se poser en utilisant ReactNative est sur le choix du langage. Javascript ou Typescript ?&lt;/p&gt;
 
-&lt;p&gt;J’ai déjà eu l’occasion d’utiliser Typescript pour &lt;a href=&quot;https://github.com/bt0r/shellbot&quot;&gt;un projet perso&lt;/a&gt; et cette fois-ci j’ai choisi de ne pas l’utiliser @@WUT.
+&lt;p&gt;J’ai déjà eu l’occasion d’utiliser Typescript pour &lt;a href=&quot;https://github.com/bt0r/shellbot&quot;&gt;un projet perso&lt;/a&gt; et cette fois-ci j’ai choisi de ne pas l’utiliser &lt;img src=&quot;/assets/images/emote/WUT.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;.
 La raison va paraitre surement farfelue mais étant donné que je me lance dans un nouveau projet, il va y avoir beaucoup de nouvelles notions à apprendre et je ne veux pas m’imposer une complexité en plus.
 Si l’envie me vient de passer l’application sur Typescript je pourrais toujours y venir plus tard, ça sera du boulot en plus mais c’est un “contrat” que je passe au début du projet.&lt;/p&gt;
 
 &lt;h1 id=&quot;bien-débuter-avec-reactnative&quot;&gt;Bien débuter avec ReactNative&lt;/h1&gt;
 &lt;p&gt;Ne connaissant pas du tout React (et donc ReactNative par la même occasion), j’avais un peu peur de mettre 6 mois à apprendre un nouveau framework sans rien produire de concret.
 Fort heureusement, ReactNative est très accessible.
-La logique globale autour des &lt;strong&gt;Composants&lt;/strong&gt; est très vite acquise et on arrive vite à créer nos premiers écrans @@SLT.&lt;/p&gt;
+La logique globale autour des &lt;strong&gt;Composants&lt;/strong&gt; est très vite acquise et on arrive vite à créer nos premiers écrans &lt;img src=&quot;/assets/images/emote/SLT.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://reactnative.dev/docs/getting-started&quot;&gt;La documentation&lt;/a&gt; est assez bien écrite, on trouve rapidement des bibliothèques qui répondent à nos besoins en fouillant sur google/github/npm…
-Oui mais voilà, tout n’est pas rose @@JEANNE&lt;/p&gt;
+Oui mais voilà, tout n’est pas rose &lt;img src=&quot;/assets/images/emote/JEANNE.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Parfois j’ai pu ressentir quelques frustrations, que ce soit par rapport à ReactNative ou par rapport à mes choix personnels.
 Je vais vous faire un petit récapitulatif de ce que j’ai retenu en 4 mois de développement sur ReactNative.&lt;/p&gt;
@@ -767,10 +767,10 @@ Je vais vous faire un petit récapitulatif de ce que j’ai retenu en 4 mois de 
 &lt;h1 id=&quot;les-moins&quot;&gt;Les moins&lt;/h1&gt;
 &lt;h4 id=&quot;la-stack-sans-expo&quot;&gt;La stack sans Expo&lt;/h4&gt;
 &lt;p&gt;Bien que ce soit un choix de ne pas l’utiliser, Expo simplifie vraiment la vie pour la création des builds ou le déploiement.
-Ne pas avoir Expo ca veut dire devoir configurer Android Studio et xCode. Comprendre pourquoi votre projet ne build pas sur xCode et surtout…&lt;strong&gt;COMPRENDRE&lt;/strong&gt; xCode @@JEANNE.
+Ne pas avoir Expo ca veut dire devoir configurer Android Studio et xCode. Comprendre pourquoi votre projet ne build pas sur xCode et surtout…&lt;strong&gt;COMPRENDRE&lt;/strong&gt; xCode &lt;img src=&quot;/assets/images/emote/JEANNE.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;.
 Avec Android studio je n’ai pas eu de problème vu que la base de l’IDE (IntelliJ) est la même pour tous les langages (PHP, JS, C++, Ruby …) et que globalement il n’y a pas grand-chose à faire, ça marche du premier coup.
 Par contre sur xCode j’ai vraiment du mal.
-Les différences entre projet et workspace, l’interface pas vraiment intuitive, je ne m’attendais pas à ça et malheureusement, il m’est impossible de passer outre @@SAD&lt;/p&gt;
+Les différences entre projet et workspace, l’interface pas vraiment intuitive, je ne m’attendais pas à ça et malheureusement, il m’est impossible de passer outre &lt;img src=&quot;/assets/images/emote/SAD.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Une fois le projet bien paramétré avec vos premiers builds de lancés, vous rencontrerez un autre problème : &lt;strong&gt;L’ajout de bibliothèques&lt;/strong&gt;.
 Étant livré à vous-même sans Expo, vous devrez installer vous-même les bibliothèques, ça veut dire devoir modifier des fichiers natifs dont vous n’avez aucune idée de comment ils fonctionnent et c’est parfois pénible.&lt;/p&gt;
@@ -800,7 +800,7 @@ On se retrouve avec juste un répertoire &lt;em&gt;src&lt;/em&gt; à remplir san
 &lt;h4 id=&quot;la-documentation-officielle-et-ses-redirections&quot;&gt;La documentation officielle et ses redirections&lt;/h4&gt;
 &lt;p&gt;J’en ai parlé dans un de mes tweet &lt;a href=&quot;https://twitter.com/biiitor/status/1252688090503819264&quot;&gt;ici&lt;/a&gt; mais s’il y a bien un truc qui me rend dingue c’est qu’une bonne partie de l’API n’est plus supporté par facebook directement mais par la communauté.
 Jusque-là pourquoi pas, ça prouve que la communauté est active.
-Le souci vient du fait qu’on se retrouve souvent à devoir naviguer entre les différentes documentations, officielles ou communautaires et à être constamment redirigé. Pénible x2 @@TUBAIZ&lt;/p&gt;
+Le souci vient du fait qu’on se retrouve souvent à devoir naviguer entre les différentes documentations, officielles ou communautaires et à être constamment redirigé. Pénible x2 &lt;img src=&quot;/assets/images/emote/TUBAIZ.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;functional-vs-class-component&quot;&gt;Functional VS Class component&lt;/h4&gt;
 &lt;p&gt;En React il est possible d’écrire ses composants de deux manières :&lt;/p&gt;
@@ -842,12 +842,12 @@ Je peux aussi ajouter les modules que je désire sans me soucier de savoir si ce
 C’est une fonctionnalité qu’on apprécie vraiment quand on fait du front : Le &lt;strong&gt;hot-reload&lt;/strong&gt; ou “rechargement à chaud” pour les puristes.
 La modification de notre code source modifie directement notre application sur le téléphone.
 Pas besoin de recréer un build ou de recharger l’application.
-Très pratique quand on travaille sur les vues de notre application @@SLT.&lt;/p&gt;
+Très pratique quand on travaille sur les vues de notre application &lt;img src=&quot;/assets/images/emote/SLT.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;.&lt;/p&gt;
 
 &lt;h4 id=&quot;css&quot;&gt;CSS&lt;/h4&gt;
 &lt;p&gt;Un des gros avantages de ReactNative est le fait qu’une bonne partie des feuilles de style CSS soient disponibles.
-On peut donc profiter des flexbox pour gérer le positionnement de nos blocs et ça c’est &lt;strong&gt;VRAIMENT&lt;/strong&gt; cool @@BEER !
-Pas de GridBagLayout, ConstraintLayout, etc @@SLT
+On peut donc profiter des flexbox pour gérer le positionnement de nos blocs et ça c’est &lt;strong&gt;VRAIMENT&lt;/strong&gt; cool &lt;img src=&quot;/assets/images/emote/BEER.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt; !
+Pas de GridBagLayout, ConstraintLayout, etc &lt;img src=&quot;/assets/images/emote/SLT.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;
 L’écriture du CSS passe par une abstraction sous forme d’objet Javascript mais correspond globalement à du CSS en camelCase.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/react-native-retour-experience/css-react-native.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
@@ -856,7 +856,7 @@ L’écriture du CSS passe par une abstraction sous forme d’objet Javascript m
 &lt;p&gt;Ca peut paraitre bête comme argument mais c’est pourtant décisif quand on utilise un framework comme ReactNative.
 Après avoir travaillé intégralement sur un émulateur Android, j’ai voulu exécuter mon application sur iOS pour vérifier si le rendu/comportement était différent sur iOS.
 J’ai été agréablement surpris de voir qu’il n’y avait pas tellement de différences, en dehors de quelques petits bogues sur des ombres en utilisant les &lt;a href=&quot;https://reactnative.dev/docs/shadow-props&quot;&gt;shadow props&lt;/a&gt;, le rendu est identique sur les deux plateformes.
-Il faut néanmoins comprendre comment fonctionnent les plateformes de destination et notamment iOS avec l’arrivée du &lt;del&gt;motch&lt;/del&gt; notch @@LUL
+Il faut néanmoins comprendre comment fonctionnent les plateformes de destination et notamment iOS avec l’arrivée du &lt;del&gt;motch&lt;/del&gt; notch &lt;img src=&quot;/assets/images/emote/LUL.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;
 Vous devrez forcément utiliser les &lt;a href=&quot;https://reactnative.dev/docs/safeareaview&quot;&gt;SafeAreaView&lt;/a&gt; afin que votre vue ne se retrouve pas sous le notch (ou alors ajuster celle-ci).&lt;/p&gt;
 
 &lt;h4 id=&quot;utilisation-des-bonnes-bibliothèques&quot;&gt;Utilisation des bonnes bibliothèques&lt;/h4&gt;
@@ -890,7 +890,7 @@ ReactNative est une solution pérenne pour réaliser vos applications mobiles cr
   &lt;li&gt;Quel est mon budget et quel est le temps que je veux allouer au développement ?&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;En fonction des réponses à celles-ci, vous pourrez vous diriger vers du ReactNative, du Flutter ou du natif @@KJ&lt;/p&gt;
+&lt;p&gt;En fonction des réponses à celles-ci, vous pourrez vous diriger vers du ReactNative, du Flutter ou du natif &lt;img src=&quot;/assets/images/emote/KJ.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 15 May 2020 00:00:00 -0500</pubDate>
         <image>https://btor.fr/assets/images/react-native-retour-experience/main.jpg</image>
@@ -919,7 +919,7 @@ Jeudi dernier, après avoir passé près de 4h à coder sur un projet personnel 
 &lt;/blockquote&gt;
 
 &lt;p&gt;Ni une, ni deux, j’ouvre Netflix et commence à chercher LA série qui va me tenir en haleine sur les prochains jours.
-Problème, il m’arrive souvent de tomber sur des séries un peu naze comme &lt;a href=&quot;http://www.allocine.fr/series/ficheserie_gen_cserie=24219.html&quot;&gt;Marianne&lt;/a&gt;, cette bouse comiquo-horrifique @@NO.&lt;/p&gt;
+Problème, il m’arrive souvent de tomber sur des séries un peu naze comme &lt;a href=&quot;http://www.allocine.fr/series/ficheserie_gen_cserie=24219.html&quot;&gt;Marianne&lt;/a&gt;, cette bouse comiquo-horrifique &lt;img src=&quot;/assets/images/emote/NO.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;.&lt;/p&gt;
 
 &lt;p&gt;C’est à ce moment précis qu’il me vint à l’esprit une idée de génie&lt;/p&gt;
 
@@ -940,10 +940,10 @@ Le plus dur c’est justement de bien réfléchir aux choix techniques, aux risq
 
 &lt;p&gt;…&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;SAUF&lt;/strong&gt; quand tu codes une extension Firefox pour un side project dont tu te contrefous de la dernière techno à la mode puisque de toute facon tu feras au mieux du Typescript transpilé pour aller dans un environement cloisonné. @@LUL&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;SAUF&lt;/strong&gt; quand tu codes une extension Firefox pour un side project dont tu te contrefous de la dernière techno à la mode puisque de toute facon tu feras au mieux du Typescript transpilé pour aller dans un environement cloisonné. &lt;img src=&quot;/assets/images/emote/LUL.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Je n’avais donc pas beaucoup de questions à me poser, je savais que j’allais partir sur du Javascript ou au mieux du Typescript et que le code ne serait pas très complexe étant donné que ça serait qu’un simple appel ajax à l’API d’Allociné.
-Du moins, c’est ce que je croyais @@SAD&lt;/p&gt;
+Du moins, c’est ce que je croyais &lt;img src=&quot;/assets/images/emote/SAD.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;J’avais déjà réalisé une petite extension Firefox sans l’avoir publié sur le store de Mozilla, je partais donc avec un léger avantage de ce côté là. 
 Par contre, je n’avais jamais regardé de près comment fonctionne le site d’allociné. 
@@ -952,12 +952,12 @@ Ce n’est pas un site que je regarde régulièrement mais c’est en général 
 &lt;p&gt;J’ai donc commencé ce side-project en me faisant un petit repository GitHub avec un bootstrap d’extension pour juste faire mes premiers crash-tests.
 Avant de m’attaquer à Netflix, je voulais m’assurer qu’il était possible de récupérer les notes de films/séries depuis l’API d’allocine.&lt;/p&gt;
 
-&lt;p&gt;Je pars convaincu, serein, frais comme un gardon, bref j’suis chaud @@PROUD&lt;/p&gt;
+&lt;p&gt;Je pars convaincu, serein, frais comme un gardon, bref j’suis chaud &lt;img src=&quot;/assets/images/emote/PROUD.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;J’arrive sur le site d’allociné et je commence à investiguer un peu ce qu’il se passe sur le site:&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;F12, onglet réseaux, est ce qu’il y a des call XHR au chargement de la page ? Nope ! @@NO&lt;/li&gt;
-  &lt;li&gt;Je regarde les différents input afin de voir si certains marchent en Ajax, bingo ! celui de la barre de recherche fait un call ajax @@HEY&lt;/li&gt;
+  &lt;li&gt;F12, onglet réseaux, est ce qu’il y a des call XHR au chargement de la page ? Nope ! &lt;img src=&quot;/assets/images/emote/NO.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Je regarde les différents input afin de voir si certains marchent en Ajax, bingo ! celui de la barre de recherche fait un call ajax &lt;img src=&quot;/assets/images/emote/HEY.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/noteflix-allocine-netflix/search_allocine.png&quot; alt=&quot;Barre de recherche Allociné&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
@@ -1019,10 +1019,10 @@ Avant de m’attaquer à Netflix, je voulais m’assurer qu’il était possible
   &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;On remarque que le format de réponse est assez light, 3 champs dont un qui nous intéresse &lt;code class=&quot;highlighter-rouge&quot;&gt;results&lt;/code&gt;, qui contient les objets répondant à notre recherche.
+&lt;p&gt;On remarque que le format de réponse est assez light, 3 champs dont un qui nous intéresse &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;results&lt;/code&gt;, qui contient les objets répondant à notre recherche.
 Ces objets peuvent être des films, séries ou des personnalités. C’est déjà une première étape à garder en tête vu qu’on ne voudra que ce qui est films ou séries.&lt;/p&gt;
 
-&lt;p&gt;On y trouve aussi un objet &lt;code class=&quot;highlighter-rouge&quot;&gt;scores&lt;/code&gt;, intéressant !&lt;/p&gt;
+&lt;p&gt;On y trouve aussi un objet &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;scores&lt;/code&gt;, intéressant !&lt;/p&gt;
 &lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
     &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;scores&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
         &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;rating_score&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
@@ -1035,7 +1035,7 @@ Ces objets peuvent être des films, séries ou des personnalités. C’est déj
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/noteflix-allocine-netflix/scores_allocine.png&quot; alt=&quot;Score allociné&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Jeanne @@JEANNE ! Au secours ! D’où proviennent ces scores ? J’ai beau tester avec 2 ou 3 autres films/séries, aucune corrélation n’est envisageable.&lt;/p&gt;
+&lt;p&gt;Jeanne &lt;img src=&quot;/assets/images/emote/JEANNE.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt; ! Au secours ! D’où proviennent ces scores ? J’ai beau tester avec 2 ou 3 autres films/séries, aucune corrélation n’est envisageable.&lt;/p&gt;
 
 &lt;p&gt;Je continue donc mon investigation en fouinant sur le site mais rien n’y fait, je ne trouve aucune donnée viable via une API. 
 Je décide donc de regarder un peu sur google et je tombe sur le blog d’un certains &lt;a href=&quot;https://wiki.gromez.fr/dev/api/allocine_v3&quot;&gt;Gromez qui parle de l’API d’Allociné&lt;/a&gt;.&lt;/p&gt;
@@ -1060,21 +1060,21 @@ De plus, cette application ne semble plus être dans le store Android.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Sshdump va nous permettre de capturer des paquets non pas depuis notre propre machine mais depuis une machine hôte, en l’occurence mon téléphone.
-Le téléphone fait office de serveur et mon wireshark de client, fini les envoies de fichier .pcap d’un device à un autre @@SLT !&lt;/p&gt;
+Le téléphone fait office de serveur et mon wireshark de client, fini les envoies de fichier .pcap d’un device à un autre &lt;img src=&quot;/assets/images/emote/SLT.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt; !&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/noteflix-allocine-netflix/pcap_remote.png&quot; alt=&quot;PCAPRemote&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;L’interface est assez simple, le bouton “play” permet de lancer une capture global du smartphone tandis que le bouton “Play 1” permet de choisir une application spécifique. 
 Pratique pour éviter de filtrer à posteriori sur Wireshark !&lt;/p&gt;
 
-&lt;p&gt;Il suffit ensuite de renseigner l’ip et port de l’hôte (le téléphone) sur wireshark en utilisant l’option &lt;code class=&quot;highlighter-rouge&quot;&gt;SSH remote capture: sshdump&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Il suffit ensuite de renseigner l’ip et port de l’hôte (le téléphone) sur wireshark en utilisant l’option &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SSH remote capture: sshdump&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/noteflix-allocine-netflix/wireshark_sshdump.png&quot; alt=&quot;Wireshark SSHDump&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Wireshark reçoit désormais les trames IP, j’en profite pour filtrer sur le protocole HTTP afin d’éviter d’être flooder de requêtes inutiles.
 Pendant que mon Wireshark tourne, je manipule un peu l’application allociné afin du générer du traffic, je recherche, click sur des films, change de pages etc.&lt;/p&gt;
 
-&lt;p&gt;Et qu’est ce qui apparait dans Wireshark ? @@LUL&lt;/p&gt;
+&lt;p&gt;Et qu’est ce qui apparait dans Wireshark ? &lt;img src=&quot;/assets/images/emote/LUL.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/noteflix-allocine-netflix/search_wireshark.png&quot; alt=&quot;PCAPRemote&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
 
@@ -1088,7 +1088,7 @@ Dans la capture wireshark je retrouve aussi des appels à des endpoint très sim
 
 &lt;p&gt;Ce endpoint contient les scores dont j’ai besoin et le lien de la fiche du film ou de la série, c’est plutôt pas mal !&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Problème:&lt;/strong&gt; L’URL changera dans le temps, le code &lt;code class=&quot;highlighter-rouge&quot;&gt;partner&lt;/code&gt; et &lt;code class=&quot;highlighter-rouge&quot;&gt;sig&lt;/code&gt; sont une sorte de credential ou d’identifiant,
+&lt;p&gt;&lt;strong&gt;Problème:&lt;/strong&gt; L’URL changera dans le temps, le code &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;partner&lt;/code&gt; et &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sig&lt;/code&gt; sont une sorte de credential ou d’identifiant,
 c’est un des constats dont faisait l’objet Gromez dans son article.&lt;/p&gt;
 
 &lt;p&gt;Plus mon investigation dure, plus je me rend compte que je passe beaucoup de temps sur quelque chose qui sera amené à évoluer avec le temps. 
@@ -1121,7 +1121,7 @@ Qu’il charge une page ou qu’il click sur une vidéo, le code devra être dé
 
 &lt;h3 id=&quot;mutationobserver&quot;&gt;MutationObserver&lt;/h3&gt;
 &lt;p&gt;La première idée qui me vient à l’esprit est d’utiliser le &lt;a href=&quot;https://developer.mozilla.org/fr/docs/Web/API/MutationObserver&quot;&gt;MutationObserver&lt;/a&gt;.
-Le &lt;code class=&quot;highlighter-rouge&quot;&gt;MutationObserver&lt;/code&gt; a pour but d’envoyer des évènements dès que le DOM de la page est modifié.&lt;/p&gt;
+Le &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MutationObserver&lt;/code&gt; a pour but d’envoyer des évènements dès que le DOM de la page est modifié.&lt;/p&gt;
 
 &lt;p&gt;Ce qui donnerait quelque chose du genre:&lt;/p&gt;
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Configuration de l'observer&lt;/span&gt;
@@ -1163,8 +1163,8 @@ Par exemple si je glisse ma souris sur mon avatar, un menu apparaitra et un év�
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;En écoutant &lt;code class=&quot;highlighter-rouge&quot;&gt;div[role=main]&lt;/code&gt; l’observer enverra des évènements pour chaque ajout/suppression/modifications de ses enfants.
-Si une des &lt;code class=&quot;highlighter-rouge&quot;&gt;div.video&lt;/code&gt; change, un évènement sera déclenché et de même pour &lt;code class=&quot;highlighter-rouge&quot;&gt;div.helper&lt;/code&gt; ou &lt;code class=&quot;highlighter-rouge&quot;&gt;div.footer&lt;/code&gt; alors qu’ils ne nous intéressent pas.&lt;/p&gt;
+&lt;p&gt;En écoutant &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;div[role=main]&lt;/code&gt; l’observer enverra des évènements pour chaque ajout/suppression/modifications de ses enfants.
+Si une des &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;div.video&lt;/code&gt; change, un évènement sera déclenché et de même pour &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;div.helper&lt;/code&gt; ou &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;div.footer&lt;/code&gt; alors qu’ils ne nous intéressent pas.&lt;/p&gt;
 
 &lt;p&gt;Quand le MutationObserver est déclenché, il renvoie une liste de &lt;a href=&quot;https://developer.mozilla.org/fr/docs/Web/API/MutationRecord&quot;&gt;MutationRecord&lt;/a&gt;.
 On peut donc encore un peu plus affiner notre code afin qu’il n’accepte que les évènements issus de noeuds qui nous intéressent:&lt;/p&gt;
@@ -1193,7 +1193,7 @@ Je pourrais y stocker les informations et rating liées aux vidéos, si le cache
 
 &lt;p&gt;Le &lt;strong&gt;Cookie&lt;/strong&gt; étant généralement utilisé pour contenir de l’information qui sera ensuite envoyer au serveur (sessionID, authentification etc.) et n’ayant aucun serveur pour NoteFlix, nous pouvons l’évincer d’office.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;LocalStorage&lt;/strong&gt; nous permet de stocker de la donnée qui perdurera dans le temps, si on coupe et relance son navigateur, le &lt;code class=&quot;highlighter-rouge&quot;&gt;localStorage&lt;/code&gt; sera toujours à l’état avant fermeture du navigateur. 
+&lt;p&gt;&lt;strong&gt;LocalStorage&lt;/strong&gt; nous permet de stocker de la donnée qui perdurera dans le temps, si on coupe et relance son navigateur, le &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;localStorage&lt;/code&gt; sera toujours à l’état avant fermeture du navigateur. 
 Il pourrait convenir à notre besoin mais il faudrait prendre en compte le fait qu’entre chaque version de l’extension, la donnée qui est en cache coté client peut potentiellement être au format de versions antérieurs. 
 Si le model du cache change, il va falloir le purger ou gérer des migrations, un sytème de rétention etc.. ca risque d’ajouter une complexité supplémentaire pour une première version.&lt;/p&gt;
 
@@ -1240,7 +1240,7 @@ Parfois l’extension se retrouvait à recevoir 2 ou 3 évènements simultanée
   &lt;span class=&quot;nx&quot;&gt;manager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;refreshRatings&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;L’avantage de passer par &lt;code class=&quot;highlighter-rouge&quot;&gt;setInterval&lt;/code&gt;, c’est qu’on ne soucis plus de la modification du DOM (donc du code en moins).
+&lt;p&gt;L’avantage de passer par &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;setInterval&lt;/code&gt;, c’est qu’on ne soucis plus de la modification du DOM (donc du code en moins).
 L’inconvénient c’est que toutes les 2 secondes une partie du code est executée pour vérifier si l’on doit chercher la note allociné ou non.&lt;/p&gt;
 
 &lt;p&gt;Le contrat est rempli, l’extension fait plutôt bien son job 🎉&lt;/p&gt;
@@ -1340,7 +1340,7 @@ Effectivement, si vous utilisez Linux sur votre machine hôte vous n’aurez auc
 
 &lt;p&gt;&lt;img src=&quot;https://media.giphy.com/media/LyJ6KPlrFdKnK/giphy.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Comme je vous l’ai dit, Docker a besoin de Linux (LXC) pour fonctionner et quand vous n’êtes pas sous Linux, votre version de Docker (&lt;code class=&quot;highlighter-rouge&quot;&gt;DockerForMac&lt;/code&gt; ou &lt;code class=&quot;highlighter-rouge&quot;&gt;DockerForWindows&lt;/code&gt;) utilisera une machine virtuelle pour exécuter Docker. C’est pour cela que vous remarquerez assez rapidement que vos applications conteneurisées sont plus lentes sur Windows et Mac (les temps de latences dépendent de votre utilisation/application, des inputs/outputs nécessaires etc)
+&lt;p&gt;Comme je vous l’ai dit, Docker a besoin de Linux (LXC) pour fonctionner et quand vous n’êtes pas sous Linux, votre version de Docker (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DockerForMac&lt;/code&gt; ou &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DockerForWindows&lt;/code&gt;) utilisera une machine virtuelle pour exécuter Docker. C’est pour cela que vous remarquerez assez rapidement que vos applications conteneurisées sont plus lentes sur Windows et Mac (les temps de latences dépendent de votre utilisation/application, des inputs/outputs nécessaires etc)
 Rassurez-vous, c’est totalement transparent pour vous ! DockerForMac (ou DockerForWindows) s’occupera lui même de gérer la machine virtuelle, vous n’avez pas d’hyperviseur à installer.
 A noter aussi que Docker n’est pas réservé à la conteneurisation d’image Linux, sous Windows vous aurez le choix entre des conteneurs Windows ou Linux mais vous ne pouvez pas exécuter les deux en même temps, tout comme vous ne pourrez pas exécuter un conteneur Windows sous Linux.&lt;/p&gt;
 
@@ -1364,16 +1364,16 @@ Pour se faire, Docker met à disposition une API simple qui attend des &lt;stron
 &lt;p&gt;Ce même fichier est utilisé pour construire (build) l’image, l’image construite sera ensuite envoyée vers un “serveur Docker” qu’on appelle &lt;strong&gt;Registry&lt;/strong&gt;. Le &lt;strong&gt;Docker Hub&lt;/strong&gt; est un &lt;strong&gt;Registry&lt;/strong&gt; gratuit mis à disposition de tout le monde (des plans payant existent aussi) mais il existe aussi d’autres Registry payant (plus performant, possibilité de gérer plusieurs repository privés etc). Vous pouvez aussi gérer vous même votre propre registry.
 Pour simplifier, Docker Hub est un peu le &lt;strong&gt;Github&lt;/strong&gt; de git, vous avez le droit à un repository privé et à autant de repository public que vous le désirez et si vous désirez avoir plus de repository privé, bah vous payez … :)&lt;/p&gt;
 
-&lt;p&gt;Les images sont stockées avec des &lt;code class=&quot;highlighter-rouge&quot;&gt;Tag&lt;/code&gt;, ces tags permettent de versionner les images sur le repository, par exemple si on regarde &lt;a href=&quot;https://hub.docker.com/_/debian&quot;&gt;les images disponibles pour Debian&lt;/a&gt; On s’aperçoit qu’il existe des images pour plusieurs versions de Debian (Jessie, Buster, Stretch etc..) qui sont en stable mais aussi des versions expérimentales, testing, Release candidate etc.&lt;/p&gt;
+&lt;p&gt;Les images sont stockées avec des &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Tag&lt;/code&gt;, ces tags permettent de versionner les images sur le repository, par exemple si on regarde &lt;a href=&quot;https://hub.docker.com/_/debian&quot;&gt;les images disponibles pour Debian&lt;/a&gt; On s’aperçoit qu’il existe des images pour plusieurs versions de Debian (Jessie, Buster, Stretch etc..) qui sont en stable mais aussi des versions expérimentales, testing, Release candidate etc.&lt;/p&gt;
 
 &lt;h3 id=&quot;️-lancer-son-premier-conteneur&quot;&gt;⚙️ Lancer son premier conteneur&lt;/h3&gt;
 &lt;p&gt;Récupérons une image de Debian et regardons ce qu’il se passe :&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Taper &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -it debian:jessie sh&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Vous devriez normalement tomber sur un shell avec juste &lt;code class=&quot;highlighter-rouge&quot;&gt;#&lt;/code&gt; d’afficher.&lt;/li&gt;
-  &lt;li&gt;Taper &lt;code class=&quot;highlighter-rouge&quot;&gt;cat /etc/debian_version&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Vous devriez voir &lt;code class=&quot;highlighter-rouge&quot;&gt;8.11&lt;/code&gt; s’afficher&lt;/li&gt;
+  &lt;li&gt;Taper &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker run -it debian:jessie sh&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Vous devriez normalement tomber sur un shell avec juste &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;#&lt;/code&gt; d’afficher.&lt;/li&gt;
+  &lt;li&gt;Taper &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cat /etc/debian_version&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Vous devriez voir &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;8.11&lt;/code&gt; s’afficher&lt;/li&gt;
   &lt;li&gt;Nous sommes bien sur une version 8 de Debian, good !&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -1381,49 +1381,49 @@ Pour simplifier, Docker Hub est un peu le &lt;strong&gt;Github&lt;/strong&gt; de
 Revenons maintenant sur ce que nous avons tapé:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker run&lt;/code&gt; : Permet de récupérer une image du Registry et de l’exécuter, si vous désirez uniquement récupérer une image docker sans même l’exécuter, vous pouvez utiliser la commande &lt;code class=&quot;highlighter-rouge&quot;&gt;docker pull&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-it&lt;/code&gt; : Permet de lancer le conteneur en mode interactif&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;debian:jessie&lt;/code&gt;: C’est l’image qu’on veut récupérer et exécuter, notons que &lt;code class=&quot;highlighter-rouge&quot;&gt;debian&lt;/code&gt; est le nom du repository et &lt;code class=&quot;highlighter-rouge&quot;&gt;jessie&lt;/code&gt; le tag de la version à utiliser&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sh&lt;/code&gt; : La commande qu’on cherche à lancer après avoir lancer le conteneur&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker run&lt;/code&gt; : Permet de récupérer une image du Registry et de l’exécuter, si vous désirez uniquement récupérer une image docker sans même l’exécuter, vous pouvez utiliser la commande &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker pull&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-it&lt;/code&gt; : Permet de lancer le conteneur en mode interactif&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;debian:jessie&lt;/code&gt;: C’est l’image qu’on veut récupérer et exécuter, notons que &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;debian&lt;/code&gt; est le nom du repository et &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jessie&lt;/code&gt; le tag de la version à utiliser&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sh&lt;/code&gt; : La commande qu’on cherche à lancer après avoir lancer le conteneur&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;En d’autres termes, on a demandé à docker de récupérer une image, la lancer et d’exécuter une commande qu’on lui donne (&lt;code class=&quot;highlighter-rouge&quot;&gt;sh&lt;/code&gt;) ! C’est tout !&lt;/p&gt;
+&lt;p&gt;En d’autres termes, on a demandé à docker de récupérer une image, la lancer et d’exécuter une commande qu’on lui donne (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sh&lt;/code&gt;) ! C’est tout !&lt;/p&gt;
 
 &lt;p&gt;Les conteneurs sont censés avoir une fonction unique, par exemple on pourrait utiliser un conteneur pour lancer un processus nginx, php-fpm, go etc..
-Le conteneur peut lancer cette fonction et se terminer à la fin du processus ou ne jamais s’arrêter (le cas d’un serveur web, d’un worker etc.). Si vous désirez arrêter l’exécution d’un conteneur qui tourne en rond, qui est un worker ou autre vous pouvez utiliser la commande &lt;code class=&quot;highlighter-rouge&quot;&gt;docker kill &amp;lt;hash&amp;gt;&lt;/code&gt; ou &lt;code class=&quot;highlighter-rouge&quot;&gt;docker kill &amp;lt;nom-conteneur&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+Le conteneur peut lancer cette fonction et se terminer à la fin du processus ou ne jamais s’arrêter (le cas d’un serveur web, d’un worker etc.). Si vous désirez arrêter l’exécution d’un conteneur qui tourne en rond, qui est un worker ou autre vous pouvez utiliser la commande &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker kill &amp;lt;hash&amp;gt;&lt;/code&gt; ou &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker kill &amp;lt;nom-conteneur&amp;gt;&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Reprenons la même image &lt;code class=&quot;highlighter-rouge&quot;&gt;debian:jessie&lt;/code&gt; mais cette fois-ci nous lui demanderons de lancer le conteneur puis d’exécuter la commande &lt;code class=&quot;highlighter-rouge&quot;&gt;cat /etc/debian_version&lt;/code&gt; sans être en mode interactif.&lt;/p&gt;
+&lt;p&gt;Reprenons la même image &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;debian:jessie&lt;/code&gt; mais cette fois-ci nous lui demanderons de lancer le conteneur puis d’exécuter la commande &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cat /etc/debian_version&lt;/code&gt; sans être en mode interactif.&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;Taper &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run debian:jessie cat /etc/debian_version&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;La commande renvoie directement &lt;code class=&quot;highlighter-rouge&quot;&gt;8.11&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Taper &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker run debian:jessie cat /etc/debian_version&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;La commande renvoie directement &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;8.11&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;Conclusion :&lt;/strong&gt; ` Docker run` va récupérer une image docker puis l’exécuter, on peut exécuter l’image en mode interactif pour interagir dans le conteneur ou tout simplement lancer l’exécution d’une commande/fonction afin d’avoir la réponse directement.&lt;/p&gt;
 
 &lt;h3 id=&quot;️-exec&quot;&gt;➡️ Exec&lt;/h3&gt;
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;run&lt;/code&gt; nous permettant de récupérer et lancer une image, comment fait-on quand on a un conteneur déjà lancé et qu’on veut exécuter une commande à l’intérieur de celui ci sans forcément passer à chaque fois par le shell ? c’est là qu’&lt;code class=&quot;highlighter-rouge&quot;&gt;exec&lt;/code&gt; intervient.
-Lançons &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run nginx&lt;/code&gt; dans une fenêtre, puis dans une autre :&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;run&lt;/code&gt; nous permettant de récupérer et lancer une image, comment fait-on quand on a un conteneur déjà lancé et qu’on veut exécuter une commande à l’intérieur de celui ci sans forcément passer à chaque fois par le shell ? c’est là qu’&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;exec&lt;/code&gt; intervient.
+Lançons &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker run nginx&lt;/code&gt; dans une fenêtre, puis dans une autre :&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker ps&lt;/code&gt; pour afficher la liste des conteneurs en cours d’exécution&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker ps&lt;/code&gt; pour afficher la liste des conteneurs en cours d’exécution&lt;/li&gt;
   &lt;li&gt;On aperçoit bien notre conteneur
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fdf20b921646  nginx &quot;nginx -g 'daemon of…&quot;   6 seconds ago   Up 4 seconds    80/tcp   happy_jepsen
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fdf20b921646  nginx &quot;nginx -g 'daemon of…&quot;   6 seconds ago   Up 4 seconds    80/tcp   happy_jepsen
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
-  &lt;li&gt;Essayons de récupérer la version de debian en tapant &lt;code class=&quot;highlighter-rouge&quot;&gt;docker exec happy_jepsen cat /etc/debian_version&lt;/code&gt; (&lt;code class=&quot;highlighter-rouge&quot;&gt;happy_jepsen&lt;/code&gt; doit être remplacé par le nom de votre conteneur ou son hash, ici &lt;code class=&quot;highlighter-rouge&quot;&gt;fdf20b921646&lt;/code&gt;)&lt;/li&gt;
-  &lt;li&gt;Le conteneur répond &lt;code class=&quot;highlighter-rouge&quot;&gt;9.9&lt;/code&gt;, ce qui correspond bien à la version &lt;code class=&quot;highlighter-rouge&quot;&gt;stretch-slim&lt;/code&gt; disponible dans le &lt;a href=&quot;https://github.com/nginxinc/docker-nginx/blob/b749353968a57ebd9da17e12d23f1a5fb62f9de9/mainline/stretch/Dockerfile&quot;&gt;Dockerfile&lt;/a&gt; de nginx&lt;/li&gt;
+  &lt;li&gt;Essayons de récupérer la version de debian en tapant &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker exec happy_jepsen cat /etc/debian_version&lt;/code&gt; (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;happy_jepsen&lt;/code&gt; doit être remplacé par le nom de votre conteneur ou son hash, ici &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fdf20b921646&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;Le conteneur répond &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;9.9&lt;/code&gt;, ce qui correspond bien à la version &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;stretch-slim&lt;/code&gt; disponible dans le &lt;a href=&quot;https://github.com/nginxinc/docker-nginx/blob/b749353968a57ebd9da17e12d23f1a5fb62f9de9/mainline/stretch/Dockerfile&quot;&gt;Dockerfile&lt;/a&gt; de nginx&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;Conclusion :&lt;/strong&gt; Il faut faire attention à bien utiliser &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run&lt;/code&gt; et &lt;code class=&quot;highlighter-rouge&quot;&gt;docker exec&lt;/code&gt;, on confond souvent les deux au début. 
-&lt;code class=&quot;highlighter-rouge&quot;&gt;run&lt;/code&gt; =&amp;gt; Je récupère et je lance l’image (avec ou sans commande à exécuter) 
-&lt;code class=&quot;highlighter-rouge&quot;&gt;exec&lt;/code&gt; =&amp;gt; Je lance une commande dans un conteneur &lt;strong&gt;déjà&lt;/strong&gt; lancé.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Conclusion :&lt;/strong&gt; Il faut faire attention à bien utiliser &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker run&lt;/code&gt; et &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker exec&lt;/code&gt;, on confond souvent les deux au début. 
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;run&lt;/code&gt; =&amp;gt; Je récupère et je lance l’image (avec ou sans commande à exécuter) 
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;exec&lt;/code&gt; =&amp;gt; Je lance une commande dans un conteneur &lt;strong&gt;déjà&lt;/strong&gt; lancé.&lt;/p&gt;
 
 &lt;h3 id=&quot;-votre-premier-conteneur-docker&quot;&gt;🐥 Votre premier conteneur Docker&lt;/h3&gt;
-&lt;p&gt;Nous avons connaissance de quatre commandes docker : &lt;code class=&quot;highlighter-rouge&quot;&gt;run&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;exec&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;pull&lt;/code&gt; et &lt;code class=&quot;highlighter-rouge&quot;&gt;ps&lt;/code&gt;. 
+&lt;p&gt;Nous avons connaissance de quatre commandes docker : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;run&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;exec&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pull&lt;/code&gt; et &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ps&lt;/code&gt;. 
 Jusqu’à présent nous avons récupéré des images docker déjà crée, mais qu’en est-il d’une image qu’on souhaiterait créer ?&lt;/p&gt;
 
 &lt;p&gt;Commençons par faire notre premier fichier &lt;strong&gt;Dockerfile&lt;/strong&gt; :&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;Créer un fichier nommé  &lt;code class=&quot;highlighter-rouge&quot;&gt;Dockerfile&lt;/code&gt; et y ajouter :&lt;/li&gt;
+  &lt;li&gt;Créer un fichier nommé  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Dockerfile&lt;/code&gt; et y ajouter :&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;div class=&quot;language-dockerfile highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; debian:jessie&lt;/span&gt;
@@ -1434,12 +1434,12 @@ Jusqu’à présent nous avons récupéré des images docker déjà crée, mais 
 &lt;p&gt;On y voit deux instructions :&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;FROM&lt;/code&gt; : Demande à Docker de récupérer une image (en l’occurence &lt;code class=&quot;highlighter-rouge&quot;&gt;debian:jessie&lt;/code&gt;)&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;RUN&lt;/code&gt; : Exécute une commande système, ça pourrait être &lt;code class=&quot;highlighter-rouge&quot;&gt;ls&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;cp&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;cat&lt;/code&gt; …&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FROM&lt;/code&gt; : Demande à Docker de récupérer une image (en l’occurence &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;debian:jessie&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RUN&lt;/code&gt; : Exécute une commande système, ça pourrait être &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ls&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cp&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cat&lt;/code&gt; …&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Les images Docker ont besoin d’être build pour ensuite pouvoir être lancée. 
-Pour lancer le build d’une image, il suffit d’utiliser la commande &lt;code class=&quot;highlighter-rouge&quot;&gt;docker build .&lt;/code&gt;. On dit juste à Docker de build l’image courante, docker se chargera de prendre le fichier &lt;code class=&quot;highlighter-rouge&quot;&gt;Dockerfile&lt;/code&gt; dans votre répertoire courant. Vous pouvez aussi spécifier un chemin vers un Dockerfile en utilisant &lt;code class=&quot;highlighter-rouge&quot;&gt;docker build -f repertoire/Dockerfile .&lt;/code&gt;&lt;/p&gt;
+Pour lancer le build d’une image, il suffit d’utiliser la commande &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker build .&lt;/code&gt;. On dit juste à Docker de build l’image courante, docker se chargera de prendre le fichier &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Dockerfile&lt;/code&gt; dans votre répertoire courant. Vous pouvez aussi spécifier un chemin vers un Dockerfile en utilisant &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker build -f repertoire/Dockerfile .&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Voici le retour de la commande:&lt;/p&gt;
 
@@ -1457,23 +1457,23 @@ Successfully built 8831306e5a73
 
 &lt;ul&gt;
   &lt;li&gt;On voit très clairement les deux étapes que docker exécute : FROM et RUN&lt;/li&gt;
-  &lt;li&gt;Chaque étape à son propre hash &lt;code class=&quot;highlighter-rouge&quot;&gt;7cd9fb1ee74f&lt;/code&gt; pour le FROM et &lt;code class=&quot;highlighter-rouge&quot;&gt;8831306e5a73&lt;/code&gt; pour le RUN, chaque étape/instruction va créer un nouveau layer (une couche).&lt;/li&gt;
-  &lt;li&gt;Le build résulte d’un message &lt;code class=&quot;highlighter-rouge&quot;&gt;Successfully build 8831306e5a73&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Chaque étape à son propre hash &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;7cd9fb1ee74f&lt;/code&gt; pour le FROM et &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;8831306e5a73&lt;/code&gt; pour le RUN, chaque étape/instruction va créer un nouveau layer (une couche).&lt;/li&gt;
+  &lt;li&gt;Le build résulte d’un message &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Successfully build 8831306e5a73&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;-les-coucheslayers&quot;&gt;📚 Les couches/layers&lt;/h2&gt;
-&lt;p&gt;Pour chaque étape ou instruction que l’ont écris dans notre Dockerfile, Docker va créer un layer avec un &lt;code class=&quot;highlighter-rouge&quot;&gt;hash&lt;/code&gt; propre à celui ci. Chaque layer est utilisable tel quel ! Oui oui ! Vous pouvez lancer un conteneur en vous basant sur le &lt;code class=&quot;highlighter-rouge&quot;&gt;hash&lt;/code&gt; de votre layer
-(vous pouvez tester en tapant&lt;code class=&quot;highlighter-rouge&quot;&gt;docker run 8831306e5a73 cat /etc/debian_version&lt;/code&gt;)&lt;/p&gt;
+&lt;p&gt;Pour chaque étape ou instruction que l’ont écris dans notre Dockerfile, Docker va créer un layer avec un &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hash&lt;/code&gt; propre à celui ci. Chaque layer est utilisable tel quel ! Oui oui ! Vous pouvez lancer un conteneur en vous basant sur le &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hash&lt;/code&gt; de votre layer
+(vous pouvez tester en tapant&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker run 8831306e5a73 cat /etc/debian_version&lt;/code&gt;)&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://media.giphy.com/media/2YntTHAxuJLZcKpOy9/giphy.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Vulgarisons la chose, voilà ce que vous demandez à Docker:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Vous:&lt;/strong&gt; Créer moi une image qui hérite de &lt;code class=&quot;highlighter-rouge&quot;&gt;debian:jessie&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Docker:&lt;/strong&gt; C’est fait, l’image est écrite dans le cache avec le hash &lt;code class=&quot;highlighter-rouge&quot;&gt;7cd9fb1ee74f&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Vous:&lt;/strong&gt; En utilisant cette image, lance la commande &lt;code class=&quot;highlighter-rouge&quot;&gt;echo &quot;toto&quot;&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Docker:&lt;/strong&gt; C’est fait, j’ai réutiliser l’image &lt;code class=&quot;highlighter-rouge&quot;&gt;debian:jessie&lt;/code&gt; puis y ai lancé la commande &lt;code class=&quot;highlighter-rouge&quot;&gt;echo &quot;toto&quot;&lt;/code&gt; et j’ai sauvegardé le résultat dans une nouvelle image avec le hash &lt;code class=&quot;highlighter-rouge&quot;&gt;8831306e5a73&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Vous:&lt;/strong&gt; Créer moi une image qui hérite de &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;debian:jessie&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Docker:&lt;/strong&gt; C’est fait, l’image est écrite dans le cache avec le hash &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;7cd9fb1ee74f&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Vous:&lt;/strong&gt; En utilisant cette image, lance la commande &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;echo &quot;toto&quot;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Docker:&lt;/strong&gt; C’est fait, j’ai réutiliser l’image &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;debian:jessie&lt;/code&gt; puis y ai lancé la commande &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;echo &quot;toto&quot;&lt;/code&gt; et j’ai sauvegardé le résultat dans une nouvelle image avec le hash &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;8831306e5a73&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Pour chaque étape, docker créer une couche, c’est génial parce que ça nous permet à la fois de tester ces étapes une à une mais c’est aussi une bonne chose puisque Docker va être capable de comprendre vos modifications sur le Dockerfile et de ne relancer que ce qui a été modifié, exemple :&lt;/p&gt;
@@ -1486,27 +1486,27 @@ Successfully built 8831306e5a73
   &lt;li&gt;Etape 3 / hash 333&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Vous lancez votre &lt;code class=&quot;highlighter-rouge&quot;&gt;docker build .&lt;/code&gt; et vous vous rendez compte que votre étape 2 n’est pas bonne. Vous l’éditez et relancé le build… et la &lt;strong&gt;PAF !&lt;/strong&gt; vous vous rendez compte que Docker ne relance pas l’étape 1 mais passe directement à l’étape 2 et 3, pourquoi ? parce qu’il a déjà en mémoire l’étape 1 et sait qu’elle n’a pas été touché donc il peut repartir de là et exécuter les étapes filles. A noter que les étapes sont séquentielles, elles dépendent toutes de leur “mère”, Etape 3 dépend de Etape 2 qui elle même dépend d’Etape 1. Docker ne peut donc pas relancer uniquement L’étape 2, elle est la mère de l’étape 3 et donc Docker n’a aucun moyen de savoir si elle a été modifié ou pas.&lt;/p&gt;
+&lt;p&gt;Vous lancez votre &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker build .&lt;/code&gt; et vous vous rendez compte que votre étape 2 n’est pas bonne. Vous l’éditez et relancé le build… et la &lt;strong&gt;PAF !&lt;/strong&gt; vous vous rendez compte que Docker ne relance pas l’étape 1 mais passe directement à l’étape 2 et 3, pourquoi ? parce qu’il a déjà en mémoire l’étape 1 et sait qu’elle n’a pas été touché donc il peut repartir de là et exécuter les étapes filles. A noter que les étapes sont séquentielles, elles dépendent toutes de leur “mère”, Etape 3 dépend de Etape 2 qui elle même dépend d’Etape 1. Docker ne peut donc pas relancer uniquement L’étape 2, elle est la mère de l’étape 3 et donc Docker n’a aucun moyen de savoir si elle a été modifié ou pas.&lt;/p&gt;
 
 &lt;h2 id=&quot;-les-instructions&quot;&gt;📝 Les instructions&lt;/h2&gt;
 &lt;p&gt;On l’a vu plus haut, un Dockerfile est composé d’instructions, dans les instructions courantes, on retrouve:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;FROM&lt;/code&gt;: C’est notre héritage de base de l’image&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;RUN&lt;/code&gt;: On lance une commande dans le filesystem du conteneur&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;COPY&lt;/code&gt;: Permet de copier des fichiers depuis la machine hôte vers le conteneur&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;LABEL&lt;/code&gt;:  Notion “d’étiquettes” qu’on donne au conteneur, utile pour mettre qui est l’auteur, le mainteneur, ou un mail de contact&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ENV&lt;/code&gt;: Affectation de variables d’environnements&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;EXPOSE&lt;/code&gt;: Permet d’exposer des ports, par exemple dans le cas d’un conteneur de serveur web, on exposera le port 80 et 443 afin de pouvoir accéder au processus Nginx/Apache&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;WORKDIR&lt;/code&gt;: Change le répertoire de travail&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ENTRYPOINT&lt;/code&gt;: Lance un script d’initialisation du conteneur&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CMD&lt;/code&gt;: Une fois le conteneur lancé, CMD sera utilisé comme commande par défaut pour lancer le conteneur (typiquement sur un conteneur &lt;code class=&quot;highlighter-rouge&quot;&gt;node&lt;/code&gt; on pourrait avoir un &lt;code class=&quot;highlighter-rouge&quot;&gt;node start&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FROM&lt;/code&gt;: C’est notre héritage de base de l’image&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RUN&lt;/code&gt;: On lance une commande dans le filesystem du conteneur&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;COPY&lt;/code&gt;: Permet de copier des fichiers depuis la machine hôte vers le conteneur&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;LABEL&lt;/code&gt;:  Notion “d’étiquettes” qu’on donne au conteneur, utile pour mettre qui est l’auteur, le mainteneur, ou un mail de contact&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ENV&lt;/code&gt;: Affectation de variables d’environnements&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;EXPOSE&lt;/code&gt;: Permet d’exposer des ports, par exemple dans le cas d’un conteneur de serveur web, on exposera le port 80 et 443 afin de pouvoir accéder au processus Nginx/Apache&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;WORKDIR&lt;/code&gt;: Change le répertoire de travail&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ENTRYPOINT&lt;/code&gt;: Lance un script d’initialisation du conteneur&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CMD&lt;/code&gt;: Une fois le conteneur lancé, CMD sera utilisé comme commande par défaut pour lancer le conteneur (typiquement sur un conteneur &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;node&lt;/code&gt; on pourrait avoir un &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;node start&lt;/code&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Ces instructions peuvent être utilisées dans l’ordre que vous voulez, à l’exception de certaines… (bah oui, il y a toujours un truc bizarre qui se cache…).
-Dans vos premiers Dockerfile vous utiliserez &lt;strong&gt;toujours&lt;/strong&gt; l’instruction &lt;code class=&quot;highlighter-rouge&quot;&gt;FROM&lt;/code&gt; en première. Tout simplement parce que votre image commence toujours à partir d’une autre image,  vous avez la possibilité de créer votre propre image de “départ”. C’est ce qu’on appelle les &lt;code class=&quot;highlighter-rouge&quot;&gt;base image&lt;/code&gt;. Il n’est pas du tout nécessaire de savoir créer des &lt;code class=&quot;highlighter-rouge&quot;&gt;base image&lt;/code&gt; pour utiliser Docker mais pour les intéressés &lt;a href=&quot;https://docs.docker.com/develop/develop-images/baseimages/&quot;&gt;voici le lien&lt;/a&gt;.&lt;/p&gt;
+Dans vos premiers Dockerfile vous utiliserez &lt;strong&gt;toujours&lt;/strong&gt; l’instruction &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FROM&lt;/code&gt; en première. Tout simplement parce que votre image commence toujours à partir d’une autre image,  vous avez la possibilité de créer votre propre image de “départ”. C’est ce qu’on appelle les &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;base image&lt;/code&gt;. Il n’est pas du tout nécessaire de savoir créer des &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;base image&lt;/code&gt; pour utiliser Docker mais pour les intéressés &lt;a href=&quot;https://docs.docker.com/develop/develop-images/baseimages/&quot;&gt;voici le lien&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;Mention spéciale aussi pour &lt;code class=&quot;highlighter-rouge&quot;&gt;CMD&lt;/code&gt; et &lt;code class=&quot;highlighter-rouge&quot;&gt;ENTRYPOINT&lt;/code&gt; qui sont souvent utilisées à la fin du Dockerfile pour des soucis de lisibilité/compréhension et parce qu’elles définissent le script/command à lancé une fois le conteneur “prêt”.&lt;/p&gt;
+&lt;p&gt;Mention spéciale aussi pour &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CMD&lt;/code&gt; et &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ENTRYPOINT&lt;/code&gt; qui sont souvent utilisées à la fin du Dockerfile pour des soucis de lisibilité/compréhension et parce qu’elles définissent le script/command à lancé une fois le conteneur “prêt”.&lt;/p&gt;
 
 &lt;h2 id=&quot;️-push-it-to-the-limit&quot;&gt;🕊️ Push it to the limit&lt;/h2&gt;
 
@@ -1514,8 +1514,8 @@ Dans vos premiers Dockerfile vous utiliserez &lt;strong&gt;toujours&lt;/strong&g
 
 &lt;p&gt;On a arrive à construire nos images en locale, à les lancer, lancer des commandes à l’intérieur de nos conteneurs etc.. cool ! mais comment fait-on pour les sauvegarder sur le hub ?&lt;/p&gt;
 
-&lt;p&gt;Première étape, votre &lt;code class=&quot;highlighter-rouge&quot;&gt;Dockerfile&lt;/code&gt; doit être versionné avec github (ou autre) afin de garder une trace de votre image.
-La deuxième étape est toute simple, pour chaque version de votre image, vous allez lui appliquer un &lt;code class=&quot;highlighter-rouge&quot;&gt;tag&lt;/code&gt; et l’envoyer sur le hub docker.&lt;/p&gt;
+&lt;p&gt;Première étape, votre &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Dockerfile&lt;/code&gt; doit être versionné avec github (ou autre) afin de garder une trace de votre image.
+La deuxième étape est toute simple, pour chaque version de votre image, vous allez lui appliquer un &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tag&lt;/code&gt; et l’envoyer sur le hub docker.&lt;/p&gt;
 
 &lt;p&gt;Faisons un essai avec ce Dockerfile:&lt;/p&gt;
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;FROM debian:jessie
@@ -1525,13 +1525,13 @@ COPY ./script.sh /root/script.sh
 RUN &lt;span class=&quot;nb&quot;&gt;chmod &lt;/span&gt;777 /root/script.sh
 ENTRYPOINT &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/root/script.sh&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Au même endroit que le Dockerfile, créez un fichier nommé &lt;code class=&quot;highlighter-rouge&quot;&gt;script.sh&lt;/code&gt; avec ceci à l’intérieur&lt;/p&gt;
+&lt;p&gt;Au même endroit que le Dockerfile, créez un fichier nommé &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;script.sh&lt;/code&gt; avec ceci à l’intérieur&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/bash&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;WOW ca marche&quot;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;Lancons le build de l’image :&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker build .
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker build .
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;Ce qui nous donne&lt;/p&gt;
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Sending build context to Docker daemon  3.072kB
@@ -1557,13 +1557,13 @@ Successfully built 1faa94d56d33
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Vous noterez qu’une seule étape de mon Dockerfile crée quelque chose dans le conteneur, c’est l’étape “COPY” qui copie un fichier depuis le système hôte jusqu’au conteneur. L’instructions &lt;code class=&quot;highlighter-rouge&quot;&gt;RUN echo &quot;Bienvenue ...&quot;&lt;/code&gt; ne s’affiche que lors de l’exécution du build, pas une fois l’image crée/lancée.&lt;/p&gt;
+&lt;p&gt;Vous noterez qu’une seule étape de mon Dockerfile crée quelque chose dans le conteneur, c’est l’étape “COPY” qui copie un fichier depuis le système hôte jusqu’au conteneur. L’instructions &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RUN echo &quot;Bienvenue ...&quot;&lt;/code&gt; ne s’affiche que lors de l’exécution du build, pas une fois l’image crée/lancée.&lt;/p&gt;
 
-&lt;p&gt;Notre image est crée en local, on peut l’exécuter en faisant &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run 1faa94d56d33&lt;/code&gt; (où &lt;code class=&quot;highlighter-rouge&quot;&gt;1faa94d56d33&lt;/code&gt; correspond au dernier layer construit).&lt;/p&gt;
+&lt;p&gt;Notre image est crée en local, on peut l’exécuter en faisant &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker run 1faa94d56d33&lt;/code&gt; (où &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1faa94d56d33&lt;/code&gt; correspond au dernier layer construit).&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;WOW ca marche&lt;/code&gt; s’affiche, génial, sauf que voilà, notre image n’a pas de version/nom du coup c’est un peu chiant d’utiliser à chaque fois le hash de celle-ci.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;WOW ca marche&lt;/code&gt; s’affiche, génial, sauf que voilà, notre image n’a pas de version/nom du coup c’est un peu chiant d’utiliser à chaque fois le hash de celle-ci.&lt;/p&gt;
 
-&lt;p&gt;Et si on la tagguait ? Pour tagguer, il suffit d’utiliser l’option &lt;code class=&quot;highlighter-rouge&quot;&gt;-t&lt;/code&gt; :&lt;/p&gt;
+&lt;p&gt;Et si on la tagguait ? Pour tagguer, il suffit d’utiliser l’option &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-t&lt;/code&gt; :&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker build &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; btor/wow
 
@@ -1589,17 +1589,17 @@ Successfully built 1faa94d56d33
 Successfully tagged btor/wow:latest
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;On note ici que j’ai utilisé : &lt;code class=&quot;highlighter-rouge&quot;&gt;btor&lt;/code&gt; comme nom de compte docker hub, &lt;code class=&quot;highlighter-rouge&quot;&gt;wow&lt;/code&gt; comme repository et c’est tout, docker m’a automatiquement attribué la version &lt;code class=&quot;highlighter-rouge&quot;&gt;latest&lt;/code&gt;, ce qui veut dire que si je refait un build de cette même image ou d’une image modifié avec le même tag, elle surchargera ma précédente. Et oui jamy !&lt;/p&gt;
+&lt;p&gt;On note ici que j’ai utilisé : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;btor&lt;/code&gt; comme nom de compte docker hub, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;wow&lt;/code&gt; comme repository et c’est tout, docker m’a automatiquement attribué la version &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;latest&lt;/code&gt;, ce qui veut dire que si je refait un build de cette même image ou d’une image modifié avec le même tag, elle surchargera ma précédente. Et oui jamy !&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://media1.tenor.com/images/43d1951bb99d9223dbdc3146ef8b4f60/tenor.gif?itemid=11967093&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Pour spécifier une version, on peut tout simplement ajouter &lt;code class=&quot;highlighter-rouge&quot;&gt;:v1&lt;/code&gt; par exemple, ce qui donnerait&lt;/p&gt;
+&lt;p&gt;Pour spécifier une version, on peut tout simplement ajouter &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:v1&lt;/code&gt; par exemple, ce qui donnerait&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker build &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; &amp;lt;vous&amp;gt;/wow:v1
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;La version peut s’appeller de n’importe quelle facon &lt;code class=&quot;highlighter-rouge&quot;&gt;10.1&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;v1&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;v1-alpha&lt;/code&gt; …&lt;/p&gt;
+&lt;p&gt;La version peut s’appeller de n’importe quelle facon &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;10.1&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;v1&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;v1-alpha&lt;/code&gt; …&lt;/p&gt;
 
-&lt;p&gt;Notre image en v1 crée en local, il serait temps de l’envoyer sur le docker hub en tapant &lt;code class=&quot;highlighter-rouge&quot;&gt;docker push &amp;lt;vous&amp;gt;/wow:v1&lt;/code&gt; (pensez à remplacer &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;vous&amp;gt;&lt;/code&gt; par votre nom de compte docker hub que ce soit pour vos builds ou vos push sinon vous n’aurez pas les droits d’envoyer sur un repository dont vous n’êtes pas le propriétaire)&lt;/p&gt;
+&lt;p&gt;Notre image en v1 crée en local, il serait temps de l’envoyer sur le docker hub en tapant &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker push &amp;lt;vous&amp;gt;/wow:v1&lt;/code&gt; (pensez à remplacer &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;vous&amp;gt;&lt;/code&gt; par votre nom de compte docker hub que ce soit pour vos builds ou vos push sinon vous n’aurez pas les droits d’envoyer sur un repository dont vous n’êtes pas le propriétaire)&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker push &amp;lt;vous&amp;gt;/wow:v1
 The push refers to repository &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;docker.io/&amp;lt;vous&amp;gt;/wow]
@@ -1609,38 +1609,38 @@ c70e7bc63ac2: Pushed
 v1: digest: sha256:90717eefe2dedddfd65d818f88f1c75aa29b7f5c3aafc43dba2b0fca8656cf9b size: 943
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;Notre image est désormais disponible sur le docker hub, elle est réutilisable par n’importe qui (repository public) ! Top ! 
-Maintenant éditons notre &lt;code class=&quot;highlighter-rouge&quot;&gt;script.sh&lt;/code&gt; et remplaçons le &lt;code class=&quot;highlighter-rouge&quot;&gt;WOW ca marche&lt;/code&gt; par &lt;code class=&quot;highlighter-rouge&quot;&gt;WOW c'est la v2 !&lt;/code&gt; et taggons tout ca en v2&lt;/p&gt;
+Maintenant éditons notre &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;script.sh&lt;/code&gt; et remplaçons le &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;WOW ca marche&lt;/code&gt; par &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;WOW c'est la v2 !&lt;/code&gt; et taggons tout ca en v2&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;vim script.sh&lt;/code&gt; -&amp;gt; Wow c’est la v2 !&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt; docker build . -t &amp;lt;vous&amp;gt;/wow:v2&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker push &amp;lt;vous&amp;gt;/wow:v2&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;vim script.sh&lt;/code&gt; -&amp;gt; Wow c’est la v2 !&lt;/li&gt;
+  &lt;li&gt;` docker build . -t &lt;vous&gt;/wow:v2`&lt;/vous&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker push &amp;lt;vous&amp;gt;/wow:v2&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Une fois le push effectué, rendez vous sur votre compte docker hub. Vous devriez avoir 2 versions (&lt;code class=&quot;highlighter-rouge&quot;&gt;v1&lt;/code&gt; et &lt;code class=&quot;highlighter-rouge&quot;&gt;v2&lt;/code&gt;) dans votre repository &lt;code class=&quot;highlighter-rouge&quot;&gt;wow&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Une fois le push effectué, rendez vous sur votre compte docker hub. Vous devriez avoir 2 versions (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;v1&lt;/code&gt; et &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;v2&lt;/code&gt;) dans votre repository &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;wow&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Les deux versions peuvent être récupérées par n’importe qui en faisant &lt;code class=&quot;highlighter-rouge&quot;&gt;docker pull &amp;lt;vous&amp;gt;/wow:v1&lt;/code&gt; ou &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run &amp;lt;vous&amp;gt;/wow:v2&lt;/code&gt;, si l’image n’existe pas en local, docker va rechercher sur docker hub et va automatiquement télécharger l’image.&lt;/p&gt;
+&lt;p&gt;Les deux versions peuvent être récupérées par n’importe qui en faisant &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker pull &amp;lt;vous&amp;gt;/wow:v1&lt;/code&gt; ou &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker run &amp;lt;vous&amp;gt;/wow:v2&lt;/code&gt;, si l’image n’existe pas en local, docker va rechercher sur docker hub et va automatiquement télécharger l’image.&lt;/p&gt;
 
 &lt;p&gt;Et si on testait ce fonctionnement en local ? :D&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Listez vos images locales en tapant &lt;code class=&quot;highlighter-rouge&quot;&gt;docker images &amp;lt;vous&amp;gt;/wow&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Supprimez vos 2 versions locale &lt;code class=&quot;highlighter-rouge&quot;&gt;v1&lt;/code&gt; et &lt;code class=&quot;highlighter-rouge&quot;&gt;v2&lt;/code&gt; en faisant ` docker rmi –force 1faa94d56d33 1faa94d56d33` (avec vos hash d’images)&lt;/li&gt;
+  &lt;li&gt;Listez vos images locales en tapant &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker images &amp;lt;vous&amp;gt;/wow&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Supprimez vos 2 versions locale &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;v1&lt;/code&gt; et &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;v2&lt;/code&gt; en faisant ` docker rmi –force 1faa94d56d33 1faa94d56d33` (avec vos hash d’images)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;docker images&lt;/strong&gt; permet de lister les images disponibles en local, tandis que &lt;strong&gt;docker rmi&lt;/strong&gt; supprime les images (&lt;code class=&quot;highlighter-rouge&quot;&gt;rmi&lt;/code&gt; pour remove images).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;docker images&lt;/strong&gt; permet de lister les images disponibles en local, tandis que &lt;strong&gt;docker rmi&lt;/strong&gt; supprime les images (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rmi&lt;/code&gt; pour remove images).&lt;/p&gt;
 
 &lt;p&gt;Les images étant supprimées, testons de récupérer les images que vous avez publiez :&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker run &amp;lt;vous&amp;gt;/wow:v1&lt;/code&gt; =&amp;gt; WOW ca marche&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker run &amp;lt;vous&amp;gt;/wow:v2&lt;/code&gt; =&amp;gt; WOW c’est la v2 !&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker run &amp;lt;vous&amp;gt;/wow:v1&lt;/code&gt; =&amp;gt; WOW ca marche&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker run &amp;lt;vous&amp;gt;/wow:v2&lt;/code&gt; =&amp;gt; WOW c’est la v2 !&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Dans les deux cas, docker nous informe bien que l’image n’est pas disponible en local &lt;code class=&quot;highlighter-rouge&quot;&gt;Unable to find image '&amp;lt;vous&amp;gt;/wow:v1' locally&lt;/code&gt;. Vous pouvez d’ailleurs essayer avec les images que j’ai moi même posté sur le hub sans remplacer par votre nom d’utilisateur : &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run btor/wow:v1&lt;/code&gt; vous devriez avoir le même résultat mais docker retéléchargera l’image (vu que pour lui elle est différente de la votre).&lt;/p&gt;
+&lt;p&gt;Dans les deux cas, docker nous informe bien que l’image n’est pas disponible en local &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Unable to find image '&amp;lt;vous&amp;gt;/wow:v1' locally&lt;/code&gt;. Vous pouvez d’ailleurs essayer avec les images que j’ai moi même posté sur le hub sans remplacer par votre nom d’utilisateur : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker run btor/wow:v1&lt;/code&gt; vous devriez avoir le même résultat mais docker retéléchargera l’image (vu que pour lui elle est différente de la votre).&lt;/p&gt;
 
 &lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
 &lt;p&gt;Vous avez désormais les notions de bases de docker, vous savez comment docker fonctionne, comment récupérer/stoper/lancer/créer/pousser une image. 
-Si vous avez aimé cet article ou que vous désirez avoir plus d’informations (voir même d’autres articles dans la même veine, &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose&lt;/code&gt;, docker avancé, &lt;code class=&quot;highlighter-rouge&quot;&gt;kubernetes&lt;/code&gt; etc..) faites le moi savoir :D&lt;/p&gt;
+Si vous avez aimé cet article ou que vous désirez avoir plus d’informations (voir même d’autres articles dans la même veine, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker-compose&lt;/code&gt;, docker avancé, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;kubernetes&lt;/code&gt; etc..) faites le moi savoir :D&lt;/p&gt;
 </description>
         <pubDate>Wed, 03 Jul 2019 00:00:00 -0500</pubDate>
         <image>https://btor.fr/assets/images/docker-bases-tuto/main.jpg</image>
@@ -2015,7 +2015,7 @@ Quand tout à coup, j’ai eu l’idée de refaire mon écran de chargement twit
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/kdenlive-green-screen/01.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Dans la fenêtre de gauche en dessous de “Nom”, faite clic-droit puis &lt;code class=&quot;highlighter-rouge&quot;&gt;Ajouter un clip&lt;/code&gt;. Sélectionnez vos vidéos,  dans ce tuto j’utilise &lt;a href=&quot;https://youtu.be/Dq_3bzyccRs&quot;&gt;cette vidéo&lt;/a&gt;  pour l’incrustation fond vert et &lt;a href=&quot;https://www.youtube.com/watch?v=rbUqOPw7w0U&quot;&gt;cette vidéo&lt;/a&gt; en guise de fond.&lt;/p&gt;
+&lt;p&gt;Dans la fenêtre de gauche en dessous de “Nom”, faite clic-droit puis &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ajouter un clip&lt;/code&gt;. Sélectionnez vos vidéos,  dans ce tuto j’utilise &lt;a href=&quot;https://youtu.be/Dq_3bzyccRs&quot;&gt;cette vidéo&lt;/a&gt;  pour l’incrustation fond vert et &lt;a href=&quot;https://www.youtube.com/watch?v=rbUqOPw7w0U&quot;&gt;cette vidéo&lt;/a&gt; en guise de fond.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/kdenlive-green-screen/02.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
@@ -2023,18 +2023,18 @@ Quand tout à coup, j’ai eu l’idée de refaire mon écran de chargement twit
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/kdenlive-green-screen/03.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Sur votre vidéo fond vert, ajoutez une &lt;code class=&quot;highlighter-rouge&quot;&gt;transition composite&lt;/code&gt; et étendez là sur toute votre vidéo fond vert.&lt;/p&gt;
+&lt;p&gt;Sur votre vidéo fond vert, ajoutez une &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;transition composite&lt;/code&gt; et étendez là sur toute votre vidéo fond vert.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/kdenlive-green-screen/04.jpg&quot; alt=&quot;&quot; /&gt; &lt;img src=&quot;/assets/images/kdenlive-green-screen/05.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;-1ère-technique&quot;&gt;🐣 1ère technique&lt;/h3&gt;
-&lt;p&gt;La première technique est assez simple et connue de tout le monde, il s’agit d’utiliser le &lt;code class=&quot;highlighter-rouge&quot;&gt;ChromaKey&lt;/code&gt; ou &lt;code class=&quot;highlighter-rouge&quot;&gt;Couleur Clé&lt;/code&gt; sur KDEnLive.&lt;/p&gt;
+&lt;p&gt;La première technique est assez simple et connue de tout le monde, il s’agit d’utiliser le &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ChromaKey&lt;/code&gt; ou &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Couleur Clé&lt;/code&gt; sur KDEnLive.&lt;/p&gt;
 
-&lt;p&gt;Cliquez sur votre vidéo fond vert dans la timeline et ajoutez lui un effet &lt;code class=&quot;highlighter-rouge&quot;&gt;Couleur clé&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Cliquez sur votre vidéo fond vert dans la timeline et ajoutez lui un effet &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Couleur clé&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/kdenlive-green-screen/06.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Cliquez sur l’icone &lt;code class=&quot;highlighter-rouge&quot;&gt;Goutte d'eau&lt;/code&gt; afin de pouvoir sélectionner la couleur à extraire&lt;/p&gt;
+&lt;p&gt;Cliquez sur l’icone &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Goutte d'eau&lt;/code&gt; afin de pouvoir sélectionner la couleur à extraire&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/kdenlive-green-screen/07.jpg&quot; alt=&quot;&quot; /&gt; &lt;img src=&quot;/assets/images/kdenlive-green-screen/08.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
@@ -2046,7 +2046,7 @@ Quand tout à coup, j’ai eu l’idée de refaire mon écran de chargement twit
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/kdenlive-green-screen/10.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Heureusement il existe une solution pour atténuer cette bordure, ajouter l’effet &lt;code class=&quot;highlighter-rouge&quot;&gt;SpillSupress&lt;/code&gt; sur votre vidéo fond vert. Cet effet n’enlèvera pas les pixels vert mais va les “convertir” en gris, comme si la bordure étaient désaturée . Le rendu est déjà beaucoup plus correct.&lt;/p&gt;
+&lt;p&gt;Heureusement il existe une solution pour atténuer cette bordure, ajouter l’effet &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SpillSupress&lt;/code&gt; sur votre vidéo fond vert. Cet effet n’enlèvera pas les pixels vert mais va les “convertir” en gris, comme si la bordure étaient désaturée . Le rendu est déjà beaucoup plus correct.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/kdenlive-green-screen/11.jpg&quot; alt=&quot;&quot; /&gt; &lt;img src=&quot;/assets/images/kdenlive-green-screen/12.jpg&quot; alt=&quot;&quot; /&gt; &lt;img src=&quot;/assets/images/kdenlive-green-screen/13.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
@@ -2055,7 +2055,7 @@ Quand tout à coup, j’ai eu l’idée de refaire mon écran de chargement twit
 &lt;h3 id=&quot;-2ème-technique&quot;&gt;🐓 2ème technique&lt;/h3&gt;
 &lt;p&gt;Il existe une autre technique pour effectuer une incrustation de fond vert qui selon moi est plus efficace que la première (du moins avec les échantillons de vidéos que j’ai pu tester).&lt;/p&gt;
 
-&lt;p&gt;Supprimez l’effet &lt;code class=&quot;highlighter-rouge&quot;&gt;Couleur Clé&lt;/code&gt; ou &lt;code class=&quot;highlighter-rouge&quot;&gt;ChromaKey&lt;/code&gt; et ajoutez les effets &lt;code class=&quot;highlighter-rouge&quot;&gt;Sélection de couleur&lt;/code&gt; et &lt;code class=&quot;highlighter-rouge&quot;&gt;Teinte&lt;/code&gt; puis jouez avec les différentes valeurs (écart, gain, valeur de nuance etc.) et précisez la couleur à supprimer (toujours notre vert, même principe que la 1ère technique).&lt;/p&gt;
+&lt;p&gt;Supprimez l’effet &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Couleur Clé&lt;/code&gt; ou &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ChromaKey&lt;/code&gt; et ajoutez les effets &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Sélection de couleur&lt;/code&gt; et &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Teinte&lt;/code&gt; puis jouez avec les différentes valeurs (écart, gain, valeur de nuance etc.) et précisez la couleur à supprimer (toujours notre vert, même principe que la 1ère technique).&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/kdenlive-green-screen/15.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
@@ -2135,8 +2135,8 @@ Dans cet article nous allons voir comment procéder sans utiliser d’interface 
 &lt;p&gt;La première étape consiste à générer des clefs. Pour se faire, rien de plus simple :&lt;/p&gt;
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;marlene@pc:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gpg2 &lt;span class=&quot;nt&quot;&gt;--full-gen-key&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Il existe 2 commandes pour générer des clefs, celle présente ci-dessus ainsi que &lt;code class=&quot;highlighter-rouge&quot;&gt;gpg2 --gen-key&lt;/code&gt;, cette dernière permet de lancer l’étape de génération de clef par défaut, elle vous demandera simplement un nom, un email et vous générera un couple de clefs RSA en 2048 bits. Pratique, rapide mais ne vous permet pas choisir le type de clef désiré ni même sa robustesse.
-J’opte donc pour &lt;code class=&quot;highlighter-rouge&quot;&gt;--full-gen-key&lt;/code&gt; afin de générer une clef 4096 bits en RSA.&lt;/p&gt;
+&lt;p&gt;Il existe 2 commandes pour générer des clefs, celle présente ci-dessus ainsi que &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gpg2 --gen-key&lt;/code&gt;, cette dernière permet de lancer l’étape de génération de clef par défaut, elle vous demandera simplement un nom, un email et vous générera un couple de clefs RSA en 2048 bits. Pratique, rapide mais ne vous permet pas choisir le type de clef désiré ni même sa robustesse.
+J’opte donc pour &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--full-gen-key&lt;/code&gt; afin de générer une clef 4096 bits en RSA.&lt;/p&gt;
 
 &lt;p&gt;Vous devriez avoir donc ceci :&lt;/p&gt;
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gpg &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;GnuPG&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 2.1.11&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; Copyright &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;C&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 2016 Free Software Foundation, Inc.
@@ -2174,7 +2174,7 @@ En fonction de l’utilisation de GPG (chiffrement personnel de vos photos de va
 La clef n&lt;span class=&quot;s1&quot;&gt;'expire pas du tout
 Est-ce correct ? (o/N) o
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Validez en tapant &lt;code class=&quot;highlighter-rouge&quot;&gt;o&lt;/code&gt; puis entrer&lt;/p&gt;
+&lt;p&gt;Validez en tapant &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;o&lt;/code&gt; puis entrer&lt;/p&gt;
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;GnuPG doit construire une identité pour identifier la clef.
 
@@ -2188,7 +2188,7 @@ Vous avez sélectionné cette identité :
 Changer le &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;N&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;om, le &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;C&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;ommentaire, l&lt;span class=&quot;s1&quot;&gt;'(A)dresse électronique
 ou (O)ui/(Q)uitter ? O
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;GPG va ensuite vous demander quelques informations vous concernant comme votre nom, email et un commentaire sur la clef.  Remplissez les et validez en tapant &lt;code class=&quot;highlighter-rouge&quot;&gt;O&lt;/code&gt; puis entrer&lt;/p&gt;
+&lt;p&gt;GPG va ensuite vous demander quelques informations vous concernant comme votre nom, email et un commentaire sur la clef.  Remplissez les et validez en tapant &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;O&lt;/code&gt; puis entrer&lt;/p&gt;
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;De nombreux octets aléatoires doivent être générés. Vous devriez faire
 autre chose &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;taper au clavier, déplacer la souris, utiliser les disques&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
@@ -2213,7 +2213,7 @@ sub   rsa4096/6969D94F 2018-04-16 &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;La génération terminée, vous devriez avoir un récapitulatif des clefs qui ont été générées.&lt;/p&gt;
 
-&lt;p&gt;Pour vérifier les clefs disponibles dans votre trousseau GPG, tapez &lt;code class=&quot;highlighter-rouge&quot;&gt;gpg2 --list-keys&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Pour vérifier les clefs disponibles dans votre trousseau GPG, tapez &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gpg2 --list-keys&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;marlene@pc:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gpg2 &lt;span class=&quot;nt&quot;&gt;--list-keys&lt;/span&gt;
 gpg: vérification de la base de confiance
 gpg: marginals needed: 3  completes needed: 1  trust model: PGP
@@ -2278,7 +2278,7 @@ gpg: chiffré avec une clef RSA de 4096 bits, identifiant 6969D94F, créée le 2
       « Marlène DURAND &amp;lt;marlene.durand@gmail.com&amp;gt; »
 Ce message est à destination de marlène
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Notez que nous aurions pu rediriger la sortie vers un fichier afin de sauvegarder le résultat &lt;code class=&quot;highlighter-rouge&quot;&gt;gpg2 --decrypt arthur.gpg  &amp;gt; arthur&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Notez que nous aurions pu rediriger la sortie vers un fichier afin de sauvegarder le résultat &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gpg2 --decrypt arthur.gpg  &amp;gt; arthur&lt;/code&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;-a-noter&quot;&gt;📝 A noter&lt;/h1&gt;
 &lt;ul&gt;
@@ -2286,10 +2286,10 @@ Ce message est à destination de marlène
     &lt;p&gt;Votre &lt;strong&gt;clef privée doit rester PRIVEE&lt;/strong&gt; vous ne devez partager que votre clef publique&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;La procédure ci-dessus &lt;strong&gt;ne prends pas en compte la signature des fichiers&lt;/strong&gt; (vérification des émetteurs) &lt;strong&gt;vous pouvez&lt;/strong&gt; bien évidemment (et c’est recommandé) &lt;strong&gt;signer vos fichiers avec l’option &lt;code class=&quot;highlighter-rouge&quot;&gt;--sign&lt;/code&gt;&lt;/strong&gt;. J’ai voulu faire simple pour que ce soit plus facilement abordable.&lt;/p&gt;
+    &lt;p&gt;La procédure ci-dessus &lt;strong&gt;ne prends pas en compte la signature des fichiers&lt;/strong&gt; (vérification des émetteurs) &lt;strong&gt;vous pouvez&lt;/strong&gt; bien évidemment (et c’est recommandé) &lt;strong&gt;signer vos fichiers avec l’option &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--sign&lt;/code&gt;&lt;/strong&gt;. J’ai voulu faire simple pour que ce soit plus facilement abordable.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Il est &lt;strong&gt;possible de chiffrer vos fichiers symétriquement&lt;/strong&gt; en utilisant l’option &lt;code class=&quot;highlighter-rouge&quot;&gt;--symetric&lt;/code&gt; , très peu recommandé mais bon à savoir&lt;/p&gt;
+    &lt;p&gt;Il est &lt;strong&gt;possible de chiffrer vos fichiers symétriquement&lt;/strong&gt; en utilisant l’option &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--symetric&lt;/code&gt; , très peu recommandé mais bon à savoir&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 </description>
