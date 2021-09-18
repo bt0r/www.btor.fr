@@ -12,7 +12,6 @@ import { miscFlexVid, miscZoom, miscSocialShare } from './components/_miscellane
 import PageTransition from './components/_pageTransition.js';
 import Popup from './components/_popup.js';
 import Age from './components/_age';
-import Emote from './components/_emote';
 import Error from './components/_error';
 
 // ----------------------------------------------
