@@ -55,7 +55,7 @@ pagination:
 autopages:
   enabled: true
   categories:
-    enabled: false
+    enabled: true
   collections:
     enabled: false
   tags:

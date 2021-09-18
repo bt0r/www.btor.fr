@@ -12,19 +12,19 @@ tags:
 ---
 J'en parlais dans un article précédent mais je suis assez fan de Datadog !
 Logs, métriques, moniteurs, tableaux de bords et j'en passe, Datadog est plutôt bien fourni et permet vraiment de gérer intégralement son monitoring.
-Qui dit monitoring, dit monitorer ! *(ou "surveiller" si toi pas comprendre la langue de Mary Poppins @@LUL)*
+Qui dit monitoring, dit monitorer ! *(ou "surveiller" si toi pas comprendre la langue de Mary Poppins ![](/assets/images/emote/LUL.png){: .emote})*
 Un des outils important de Datadog est sa fonction "Monitor" qui permet de créer des alertes en fonction de seuils, variations ou autres critères de déclenchement.
 Ces alertes peuvent être envoyées par mail, sur slack [ou d'autres applications](https://docs.datadoghq.com/fr/integrations/).
 
 ![](/assets/images/comment-envoyer-alertes-datadog-discord/jusquici.jpg){: .center-image}
 
-Depuis le COVID, quelques sociétés se sont mises au télétravail avec plus ou moins de succès (on vous voit @@KJ).
+Depuis le COVID, quelques sociétés se sont mises au télétravail avec plus ou moins de succès (on vous voit ![](/assets/images/emote/KJ.png){: .emote}).
 Parmi les gros changements qu'a apportés le télétravail, il y a eu l'arrivée massive de la visio : Meet, Zoom, Livestorm ou même Discord.
 
-Pour beaucoup de travailleurs ~~du sexe~~ de la tech @@OUCH, ces outils sont devenus monnaie courante.
+Pour beaucoup de travailleurs ~~du sexe~~ de la tech ![](/assets/images/emote/OUCH.png){: .emote}, ces outils sont devenus monnaie courante.
 Certaines sociétés en ont d'ailleurs profité pour (parfois) changer leurs outils de communication pour privilégier un Discord plutôt qu'un Slack, notamment pour des raisons de tarification 💸.
-Et c'est là que tu vois le loup arriver ! Discord c'est bien, c'est pratique mais c'est pas aussi bien interconnecté qu'un slack @@SAD notamment quand il s'agit d'envoyer des notifications Datadog sur Discord
-(c'est le sujet de l'article @@RS, ça va j'accouche ! Pas besoin de t'énerver ! @@OOPS) 
+Et c'est là que tu vois le loup arriver ! Discord c'est bien, c'est pratique mais c'est pas aussi bien interconnecté qu'un slack ![](/assets/images/emote/SAD.png){: .emote} notamment quand il s'agit d'envoyer des notifications Datadog sur Discord
+(c'est le sujet de l'article ![](/assets/images/emote/RS.png){: .emote}, ça va j'accouche ! Pas besoin de t'énerver ! ![](/assets/images/emote/OOPS.png){: .emote}) 
 
 Voyons-donc comment envoyer les alertes de nos moniteurs Datadog, directement dans Discord !
 
@@ -104,4 +104,4 @@ Valider votre webhook Datadog avec le payload modifié, puis rendez-vous sur vot
 <center>Aperçu d'un test de notification</center>
 ![](/assets/images/comment-envoyer-alertes-datadog-discord/notification-discord.jpg){: .center-image}
 
-J'espère que ce petit tips vous aura aidé @@KJ @@BEER
+J'espère que ce petit tips vous aura aidé ![](/assets/images/emote/KJ.png){: .emote} ![](/assets/images/emote/BEER.png){: .emote}

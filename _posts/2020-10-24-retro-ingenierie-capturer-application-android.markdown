@@ -10,8 +10,8 @@ tags:
   - Mobile
 ---
 
-@@KJ Salut à toi jeune ~~entrepreneur~~, ~~caucasoïde~~...
-Oula ! je glisse sur l'actu @@OOPS
+![](/assets/images/emote/KJ.png){: .emote} Salut à toi jeune ~~entrepreneur~~, ~~caucasoïde~~...
+Oula ! je glisse sur l'actu ![](/assets/images/emote/OOPS.png){: .emote}
 
 Dans l'article sur [Noteflix](/2020/04/07/noteflix-allocine-netflix/) je vous parlais d'une technique pour récupérer le trafic IP à travers une application mobile.
 L'astuce résidait dans l'utilisation de l'application [PCAPRemote](https://play.google.com/store/apps/details?id=com.egorovandreyrm.pcapremote) avec SSHDump et Wireshark pour l'analyse des paquets IP. 
@@ -24,8 +24,8 @@ PCAPRemote peut vous fournir un fichier .pcap mais aussi faire office de serveur
 
 > Et si on testait avec une application qui contient du HTTPS ?
 
-Ça tombe bien, j'ai du temps avec le couvre-feu actuel @@SAD. 
-J'enfile donc mon plus beau couvre-chef et je me lance dans le sniffing de [ma propre application](https://play.google.com/store/apps/details?id=com.btorfr) @@WINK
+Ça tombe bien, j'ai du temps avec le couvre-feu actuel ![](/assets/images/emote/SAD.png){: .emote}. 
+J'enfile donc mon plus beau couvre-chef et je me lance dans le sniffing de [ma propre application](https://play.google.com/store/apps/details?id=com.btorfr) ![](/assets/images/emote/WINK.png){: .emote}
 
 # Contexte
 L'application **btor.fr** est un très bon cas d'utilisation car elle ne fait rien de complexe.
@@ -36,7 +36,7 @@ Nous allons partir du principe que nous ne connaissons pas du tout l'application
 # Sniffing SSL
 Le sniffing consiste à lire ce qu'il se passe sur une liaison. 
 Par exemple, lire les communications entre votre machine et les serveurs de Facebook.
-Ça peut être tout type de flux HTTP, HTTPS, FTP, TELNET (ouais bon ... @@SAD)
+Ça peut être tout type de flux HTTP, HTTPS, FTP, TELNET (ouais bon ... ![](/assets/images/emote/SAD.png){: .emote})
 
 Prenons l'exemple d'une liaison HTTP classique, pour intercepter ce qu'il se passe sur la liaison nous devons nous trouver au milieu de la liaison.
 Une fois au milieu de la liaison, nous pouvons intercepter le trafic et le lire directement étant donné que HTTP n'est pas chiffré.
@@ -49,7 +49,7 @@ La "victime" (ici notre application) utilisera un certificat auto-signé, ce qui
 # Première tentative
 Nous avions déjà réussi à capturer du trafic HTTP grâce à PCAPRemote, nous pourrions tout simplement faire de même et voir ce qu'il se passe ? 
 
-Deal @@SLT !
+Deal ![](/assets/images/emote/SLT.png){: .emote} !
 
 * Lancer PCAPRemote et configurer-le en fonction de vos préférences (récupération dans un fichier ou via SSHDump)
 <center><img src="/assets/images/retro-ingenierie-capturer-application-android/pcap_remote.png" alt="PCAPRemote" width="200"/></center>
@@ -58,23 +58,23 @@ Deal @@SLT !
 
 Vous ne voyez aucune trame HTTP ? alors que vous avez bien pris le soin de cocher la case `Make HTTPS/TLS connections decryptable` ? et vous avez bien installé les certificats ?
  
- C'est normal @@LUL
+ C'est normal ![](/assets/images/emote/LUL.png){: .emote}
 
 # Les restrictions
 Depuis Android 7 Nougat (2016), Google a [ajouté une sécurité](https://android-developers.googleblog.com/2016/07/changes-to-trusted-certificate.html) afin de limiter les authorités de certifications (CA) approuvées par défaut par l'application.
 Autrement dit, si l'application ne précise pas elle-même qu'elle autorise des CAs tierce, l'application n'utilisera jamais notre certificat auto-signé. 
-Pas très pratique pour sniffer le trafic... @@NO
+Pas très pratique pour sniffer le trafic... ![](/assets/images/emote/NO.png){: .emote}
 
 ![](https://media1.tenor.com/images/020c0d4888bfc27d9a3f0c9fbd1bf6b1/tenor.gif?itemid=13854472){: .center-image}
 
-Dans mon cas, je pourrais très bien reconstruire mon application avec les nouvelles recommendations de Google mais ça ne serait pas très fun @@LUL !
+Dans mon cas, je pourrais très bien reconstruire mon application avec les nouvelles recommendations de Google mais ça ne serait pas très fun ![](/assets/images/emote/LUL.png){: .emote} !
 Nous allons donc faire comme si je n'étais pas le développeur de l'application.
 
 > Comment dire à l'application d'autoriser les certificats auto-signés si nous n'avons pas les sources de l'application ?
 
 ![](https://media.giphy.com/media/26FfieBFKHaHCivte/giphy.gif){:.center-image}
 
-C'est exactement la question que je me suis posé et après quelques recherches je me suis rendu compte qu'il était possible d'injecter une configuration à un APK @@HEY !
+C'est exactement la question que je me suis posé et après quelques recherches je me suis rendu compte qu'il était possible d'injecter une configuration à un APK ![](/assets/images/emote/HEY.png){: .emote} !
 
 **Première étape**, nous devons trouver le fichier APK de l'application :
 * Récupérer l'ID de l'application dans l'URL du [PlayStore](https://play.google.com/store/apps/details?id=com.btorfr), ici `com.btorfr`
@@ -105,7 +105,7 @@ Les étapes sont exactement les mêmes qu'en sniffant de l'HTTP à la petite dif
 
 ![](/assets/images/retro-ingenierie-capturer-application-android/wireshark_detail.png){:.center-image}
 
-Tada @@PROUD ! Nous avons bien notre appel au flux RSS de visible. 
+Tada ![](/assets/images/emote/PROUD.png){: .emote} ! Nous avons bien notre appel au flux RSS de visible. 
 On peut apercevoir la couche TLS au-dessus d'HTTP, garantie que la liaison est bien chiffrée.
 
 # Aller plus loin

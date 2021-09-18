@@ -19,11 +19,11 @@ J'ai pu tester à peu près tous les services proposés par Datadog, certains m'
 Un des points qui revient souvent quand on parle de Datadog c'est :
 > Ca serait bien de pouvoir monitorer aussi le front !
 
-Ca tombe bien, depuis fin 2019 Datadog travaille sur [Browser-SDK](https://github.com/DataDog/browser-sdk) dont [Browser-logs](https://www.npmjs.com/package/@datadog/browser-logs) @@SLT !
+Ca tombe bien, depuis fin 2019 Datadog travaille sur [Browser-SDK](https://github.com/DataDog/browser-sdk) dont [Browser-logs](https://www.npmjs.com/package/@datadog/browser-logs) ![](/assets/images/emote/SLT.png){: .emote} !
 `Browser-Logs` est un package NPM à installer qui met à disposition un Logger qui se chargera automatiquement de push les logs à Datadog. 
 C'est simple à mettre en place et en plus on y retrouve toutes les fonctionnalités "classiques" de Datadog comme le fait d'avoir les attributs de GeoIP, User-Agent, Session, HTTP... directement interprété dans Datadog.
 
-Ca tombe doublement bien puisque j'ai actuellement besoin d'un outil pour logger mon extension [Noteflix](https://github.com/bt0r/NoteFlix) @@RS 
+Ca tombe doublement bien puisque j'ai actuellement besoin d'un outil pour logger mon extension [Noteflix](https://github.com/bt0r/NoteFlix) ![](/assets/images/emote/RS.png){: .emote} 
 
 # Installation
 * Pour l'installation c'est simple, il vous suffira d'installer le package `browser-logs`
@@ -70,7 +70,7 @@ Vous devrez donc prendre en compte qu'une partie de vos utilisateurs ne seront p
 L'intégration de Datadog pour logger notre application front est assez simple ! 
 Il est à noter qu'il est aussi possible de faire du [RUM](https://docs.datadoghq.com/fr/real_user_monitoring/) (Real User Monitoring) en utilisant [Browser-RUM](https://www.npmjs.com/package/@datadog/browser-rum).
 
-Vous avez désormais toutes les cartes en main pour monitorer votre application @@BEER
+Vous avez désormais toutes les cartes en main pour monitorer votre application ![](/assets/images/emote/BEER.png){: .emote}
 
 # Liens
 [Browser-Logs sur Github](https://github.com/DataDog/browser-sdk)

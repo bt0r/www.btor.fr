@@ -51,6 +51,4 @@ $(() => {
   if($('.section-error').length){
     Error.init();
   }
-
-  Emote.init();
 });

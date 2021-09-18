@@ -12,10 +12,10 @@ tags:
   - Developpement
   - Mobile
 ---
-Vous vous demandez surement pourquoi un développeur back-end parlerait d'une techno front-end ? @@LUL 
+Vous vous demandez surement pourquoi un développeur back-end parlerait d'une techno front-end ? ![](/assets/images/emote/LUL.png){: .emote} 
 
 Tout simplement parce que nous aussi "les backs" on a le droit de s'amuser avec ~~vos technos de merde~~, euh javascript.
-C'est bon je rigole @@SAD
+C'est bon je rigole ![](/assets/images/emote/SAD.png){: .emote}
 
 Depuis un peu plus d'un an je travaille dans une équipe mobile qui se compose de :
 - Deux développeurs iOS natif (Swift)
@@ -27,20 +27,20 @@ J'ai la chance d'avoir une équipe assez hétérogène qui touche un peu à tout
 Tout le monde étend ses connaissances et le partage à l'équipe.
 
 A force de discuter des projets des uns et des autres (majoritairement axés sur du mobile, ça va de soit), je me suis dis qu'il serait temps que je me mette un peu à jour et que moi aussi je retente "l'expérience mobile".
-Je dis "Retente" parce que oui, j'ai déjà réalisé une ou deux applications mobiles Android il y a quelques années mais n'en parlons pas ... @@LUL
+Je dis "Retente" parce que oui, j'ai déjà réalisé une ou deux applications mobiles Android il y a quelques années mais n'en parlons pas ... ![](/assets/images/emote/LUL.png){: .emote}
 # Mais pourquoi ReactNative ?
-La question qui vient *normalement* tout de suite à l'esprit c'est : **MAIS POURQUOI REACT NATIVE ?** @@NO
+La question qui vient *normalement* tout de suite à l'esprit c'est : **MAIS POURQUOI REACT NATIVE ?** ![](/assets/images/emote/NO.png){: .emote}
 
-Dans un premier temps il est important de comprendre le besoin avant de choisir la techno que l'on utilisera (n'en déplaise aux haters de PHP @@WINK )
+Dans un premier temps il est important de comprendre le besoin avant de choisir la techno que l'on utilisera (n'en déplaise aux haters de PHP ![](/assets/images/emote/WINK.png){: .emote} )
 
-Le besoin est simple, je cherche à développer une application mobile de rencontre @@RS.
+Le besoin est simple, je cherche à développer une application mobile de rencontre ![](/assets/images/emote/RS.png){: .emote}.
 Les critères pour développer cette application sont :
 - Une application cross-platform iOS / Android
 - Un temps de développement réduit (c'est un side-project ne l'oublions pas, je ne vais pas passer toutes mes journées dessus)
 - Un faible coût de mise en place/maintenance (je pars avec un budget de 0€ donc aucun service SaaS payant et aucun prestataire n'est envisageable).
 
 En prenant en compte ces critères, on peut commencer par lister quelques langages qui pourraient correspondre au besoin :
-- Tous les langages natifs : iOS/Swift, Android/Kotlin, WindowsPhone/C# @@LUL
+- Tous les langages natifs : iOS/Swift, Android/Kotlin, WindowsPhone/C# ![](/assets/images/emote/LUL.png){: .emote}
 - Tous les langages web portés sur mobile (Ionic, NativeScript, PhoneGap, React Native)
 - Flutter
 - Et sûrement d'autres que je ne connais pas.
@@ -94,7 +94,7 @@ donnera sur Android
 Pour commencer un projet ReactNative vous avez le choix entre ReactNative CLI et Expo. 
 [Expo](https://expo.io/) est un kit d'outils pour développer des applications ReactNative plus rapidement, il propose des fonctionnalités en plus de ReactNative.
 
-ReactNative CLI est tout simplement... ReactNative...@@RS
+ReactNative CLI est tout simplement... ReactNative...![](/assets/images/emote/RS.png){: .emote}
 
 ## Expo, expo, on rentre du boulot...
 J'ai commencé le développement de l'application en utilisant Expo, l'objectif de celui-ci étant de me simplifier la vie, j'avais tout intérêt à l'utiliser.
@@ -109,7 +109,7 @@ La documentation est assez claire avec ça d'ailleurs :
 > When one of our building machines will be free, it'll start building your app
 
 Un autre point frustrant avec Expo est qu'on ne peut pas utiliser de modules natif autre que ceux déjà proposés par Expo.
-Par exemple, si vous désirez utiliser le bluetooth, vous ne pourrez pas @@SAD !
+Par exemple, si vous désirez utiliser le bluetooth, vous ne pourrez pas ![](/assets/images/emote/SAD.png){: .emote} !
 Vous devrez vous *éjecter* d'Expo ([en savoir plus sur le procédé d'éjection](https://docs.expo.io/expokit/eject/)) et donc perdre le principal intérêt d'Expo.
 
 Expo parle d'ailleurs assez bien de ses limitations dans sa documentation, je vous invite à y jeter un oeil [ici](https://docs.expo.io/introduction/why-not-expo/).
@@ -118,17 +118,17 @@ J'ai donc rapidement pris la décision de ne pas utiliser Expo et de m'orienter 
 # (?:Type|Java)script ?
 Une autre question à se poser en utilisant ReactNative est sur le choix du langage. Javascript ou Typescript ?
 
-J'ai déjà eu l'occasion d'utiliser Typescript pour [un projet perso](https://github.com/bt0r/shellbot) et cette fois-ci j'ai choisi de ne pas l'utiliser @@WUT.
+J'ai déjà eu l'occasion d'utiliser Typescript pour [un projet perso](https://github.com/bt0r/shellbot) et cette fois-ci j'ai choisi de ne pas l'utiliser ![](/assets/images/emote/WUT.png){: .emote}.
 La raison va paraitre surement farfelue mais étant donné que je me lance dans un nouveau projet, il va y avoir beaucoup de nouvelles notions à apprendre et je ne veux pas m'imposer une complexité en plus.
 Si l'envie me vient de passer l'application sur Typescript je pourrais toujours y venir plus tard, ça sera du boulot en plus mais c'est un "contrat" que je passe au début du projet.
 
 # Bien débuter avec ReactNative
 Ne connaissant pas du tout React (et donc ReactNative par la même occasion), j'avais un peu peur de mettre 6 mois à apprendre un nouveau framework sans rien produire de concret.
 Fort heureusement, ReactNative est très accessible.
-La logique globale autour des **Composants** est très vite acquise et on arrive vite à créer nos premiers écrans @@SLT.
+La logique globale autour des **Composants** est très vite acquise et on arrive vite à créer nos premiers écrans ![](/assets/images/emote/SLT.png){: .emote}.
 
 [La documentation](https://reactnative.dev/docs/getting-started) est assez bien écrite, on trouve rapidement des bibliothèques qui répondent à nos besoins en fouillant sur google/github/npm...
-Oui mais voilà, tout n'est pas rose @@JEANNE
+Oui mais voilà, tout n'est pas rose ![](/assets/images/emote/JEANNE.png){: .emote}
 
 Parfois j'ai pu ressentir quelques frustrations, que ce soit par rapport à ReactNative ou par rapport à mes choix personnels.
 Je vais vous faire un petit récapitulatif de ce que j'ai retenu en 4 mois de développement sur ReactNative.
@@ -136,10 +136,10 @@ Je vais vous faire un petit récapitulatif de ce que j'ai retenu en 4 mois de d�
 # Les moins
 #### La stack sans Expo
 Bien que ce soit un choix de ne pas l'utiliser, Expo simplifie vraiment la vie pour la création des builds ou le déploiement.
-Ne pas avoir Expo ca veut dire devoir configurer Android Studio et xCode. Comprendre pourquoi votre projet ne build pas sur xCode et surtout...**COMPRENDRE** xCode @@JEANNE.
+Ne pas avoir Expo ca veut dire devoir configurer Android Studio et xCode. Comprendre pourquoi votre projet ne build pas sur xCode et surtout...**COMPRENDRE** xCode ![](/assets/images/emote/JEANNE.png){: .emote}.
 Avec Android studio je n'ai pas eu de problème vu que la base de l'IDE (IntelliJ) est la même pour tous les langages (PHP, JS, C++, Ruby ...) et que globalement il n'y a pas grand-chose à faire, ça marche du premier coup.
 Par contre sur xCode j'ai vraiment du mal.
-Les différences entre projet et workspace, l'interface pas vraiment intuitive, je ne m'attendais pas à ça et malheureusement, il m'est impossible de passer outre @@SAD
+Les différences entre projet et workspace, l'interface pas vraiment intuitive, je ne m'attendais pas à ça et malheureusement, il m'est impossible de passer outre ![](/assets/images/emote/SAD.png){: .emote}
 
 Une fois le projet bien paramétré avec vos premiers builds de lancés, vous rencontrerez un autre problème : **L'ajout de bibliothèques**.
 Étant livré à vous-même sans Expo, vous devrez installer vous-même les bibliothèques, ça veut dire devoir modifier des fichiers natifs dont vous n'avez aucune idée de comment ils fonctionnent et c'est parfois pénible.
@@ -169,7 +169,7 @@ On se retrouve avec juste un répertoire *src* à remplir sans aucunes lignes di
 #### La documentation officielle et ses redirections
 J'en ai parlé dans un de mes tweet [ici](https://twitter.com/biiitor/status/1252688090503819264) mais s’il y a bien un truc qui me rend dingue c'est qu'une bonne partie de l'API n'est plus supporté par facebook directement mais par la communauté.
 Jusque-là pourquoi pas, ça prouve que la communauté est active.
-Le souci vient du fait qu'on se retrouve souvent à devoir naviguer entre les différentes documentations, officielles ou communautaires et à être constamment redirigé. Pénible x2 @@TUBAIZ
+Le souci vient du fait qu'on se retrouve souvent à devoir naviguer entre les différentes documentations, officielles ou communautaires et à être constamment redirigé. Pénible x2 ![](/assets/images/emote/TUBAIZ.png){: .emote}
 
 #### Functional VS Class component
 En React il est possible d'écrire ses composants de deux manières :
@@ -209,12 +209,12 @@ Rien d'extra-ordinaire de ce côté là (disponible dans pratiquement toutes les
 C'est une fonctionnalité qu'on apprécie vraiment quand on fait du front : Le **hot-reload** ou "rechargement à chaud" pour les puristes.
 La modification de notre code source modifie directement notre application sur le téléphone.
 Pas besoin de recréer un build ou de recharger l'application.
-Très pratique quand on travaille sur les vues de notre application @@SLT.
+Très pratique quand on travaille sur les vues de notre application ![](/assets/images/emote/SLT.png){: .emote}.
 
 #### CSS
 Un des gros avantages de ReactNative est le fait qu'une bonne partie des feuilles de style CSS soient disponibles.
-On peut donc profiter des flexbox pour gérer le positionnement de nos blocs et ça c'est **VRAIMENT** cool @@BEER !
-Pas de GridBagLayout, ConstraintLayout, etc @@SLT
+On peut donc profiter des flexbox pour gérer le positionnement de nos blocs et ça c'est **VRAIMENT** cool ![](/assets/images/emote/BEER.png){: .emote} !
+Pas de GridBagLayout, ConstraintLayout, etc ![](/assets/images/emote/SLT.png){: .emote}
 L'écriture du CSS passe par une abstraction sous forme d'objet Javascript mais correspond globalement à du CSS en camelCase.
 
 ![](/assets/images/react-native-retour-experience/css-react-native.png){: .center-image}
@@ -223,7 +223,7 @@ L'écriture du CSS passe par une abstraction sous forme d'objet Javascript mais 
 Ca peut paraitre bête comme argument mais c'est pourtant décisif quand on utilise un framework comme ReactNative.
 Après avoir travaillé intégralement sur un émulateur Android, j'ai voulu exécuter mon application sur iOS pour vérifier si le rendu/comportement était différent sur iOS.
 J'ai été agréablement surpris de voir qu'il n'y avait pas tellement de différences, en dehors de quelques petits bogues sur des ombres en utilisant les [shadow props](https://reactnative.dev/docs/shadow-props), le rendu est identique sur les deux plateformes.
-Il faut néanmoins comprendre comment fonctionnent les plateformes de destination et notamment iOS avec l'arrivée du ~~motch~~ notch @@LUL
+Il faut néanmoins comprendre comment fonctionnent les plateformes de destination et notamment iOS avec l'arrivée du ~~motch~~ notch ![](/assets/images/emote/LUL.png){: .emote}
 Vous devrez forcément utiliser les [SafeAreaView](https://reactnative.dev/docs/safeareaview) afin que votre vue ne se retrouve pas sous le notch (ou alors ajuster celle-ci).
 
 #### Utilisation des bonnes bibliothèques
@@ -253,4 +253,4 @@ Si vous hésitez à utiliser ReactNative, posez-vous les mêmes questions que j'
 - Est-ce que je disposerai des bonnes bibliothèques ?
 - Quel est mon budget et quel est le temps que je veux allouer au développement ?
 
-En fonction des réponses à celles-ci, vous pourrez vous diriger vers du ReactNative, du Flutter ou du natif @@KJ
+En fonction des réponses à celles-ci, vous pourrez vous diriger vers du ReactNative, du Flutter ou du natif ![](/assets/images/emote/KJ.png){: .emote}

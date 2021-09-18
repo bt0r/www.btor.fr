@@ -17,7 +17,7 @@ Jeudi dernier, après avoir passé près de 4h à coder sur un projet personnel 
 > Et si je me mettais une petite série Netflix ? 
 
 Ni une, ni deux, j'ouvre Netflix et commence à chercher LA série qui va me tenir en haleine sur les prochains jours.
-Problème, il m'arrive souvent de tomber sur des séries un peu naze comme [Marianne](http://www.allocine.fr/series/ficheserie_gen_cserie=24219.html), cette bouse comiquo-horrifique @@NO.
+Problème, il m'arrive souvent de tomber sur des séries un peu naze comme [Marianne](http://www.allocine.fr/series/ficheserie_gen_cserie=24219.html), cette bouse comiquo-horrifique ![](/assets/images/emote/NO.png){: .emote}.
 
 C'est à ce moment précis qu'il me vint à l'esprit une idée de génie
 
@@ -36,10 +36,10 @@ Le plus dur c'est justement de bien réfléchir aux choix techniques, aux risque
 
 ...
 
-**SAUF** quand tu codes une extension Firefox pour un side project dont tu te contrefous de la dernière techno à la mode puisque de toute facon tu feras au mieux du Typescript transpilé pour aller dans un environement cloisonné. @@LUL
+**SAUF** quand tu codes une extension Firefox pour un side project dont tu te contrefous de la dernière techno à la mode puisque de toute facon tu feras au mieux du Typescript transpilé pour aller dans un environement cloisonné. ![](/assets/images/emote/LUL.png){: .emote}
 
 Je n'avais donc pas beaucoup de questions à me poser, je savais que j'allais partir sur du Javascript ou au mieux du Typescript et que le code ne serait pas très complexe étant donné que ça serait qu'un simple appel ajax à l'API d'Allociné.
-Du moins, c'est ce que je croyais @@SAD
+Du moins, c'est ce que je croyais ![](/assets/images/emote/SAD.png){: .emote}
 
 J'avais déjà réalisé une petite extension Firefox sans l'avoir publié sur le store de Mozilla, je partais donc avec un léger avantage de ce côté là. 
 Par contre, je n'avais jamais regardé de près comment fonctionne le site d'allociné. 
@@ -48,11 +48,11 @@ Ce n'est pas un site que je regarde régulièrement mais c'est en général le p
 J'ai donc commencé ce side-project en me faisant un petit repository GitHub avec un bootstrap d'extension pour juste faire mes premiers crash-tests.
 Avant de m'attaquer à Netflix, je voulais m'assurer qu'il était possible de récupérer les notes de films/séries depuis l'API d'allocine.
 
-Je pars convaincu, serein, frais comme un gardon, bref j'suis chaud @@PROUD
+Je pars convaincu, serein, frais comme un gardon, bref j'suis chaud ![](/assets/images/emote/PROUD.png){: .emote}
 
 J'arrive sur le site d'allociné et je commence à investiguer un peu ce qu'il se passe sur le site:
-- F12, onglet réseaux, est ce qu'il y a des call XHR au chargement de la page ? Nope ! @@NO
-- Je regarde les différents input afin de voir si certains marchent en Ajax, bingo ! celui de la barre de recherche fait un call ajax @@HEY
+- F12, onglet réseaux, est ce qu'il y a des call XHR au chargement de la page ? Nope ! ![](/assets/images/emote/NO.png){: .emote}
+- Je regarde les différents input afin de voir si certains marchent en Ajax, bingo ! celui de la barre de recherche fait un call ajax ![](/assets/images/emote/HEY.png){: .emote}
 
 ![Barre de recherche Allociné](/assets/images/noteflix-allocine-netflix/search_allocine.png){: .center-image}
 
@@ -131,7 +131,7 @@ Parfait, je regarde donc à quoi correspondent ces scores, voir si ils correspon
 
 ![Score allociné](/assets/images/noteflix-allocine-netflix/scores_allocine.png){: .center-image}
 
-Jeanne @@JEANNE ! Au secours ! D'où proviennent ces scores ? J'ai beau tester avec 2 ou 3 autres films/séries, aucune corrélation n'est envisageable. 
+Jeanne ![](/assets/images/emote/JEANNE.png){: .emote} ! Au secours ! D'où proviennent ces scores ? J'ai beau tester avec 2 ou 3 autres films/séries, aucune corrélation n'est envisageable. 
 
 Je continue donc mon investigation en fouinant sur le site mais rien n'y fait, je ne trouve aucune donnée viable via une API. 
 Je décide donc de regarder un peu sur google et je tombe sur le blog d'un certains [Gromez qui parle de l'API d'Allociné](https://wiki.gromez.fr/dev/api/allocine_v3).
@@ -154,7 +154,7 @@ En fouinant le store je tombe sur [PCAPRemote](https://play.google.com/store/app
 > SSHDump ? Kézako ?
 
 Sshdump va nous permettre de capturer des paquets non pas depuis notre propre machine mais depuis une machine hôte, en l'occurence mon téléphone.
-Le téléphone fait office de serveur et mon wireshark de client, fini les envoies de fichier .pcap d'un device à un autre @@SLT !
+Le téléphone fait office de serveur et mon wireshark de client, fini les envoies de fichier .pcap d'un device à un autre ![](/assets/images/emote/SLT.png){: .emote} !
 
 
 ![PCAPRemote](/assets/images/noteflix-allocine-netflix/pcap_remote.png){: .center-image}
@@ -169,7 +169,7 @@ Il suffit ensuite de renseigner l'ip et port de l'hôte (le téléphone) sur wir
 Wireshark reçoit désormais les trames IP, j'en profite pour filtrer sur le protocole HTTP afin d'éviter d'être flooder de requêtes inutiles.
 Pendant que mon Wireshark tourne, je manipule un peu l'application allociné afin du générer du traffic, je recherche, click sur des films, change de pages etc.
 
-Et qu'est ce qui apparait dans Wireshark ? @@LUL
+Et qu'est ce qui apparait dans Wireshark ? ![](/assets/images/emote/LUL.png){: .emote}
 
 ![PCAPRemote](/assets/images/noteflix-allocine-netflix/search_wireshark.png){: .center-image}
 
