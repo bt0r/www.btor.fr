@@ -1,4 +1,177 @@
-<!DOCTYPE html><html lang="en"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Comment envoyer des alertes Datadog dans Discord ? | btor.fr</title><meta name="description" content="Passionné d'informatique, de développement web & applicatif depuis plus de 10 ans. Je partage mon quotidien de tech ! "><meta itemprop="name" content="Thibaut BAYER"><meta itemprop="description" content="Dans cet article j&#39;explique comment envoyer des alertes Datadog directement dans Discord en utilisant les webhooks."><meta itemprop="image" content="https://btor.fr/assets/images/comment-envoyer-alertes-datadog-discord/main.jpg"><meta property="og:url" content="https://btor.fr/2021/03/07/comment-envoyer-alertes-datadog-discord/"><meta property="og:type" content="website"><meta property="og:title" content="Comment envoyer des alertes Datadog dans Discord ? | btor.fr"><meta property="og:site_name" content="btor.fr"><meta property="og:description" content="Dans cet article j&#39;explique comment envoyer des alertes Datadog directement dans Discord en utilisant les webhooks."><meta property="og:image" content="https://btor.fr/assets/images/comment-envoyer-alertes-datadog-discord/main.jpg"><meta name="twitter:url" content="https://btor.fr/2021/03/07/comment-envoyer-alertes-datadog-discord/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Comment envoyer des alertes Datadog dans Discord ? | btor.fr"><meta name="twitter:site" content="btor.fr"><meta name="twitter:description" content="Dans cet article j&#39;explique comment envoyer des alertes Datadog directement dans Discord en utilisant les webhooks."><meta name="twitter:creator" content="@biiitor"><meta property="twitter:image" content="https://btor.fr/assets/images/comment-envoyer-alertes-datadog-discord/main.jpg"><link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico"><link rel="stylesheet" href="/assets/css/app.min.css"><link rel="alternate" type="application/rss+xml" title="btor.fr" href="/feed.xml"><link rel="canonical" href="/2021/03/07/comment-envoyer-alertes-datadog-discord/"> <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153641953-1"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-153641953-1'); </script> <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7190479662443667" crossorigin="anonymous"> </script></head><body id="comment-envoyer-des-alertes-datadog-dans-discord" class="post-layout"><header class="header"> <a class="header__title" href="https://btor.fr/"><img width="75" src="/assets/images/logo/logo.dark.small.png"/></a><nav><ul class="header__list"><li><a href="/projets">💡 Mes projets</a></li><li><a href="/qui-suis-je">❓ Qui suis-je</a></li></ul></nav></header><main class="💈"><div class="post"><article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting"><div class="post__header section-padding--double"><div class="grid-small"><h2 itemprop="name headline">Comment envoyer des alertes Datadog dans Discord ?</h2><time class="post__date" datetime="2021-03-07T00:00:00-06:00" itemprop="datePublished">07/03/2021</time></div></div><div class="post__img"><div><figure class="absolute-bg" style="background-image: url('/assets/images/comment-envoyer-alertes-datadog-discord/main.jpg');"></figure></div></div><div class="post__content section-padding"><div class="grid"><div id="markdown" itemprop="articleBody"><p>J’en parlais dans un article précédent mais je suis assez fan de Datadog ! Logs, métriques, moniteurs, tableaux de bords et j’en passe, Datadog est plutôt bien fourni et permet vraiment de gérer intégralement son monitoring. Qui dit monitoring, dit monitorer ! <em>(ou “surveiller” si toi pas comprendre la langue de Mary Poppins <img src="/assets/images/emote/LUL.png" alt="" class="emote" />)</em> Un des outils important de Datadog est sa fonction “Monitor” qui permet de créer des alertes en fonction de seuils, variations ou autres critères de déclenchement. Ces alertes peuvent être envoyées par mail, sur slack <a href="https://docs.datadoghq.com/fr/integrations/">ou d’autres applications</a>.</p><p><img src="/assets/images/comment-envoyer-alertes-datadog-discord/jusquici.jpg" alt="" class="center-image" /></p><p>Depuis le COVID, quelques sociétés se sont mises au télétravail avec plus ou moins de succès (on vous voit <img src="/assets/images/emote/KJ.png" alt="" class="emote" />). Parmi les gros changements qu’a apportés le télétravail, il y a eu l’arrivée massive de la visio : Meet, Zoom, Livestorm ou même Discord.</p><p>Pour beaucoup de travailleurs <del>du sexe</del> de la tech <img src="/assets/images/emote/OUCH.png" alt="" class="emote" />, ces outils sont devenus monnaie courante. Certaines sociétés en ont d’ailleurs profité pour (parfois) changer leurs outils de communication pour privilégier un Discord plutôt qu’un Slack, notamment pour des raisons de tarification 💸. Et c’est là que tu vois le loup arriver ! Discord c’est bien, c’est pratique mais c’est pas aussi bien interconnecté qu’un slack <img src="/assets/images/emote/SAD.png" alt="" class="emote" /> notamment quand il s’agit d’envoyer des notifications Datadog sur Discord (c’est le sujet de l’article <img src="/assets/images/emote/RS.png" alt="" class="emote" />, ça va j’accouche ! Pas besoin de t’énerver ! <img src="/assets/images/emote/OOPS.png" alt="" class="emote" />)</p><p>Voyons-donc comment envoyer les alertes de nos moniteurs Datadog, directement dans Discord !</p><p><img src="https://media1.tenor.com/images/b13a03a18eb819855cd99f22e2cf4433/tenor.gif?itemid=16135073" alt="" class="center-image" /></p><p><strong>Spoiler</strong> : Si tu connais déjà les webhooks, que t’es une diva du dév’ ou tout autre Apollon de la tech, tu peux directement voir la solution <a href="#format-du-webhook">au dernier chapitre</a></p><h1 id="les-webhooks">Les webhooks</h1><p>Si tu es développeur, tu as forcément entendu parler des webhooks. Un webhook c’est un système qui permet d’envoyer (ou recevoir) des évènements à/depuis une application tierce, en général au travers d’un appel HTTP. L’idée derrière le webhook c’est de pouvoir avertir facilement un service tier d’un nouvel évènement sans avoir à se soucier de la pile technique distante. En gros, le webhook va effectuer un call HTTP avec le contenu de la notification dans le corps de la requête HTTP.</p><p>Dans notre cas, Datadog doit notifier Discord d’une nouvelle alerte. Ca se présente ainsi : <img src="/assets/images/comment-envoyer-alertes-datadog-discord/explication.jpg" alt="" class="center-image" /></p><p>Pour se faire, il va nous falloir :</p><ul><li>Un webhook Datadog qui envoie la notification</li><li>Un webhook Discord qui reçoit la notification</li></ul><h2 id="créer-le-webhook-coté-discord">Créer le webhook coté Discord</h2><p>Pour créer un webhook sur discord, il faut :</p><ul><li>Se rendre sur les paramètres d’un salon textuel</li><li>Puis aller dans Intégrations &gt; Webhooks &gt; Nouveau Webhook</li><li>Copier l’URL du webhook <img src="/assets/images/comment-envoyer-alertes-datadog-discord/webhook-discord.png" alt="" class="center-image" /></li></ul><p>En créant ce webhook, Discord nous donne la possibilité de poster des messages dans notre salon <strong>#test</strong> en appelant l’URL du webhook.</p><h2 id="créer-le-webhook-datadog">Créer le webhook Datadog</h2><p>Maintenant que notre webhook Discord est opérationnel, occupons-nous de créer le webhook coté Datadog.</p><ul><li>Rendez-vous sur la page <a href="https://app.datadoghq.com/account/settings#integrations/webhooks">d’intégration des webhook</a></li><li>Créer un webhook <img src="/assets/images/comment-envoyer-alertes-datadog-discord/webhook-datadog.png" alt="" class="center-image" /></li></ul><p>Le champ <strong>Payload</strong> est ce qui sera envoyé à chaque fois qu’une nouvelle alerte sera déclenchée. Comme je l’expliquais plus haut, l’intérêt du webhook est de faire en sorte de pouvoir communiquer facilement de service-à-service mais en aucun cas avec un format d’échange unique ! Chaque site/service à sa logique donc les payloads diffèrent en fonction du service qu’on souhaite atteindre.</p><blockquote><p>Mé komen kon fé pou ke Discord komprene Datadog ?</p></blockquote><p><img src="/assets/images/comment-envoyer-alertes-datadog-discord/rtfm.gif" alt="" class="center-image" /></p><h2 id="format-du-webhook">Format du webhook</h2><p>En temps normal quand un service intègre des webhooks, il est souvent proposé de choisir le service distant afin d’auto-formater le payload en conséquence (ou de mieux interpréter le payload qui sera reçu). C’est par exemple le cas avec Discord qui intègre très bien les notifications Github, comment ? Tout simplement en ajoutant <code class="language-plaintext highlighter-rouge">/github</code> à la fin de l’URL du webhook discord. Ca marche aussi pour Slack en ajoutant <code class="language-plaintext highlighter-rouge">/slack</code>. Malheureusement Discord n’intègre pas ce type de “tips” pour Datadog. Il faut donc formater notre payload Datadog pour qu’il soit conforme aux spécifications Discord et avec les bonnes valeurs.</p><p>Deux références sont nécessaires :</p><ul><li><a href="https://docs.datadoghq.com/fr/integrations/webhooks/">Les valeurs disponibles pour les webhooks Datadog</a></li><li><a href="https://discord.com/developers/docs/resources/webhook#execute-webhook">Les spécifications Discord pour l’envoi de webhook</a></li></ul><p>Avec ces informations on peut désormais ajouter un payload qui ressemble à quelque chose du style :</p><div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Comment envoyer des alertes Datadog dans Discord ? | btor.fr</title>
+<meta name="description" content="Passionné d'informatique, de développement web & applicatif depuis plus de 10 ans. Je partage mon quotidien de tech !
+">
+
+<meta itemprop="name" content="Thibaut BAYER">
+<meta itemprop="description" content="Dans cet article j&#39;explique comment envoyer des alertes Datadog directement dans Discord en utilisant les webhooks.">
+<meta itemprop="image" content="https://btor.fr/assets/images/comment-envoyer-alertes-datadog-discord/main.jpg">
+
+<meta property="og:url" content="https://btor.fr/2021/03/07/comment-envoyer-alertes-datadog-discord/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Comment envoyer des alertes Datadog dans Discord ? | btor.fr">
+<meta property="og:site_name" content="btor.fr">
+<meta property="og:description" content="Dans cet article j&#39;explique comment envoyer des alertes Datadog directement dans Discord en utilisant les webhooks.">
+<meta property="og:image" content="https://btor.fr/assets/images/comment-envoyer-alertes-datadog-discord/main.jpg">
+
+<meta name="twitter:url" content="https://btor.fr/2021/03/07/comment-envoyer-alertes-datadog-discord/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Comment envoyer des alertes Datadog dans Discord ? | btor.fr">
+<meta name="twitter:site" content="btor.fr">
+<meta name="twitter:description" content="Dans cet article j&#39;explique comment envoyer des alertes Datadog directement dans Discord en utilisant les webhooks.">
+
+  <meta name="twitter:creator" content="@biiitor">
+
+<meta property="twitter:image" content="https://btor.fr/assets/images/comment-envoyer-alertes-datadog-discord/main.jpg">
+
+<link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+
+<link rel="stylesheet" href="/assets/css/app.min.css">
+
+<link rel="alternate" type="application/rss+xml" title="btor.fr" href="/feed.xml">
+<link rel="canonical" href="/2021/03/07/comment-envoyer-alertes-datadog-discord/">
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153641953-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-153641953-1');
+  </script>
+  <script async 
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7190479662443667"
+          crossorigin="anonymous">
+  </script>
+
+</head>
+<body id="comment-envoyer-des-alertes-datadog-dans-discord" class="post-layout">
+
+  <header class="header">
+  <!-- <a class="header__title" href="https://btor.fr/">btor.fr</a> -->
+  <a class="header__title" href="https://btor.fr/"><img width="75" src="/assets/images/logo/logo.dark.small.png"/></a>
+
+  <nav>
+  <ul class="header__list">
+    <li><a href="/projets">💡 Mes projets</a></li>
+    <li><a href="/qui-suis-je">❓ Qui suis-je</a></li>
+  </ul>
+</nav>
+
+</header>
+
+  <main class="💈">
+    <div class="post">
+  <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post__header section-padding--double">
+      <div class="grid-small">
+        <h2 itemprop="name headline">Comment envoyer des alertes Datadog dans Discord ?</h2>
+
+        <time class="post__date" datetime="2021-03-07T00:00:00-06:00" itemprop="datePublished">07/03/2021</time>
+      </div>
+    </div>
+
+    
+      <div class="post__img">
+        <div>
+          <figure class="absolute-bg" style="background-image: url('/assets/images/comment-envoyer-alertes-datadog-discord/main.jpg');"></figure>
+        </div>
+      </div>
+    
+    <div class="post__content section-padding">
+      <div class="grid">
+        <div id="markdown" itemprop="articleBody">
+          <p>J’en parlais dans un article précédent mais je suis assez fan de Datadog !
+Logs, métriques, moniteurs, tableaux de bords et j’en passe, Datadog est plutôt bien fourni et permet vraiment de gérer intégralement son monitoring.
+Qui dit monitoring, dit monitorer ! <em>(ou “surveiller” si toi pas comprendre la langue de Mary Poppins <img src="/assets/images/emote/LUL.png" alt="" class="emote" />)</em>
+Un des outils important de Datadog est sa fonction “Monitor” qui permet de créer des alertes en fonction de seuils, variations ou autres critères de déclenchement.
+Ces alertes peuvent être envoyées par mail, sur slack <a href="https://docs.datadoghq.com/fr/integrations/">ou d’autres applications</a>.</p>
+
+<p><img src="/assets/images/comment-envoyer-alertes-datadog-discord/jusquici.jpg" alt="" class="center-image" /></p>
+
+<p>Depuis le COVID, quelques sociétés se sont mises au télétravail avec plus ou moins de succès (on vous voit <img src="/assets/images/emote/KJ.png" alt="" class="emote" />).
+Parmi les gros changements qu’a apportés le télétravail, il y a eu l’arrivée massive de la visio : Meet, Zoom, Livestorm ou même Discord.</p>
+
+<p>Pour beaucoup de travailleurs <del>du sexe</del> de la tech <img src="/assets/images/emote/OUCH.png" alt="" class="emote" />, ces outils sont devenus monnaie courante.
+Certaines sociétés en ont d’ailleurs profité pour (parfois) changer leurs outils de communication pour privilégier un Discord plutôt qu’un Slack, notamment pour des raisons de tarification 💸.
+Et c’est là que tu vois le loup arriver ! Discord c’est bien, c’est pratique mais c’est pas aussi bien interconnecté qu’un slack <img src="/assets/images/emote/SAD.png" alt="" class="emote" /> notamment quand il s’agit d’envoyer des notifications Datadog sur Discord
+(c’est le sujet de l’article <img src="/assets/images/emote/RS.png" alt="" class="emote" />, ça va j’accouche ! Pas besoin de t’énerver ! <img src="/assets/images/emote/OOPS.png" alt="" class="emote" />)</p>
+
+<p>Voyons-donc comment envoyer les alertes de nos moniteurs Datadog, directement dans Discord !</p>
+
+<p><img src="https://media1.tenor.com/images/b13a03a18eb819855cd99f22e2cf4433/tenor.gif?itemid=16135073" alt="" class="center-image" /></p>
+
+<p><strong>Spoiler</strong> : Si tu connais déjà les webhooks, que t’es une diva du dév’ ou tout autre Apollon de la tech, tu peux directement voir la solution <a href="#format-du-webhook">au dernier chapitre</a></p>
+<h1 id="les-webhooks">Les webhooks</h1>
+<p>Si tu es développeur, tu as forcément entendu parler des webhooks. 
+Un webhook c’est un système qui permet d’envoyer (ou recevoir) des évènements à/depuis une application tierce, en général au travers d’un appel HTTP.
+L’idée derrière le webhook c’est de pouvoir avertir facilement un service tier d’un nouvel évènement sans avoir à se soucier de la pile technique distante.
+En gros, le webhook va effectuer un call HTTP avec le contenu de la notification dans le corps de la requête HTTP.</p>
+
+<p>Dans notre cas, Datadog doit notifier Discord d’une nouvelle alerte.
+Ca se présente ainsi :
+<img src="/assets/images/comment-envoyer-alertes-datadog-discord/explication.jpg" alt="" class="center-image" /></p>
+
+<p>Pour se faire, il va nous falloir :</p>
+<ul>
+  <li>Un webhook Datadog qui envoie la notification</li>
+  <li>Un webhook Discord qui reçoit la notification</li>
+</ul>
+
+<h2 id="créer-le-webhook-coté-discord">Créer le webhook coté Discord</h2>
+<p>Pour créer un webhook sur discord, il faut :</p>
+<ul>
+  <li>Se rendre sur les paramètres d’un salon textuel</li>
+  <li>Puis aller dans Intégrations &gt; Webhooks &gt; Nouveau Webhook</li>
+  <li>Copier l’URL du webhook
+<img src="/assets/images/comment-envoyer-alertes-datadog-discord/webhook-discord.png" alt="" class="center-image" /></li>
+</ul>
+
+<p>En créant ce webhook, Discord nous donne la possibilité de poster des messages dans notre salon <strong>#test</strong> en appelant l’URL du webhook.</p>
+
+<h2 id="créer-le-webhook-datadog">Créer le webhook Datadog</h2>
+<p>Maintenant que notre webhook Discord est opérationnel, occupons-nous de créer le webhook coté Datadog.</p>
+<ul>
+  <li>Rendez-vous sur la page <a href="https://app.datadoghq.com/account/settings#integrations/webhooks">d’intégration des webhook</a></li>
+  <li>Créer un webhook
+<img src="/assets/images/comment-envoyer-alertes-datadog-discord/webhook-datadog.png" alt="" class="center-image" /></li>
+</ul>
+
+<p>Le champ <strong>Payload</strong> est ce qui sera envoyé à chaque fois qu’une nouvelle alerte sera déclenchée.
+Comme je l’expliquais plus haut, l’intérêt du webhook est de faire en sorte de pouvoir communiquer facilement de service-à-service mais en aucun cas avec un format d’échange unique !
+Chaque site/service à sa logique donc les payloads diffèrent en fonction du service qu’on souhaite atteindre.</p>
+
+<blockquote>
+  <p>Mé komen kon fé pou ke Discord komprene Datadog ?</p>
+</blockquote>
+
+<p><img src="/assets/images/comment-envoyer-alertes-datadog-discord/rtfm.gif" alt="" class="center-image" /></p>
+
+<h2 id="format-du-webhook">Format du webhook</h2>
+<p>En temps normal quand un service intègre des webhooks, il est souvent proposé de choisir le service distant afin d’auto-formater le payload en conséquence (ou de mieux interpréter le payload qui sera reçu).
+C’est par exemple le cas avec Discord qui intègre très bien les notifications Github, comment ? Tout simplement en ajoutant <code class="language-plaintext highlighter-rouge">/github</code> à la fin de l’URL du webhook discord.
+Ca marche aussi pour Slack en ajoutant <code class="language-plaintext highlighter-rouge">/slack</code>.
+Malheureusement Discord n’intègre pas ce type de “tips” pour Datadog. 
+Il faut donc formater notre payload Datadog pour qu’il soit conforme aux spécifications Discord et avec les bonnes valeurs.</p>
+
+<p>Deux références sont nécessaires :</p>
+<ul>
+  <li><a href="https://docs.datadoghq.com/fr/integrations/webhooks/">Les valeurs disponibles pour les webhooks Datadog</a></li>
+  <li><a href="https://discord.com/developers/docs/resources/webhook#execute-webhook">Les spécifications Discord pour l’envoi de webhook</a></li>
+</ul>
+
+<p>Avec ces informations on peut désormais ajouter un payload qui ressemble à quelque chose du style :</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Datadog"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://i.postimg.cc/q7gJ7MKm/datadog.png"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"embeds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -13,5 +186,233 @@
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div></div><p>Vous pouvez paramétrer votre payload en fonction du style de rendu que vous voulez, par exemple ajouter des catégories dans l’embed, n’envoyer que le texte de l’alerte, ou que le lien etc</p><p>Valider votre webhook Datadog avec le payload modifié, puis rendez-vous sur votre Monitor et ajouter <code class="language-plaintext highlighter-rouge">@webhook-&lt;nom du webhook&gt;</code> dans “Notify your team” ou dans “Say what’s happening”, that’s it !</p><center>Aperçu d'un test de notification</center><p><img src="/assets/images/comment-envoyer-alertes-datadog-discord/notification-discord.jpg" alt="" class="center-image" /></p><p>J’espère que ce petit tips vous aura aidé <img src="/assets/images/emote/KJ.png" alt="" class="emote" /> <img src="/assets/images/emote/BEER.png" alt="" class="emote" /></p></div><ul class="post__social"><li><a href="https://www.facebook.com/sharer/sharer.php?u=https://btor.fr/2021/03/07/comment-envoyer-alertes-datadog-discord/" target="_blank"><i class="fa fa-facebook"></i></a></li><li><a href="https://twitter.com/intent/tweet?&text=Comment envoyer des alertes Datadog dans Discord ?+https://btor.fr/2021/03/07/comment-envoyer-alertes-datadog-discord/+by+Thibaut BAYER" target="_blank"><i class="fa fa-twitter"></i></a></li><li><a href="https://plus.google.com/share?url=https://btor.fr/2021/03/07/comment-envoyer-alertes-datadog-discord/" target="_blank"><i class="fa fa-google-plus"></i></a></li><li><a href="https://www.linkedin.com/shareArticle?mini=true&source=Comment envoyer des alertes Datadog dans Discord ?&summary=Dans cet article j'explique comment envoyer des alertes Datadog directement dans Discord en utilisant les webhooks.&url=https://btor.fr/2021/03/07/comment-envoyer-alertes-datadog-discord/" target="_blank"><i class="fa fa-linkedin"></i></a></li><li><a href="https://www.stumbleupon.com/badge/?url=https://btor.fr/2021/03/07/comment-envoyer-alertes-datadog-discord/" target="_blank"><i class="fa fa-stumbleupon"></i></a></li><li><a href="https://www.reddit.com/submit?url=https://btor.fr/2021/03/07/comment-envoyer-alertes-datadog-discord/" target="_blank"><i class="fa fa-reddit-alien"></i></a></li><li><a href="https://www.tumblr.com/share/link?url=https://btor.fr/2021/03/07/comment-envoyer-alertes-datadog-discord/" target="_blank"><i class="fa fa-tumblr"></i></a></li><li><a href="https://www.pinterest.com/pin/create/link/?description=Dans cet article j'explique comment envoyer des alertes Datadog directement dans Discord en utilisant les webhooks.&media=https://btor.fr/assets/images/comment-envoyer-alertes-datadog-discord/main.jpg&url=https://btor.fr/2021/03/07/comment-envoyer-alertes-datadog-discord/" target="_blank"><i class="fa fa-pinterest"></i></a></li></ul></div></div><div class="section-padding--none"><div class="grid"><hr class="sep"/></div></div><div class="section-padding"><div class="grid-small"> <span class="post__author">Posté par <a href="http://btor.fr" title="More By Thibaut BAYER">Thibaut BAYER</a></span><p class="post__bio">Passionné d'informatique, de développement web & applicatif depuis plus de 10 ans. Je partage mon quotidien de tech !</p></div></div><div class="post__comments section-padding"><div class="grid-small"> <script src="https://utteranc.es/client.js" repo="bt0r/www.btor.fr" issue-term="pathname" label="💬 Commentaire" theme="github-light" crossorigin="anonymous" async> </script></div></div></article></div><section class="related section-padding"><div class="grid-xlarge"><h2 class="related__title"></h2><div class="related__container"><article class="related__post"> <a class="related__link" href="https://btor.fr/2021/03/07/comment-envoyer-alertes-datadog-discord/"><figure class="related__img"> <img src="/assets/images/comment-envoyer-alertes-datadog-discord/main.jpg" alt="Comment envoyer des alertes Datadog dans Discord ?"/></figure><div><h2 class="related__text">Comment envoyer des alertes Datadog dans Discord ?</h2></div></a></article><article class="related__post"> <a class="related__link" href="https://btor.fr/2020/09/11/logger-front-datadog/"><figure class="related__img"> <img src="/assets/images/logger-front-datadog/main.jpg" alt="Logger son front (web ou extension de navigateur) avec Datadog"/></figure><div><h2 class="related__text">Logger son front (web ou extension de navigateur) avec Datadog</h2></div></a></article></div></div></section></main><footer class="footer section-padding"><div class="grid"><div class="subscribe" id="subscribe"><div class="subscribe__container"> <span class="subscribe__title">Restons en contact</span><ul class="footer__social"><li><a href="https://twitter.com/biiitor" target="_blank"><i class="fa fa-twitter"></i></a></li><li><a href="https://www.instagram.com/btor.fr/" target="_blank"><i class="fa fa-instagram"></i></a></li><li><a href="https://www.linkedin.com/in/thibaut-bayer//" target="_blank"><i class="fa fa-linkedin"></i></a></li><li><a href="https://github.com/bt0r" target="_blank"><i class="fa fa-github"></i></a></li><li><a href="https://twitch.tv/bt0r" target="_blank"><i class="fa fa-twitch"></i></a></li><li><a href="https://btor.fr/feed.xml" target="_blank"><i class="fa fa-rss"></i></a></li></ul></div></div><hr class="sep--white"/><div class="footer__container"><p>Catégories</p><ul class="footer__tags"><li><a class="footer__link" href="/tag/materiel">Materiel</a></li><li><a class="footer__link" href="/tag/test">Test</a></li><li><a class="footer__link" href="/tag/tutorial">Tutorial</a></li><li><a class="footer__link" href="/tag/javascript">Javascript</a></li><li><a class="footer__link" href="/tag/datadog">Datadog</a></li></ul></div></div></footer><section class="contact popup"><div class="popup__close"><div class="popup__exit"></div></div><div class="contact__container popup__container"><div class="contact__img"><figure class="absolute-bg" style="background-image: url(/assets/images/logo/logo.dark.small.png);"></figure></div><div class="contact__content"><div class="contact__mast section-padding--half"><div class="grid"><h2>Contact</h2></div></div><div class="section-padding--none"><hr class="sep"/></div><div class="contact__form section-padding--half"><div class="grid-xlarge"> <form id="form" class="form" action="https://formcarry.com/s/HkIo0nMb7" method="POST"><div class="form__subcontainer"><div> <label for="form-first-name">First Name</label> <input type="text" name="first-name" id="form-first-name" required></div><div> <label for="form-last-name">Last Name</label> <input type="text" name="last-name" id="form-last-name" required></div></div><div> <label for="form-email">E-Mail</label> <input type="email" name="email" id="form-email" required></div><div> <label for="form-message">Message</label> <textarea name="message" id="form-message" rows="3"></textarea></div><div class="form__submit"><div class="form__btn"> <input type="submit" value="Send"></div></div><p class="form__message"></p></form></div></div></div></div></section><script src="/assets/js/app.min.js"></script></body></html>
-  
+</span></code></pre></div></div>
+<p>Vous pouvez paramétrer votre payload en fonction du style de rendu que vous voulez, par exemple ajouter des catégories dans l’embed, n’envoyer que le texte de l’alerte, ou que le lien etc</p>
+
+<p>Valider votre webhook Datadog avec le payload modifié, puis rendez-vous sur votre Monitor et ajouter <code class="language-plaintext highlighter-rouge">@webhook-&lt;nom du webhook&gt;</code> dans “Notify your team” ou dans “Say what’s happening”, that’s it !</p>
+
+<center>Aperçu d'un test de notification</center>
+<p><img src="/assets/images/comment-envoyer-alertes-datadog-discord/notification-discord.jpg" alt="" class="center-image" /></p>
+
+<p>J’espère que ce petit tips vous aura aidé <img src="/assets/images/emote/KJ.png" alt="" class="emote" /> <img src="/assets/images/emote/BEER.png" alt="" class="emote" /></p>
+
+        </div>
+        <ul class="post__social">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://btor.fr/2021/03/07/comment-envoyer-alertes-datadog-discord/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+  <li><a href="https://twitter.com/intent/tweet?&text=Comment envoyer des alertes Datadog dans Discord ?+https://btor.fr/2021/03/07/comment-envoyer-alertes-datadog-discord/+by+Thibaut BAYER" target="_blank"><i class="fa fa-twitter"></i></a></li>
+  <li><a href="https://plus.google.com/share?url=https://btor.fr/2021/03/07/comment-envoyer-alertes-datadog-discord/" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+  <li><a href="https://www.linkedin.com/shareArticle?mini=true&source=Comment envoyer des alertes Datadog dans Discord ?&summary=Dans cet article j'explique comment envoyer des alertes Datadog directement dans Discord en utilisant les webhooks.&url=https://btor.fr/2021/03/07/comment-envoyer-alertes-datadog-discord/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+  <li><a href="https://www.stumbleupon.com/badge/?url=https://btor.fr/2021/03/07/comment-envoyer-alertes-datadog-discord/" target="_blank"><i class="fa fa-stumbleupon"></i></a></li>
+  <li><a href="https://www.reddit.com/submit?url=https://btor.fr/2021/03/07/comment-envoyer-alertes-datadog-discord/" target="_blank"><i class="fa fa-reddit-alien"></i></a></li>
+  <li><a href="https://www.tumblr.com/share/link?url=https://btor.fr/2021/03/07/comment-envoyer-alertes-datadog-discord/" target="_blank"><i class="fa fa-tumblr"></i></a></li>
+  <li><a href="https://www.pinterest.com/pin/create/link/?description=Dans cet article j'explique comment envoyer des alertes Datadog directement dans Discord en utilisant les webhooks.&media=https://btor.fr/assets/images/comment-envoyer-alertes-datadog-discord/main.jpg&url=https://btor.fr/2021/03/07/comment-envoyer-alertes-datadog-discord/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Everything inside the #author tags pulls data from the author -->
+    
+      <div class="section-padding--none">
+        <div class="grid">
+          <hr class="sep"/>
+        </div>
+      </div>
+
+      <div class="section-padding">
+        <div class="grid-small">
+          
+            
+            
+              <span class="post__author">Posté par
+            
+            <a href="http://btor.fr" title="More By Thibaut BAYER">Thibaut BAYER</a></span>
+            <p class="post__bio">Passionné d'informatique, de développement web & applicatif depuis plus de 10 ans. Je partage mon quotidien de tech !</p>
+          
+        </div>
+      </div>
+    
+
+    <!--
+
+If you use Disqus comments, just uncomment this block.
+The only thing you need to change is "test-apkdzgmqhj" - which
+should be replaced with your own Disqus site-id.
+
+<div class="post__comments section-padding">
+  <div class="grid-small">
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function () {
+        this.page.url = 'https://btor.fr/2021/03/07/comment-envoyer-alertes-datadog-discord/';
+        this.page.identifier = 'https://btor.fr/2021/03/07/comment-envoyer-alertes-datadog-discord/';
+      };
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://btor.fr.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+  </div>
+</div>
+-->
+
+    <div class="post__comments section-padding">
+    <div class="grid-small">
+        <script src="https://utteranc.es/client.js"
+                repo="bt0r/www.btor.fr"
+                issue-term="pathname"
+                label="💬 Commentaire"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+        </script>
+    </div>
+</div>
+
+
+  </article>
+</div>
+
+<!-- Links to Previous/Next posts -->
+
+
+  <section class="related section-padding">
+    <div class="grid-xlarge">
+      <h2 class="related__title"></h2>
+      <div class="related__container">
+        
+          <article class="related__post">
+            <a class="related__link" href="https://btor.fr/2021/03/07/comment-envoyer-alertes-datadog-discord/">
+              
+                <figure class="related__img">
+                  <img src="/assets/images/comment-envoyer-alertes-datadog-discord/main.jpg" alt="Comment envoyer des alertes Datadog dans Discord ?"/>
+                </figure>
+              
+              <div>
+                <h2 class="related__text">Comment envoyer des alertes Datadog dans Discord ?</h2>
+              </div>
+            </a>
+          </article>
+        
+          <article class="related__post">
+            <a class="related__link" href="https://btor.fr/2020/09/11/logger-front-datadog/">
+              
+                <figure class="related__img">
+                  <img src="/assets/images/logger-front-datadog/main.jpg" alt="Logger son front (web ou extension de navigateur) avec Datadog"/>
+                </figure>
+              
+              <div>
+                <h2 class="related__text">Logger son front (web ou extension de navigateur) avec Datadog</h2>
+              </div>
+            </a>
+          </article>
+        
+      </div>
+    </div>
+  </section>
+
+
+  </main>
+  <!-- The footer at the very bottom of the screen -->
+<footer class="footer section-padding">
+  <div class="grid">
+    <div class="subscribe" id="subscribe">
+      <div class="subscribe__container">
+        <span class="subscribe__title">Restons en contact</span>
+
+        
+  <ul class="footer__social">
+    
+      <li><a href="https://twitter.com/biiitor" target="_blank"><i class="fa fa-twitter"></i></a></li>
+    
+      <li><a href="https://www.instagram.com/btor.fr/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+    
+      <li><a href="https://www.linkedin.com/in/thibaut-bayer//" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+    
+      <li><a href="https://github.com/bt0r" target="_blank"><i class="fa fa-github"></i></a></li>
+    
+      <li><a href="https://twitch.tv/bt0r" target="_blank"><i class="fa fa-twitch"></i></a></li>
+    
+      <li><a href="https://btor.fr/feed.xml" target="_blank"><i class="fa fa-rss"></i></a></li>
+    
+  </ul>
+
+
+      </div>
+    </div>
+
+    <hr class="sep--white"/>
+    <div class="footer__container">
+      <p>Catégories</p>
+      <ul class="footer__tags"><li><a class="footer__link" href="/tag/materiel">Materiel</a></li><li><a class="footer__link" href="/tag/test">Test</a></li><li><a class="footer__link" href="/tag/javascript">Javascript</a></li><li><a class="footer__link" href="/tag/tutorial">Tutorial</a></li><li><a class="footer__link" href="/tag/securite">Securite</a></li></ul>
+    </div>
+  </div>
+</footer>
+
+<section class="contact popup">
+  <div class="popup__close">
+    <div class="popup__exit"></div>
+  </div>
+  <div class="contact__container popup__container">
+    <div class="contact__img">
+      <figure class="absolute-bg" style="background-image: url(/assets/images/logo/logo.dark.small.png);"></figure>
+    </div>
+    <div class="contact__content">
+      <div class="contact__mast section-padding--half">
+        <div class="grid">
+          <h2>Contact</h2>
+        </div>
+      </div>
+
+      <div class="section-padding--none">
+        <hr class="sep"/>
+      </div>
+
+      <div class="contact__form section-padding--half">
+        <div class="grid-xlarge">
+          <form id="form" class="form" action="https://formcarry.com/s/HkIo0nMb7" method="POST">
+  <div class="form__subcontainer">
+    <div>
+      <label for="form-first-name">First Name</label>
+      <input type="text" name="first-name" id="form-first-name" required>
+    </div>
+    <div>
+      <label for="form-last-name">Last Name</label>
+      <input type="text" name="last-name" id="form-last-name" required>
+    </div>
+  </div>
+
+  <div>
+    <label for="form-email">E-Mail</label>
+    <input type="email" name="email" id="form-email" required>
+  </div>
+
+  <div>
+    <label for="form-message">Message</label>
+    <textarea name="message" id="form-message" rows="3"></textarea>
+  </div>
+
+  <div class="form__submit">
+    <div class="form__btn">
+      <input type="submit" value="Send">
+    </div>
+  </div>
+
+  <p class="form__message"></p>
+</form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<script src="/assets/js/app.min.js"></script>
+
+</body>
+</html>

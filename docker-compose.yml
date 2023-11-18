@@ -6,5 +6,6 @@ services:
       - ./:/srv/jekyll:delegated
       - ./vendor/bundle:/usr/local/bundle
     ports:
-      - 4000:4000
-    command: jekyll serve --watch --force_polling
+      - "4000:4000"
+      - "35729:35729"
+    command: jekyll serve --open-url --livereload

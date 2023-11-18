@@ -6,9 +6,122 @@
 </description>
     <link>https://btor.fr</link>
     <atom:link href="https://btor.fr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 06 Aug 2023 14:55:39 -0500</pubDate>
-    <lastBuildDate>Sun, 06 Aug 2023 14:55:39 -0500</lastBuildDate>
+    <pubDate>Sat, 18 Nov 2023 08:56:45 -0600</pubDate>
+    <lastBuildDate>Sat, 18 Nov 2023 08:56:45 -0600</lastBuildDate>
     <generator>Jekyll v3.9.1</generator>
+    
+      <item>
+        <title>Test: Framework 13&quot;, un pc portable modulaire sous Linux </title>
+        <description>&lt;p&gt;Mercredi 15 février, une météo clémente rayonne dans mon salon après deux semaines de froid et de pluie diluvienne.
+Ces deux dernières semaines ont été aussi longue et désagréable que les &lt;strong&gt;MOIS D’ATTENTES&lt;/strong&gt; pour recevoir mon nouveau laptop: Un &lt;a href=&quot;https://frame.work/fr/fr/products/laptop-diy-13-gen-intel&quot;&gt;Framework 13” sous AMD Ryzen 7040&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;framework-cest-quoi-&quot;&gt;Framework, c’est quoi ?&lt;/h2&gt;
+&lt;p&gt;Non, cette fois-ci, nous ne parlerons pas de Framework tel que Symfony ou NextJS. 
+Framework c’est une marque d’ordinateur portable qui se veut le plus écoresponsable possible en proposant des ordinateurs modulaire et facilement réparable.
+C’est un peu le &lt;a href=&quot;https://www.fairphone.com/en/&quot;&gt;Fairphone&lt;/a&gt; de l’ordinateur portable, avec quelques différences tout de même (notamment le prix).&lt;/p&gt;
+
+&lt;h2 id=&quot;tes-devenu-bobo-écolo-vegan-ou-quoi-&quot;&gt;T’es devenu bobo-écolo-vegan ou quoi ?&lt;/h2&gt;
+&lt;p&gt;Bien que l’idée de lécher des cailloux me vende du rêve &lt;img src=&quot;/assets/images/emote/LUL_DIDIER.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;, j’ai choisi de passer sur Framework pour plusieurs raisons :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Je suis loin d’être irréprochable, mais l’écologie est un sujet important. Si j’ai l’occasion d’avoir un ordinateur performant, réparable et écoresponsable, pourquoi devrai-je m’en priver ?&lt;/li&gt;
+  &lt;li&gt;Nos ordinateurs, téléphones et autre support multimédia ont un design très souvent similaire (ex: les Macbook Pro pratiquement tous identiques, à quelques détails près)&lt;/li&gt;
+  &lt;li&gt;Depuis toujours, je suis un grand utilisateur de linux (Debian/Ubuntu, Fedora principalement), j’ai récemment beaucoup utilisé MacOS mais bien que la finition des Mac soit irréprochable, développer sous MacOS devient de plus en plus pénible.
+L’OS est assez “fluide” dans son utilisation globale, on a l’impression que tout fonctionne bien etc, mais dès que l’on commence à le pousser un peu dans ses retranchements, ça devient compliqué (wink wink les power user de docker)&lt;/li&gt;
+  &lt;li&gt;L’envie d’avoir un ordinateur puissant, avec 32GO de RAM qui ne me coutera pas un bras (wink wink les Macbook Pro)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Avec tous ces critères, Framework semblait être un bon compromis, mais qu’en est-il vraiment ? &lt;img src=&quot;/assets/images/emote/TUBAIZ.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;déballage-et-montage&quot;&gt;Déballage et montage&lt;/h2&gt;
+&lt;p&gt;J’ai donc commandé mon Framework 13” au moins de juin, pour une livraison mi-novembre. 
+Je suis parti sur une configuration assez basique :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Processeur AMD Ryzen 7 7040&lt;/li&gt;
+  &lt;li&gt;32go de RAM&lt;/li&gt;
+  &lt;li&gt;500G SSD NVM&lt;/li&gt;
+  &lt;li&gt;2 ports USB-C&lt;/li&gt;
+  &lt;li&gt;Un port DisplayPort&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Pour un total avoisinant les &lt;strong&gt;1700€&lt;/strong&gt;, ce qui est assez raisonnable pour un ordinateur portable de cette gamme.
+L’équivalent chez Apple est d’environ 2500€ pour un Macbook Pro M3 et un peu moins en M2.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/framework-laptop-portable-linux/déballage.jpg&quot; alt=&quot;Framework 13&amp;quot; déballage&quot; /&gt;
+&lt;img src=&quot;/assets/images/framework-laptop-portable-linux/montage.jpg&quot; alt=&quot;Framework 13&amp;quot; montage&quot; /&gt;
+Le carton est assez lourd, le packaging très bien fait, on se retrouve rapidement avec un ordinateur pré-monté (écran, cpu, carte mère) et les autres composants à monter soit même (clavier, contour d’écran, ram, SSD)
+C’est assez perturbant de recevoir un ordinateur portable en kit, d’autant plus qu’il n’y a aucun “mode d’emploi” comme on pourrait s’attendre à en avoir avec ce type de produit.
+&lt;img src=&quot;/assets/images/framework-laptop-portable-linux/montage-qrcode.jpg&quot; alt=&quot;Framework 13&amp;quot; QR codes&quot; /&gt;
+Pas de notice papier &lt;strong&gt;MAIS&lt;/strong&gt; un QR code sur chaque composant qui nous redirige vers des tutos sur le site de Framework.
+J’ai regardé par curiosité comment étaient fait les tutos et c’est globalement bien foutu, mais ça ne servira pas aux gros barbus bricoleurs fan de Metallica tellement le montage est simple. &lt;img src=&quot;/assets/images/emote/LUL.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Pour le montage :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;On branche le SSD et la RAM sur la carte mère (une vis pour le SSD, et des clips pour la RAM)&lt;/li&gt;
+  &lt;li&gt;On pose le contour de l’écran (clipsé)&lt;/li&gt;
+  &lt;li&gt;On branche le clavier à la CM (nappe)&lt;/li&gt;
+  &lt;li&gt;On clips tout ça dans le châssis et on visse le tout (5 vis à l’arrière, tournevis fournis)&lt;/li&gt;
+  &lt;li&gt;Reste plus qu’à brancher les cartes d’extensions et le tour est joué !&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;installation-de-los&quot;&gt;Installation de l’OS&lt;/h2&gt;
+&lt;p&gt;Place à l’installation de l’OS, il n’y a rien de bien compliqué, la documentation en ligne est assez bien faite, pour Linux il faut d’abord mettre à jour le bios en version 3.03 et ensuite faire l’installation de l’OS.
+Depuis peu, j’utilise &lt;a href=&quot;https://endeavouros.com/&quot;&gt;EndeavourOS&lt;/a&gt;, une distribution basée sur ArchLinux, que j’apprécie beaucoup pour sa simplicité et sa légèreté (XFCE for the win).
+J’ai donc directement tenté une installation d’EndeavourOS et que fût ma surprise… ça a fonctionné du &lt;strong&gt;PREMIER COUP&lt;/strong&gt;, en 10min top chrono l’OS était installé et fonctionnel.
+Bluetooth, wifi, touchpad, caméra, TOUT fonctionne ! 
+Ça peut paraitre anodin, mais c’est assez rare pour être souligné.&lt;/p&gt;
+
+&lt;h2 id=&quot;comparaison-avec-un-macbook-pro&quot;&gt;Comparaison avec un MacBook Pro&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/framework-laptop-portable-linux/comparaison-macbook-pro-dessus.jpg&quot; alt=&quot;Framework 13&amp;quot; - Comparaison MacBook Pro et Framework - Dessus&quot; /&gt;
+&lt;img src=&quot;/assets/images/framework-laptop-portable-linux/comparaison-macbook-pro.jpg&quot; alt=&quot;Framework 13&amp;quot; Comparaison MacBook Pro et Framework - Epaisseur&quot; /&gt;
+&lt;img src=&quot;/assets/images/framework-laptop-portable-linux/comparaison-macbook-pro-ouvert.jpg&quot; alt=&quot;Framework 13&amp;quot; Comparaison MacBook Pro et Framework - Ouvert&quot; /&gt;
+Le framework est légèrement plus &lt;strong&gt;épais&lt;/strong&gt; que le MacBook Pro et &lt;strong&gt;l’écran un peu plus grand&lt;/strong&gt; notamment dû à son format 3:2.
+Le point fort des MacBook Pro étant la finition, on ne peut pas dire que le Framework soit aussi bien fini, mais ça reste très correct pour un ordinateur que l’on monte entièrement soit même.
+Côté poids, le framework est un peu plus léger qu’un Macbook Pro (1,3kg vs ~1,4kg), concernant la &lt;strong&gt;batterie&lt;/strong&gt; je n’ai pas encore eu l’occasion de faire des tests mais d’après &lt;a href=&quot;https://www.lesnumeriques.com/ordinateur-portable/framework-laptop-13-ryzen-7-7840hs-p73244/test.html#anchor-review-chap-mobilite-autonomie&quot;&gt;les numériques&lt;/a&gt; le framework tient ~9h là où le Macbook pro tient ~13h, avantage au Macbook pro donc.&lt;/p&gt;
+
+&lt;p&gt;Côté &lt;strong&gt;performance&lt;/strong&gt; (linux oblige) &lt;strong&gt;le MacBook Pro se fait littéralement écraser.&lt;/strong&gt;
+Que ce soit en termes de temps de boot ou d’utilisation générale (navigation, docker etc).&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Les +&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Le montage&lt;/strong&gt; &lt;img src=&quot;/assets/images/emote/SLT.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt; - C’est là qu’on voit qu’ils ont réussi à faire un truc assez dingue : &lt;strong&gt;C’EST FUCKING SIMPLE !&lt;/strong&gt; Un enfant de 10 ans pourrait monter son propre ordinateur.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;La modularité interne&lt;/strong&gt; &lt;img src=&quot;/assets/images/emote/SLT.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt; (CM/RAM/SSD) est vraiment bien foutue, j’avais peur que les 4 blocs d’extensions soient un peu trop épais et finalement, c’est très clean !&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Le clavier&lt;/strong&gt; est vraiment bien, ça ressemble fortement à une copie des claviers Mac et pour le coup, c’était une bonne idée !&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Les performances&lt;/strong&gt; sont au rendez-vous, l’ordi boot en quelques secondes et ne fait pas d’écart quand on le sollicite un peu ardûment.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Les -&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Ça chauffe !&lt;/strong&gt; &lt;img src=&quot;/assets/images/emote/WUT_KARINE.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt; - A vous les mains qui collent au clavier, je n’ai pas encore eu droit aux bruits de décolage d’avion de chasse mais ça ne saurait tarder. Vivement une version fanless.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;L’écran en 60hz 3:2&lt;/strong&gt; &lt;img src=&quot;/assets/images/emote/WUT_KARINE.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt; -  j’aurais préféré un écran 16:9 en 120hz 1440p plutôt qu’un 60hz 3:2 bizarre comme choix, autant un 60hz je peux comprendre, par contre le 3:2 c’est incompréhensible. Ca doit encore être l’idée d’un Sales… &lt;img src=&quot;/assets/images/emote/LUL_DIDIER.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Le son est CATASTROPHIQUE&lt;/strong&gt; &lt;img src=&quot;/assets/images/emote/NO.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt; - Quand je dis CATASTROPHIQUE, c’est CATASTROPHIQUE, je ne sais pas si ça va s’entendre sur cette vidéo mais le son manque de basse, est étouffé etc :
+    &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/dT4v9Z12q60?si=Zttkk6m7wL3z4ag_&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Linux (Arch): Le touchpad est ultra sensible, j’ai réussi à le configurer pour que ce ne soit pas trop dérangeant mais c’est plus du tweak que du natif, c’est peut-être mieux sur d’autres distributions.&lt;/li&gt;
+  &lt;li&gt;On est sur un ordinateur entièrement monté “à la main” donc sans finition “d’usine”, c’est un mix d’alu et de plastique avec certaines zones totalement “ouvertes” sur la carte mère.
+Pour l’étanchéité, il faudra repasser.&lt;/li&gt;
+  &lt;li&gt;J’ai commandé 3 blocs d’extensions en pensant qu’ils fournissaient des caches d’extensions (pour éviter d’avoir un trou dans l’ordi), plot twist : ce n’est pas le cas. Pensez donc à bien acheter 4 blocs d’extensions.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;En résumé,&lt;/strong&gt; c’est un bon ordinateur de geekos, de mecs qui va aimer bidouiller, qui cherche les performances etc.
+Les &lt;strong&gt;3 gros points noirs&lt;/strong&gt; à corriger sont, selon moi, la &lt;strong&gt;taille/résolution d’écran&lt;/strong&gt;, la &lt;strong&gt;qualité audio&lt;/strong&gt; et le &lt;strong&gt;manque de fanless&lt;/strong&gt; côté CPU.
+Avec ces 3 points améliorés, le Framework pourrait rapidement devenir un incontournable pour les développeurs, peut-être même pour le grand public.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 15 Nov 2023 09:30:00 -0600</pubDate>
+        <image>https://btor.fr/assets/images/framework-laptop-portable-linux/main.jpg</image>
+        <link>https://btor.fr/2023/11/15/framework-laptop-portable-linux/</link>
+        <guid isPermaLink="true">https://btor.fr/2023/11/15/framework-laptop-portable-linux/</guid>
+        
+        <category>Materiel</category>
+        
+        <category>Test</category>
+        
+        <category>Linux</category>
+        
+        <category>ArchLinux</category>
+        
+        
+      </item>
     
       <item>
         <title>Comment envoyer des alertes Datadog dans Discord ?</title>

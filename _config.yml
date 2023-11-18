@@ -11,6 +11,7 @@ description: >
 url: https://btor.fr
 twitter_username: biiitor
 default_img: /assets/images/seo.jpg
+livereload: true
 social:
   - name: twitter
     url: https://twitter.com/biiitor
