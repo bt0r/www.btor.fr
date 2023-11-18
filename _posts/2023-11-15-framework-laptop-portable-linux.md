@@ -10,6 +10,7 @@ tags:
   - Test
   - Linux
   - ArchLinux
+  - Framework
 ---
 Mercredi 15 février, une météo clémente rayonne dans mon salon après deux semaines de froid et de pluie diluvienne.
 Ces deux dernières semaines ont été aussi longue et désagréable que les **MOIS D'ATTENTES** pour recevoir mon nouveau laptop: Un [Framework 13" sous AMD Ryzen 7040](https://frame.work/fr/fr/products/laptop-diy-13-gen-intel).
