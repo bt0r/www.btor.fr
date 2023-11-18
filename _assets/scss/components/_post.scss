@@ -23,17 +23,18 @@
   }
 
   &__img {
-    height: 18em;
+    width: 100%;
+    height: 16em;
     padding: 1em;
+    margin:auto;
 
     @media (min-width: $mq-small) {
-      height: 36em;
+      height: 20em;
       padding: 2em;
     }
 
     @media (min-width: $mq-med) {
-      height: calc(100vh - 3em);
-      min-height: 36em;
+      height: 30em;
     }
 
     & > * {
@@ -41,8 +42,6 @@
 
       height: 100%;
       width: 100%;
-
-      background-color: $color-lightgrey;
     }
   }
 

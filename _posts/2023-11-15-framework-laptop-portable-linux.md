@@ -49,13 +49,14 @@ C'est assez perturbant de recevoir un ordinateur portable en kit, d'autant plus 
 Pas de notice papier **MAIS** un QR code sur chaque composant qui nous redirige vers des tutos sur le site de Framework.
 J'ai regardé par curiosité comment étaient fait les tutos et c'est globalement bien foutu, mais ça ne servira pas aux gros barbus bricoleurs fan de Metallica tellement le montage est simple. ![](/assets/images/emote/LUL.png){: .emote}
 
-
+![Framework 13" - Début du montage](/assets/images/framework-laptop-portable-linux/montage-clavier.jpg)
 Pour le montage :
 * On branche le SSD et la RAM sur la carte mère (une vis pour le SSD, et des clips pour la RAM)
 * On pose le contour de l'écran (clipsé)
 * On branche le clavier à la CM (nappe)
 * On clips tout ça dans le châssis et on visse le tout (5 vis à l'arrière, tournevis fournis)
 * Reste plus qu'à brancher les cartes d'extensions et le tour est joué !
+
 
 ## Installation de l'OS
 Place à l'installation de l'OS, il n'y a rien de bien compliqué, la documentation en ligne est assez bien faite, pour Linux il faut d'abord mettre à jour le bios en version 3.03 et ensuite faire l'installation de l'OS.

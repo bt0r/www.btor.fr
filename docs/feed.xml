@@ -6,8 +6,8 @@
 </description>
     <link>https://btor.fr</link>
     <atom:link href="https://btor.fr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 18 Nov 2023 08:56:45 -0600</pubDate>
-    <lastBuildDate>Sat, 18 Nov 2023 08:56:45 -0600</lastBuildDate>
+    <pubDate>Sat, 18 Nov 2023 11:17:51 -0600</pubDate>
+    <lastBuildDate>Sat, 18 Nov 2023 11:17:51 -0600</lastBuildDate>
     <generator>Jekyll v3.9.1</generator>
     
       <item>
@@ -54,7 +54,8 @@ C’est assez perturbant de recevoir un ordinateur portable en kit, d’autant p
 Pas de notice papier &lt;strong&gt;MAIS&lt;/strong&gt; un QR code sur chaque composant qui nous redirige vers des tutos sur le site de Framework.
 J’ai regardé par curiosité comment étaient fait les tutos et c’est globalement bien foutu, mais ça ne servira pas aux gros barbus bricoleurs fan de Metallica tellement le montage est simple. &lt;img src=&quot;/assets/images/emote/LUL.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Pour le montage :&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/framework-laptop-portable-linux/montage-clavier.jpg&quot; alt=&quot;Framework 13&amp;quot; - Début du montage&quot; /&gt;
+Pour le montage :&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;On branche le SSD et la RAM sur la carte mère (une vis pour le SSD, et des clips pour la RAM)&lt;/li&gt;
   &lt;li&gt;On pose le contour de l’écran (clipsé)&lt;/li&gt;
