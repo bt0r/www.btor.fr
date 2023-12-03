@@ -6,9 +6,63 @@
 </description>
     <link>https://btor.fr</link>
     <atom:link href="https://btor.fr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 18 Nov 2023 11:19:16 -0600</pubDate>
-    <lastBuildDate>Sat, 18 Nov 2023 11:19:16 -0600</lastBuildDate>
+    <pubDate>Sun, 03 Dec 2023 15:07:22 -0600</pubDate>
+    <lastBuildDate>Sun, 03 Dec 2023 15:07:22 -0600</lastBuildDate>
     <generator>Jekyll v3.9.1</generator>
+    
+      <item>
+        <title>Fusuma: Quand la gestuelle de MacOS débarque sur Linux</title>
+        <description>&lt;p&gt;Avec l’arrivée de mon nouveau Framework et le fait que je l’utilise principalement pour le développement, j’ai décidé de passer sur ArchLinux (cf: &lt;a href=&quot;/2023/11/15/framework-laptop-portable-linux/&quot;&gt;cet article&lt;/a&gt;). 
+J’ai donc profité du passage à EndeavourOS pour commencer à setup mon laptop afin qu’il soit le plus ISO possible avec mon MacBook Pro (du moins en terme d’utilisation).
+Et on va pas se mentir… c’est pas chose aisée ! &lt;img src=&quot;/assets/images/emote/OUCH.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Un de mes problèmes majeurs concerne le touchpad, par défaut sur XFCE, rien n’est prévu pour basculer facilement entre les bureaux virtuels avec le touchpad.
+J’ai donc cherché un peu sur le net et le premier résultat qui sortait était &lt;a href=&quot;https://github.com/JoseExposito/touchegg&quot;&gt;touchegg&lt;/a&gt;, 
+après 2/3 essais infructueux, j’ai décidé de m’orienter vers &lt;a href=&quot;https://github.com/iberianpig/fusuma&quot;&gt;Fusuma&lt;/a&gt;, 
+une librairie Ruby qui permet de mapper les gestes du touchpad avec des commandes/actions (globalement la même chose que ToucheGG).&lt;/p&gt;
+
+&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+&lt;p&gt;Pour installer Fusuma, rien de plus simple, il suffit d’installer les paquets suivants :&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;pacman &lt;span class=&quot;nt&quot;&gt;-Syu&lt;/span&gt; libinput ruby xdotool
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;gem &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;fusuma
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&quot;https://github.com/iberianpig/fusuma#installation&quot;&gt;Voir les autres méthodes d’installation&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Une fois les paquets installés, il faut créer le fichier de configuration de Fusuma :&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; ~/.config/fusuma
+vim ~/.config/fusuma/config.yml
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Puis y ajouter votre configuration, pour ma part, j’ai choisi de mapper uniquement les swipes de changement de bureau virtuel :&lt;/p&gt;
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;swipe&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Détermine le type de gestuelle que l'ont veut déclencher&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Nombre de doigts utilisés&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Direction du swipe&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;command&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;xdotool&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;set_desktop&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;--relative&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;+1&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Commande à exécuter&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;command&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;xdotool&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;set_desktop&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;--relative&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;-1&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&quot;https://github.com/iberianpig/fusuma#more-example-of-configyml&quot;&gt;Plus d’exemple sur la doc officielle&lt;/a&gt;&lt;/em&gt; - &lt;em&gt;&lt;a href=&quot;https://github.com/iberianpig/fusuma#available-gestures&quot;&gt;Liste des différentes gestuelles disponibles&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Et voilà ! Rien de plus simple ! &lt;img src=&quot;/assets/images/emote/LUL_DIDIER.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 03 Dec 2023 10:00:00 -0600</pubDate>
+        <image>https://btor.fr/assets/images/comment-touchpad-macos-linux-workspace/main.jpg</image>
+        <link>https://btor.fr/2023/12/03/comment-touchpad-macos-linux-workspace/</link>
+        <guid isPermaLink="true">https://btor.fr/2023/12/03/comment-touchpad-macos-linux-workspace/</guid>
+        
+        <category>MacOS</category>
+        
+        <category>Touchpad</category>
+        
+        <category>Linux</category>
+        
+        <category>ArchLinux</category>
+        
+        <category>Framework</category>
+        
+        <category>Fusuma</category>
+        
+        
+      </item>
     
       <item>
         <title>Test: Framework 13&quot;, un pc portable modulaire sous Linux </title>

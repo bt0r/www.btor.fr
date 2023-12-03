@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Fusuma: Quand la gestuelle de MacOS débarque sur Linux | btor.fr</title>
+<meta name="description" content="Passionné d'informatique, de développement web & applicatif depuis plus de 10 ans. Je partage mon quotidien de tech !
+">
+
+<meta itemprop="name" content="Thibaut BAYER">
+<meta itemprop="description" content="Fusuma permet de créer ses propre mapping entre des gestes sur le touchpad et des commandes à exécuter.">
+<meta itemprop="image" content="https://btor.fr/assets/images/comment-touchpad-macos-linux-workspace/main.jpg">
+
+<meta property="og:url" content="https://btor.fr/2023/12/03/comment-touchpad-macos-linux-workspace/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fusuma: Quand la gestuelle de MacOS débarque sur Linux | btor.fr">
+<meta property="og:site_name" content="btor.fr">
+<meta property="og:description" content="Fusuma permet de créer ses propre mapping entre des gestes sur le touchpad et des commandes à exécuter.">
+<meta property="og:image" content="https://btor.fr/assets/images/comment-touchpad-macos-linux-workspace/main.jpg">
+
+<meta name="twitter:url" content="https://btor.fr/2023/12/03/comment-touchpad-macos-linux-workspace/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Fusuma: Quand la gestuelle de MacOS débarque sur Linux | btor.fr">
+<meta name="twitter:site" content="btor.fr">
+<meta name="twitter:description" content="Fusuma permet de créer ses propre mapping entre des gestes sur le touchpad et des commandes à exécuter.">
+
+  <meta name="twitter:creator" content="@biiitor">
+
+<meta property="twitter:image" content="https://btor.fr/assets/images/comment-touchpad-macos-linux-workspace/main.jpg">
+
+<link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+
+<link rel="stylesheet" href="/assets/css/app.min.css">
+
+<link rel="alternate" type="application/rss+xml" title="btor.fr" href="/feed.xml">
+<link rel="canonical" href="/2023/12/03/comment-touchpad-macos-linux-workspace/">
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153641953-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-153641953-1');
+  </script>
+  <script async 
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7190479662443667"
+          crossorigin="anonymous">
+  </script>
+
+</head>
+<body id="fusuma-quand-la-gestuelle-de-macos-débarque-sur-linux" class="post-layout">
+
+  <header class="header">
+  <!-- <a class="header__title" href="https://btor.fr/">btor.fr</a> -->
+  <a class="header__title" href="https://btor.fr/"><img width="75" src="/assets/images/logo/logo.dark.small.png"/></a>
+
+  <nav>
+  <ul class="header__list">
+    <li><a href="/projets">💡 Mes projets</a></li>
+    <li><a href="/qui-suis-je">❓ Qui suis-je</a></li>
+  </ul>
+</nav>
+
+</header>
+
+  <main class="💈">
+    <div class="post">
+  <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post__header section-padding--double">
+      <div class="grid-small">
+        <h2 itemprop="name headline">Fusuma: Quand la gestuelle de MacOS débarque sur Linux</h2>
+
+        <time class="post__date" datetime="2023-12-03T10:00:00-06:00" itemprop="datePublished">03/12/2023</time>
+      </div>
+    </div>
+
+    
+      <div class="post__img">
+        <div>
+          <figure class="absolute-bg" style="background-image: url('/assets/images/comment-touchpad-macos-linux-workspace/main.jpg');"></figure>
+        </div>
+      </div>
+    
+    <div class="post__content section-padding">
+      <div class="grid">
+        <div id="markdown" itemprop="articleBody">
+          <p>Avec l’arrivée de mon nouveau Framework et le fait que je l’utilise principalement pour le développement, j’ai décidé de passer sur ArchLinux (cf: <a href="/2023/11/15/framework-laptop-portable-linux/">cet article</a>). 
+J’ai donc profité du passage à EndeavourOS pour commencer à setup mon laptop afin qu’il soit le plus ISO possible avec mon MacBook Pro (du moins en terme d’utilisation).
+Et on va pas se mentir… c’est pas chose aisée ! <img src="/assets/images/emote/OUCH.png" alt="" class="emote" /></p>
+
+<p>Un de mes problèmes majeurs concerne le touchpad, par défaut sur XFCE, rien n’est prévu pour basculer facilement entre les bureaux virtuels avec le touchpad.
+J’ai donc cherché un peu sur le net et le premier résultat qui sortait était <a href="https://github.com/JoseExposito/touchegg">touchegg</a>, 
+après 2/3 essais infructueux, j’ai décidé de m’orienter vers <a href="https://github.com/iberianpig/fusuma">Fusuma</a>, 
+une librairie Ruby qui permet de mapper les gestes du touchpad avec des commandes/actions (globalement la même chose que ToucheGG).</p>
+
+<h2 id="installation">Installation</h2>
+<p>Pour installer Fusuma, rien de plus simple, il suffit d’installer les paquets suivants :</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-Syu</span> libinput ruby xdotool
+<span class="nb">sudo </span>gem <span class="nb">install </span>fusuma
+</code></pre></div></div>
+<p><em><a href="https://github.com/iberianpig/fusuma#installation">Voir les autres méthodes d’installation</a></em></p>
+
+<p>Une fois les paquets installés, il faut créer le fichier de configuration de Fusuma :</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> ~/.config/fusuma
+vim ~/.config/fusuma/config.yml
+</code></pre></div></div>
+<p>Puis y ajouter votre configuration, pour ma part, j’ai choisi de mapper uniquement les swipes de changement de bureau virtuel :</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">swipe</span><span class="pi">:</span> <span class="c1"># Détermine le type de gestuelle que l'ont veut déclencher</span>
+  <span class="na">3</span><span class="pi">:</span> <span class="c1"># Nombre de doigts utilisés</span>
+    <span class="na">right</span><span class="pi">:</span> <span class="c1"># Direction du swipe</span>
+      <span class="na">command</span><span class="pi">:</span> <span class="s2">"</span><span class="s">xdotool</span><span class="nv"> </span><span class="s">set_desktop</span><span class="nv"> </span><span class="s">--relative</span><span class="nv"> </span><span class="s">+1"</span> <span class="c1"># Commande à exécuter</span>
+    <span class="na">left</span><span class="pi">:</span>
+      <span class="na">command</span><span class="pi">:</span> <span class="s2">"</span><span class="s">xdotool</span><span class="nv"> </span><span class="s">set_desktop</span><span class="nv"> </span><span class="s">--relative</span><span class="nv"> </span><span class="s">--</span><span class="nv"> </span><span class="s">-1"</span>
+</code></pre></div></div>
+<p><em><a href="https://github.com/iberianpig/fusuma#more-example-of-configyml">Plus d’exemple sur la doc officielle</a></em> - <em><a href="https://github.com/iberianpig/fusuma#available-gestures">Liste des différentes gestuelles disponibles</a></em></p>
+
+<p>Et voilà ! Rien de plus simple ! <img src="/assets/images/emote/LUL_DIDIER.png" alt="" class="emote" /></p>
+
+        </div>
+        <ul class="post__social">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://btor.fr/2023/12/03/comment-touchpad-macos-linux-workspace/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+  <li><a href="https://twitter.com/intent/tweet?&text=Fusuma: Quand la gestuelle de MacOS débarque sur Linux+https://btor.fr/2023/12/03/comment-touchpad-macos-linux-workspace/+by+Thibaut BAYER" target="_blank"><i class="fa fa-twitter"></i></a></li>
+  <li><a href="https://plus.google.com/share?url=https://btor.fr/2023/12/03/comment-touchpad-macos-linux-workspace/" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+  <li><a href="https://www.linkedin.com/shareArticle?mini=true&source=Fusuma: Quand la gestuelle de MacOS débarque sur Linux&summary=Fusuma permet de créer ses propre mapping entre des gestes sur le touchpad et des commandes à exécuter.&url=https://btor.fr/2023/12/03/comment-touchpad-macos-linux-workspace/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+  <li><a href="https://www.stumbleupon.com/badge/?url=https://btor.fr/2023/12/03/comment-touchpad-macos-linux-workspace/" target="_blank"><i class="fa fa-stumbleupon"></i></a></li>
+  <li><a href="https://www.reddit.com/submit?url=https://btor.fr/2023/12/03/comment-touchpad-macos-linux-workspace/" target="_blank"><i class="fa fa-reddit-alien"></i></a></li>
+  <li><a href="https://www.tumblr.com/share/link?url=https://btor.fr/2023/12/03/comment-touchpad-macos-linux-workspace/" target="_blank"><i class="fa fa-tumblr"></i></a></li>
+  <li><a href="https://www.pinterest.com/pin/create/link/?description=Fusuma permet de créer ses propre mapping entre des gestes sur le touchpad et des commandes à exécuter.&media=https://btor.fr/assets/images/comment-touchpad-macos-linux-workspace/main.jpg&url=https://btor.fr/2023/12/03/comment-touchpad-macos-linux-workspace/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Everything inside the #author tags pulls data from the author -->
+    
+      <div class="section-padding--none">
+        <div class="grid">
+          <hr class="sep"/>
+        </div>
+      </div>
+
+      <div class="section-padding">
+        <div class="grid-small">
+          
+            
+            
+              <span class="post__author">Posté par
+            
+            <a href="http://btor.fr" title="More By Thibaut BAYER">Thibaut BAYER</a></span>
+            <p class="post__bio">Passionné d'informatique, de développement web & applicatif depuis plus de 10 ans. Je partage mon quotidien de tech !</p>
+          
+        </div>
+      </div>
+    
+
+    <!--
+
+If you use Disqus comments, just uncomment this block.
+The only thing you need to change is "test-apkdzgmqhj" - which
+should be replaced with your own Disqus site-id.
+
+<div class="post__comments section-padding">
+  <div class="grid-small">
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function () {
+        this.page.url = 'https://btor.fr/2023/12/03/comment-touchpad-macos-linux-workspace/';
+        this.page.identifier = 'https://btor.fr/2023/12/03/comment-touchpad-macos-linux-workspace/';
+      };
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://btor.fr.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+  </div>
+</div>
+-->
+
+    <div class="post__comments section-padding">
+    <div class="grid-small">
+        <script src="https://utteranc.es/client.js"
+                repo="bt0r/www.btor.fr"
+                issue-term="pathname"
+                label="💬 Commentaire"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+        </script>
+    </div>
+</div>
+
+
+  </article>
+</div>
+
+<!-- Links to Previous/Next posts -->
+
+
+  <section class="related section-padding">
+    <div class="grid-xlarge">
+      <h2 class="related__title"></h2>
+      <div class="related__container">
+        
+          <article class="related__post">
+            <a class="related__link" href="https://btor.fr/2023/12/03/comment-touchpad-macos-linux-workspace/">
+              
+                <figure class="related__img">
+                  <img src="/assets/images/comment-touchpad-macos-linux-workspace/main.jpg" alt="Fusuma: Quand la gestuelle de MacOS débarque sur Linux"/>
+                </figure>
+              
+              <div>
+                <h2 class="related__text">Fusuma: Quand la gestuelle de MacOS débarque sur Linux</h2>
+              </div>
+            </a>
+          </article>
+        
+      </div>
+    </div>
+  </section>
+
+
+  </main>
+  <!-- The footer at the very bottom of the screen -->
+<footer class="footer section-padding">
+  <div class="grid">
+    <div class="subscribe" id="subscribe">
+      <div class="subscribe__container">
+        <span class="subscribe__title">Restons en contact</span>
+
+        
+  <ul class="footer__social">
+    
+      <li><a href="https://twitter.com/biiitor" target="_blank"><i class="fa fa-twitter"></i></a></li>
+    
+      <li><a href="https://www.instagram.com/btor.fr/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+    
+      <li><a href="https://www.linkedin.com/in/thibaut-bayer//" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+    
+      <li><a href="https://github.com/bt0r" target="_blank"><i class="fa fa-github"></i></a></li>
+    
+      <li><a href="https://twitch.tv/bt0r" target="_blank"><i class="fa fa-twitch"></i></a></li>
+    
+      <li><a href="https://btor.fr/feed.xml" target="_blank"><i class="fa fa-rss"></i></a></li>
+    
+  </ul>
+
+
+      </div>
+    </div>
+
+    <hr class="sep--white"/>
+    <div class="footer__container">
+      <p>Catégories</p>
+      <ul class="footer__tags"><li><a class="footer__link" href="/tag/materiel">Materiel</a></li><li><a class="footer__link" href="/tag/test">Test</a></li><li><a class="footer__link" href="/tag/tutorial">Tutorial</a></li><li><a class="footer__link" href="/tag/linux">Linux</a></li><li><a class="footer__link" href="/tag/javascript">Javascript</a></li></ul>
+    </div>
+  </div>
+</footer>
+
+<section class="contact popup">
+  <div class="popup__close">
+    <div class="popup__exit"></div>
+  </div>
+  <div class="contact__container popup__container">
+    <div class="contact__img">
+      <figure class="absolute-bg" style="background-image: url(/assets/images/logo/logo.dark.small.png);"></figure>
+    </div>
+    <div class="contact__content">
+      <div class="contact__mast section-padding--half">
+        <div class="grid">
+          <h2>Contact</h2>
+        </div>
+      </div>
+
+      <div class="section-padding--none">
+        <hr class="sep"/>
+      </div>
+
+      <div class="contact__form section-padding--half">
+        <div class="grid-xlarge">
+          <form id="form" class="form" action="https://formcarry.com/s/HkIo0nMb7" method="POST">
+  <div class="form__subcontainer">
+    <div>
+      <label for="form-first-name">First Name</label>
+      <input type="text" name="first-name" id="form-first-name" required>
+    </div>
+    <div>
+      <label for="form-last-name">Last Name</label>
+      <input type="text" name="last-name" id="form-last-name" required>
+    </div>
+  </div>
+
+  <div>
+    <label for="form-email">E-Mail</label>
+    <input type="email" name="email" id="form-email" required>
+  </div>
+
+  <div>
+    <label for="form-message">Message</label>
+    <textarea name="message" id="form-message" rows="3"></textarea>
+  </div>
+
+  <div class="form__submit">
+    <div class="form__btn">
+      <input type="submit" value="Send">
+    </div>
+  </div>
+
+  <p class="form__message"></p>
+</form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<script src="/assets/js/app.min.js"></script>
+
+</body>
+</html>
