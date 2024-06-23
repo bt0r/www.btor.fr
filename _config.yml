@@ -7,7 +7,7 @@ google_analytics:
 name: Thibaut BAYER
 title: btor.fr
 description: >
-  Passionné d'informatique, de développement web & applicatif depuis plus de 10 ans. Je partage mon quotidien de tech !
+  CTO le jour, codeur la nuit, je partage mon quotidien de tech et d'autres trucs qui me passionnent.
 url: https://btor.fr
 twitter_username: biiitor
 default_img: /assets/images/seo.jpg
@@ -40,8 +40,8 @@ mailchimp_input: b_66ddf555dab480e6a8606430b_89b3ee034f
 # Author settings
 author:
   - name: Thibaut BAYER
-    bio: Passionné d'informatique, de développement web & applicatif depuis plus de 10 ans. Je partage mon quotidien de tech !
-    url: http://btor.fr
+    bio: CTO le jour, codeur la nuit, je partage mon quotidien de tech et d'autres trucs qui me passionnent.
+    url: https://btor.fr
 
 # Pagination settings
 pagination:
