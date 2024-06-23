@@ -6,37 +6,37 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Fusuma: Quand la gestuelle de MacOS débarque sur Linux | btor.fr</title>
+<title>OrbStack : Un Docker Desktop for Mac sous stéroïde ? | btor.fr</title>
 <meta name="description" content="CTO le jour, codeur la nuit, je partage mon quotidien de tech et d'autres trucs qui me passionnent.
 ">
 
 <meta itemprop="name" content="Thibaut BAYER">
-<meta itemprop="description" content="Fusuma permet de créer ses propre mapping entre des gestes sur le touchpad et des commandes à exécuter.">
-<meta itemprop="image" content="https://btor.fr/assets/images/comment-touchpad-macos-linux-workspace/main.jpg">
+<meta itemprop="description" content="OrbStack est un démon docker pour MacOS qui vise à régler les problèmes de performances de Docker Desktop for Mac. Mais est ce que ça marche vraiment ?">
+<meta itemprop="image" content="https://btor.fr/assets/images/orbstack-remplacant-docker-desktop-for-mac/main.jpg">
 
-<meta property="og:url" content="https://btor.fr/2023/12/03/comment-touchpad-macos-linux-workspace/">
+<meta property="og:url" content="https://btor.fr/2024/06/22/orbstack-remplacant-docker-desktop-for-mac/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Fusuma: Quand la gestuelle de MacOS débarque sur Linux | btor.fr">
+<meta property="og:title" content="OrbStack : Un Docker Desktop for Mac sous stéroïde ? | btor.fr">
 <meta property="og:site_name" content="btor.fr">
-<meta property="og:description" content="Fusuma permet de créer ses propre mapping entre des gestes sur le touchpad et des commandes à exécuter.">
-<meta property="og:image" content="https://btor.fr/assets/images/comment-touchpad-macos-linux-workspace/main.jpg">
+<meta property="og:description" content="OrbStack est un démon docker pour MacOS qui vise à régler les problèmes de performances de Docker Desktop for Mac. Mais est ce que ça marche vraiment ?">
+<meta property="og:image" content="https://btor.fr/assets/images/orbstack-remplacant-docker-desktop-for-mac/main.jpg">
 
-<meta name="twitter:url" content="https://btor.fr/2023/12/03/comment-touchpad-macos-linux-workspace/">
+<meta name="twitter:url" content="https://btor.fr/2024/06/22/orbstack-remplacant-docker-desktop-for-mac/">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Fusuma: Quand la gestuelle de MacOS débarque sur Linux | btor.fr">
+<meta name="twitter:title" content="OrbStack : Un Docker Desktop for Mac sous stéroïde ? | btor.fr">
 <meta name="twitter:site" content="btor.fr">
-<meta name="twitter:description" content="Fusuma permet de créer ses propre mapping entre des gestes sur le touchpad et des commandes à exécuter.">
+<meta name="twitter:description" content="OrbStack est un démon docker pour MacOS qui vise à régler les problèmes de performances de Docker Desktop for Mac. Mais est ce que ça marche vraiment ?">
 
   <meta name="twitter:creator" content="@biiitor">
 
-<meta property="twitter:image" content="https://btor.fr/assets/images/comment-touchpad-macos-linux-workspace/main.jpg">
+<meta property="twitter:image" content="https://btor.fr/assets/images/orbstack-remplacant-docker-desktop-for-mac/main.jpg">
 
 <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
 
 <link rel="stylesheet" href="/assets/css/app.min.css">
 
 <link rel="alternate" type="application/rss+xml" title="btor.fr" href="/feed.xml">
-<link rel="canonical" href="/2023/12/03/comment-touchpad-macos-linux-workspace/">
+<link rel="canonical" href="/2024/06/22/orbstack-remplacant-docker-desktop-for-mac/">
 
 
 
@@ -55,7 +55,7 @@
   </script>
 
 </head>
-<body id="fusuma-quand-la-gestuelle-de-macos-débarque-sur-linux" class="post-layout">
+<body id="orbstack-un-docker-desktop-for-mac-sous-stéroïde" class="post-layout">
 
   <header class="header">
   <!-- <a class="header__title" href="https://btor.fr/">btor.fr</a> -->
@@ -75,64 +75,65 @@
   <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
     <div class="post__header section-padding--double">
       <div class="grid-small">
-        <h2 itemprop="name headline">Fusuma: Quand la gestuelle de MacOS débarque sur Linux</h2>
+        <h2 itemprop="name headline">OrbStack : Un Docker Desktop for Mac sous stéroïde ?</h2>
 
-        <time class="post__date" datetime="2023-12-03T10:00:00-06:00" itemprop="datePublished">03/12/2023</time>
+        <time class="post__date" datetime="2024-06-22T06:30:00-05:00" itemprop="datePublished">22/06/2024</time>
       </div>
     </div>
 
     
       <div class="post__img">
         <div>
-          <figure class="absolute-bg" style="background-image: url('/assets/images/comment-touchpad-macos-linux-workspace/main.jpg');"></figure>
+          <figure class="absolute-bg" style="background-image: url('/assets/images/orbstack-remplacant-docker-desktop-for-mac/main.jpg');"></figure>
         </div>
       </div>
     
     <div class="post__content section-padding">
       <div class="grid">
         <div id="markdown" itemprop="articleBody">
-          <p>Avec l’arrivée de mon nouveau Framework et le fait que je l’utilise principalement pour le développement, j’ai décidé de passer sur ArchLinux (cf: <a href="/2023/11/15/framework-laptop-portable-linux/">cet article</a>). 
-J’ai donc profité du passage à EndeavourOS pour commencer à setup mon laptop afin qu’il soit le plus ISO possible avec mon MacBook Pro (du moins en terme d’utilisation).
-Et on va pas se mentir… c’est pas chose aisée ! <img src="/assets/images/emote/OUCH.png" alt="" class="emote" /></p>
+          <blockquote>
+  <p>“J’en ai marre, ma stack docker est leeeeente sur Mac”</p>
+</blockquote>
 
-<p>Un de mes problèmes majeurs concerne le touchpad, par défaut sur XFCE, rien n’est prévu pour basculer facilement entre les bureaux virtuels avec le touchpad.
-J’ai donc cherché un peu sur le net et le premier résultat qui sortait était <a href="https://github.com/JoseExposito/touchegg">touchegg</a>, 
-après 2/3 essais infructueux, j’ai décidé de m’orienter vers <a href="https://github.com/iberianpig/fusuma">Fusuma</a>, 
-une librairie Ruby qui permet de mapper les gestes du touchpad avec des commandes/actions (globalement la même chose que ToucheGG).</p>
+<p>J’ai entendu cette phrase un nombre incalculable de fois, et j’ai moi-même été confronté à ce problème pendant mes années de développeur.</p>
 
-<h2 id="installation">Installation</h2>
-<p>Pour installer Fusuma, rien de plus simple, il suffit d’installer les paquets suivants :</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-Syu</span> libinput ruby xdotool
-<span class="nb">sudo </span>gem <span class="nb">install </span>fusuma
-</code></pre></div></div>
-<p><em><a href="https://github.com/iberianpig/fusuma#installation">Voir les autres méthodes d’installation</a></em></p>
+<p>Il y a 5 ans, dans <a href="http://btor.fr/2019/07/03/docker-bases-tuto/">cet article</a>, j’expliquais le fonctionnement de base de docker et les contraintes liées à son utilisation sur MacOS.</p>
+<blockquote>
+  <p>TLDR: Effectivement, si vous utilisez Linux sur votre machine hôte vous n’aurez aucun problème, Docker est supporté nativement, par contre sous Windows et Mac vous aurez une couche supplémentaire pour faire fonctionner Docker… Une machine virtuelle !</p>
+</blockquote>
 
-<p>Une fois les paquets installés, il faut créer le fichier de configuration de Fusuma :</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> ~/.config/fusuma
-vim ~/.config/fusuma/config.yml
-</code></pre></div></div>
-<p>Puis y ajouter votre configuration, pour ma part, j’ai choisi de mapper uniquement les swipes de changement de bureau virtuel :</p>
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">swipe</span><span class="pi">:</span> <span class="c1"># Détermine le type de gestuelle que l'ont veut déclencher</span>
-  <span class="na">3</span><span class="pi">:</span> <span class="c1"># Nombre de doigts utilisés</span>
-    <span class="na">right</span><span class="pi">:</span> <span class="c1"># Direction du swipe</span>
-      <span class="na">command</span><span class="pi">:</span> <span class="s2">"</span><span class="s">xdotool</span><span class="nv"> </span><span class="s">set_desktop</span><span class="nv"> </span><span class="s">--relative</span><span class="nv"> </span><span class="s">+1"</span> <span class="c1"># Commande à exécuter</span>
-    <span class="na">left</span><span class="pi">:</span>
-      <span class="na">command</span><span class="pi">:</span> <span class="s2">"</span><span class="s">xdotool</span><span class="nv"> </span><span class="s">set_desktop</span><span class="nv"> </span><span class="s">--relative</span><span class="nv"> </span><span class="s">--</span><span class="nv"> </span><span class="s">-1"</span>
-</code></pre></div></div>
-<p><em><a href="https://github.com/iberianpig/fusuma#more-example-of-configyml">Plus d’exemple sur la doc officielle</a></em> - <em><a href="https://github.com/iberianpig/fusuma#available-gestures">Liste des différentes gestuelles disponibles</a></em></p>
+<p><em>D’ailleurs un article “Docker : Avancé” est en cours d’écriture depuis 3 ans…, ça va devenir mon <a href="https://www.mesopinions.com/petition/politique/vultech-differentiel/89467">Vultech sur le différentiel</a> <img src="/assets/images/emote/LUL.png" alt="" class="emote" /> en espérant que ça ne se termine pas de la même façon…</em></p>
 
-<p>Et voilà ! Rien de plus simple ! <img src="/assets/images/emote/LUL_DIDIER.png" alt="" class="emote" /></p>
+<p>Les <strong>allers/retours</strong> entre la machine hôte et les conteneurs peuvent être source de <strong>latence, et ce</strong>, même avec des machines puissantes (M1/M2/M3)</p>
+
+<p><strong>BREF</strong>. Vous êtes sous MacOS, c’est cool, vous flambez avec votre Macbook Pro <em>Ultra Max Plus Mauve Fushia M12</em> au lounge d’Orly, mais dès que vous lancez une stack docker, c’est la merde <img src="/assets/images/emote/JEANNE.png" alt="" class="emote" />.</p>
+
+<h2 id="quapporte-orbstack-du-coup-">Qu’apporte OrbStack du coup ?</h2>
+<p>La <strong>PERFORMANCE</strong> <img src="/assets/images/emote/JAMY.png" alt="" class="emote" /> !!</p>
+
+<p><strong>OrbStack</strong> va garder ce même principe de machine virtuelle mais en utilisant une <strong>machine virtuelle ultra allégée/optimisée</strong> et avec un kernel partagé, en plus d’utiliser d’autres technos déjà performantes sur Docker Desktop for Mac (comme <strong>VirtioFS pour le partage de fichier</strong>)</p>
+
+<p>Un autre point fort d’<strong>OrbStack</strong> est qu’il n’y a <strong>aucune configuration à faire</strong>, il suffit de supprimer correctement l’ancien démon Docker Desktop (et penser à bien purger ses images/conteneurs etc) puis d’installer et lancer OrbStack.</p>
+
+<p>Et le tour est joué <img src="/assets/images/emote/BEER.png" alt="" class="emote" /> ! Rien de plus à faire, vous aurez une stack Docker un peu plus convenable sur votre Mac et si vous n’êtes toujours pas satisfait, il ne vous reste qu’une solution, celle des dieux : <strong>Linux</strong> <img src="/assets/images/emote/SLT.png" alt="" class="emote" /></p>
+
+<p><em>À noter : OrbStack est disponible gratuitement pour les utilisateurs individuels ou à but non lucratif, mais pour les entreprises, il faudra passer à la caisse (compter 8$ par mois par utilisateur)</em></p>
+
+<p>🌎 <a href="https://orbstack.dev" target="_blank">OrbStack</a></p>
+
+<p>⚙️ Plus d’infos sur le fonctionnement interne d’OrbStack : <a href="https://docs.orbstack.dev/architecture" target="_blank">Architecture</a></p>
+
 
         </div>
         <ul class="post__social">
-  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://btor.fr/2023/12/03/comment-touchpad-macos-linux-workspace/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-  <li><a href="https://twitter.com/intent/tweet?&text=Fusuma: Quand la gestuelle de MacOS débarque sur Linux+https://btor.fr/2023/12/03/comment-touchpad-macos-linux-workspace/+by+Thibaut BAYER" target="_blank"><i class="fa fa-twitter"></i></a></li>
-  <li><a href="https://plus.google.com/share?url=https://btor.fr/2023/12/03/comment-touchpad-macos-linux-workspace/" target="_blank"><i class="fa fa-google-plus"></i></a></li>
-  <li><a href="https://www.linkedin.com/shareArticle?mini=true&source=Fusuma: Quand la gestuelle de MacOS débarque sur Linux&summary=Fusuma permet de créer ses propre mapping entre des gestes sur le touchpad et des commandes à exécuter.&url=https://btor.fr/2023/12/03/comment-touchpad-macos-linux-workspace/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-  <li><a href="https://www.stumbleupon.com/badge/?url=https://btor.fr/2023/12/03/comment-touchpad-macos-linux-workspace/" target="_blank"><i class="fa fa-stumbleupon"></i></a></li>
-  <li><a href="https://www.reddit.com/submit?url=https://btor.fr/2023/12/03/comment-touchpad-macos-linux-workspace/" target="_blank"><i class="fa fa-reddit-alien"></i></a></li>
-  <li><a href="https://www.tumblr.com/share/link?url=https://btor.fr/2023/12/03/comment-touchpad-macos-linux-workspace/" target="_blank"><i class="fa fa-tumblr"></i></a></li>
-  <li><a href="https://www.pinterest.com/pin/create/link/?description=Fusuma permet de créer ses propre mapping entre des gestes sur le touchpad et des commandes à exécuter.&media=https://btor.fr/assets/images/comment-touchpad-macos-linux-workspace/main.jpg&url=https://btor.fr/2023/12/03/comment-touchpad-macos-linux-workspace/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://btor.fr/2024/06/22/orbstack-remplacant-docker-desktop-for-mac/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+  <li><a href="https://twitter.com/intent/tweet?&text=OrbStack : Un Docker Desktop for Mac sous stéroïde ?+https://btor.fr/2024/06/22/orbstack-remplacant-docker-desktop-for-mac/+by+Thibaut BAYER" target="_blank"><i class="fa fa-twitter"></i></a></li>
+  <li><a href="https://plus.google.com/share?url=https://btor.fr/2024/06/22/orbstack-remplacant-docker-desktop-for-mac/" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+  <li><a href="https://www.linkedin.com/shareArticle?mini=true&source=OrbStack : Un Docker Desktop for Mac sous stéroïde ?&summary=OrbStack est un démon docker pour MacOS qui vise à régler les problèmes de performances de Docker Desktop for Mac. Mais est ce que ça marche vraiment ?&url=https://btor.fr/2024/06/22/orbstack-remplacant-docker-desktop-for-mac/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+  <li><a href="https://www.stumbleupon.com/badge/?url=https://btor.fr/2024/06/22/orbstack-remplacant-docker-desktop-for-mac/" target="_blank"><i class="fa fa-stumbleupon"></i></a></li>
+  <li><a href="https://www.reddit.com/submit?url=https://btor.fr/2024/06/22/orbstack-remplacant-docker-desktop-for-mac/" target="_blank"><i class="fa fa-reddit-alien"></i></a></li>
+  <li><a href="https://www.tumblr.com/share/link?url=https://btor.fr/2024/06/22/orbstack-remplacant-docker-desktop-for-mac/" target="_blank"><i class="fa fa-tumblr"></i></a></li>
+  <li><a href="https://www.pinterest.com/pin/create/link/?description=OrbStack est un démon docker pour MacOS qui vise à régler les problèmes de performances de Docker Desktop for Mac. Mais est ce que ça marche vraiment ?&media=https://btor.fr/assets/images/orbstack-remplacant-docker-desktop-for-mac/main.jpg&url=https://btor.fr/2024/06/22/orbstack-remplacant-docker-desktop-for-mac/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
 </ul>
 
       </div>
@@ -171,8 +172,8 @@ should be replaced with your own Disqus site-id.
     <div id="disqus_thread"></div>
     <script>
       var disqus_config = function () {
-        this.page.url = 'https://btor.fr/2023/12/03/comment-touchpad-macos-linux-workspace/';
-        this.page.identifier = 'https://btor.fr/2023/12/03/comment-touchpad-macos-linux-workspace/';
+        this.page.url = 'https://btor.fr/2024/06/22/orbstack-remplacant-docker-desktop-for-mac/';
+        this.page.identifier = 'https://btor.fr/2024/06/22/orbstack-remplacant-docker-desktop-for-mac/';
       };
       (function() {
         var d = document, s = d.createElement('script');

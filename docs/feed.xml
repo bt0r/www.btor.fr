@@ -2,13 +2,64 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>btor.fr</title>
-    <description>Passionné d'informatique, de développement web &amp; applicatif depuis plus de 10 ans. Je partage mon quotidien de tech !
+    <description>CTO le jour, codeur la nuit, je partage mon quotidien de tech et d'autres trucs qui me passionnent.
 </description>
     <link>https://btor.fr</link>
     <atom:link href="https://btor.fr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 03 Dec 2023 15:07:22 -0600</pubDate>
-    <lastBuildDate>Sun, 03 Dec 2023 15:07:22 -0600</lastBuildDate>
+    <pubDate>Sun, 23 Jun 2024 01:04:07 -0500</pubDate>
+    <lastBuildDate>Sun, 23 Jun 2024 01:04:07 -0500</lastBuildDate>
     <generator>Jekyll v3.9.1</generator>
+    
+      <item>
+        <title>OrbStack : Un Docker Desktop for Mac sous stéroïde ?</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;“J’en ai marre, ma stack docker est leeeeente sur Mac”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;J’ai entendu cette phrase un nombre incalculable de fois, et j’ai moi-même été confronté à ce problème pendant mes années de développeur.&lt;/p&gt;
+
+&lt;p&gt;Il y a 5 ans, dans &lt;a href=&quot;http://btor.fr/2019/07/03/docker-bases-tuto/&quot;&gt;cet article&lt;/a&gt;, j’expliquais le fonctionnement de base de docker et les contraintes liées à son utilisation sur MacOS.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;TLDR: Effectivement, si vous utilisez Linux sur votre machine hôte vous n’aurez aucun problème, Docker est supporté nativement, par contre sous Windows et Mac vous aurez une couche supplémentaire pour faire fonctionner Docker… Une machine virtuelle !&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;em&gt;D’ailleurs un article “Docker : Avancé” est en cours d’écriture depuis 3 ans…, ça va devenir mon &lt;a href=&quot;https://www.mesopinions.com/petition/politique/vultech-differentiel/89467&quot;&gt;Vultech sur le différentiel&lt;/a&gt; &lt;img src=&quot;/assets/images/emote/LUL.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt; en espérant que ça ne se termine pas de la même façon…&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Les &lt;strong&gt;allers/retours&lt;/strong&gt; entre la machine hôte et les conteneurs peuvent être source de &lt;strong&gt;latence, et ce&lt;/strong&gt;, même avec des machines puissantes (M1/M2/M3)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;BREF&lt;/strong&gt;. Vous êtes sous MacOS, c’est cool, vous flambez avec votre Macbook Pro &lt;em&gt;Ultra Max Plus Mauve Fushia M12&lt;/em&gt; au lounge d’Orly, mais dès que vous lancez une stack docker, c’est la merde &lt;img src=&quot;/assets/images/emote/JEANNE.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;quapporte-orbstack-du-coup-&quot;&gt;Qu’apporte OrbStack du coup ?&lt;/h2&gt;
+&lt;p&gt;La &lt;strong&gt;PERFORMANCE&lt;/strong&gt; &lt;img src=&quot;/assets/images/emote/JAMY.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt; !!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;OrbStack&lt;/strong&gt; va garder ce même principe de machine virtuelle mais en utilisant une &lt;strong&gt;machine virtuelle ultra allégée/optimisée&lt;/strong&gt; et avec un kernel partagé, en plus d’utiliser d’autres technos déjà performantes sur Docker Desktop for Mac (comme &lt;strong&gt;VirtioFS pour le partage de fichier&lt;/strong&gt;)&lt;/p&gt;
+
+&lt;p&gt;Un autre point fort d’&lt;strong&gt;OrbStack&lt;/strong&gt; est qu’il n’y a &lt;strong&gt;aucune configuration à faire&lt;/strong&gt;, il suffit de supprimer correctement l’ancien démon Docker Desktop (et penser à bien purger ses images/conteneurs etc) puis d’installer et lancer OrbStack.&lt;/p&gt;
+
+&lt;p&gt;Et le tour est joué &lt;img src=&quot;/assets/images/emote/BEER.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt; ! Rien de plus à faire, vous aurez une stack Docker un peu plus convenable sur votre Mac et si vous n’êtes toujours pas satisfait, il ne vous reste qu’une solution, celle des dieux : &lt;strong&gt;Linux&lt;/strong&gt; &lt;img src=&quot;/assets/images/emote/SLT.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;À noter : OrbStack est disponible gratuitement pour les utilisateurs individuels ou à but non lucratif, mais pour les entreprises, il faudra passer à la caisse (compter 8$ par mois par utilisateur)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;🌎 &lt;a href=&quot;https://orbstack.dev&quot; target=&quot;_blank&quot;&gt;OrbStack&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;⚙️ Plus d’infos sur le fonctionnement interne d’OrbStack : &lt;a href=&quot;https://docs.orbstack.dev/architecture&quot; target=&quot;_blank&quot;&gt;Architecture&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 22 Jun 2024 06:30:00 -0500</pubDate>
+        <image>https://btor.fr/assets/images/orbstack-remplacant-docker-desktop-for-mac/main.jpg</image>
+        <link>https://btor.fr/2024/06/22/orbstack-remplacant-docker-desktop-for-mac/</link>
+        <guid isPermaLink="true">https://btor.fr/2024/06/22/orbstack-remplacant-docker-desktop-for-mac/</guid>
+        
+        <category>MacOS</category>
+        
+        <category>Docker Desktop</category>
+        
+        <category>OrbStack</category>
+        
+        <category>Docker</category>
+        
+        
+      </item>
     
       <item>
         <title>Fusuma: Quand la gestuelle de MacOS débarque sur Linux</title>
