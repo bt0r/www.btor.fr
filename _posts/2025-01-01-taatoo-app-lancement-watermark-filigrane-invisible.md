@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "taatoo, un SaaS pour protéger vos images"
-date: "2025-02-01 10:00"
+date: "2024-02-01 10:00"
 description: "Comment protéger vos photos sans dénaturer vos images ? Découvrez taatoo, un service qui protège vos images des leaks."
 image: /assets/images/taatoo-app-lancement-watermark-filigrane-invisible/main.jpg
 author: Thibaut BAYER
