@@ -5,7 +5,7 @@ services:
       - ./:/srv/jekyll:delegated
       - ./vendor/bundle:/usr/local/bundle
     environment:
-      JEKYLL_UID: 1001
+      JEKYLL_UID: 1000
       JEKYLL_GID: 1001
     ports:
       - "4000:4000"
