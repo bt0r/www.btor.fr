@@ -6,9 +6,83 @@
 </description>
     <link>https://btor.fr</link>
     <atom:link href="https://btor.fr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 25 Jan 2025 06:50:09 -0600</pubDate>
-    <lastBuildDate>Sat, 25 Jan 2025 06:50:09 -0600</lastBuildDate>
+    <pubDate>Sat, 25 Jan 2025 13:56:39 +0100</pubDate>
+    <lastBuildDate>Sat, 25 Jan 2025 13:56:39 +0100</lastBuildDate>
     <generator>Jekyll v3.9.1</generator>
+    
+      <item>
+        <title>taatoo, un SaaS pour protéger vos images</title>
+        <description>&lt;p&gt;Ceux qui me suivent sur les réseaux ou qui me connaissent personnellement savent que je passe beaucoup de temps à développer des side projects (&lt;a href=&quot;https://btor.fr/2020/04/07/noteflix-allocine-netflix/&quot; target=&quot;_blank&quot;&gt;Noteflix&lt;/a&gt; par exemple).&lt;/p&gt;
+
+&lt;p&gt;J’ai toujours eu plein d’idées en tête et toujours eu envie de faire les choses qui me passionnent : développement, sports, musique, photographie, sports extrêmes… bref.&lt;/p&gt;
+
+&lt;p&gt;Et c’est justement dans ces vieux hobbies que j’ai puisé l’envie et l’énergie de lancer &lt;a href=&quot;https://taatoo.app/&quot; target=&quot;_blank&quot;&gt;taatoo&lt;/a&gt;, un SaaS qui propose de protéger vos images en y ajoutant un filigrane invisible !&lt;/p&gt;
+
+&lt;h2 id=&quot;pourquoi-taatoo-&quot;&gt;Pourquoi taatoo ?&lt;/h2&gt;
+&lt;p&gt;On vit dans un monde où on partage tout très vite, très facilement, parfois au détriment de la protection de nos données.
+Avec taatoo, je veux proposer une solution simple pour protéger ses photos, son travail, son art.. et freiner les “leakeurs”.&lt;/p&gt;
+
+&lt;h2 id=&quot;comment-ça-marche-&quot;&gt;Comment ça marche ?&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/taatoo-app-lancement-watermark-filigrane-invisible/schema.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;
+Le fonctionnement est assez simple : l’utilisateur souhaitant protéger ses photos doit se rendre sur &lt;a href=&quot;https://taatoo.app&quot;&gt;taatoo.app&lt;/a&gt;,
+s’inscrire, puis une fois inscrit, se rendre sur “Create”.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/taatoo-app-lancement-watermark-filigrane-invisible/create.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Une fois sur la page de création de “taatoo” (tatouage), il suffit de glisser-déposer l’image que l’on souhaite sécuriser,
+lui donner un nom, et ajouter un ou plusieurs destinataires.
+Il est aussi possible de choisir l’encodage que l’on souhaite utiliser, l’encodage “strong” étant le plus résistant aux modifications
+mais aussi le plus coûteux en temps de génération de l’image (donc le plus cher).&lt;/p&gt;
+
+&lt;p&gt;Mais pour que taatoo soit efficace, une image tatouée ne doit être envoyée qu’à un seul destinataire. Pour garantir cela, taatoo met à disposition une URL unique pour pouvoir voir et télécharger l’image tatouée.
+En allant sur l’image tatouée dans le dashboard, on peut voir deux icônes :&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/taatoo-app-lancement-watermark-filigrane-invisible/recipient-links.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;L’œil : Permet de voir si une image a déjà été vue ou non&lt;/li&gt;
+  &lt;li&gt;Copie : Permet de copier l’URL de consultation de l’image&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Le destinataire désirant consulter l’image arrivera sur une page publique avec ce message :
+&lt;img src=&quot;/assets/images/taatoo-app-lancement-watermark-filigrane-invisible/view.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Après consultation de l’image, qu’elle soit téléchargée ou non, l’image ne peut plus être consultée de nouveau.
+&lt;img src=&quot;/assets/images/taatoo-app-lancement-watermark-filigrane-invisible/already-viewed.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Côté technique pur, taatoo utilise diverses techniques pour ajouter le filigrane, mais la techno principale est la stéganographie en utilisant du machine learning.&lt;/p&gt;
+
+&lt;h2 id=&quot;qui-sont-les-cibles-de-taatoo-&quot;&gt;Qui sont les cibles de taatoo ?&lt;/h2&gt;
+&lt;p&gt;Tout le monde ! Photographe amateur ou professionnel, artiste, graphiste, ou simple particulier qui veut partager des photos.
+Pour le moment, le service est uniquement disponible en web donc la cible est plus orienté professionnel mais à terme étendre l’utilisation en étant présent sur plusieurs supports (app/extension de navigateur etc)&lt;/p&gt;
+
+&lt;h2 id=&quot;comment-fonctionne-la-tarification-de-taatoo-&quot;&gt;Comment fonctionne la tarification de taatoo ?&lt;/h2&gt;
+&lt;p&gt;C’est un SaaS donc c’est une tarification à la consommation. Le tarif va dépendre de l’encodage utilisé et de la taille de l’image,
+mais le prix moyen d’un tatouage est autour des &lt;strong&gt;15 centimes d’euros&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Pour ceux qui sont arrivés jusqu’au bout de cet article (bravo déjà ! ) et qui souhaitent tester le service, &lt;strong&gt;voici un code de réduction de 10% &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;E4NJCXMQ&lt;/code&gt; !&lt;/strong&gt;
+À ajouter dans votre prochaine commande sur le site taatoo.app&lt;/p&gt;
+
+&lt;p&gt;🌎 &lt;a href=&quot;https://taatoo.app/&quot; target=&quot;_blank&quot;&gt;taatoo&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 25 Jan 2025 10:00:00 +0100</pubDate>
+        <image>https://btor.fr/assets/images/taatoo-app-lancement-watermark-filigrane-invisible/main.jpg</image>
+        <link>https://btor.fr/2025/01/25/taatoo-app-lancement-watermark-filigrane-invisible/</link>
+        <guid isPermaLink="true">https://btor.fr/2025/01/25/taatoo-app-lancement-watermark-filigrane-invisible/</guid>
+        
+        <category>taatoo</category>
+        
+        <category>SaaS</category>
+        
+        <category>Filigrane</category>
+        
+        <category>Protection des données</category>
+        
+        <category>IA</category>
+        
+        <category>Machine learning</category>
+        
+        
+      </item>
     
       <item>
         <title>Zen : L'alternative à Arc mais sous Firefox ?</title>
@@ -40,7 +114,7 @@
 &lt;p&gt;🌎 &lt;a href=&quot;https://zen-browser.app/&quot; target=&quot;_blank&quot;&gt;Zen&lt;/a&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>Wed, 25 Sep 2024 10:00:00 -0500</pubDate>
+        <pubDate>Wed, 25 Sep 2024 10:00:00 +0200</pubDate>
         <image>https://btor.fr/assets/images/zen-navigateur-arc-firefox-alternative/main.jpg</image>
         <link>https://btor.fr/2024/09/25/zen-navigateur-arc-firefox-alternative/</link>
         <guid isPermaLink="true">https://btor.fr/2024/09/25/zen-navigateur-arc-firefox-alternative/</guid>
@@ -91,7 +165,7 @@
 &lt;p&gt;⚙️ Plus d’infos sur le fonctionnement interne d’OrbStack : &lt;a href=&quot;https://docs.orbstack.dev/architecture&quot; target=&quot;_blank&quot;&gt;Architecture&lt;/a&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>Sat, 22 Jun 2024 06:30:00 -0500</pubDate>
+        <pubDate>Sat, 22 Jun 2024 06:30:00 +0200</pubDate>
         <image>https://btor.fr/assets/images/orbstack-remplacant-docker-desktop-for-mac/main.jpg</image>
         <link>https://btor.fr/2024/06/22/orbstack-remplacant-docker-desktop-for-mac/</link>
         <guid isPermaLink="true">https://btor.fr/2024/06/22/orbstack-remplacant-docker-desktop-for-mac/</guid>
@@ -141,7 +215,7 @@ vim ~/.config/fusuma/config.yml
 
 &lt;p&gt;Et voilà ! Rien de plus simple ! &lt;img src=&quot;/assets/images/emote/LUL_DIDIER.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
 </description>
-        <pubDate>Sun, 03 Dec 2023 10:00:00 -0600</pubDate>
+        <pubDate>Sun, 03 Dec 2023 10:00:00 +0100</pubDate>
         <image>https://btor.fr/assets/images/comment-touchpad-macos-linux-workspace/main.jpg</image>
         <link>https://btor.fr/2023/12/03/comment-touchpad-macos-linux-workspace/</link>
         <guid isPermaLink="true">https://btor.fr/2023/12/03/comment-touchpad-macos-linux-workspace/</guid>
@@ -259,7 +333,7 @@ Pour l’étanchéité, il faudra repasser.&lt;/li&gt;
 Les &lt;strong&gt;3 gros points noirs&lt;/strong&gt; à corriger sont, selon moi, la &lt;strong&gt;taille/résolution d’écran&lt;/strong&gt;, la &lt;strong&gt;qualité audio&lt;/strong&gt; et le &lt;strong&gt;manque de fanless&lt;/strong&gt; côté CPU.
 Avec ces 3 points améliorés, le Framework pourrait rapidement devenir un incontournable pour les développeurs, peut-être même pour le grand public.&lt;/p&gt;
 </description>
-        <pubDate>Wed, 15 Nov 2023 09:30:00 -0600</pubDate>
+        <pubDate>Wed, 15 Nov 2023 16:30:00 +0100</pubDate>
         <image>https://btor.fr/assets/images/framework-laptop-portable-linux/main.jpg</image>
         <link>https://btor.fr/2023/11/15/framework-laptop-portable-linux/</link>
         <guid isPermaLink="true">https://btor.fr/2023/11/15/framework-laptop-portable-linux/</guid>
@@ -384,7 +458,7 @@ Il faut donc formater notre payload Datadog pour qu’il soit conforme aux spéc
 
 &lt;p&gt;J’espère que ce petit tips vous aura aidé &lt;img src=&quot;/assets/images/emote/KJ.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt; &lt;img src=&quot;/assets/images/emote/BEER.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
 </description>
-        <pubDate>Sun, 07 Mar 2021 00:00:00 -0600</pubDate>
+        <pubDate>Sun, 07 Mar 2021 00:00:00 +0100</pubDate>
         <image>https://btor.fr/assets/images/comment-envoyer-alertes-datadog-discord/main.jpg</image>
         <link>https://btor.fr/2021/03/07/comment-envoyer-alertes-datadog-discord/</link>
         <guid isPermaLink="true">https://btor.fr/2021/03/07/comment-envoyer-alertes-datadog-discord/</guid>
@@ -551,7 +625,7 @@ Ca vous évitera aussi d’avoir comme moi un cable-management digne d’un rép
 &lt;/ul&gt;
 
 </description>
-        <pubDate>Fri, 29 Jan 2021 00:00:00 -0600</pubDate>
+        <pubDate>Fri, 29 Jan 2021 00:00:00 +0100</pubDate>
         <image>https://btor.fr/assets/images/flexispot-bureau-assis-debout/main.jpg</image>
         <link>https://btor.fr/2021/01/29/flexispot-bureau-assis-debout/</link>
         <guid isPermaLink="true">https://btor.fr/2021/01/29/flexispot-bureau-assis-debout/</guid>
@@ -707,7 +781,7 @@ Il permet notamment de créer un proxy, capturer le trafic HTTP/HTTPS, pouvoir i
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/iBotPeaches/Apktool/&quot;&gt;APKTool&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Sat, 24 Oct 2020 00:00:00 -0500</pubDate>
+        <pubDate>Sat, 24 Oct 2020 00:00:00 +0200</pubDate>
         <image>https://btor.fr/assets/images/retro-ingenierie-capturer-application-android/main.jpg</image>
         <link>https://btor.fr/2020/10/24/retro-ingenierie-capturer-application-android/</link>
         <guid isPermaLink="true">https://btor.fr/2020/10/24/retro-ingenierie-capturer-application-android/</guid>
@@ -796,7 +870,7 @@ Il est à noter qu’il est aussi possible de faire du &lt;a href=&quot;https://
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/bt0r/NoteFlix/blob/db5cd5ca33ecf84687564bd64d840c55d73bab57/src/logging/Logger.js&quot;&gt;Exemple d’intégration dans une extension&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Fri, 11 Sep 2020 00:00:00 -0500</pubDate>
+        <pubDate>Fri, 11 Sep 2020 00:00:00 +0200</pubDate>
         <image>https://btor.fr/assets/images/logger-front-datadog/main.jpg</image>
         <link>https://btor.fr/2020/09/11/logger-front-datadog/</link>
         <guid isPermaLink="true">https://btor.fr/2020/09/11/logger-front-datadog/</guid>
@@ -878,7 +952,7 @@ En utilisant ce script, vous n’avez qu’a changé votre raccourci Spotify et 
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/spotify-obs-titre-chanson/obs-apercu.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 </description>
-        <pubDate>Sun, 24 May 2020 00:00:00 -0500</pubDate>
+        <pubDate>Sun, 24 May 2020 00:00:00 +0200</pubDate>
         <image>https://btor.fr/assets/images/spotify-obs-titre-chanson/main.jpg</image>
         <link>https://btor.fr/2020/05/24/spotify-obs-titre-chanson/</link>
         <guid isPermaLink="true">https://btor.fr/2020/05/24/spotify-obs-titre-chanson/</guid>
@@ -1159,7 +1233,7 @@ ReactNative est une solution pérenne pour réaliser vos applications mobiles cr
 
 &lt;p&gt;En fonction des réponses à celles-ci, vous pourrez vous diriger vers du ReactNative, du Flutter ou du natif &lt;img src=&quot;/assets/images/emote/KJ.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
 </description>
-        <pubDate>Fri, 15 May 2020 00:00:00 -0500</pubDate>
+        <pubDate>Fri, 15 May 2020 00:00:00 +0200</pubDate>
         <image>https://btor.fr/assets/images/react-native-retour-experience/main.jpg</image>
         <link>https://btor.fr/2020/05/15/react-native-retour-experience/</link>
         <guid isPermaLink="true">https://btor.fr/2020/05/15/react-native-retour-experience/</guid>
@@ -1529,7 +1603,7 @@ L’inconvénient c’est que toutes les 2 secondes une partie du code est exec
 &lt;a href=&quot;https://chrome.google.com/webstore/detail/noteflix/ahoplkcmcgpbkimjhncpnnllgikapjoj?hl=fr&quot;&gt;Télécharger l’extension pour Chrome&lt;/a&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>Tue, 07 Apr 2020 00:00:00 -0500</pubDate>
+        <pubDate>Tue, 07 Apr 2020 00:00:00 +0200</pubDate>
         <image>https://btor.fr/assets/images/noteflix-allocine-netflix/main.jpg</image>
         <link>https://btor.fr/2020/04/07/noteflix-allocine-netflix/</link>
         <guid isPermaLink="true">https://btor.fr/2020/04/07/noteflix-allocine-netflix/</guid>
@@ -1909,7 +1983,7 @@ Maintenant éditons notre &lt;code class=&quot;language-plaintext highlighter-ro
 &lt;p&gt;Vous avez désormais les notions de bases de docker, vous savez comment docker fonctionne, comment récupérer/stoper/lancer/créer/pousser une image. 
 Si vous avez aimé cet article ou que vous désirez avoir plus d’informations (voir même d’autres articles dans la même veine, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker-compose&lt;/code&gt;, docker avancé, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;kubernetes&lt;/code&gt; etc..) faites le moi savoir :D&lt;/p&gt;
 </description>
-        <pubDate>Wed, 03 Jul 2019 00:00:00 -0500</pubDate>
+        <pubDate>Wed, 03 Jul 2019 00:00:00 +0200</pubDate>
         <image>https://btor.fr/assets/images/docker-bases-tuto/main.jpg</image>
         <link>https://btor.fr/2019/07/03/docker-bases-tuto/</link>
         <guid isPermaLink="true">https://btor.fr/2019/07/03/docker-bases-tuto/</guid>
@@ -1962,7 +2036,7 @@ J’ai également testé avec PUBG, sans succès le jeu se lance mais rien ne s�
 
 &lt;p&gt;Cette solution peut dépanner si le jeu est supporté et si vous disposez d’un bon matériel, néanmoins, elle ne permet pas de jouer à tous les jeux windows.&lt;/p&gt;
 </description>
-        <pubDate>Sun, 02 Sep 2018 00:00:00 -0500</pubDate>
+        <pubDate>Sun, 02 Sep 2018 00:00:00 +0200</pubDate>
         <image>https://btor.fr/assets/images/jouer-jeux-linux-windows/main.jpg</image>
         <link>https://btor.fr/2018/09/02/jouer-jeux-linux-windows/</link>
         <guid isPermaLink="true">https://btor.fr/2018/09/02/jouer-jeux-linux-windows/</guid>
@@ -2244,7 +2318,7 @@ On a opté pour le train, plus pratique et pas si cher que ça (16€/pers pour 
 Au final, après avoir passé 2 semaines sur Rome,Pise, Florence et les cinque terre, nous avons dépensés à peu près 1000€ chacun tout inclus. Ça peut paraître énorme pour 2 semaines mais comme je le disais plus haut il faut re-contextualiser (Appartement plutôt qu’auberge, prix des monuments, voitures avec frais de parking assez élevé, réservation 2 semaines avant, mois d’août etc).&lt;br /&gt;
 Je recommande vivement de visiter Rome et ses environs, en organisant votre voyage à l’avance vous pouvez faire pas mal d’économies.&lt;/p&gt;
 </description>
-        <pubDate>Sat, 01 Sep 2018 00:00:00 -0500</pubDate>
+        <pubDate>Sat, 01 Sep 2018 00:00:00 +0200</pubDate>
         <image>https://btor.fr/assets/images/italie-cinque-terre/main.jpg</image>
         <link>https://btor.fr/2018/09/01/italie-cinque-terre/</link>
         <guid isPermaLink="true">https://btor.fr/2018/09/01/italie-cinque-terre/</guid>
@@ -2339,7 +2413,7 @@ Quand tout à coup, j’ai eu l’idée de refaire mon écran de chargement twit
 
 &lt;p&gt;Peace !&lt;/p&gt;
 </description>
-        <pubDate>Tue, 17 Apr 2018 00:00:00 -0500</pubDate>
+        <pubDate>Tue, 17 Apr 2018 00:00:00 +0200</pubDate>
         <image>https://btor.fr/assets/images/kdenlive-green-screen/main.jpg</image>
         <link>https://btor.fr/2018/04/17/kdenlive-green-screen/</link>
         <guid isPermaLink="true">https://btor.fr/2018/04/17/kdenlive-green-screen/</guid>
@@ -2560,7 +2634,7 @@ Ce message est à destination de marlène
   &lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Tue, 17 Apr 2018 00:00:00 -0500</pubDate>
+        <pubDate>Tue, 17 Apr 2018 00:00:00 +0200</pubDate>
         <image>https://btor.fr/assets/images/chiffrer-donnees-gpg/main.jpg</image>
         <link>https://btor.fr/2018/04/17/chiffrer-donnees-gpg/</link>
         <guid isPermaLink="true">https://btor.fr/2018/04/17/chiffrer-donnees-gpg/</guid>
@@ -2685,7 +2759,7 @@ A noté que ce bouton “Mining details” n’est disponible qu’en cours de m
 
 &lt;p&gt;Si vous avez la moindre question, n’hésitez pas à en parler dans les commentaires, j’y répondrai volontiers.&lt;/p&gt;
 </description>
-        <pubDate>Fri, 12 Jan 2018 00:00:00 -0600</pubDate>
+        <pubDate>Fri, 12 Jan 2018 00:00:00 +0100</pubDate>
         <image>https://btor.fr/assets/images/bitcoin-twitch/main.jpg</image>
         <link>https://btor.fr/2018/01/12/bitcoin-twitch/</link>
         <guid isPermaLink="true">https://btor.fr/2018/01/12/bitcoin-twitch/</guid>
@@ -2769,7 +2843,7 @@ Je trouve cette FAQ assez clair, mon coté méfiant me laisse imaginer les pires
 
 &lt;p&gt;Pour conclure, en dehors de l’aspect vie privé qui peut être problématique pour certains. Cette enceinte Home Mini est vraiment de bonne facture pour son prix (60€ TTC), facile d’utilisation et facile à paramétrer. C’est un must-have du geek !&lt;/p&gt;
 </description>
-        <pubDate>Sun, 24 Sep 2017 00:00:00 -0500</pubDate>
+        <pubDate>Sun, 24 Sep 2017 00:00:00 +0200</pubDate>
         <image>https://btor.fr/assets/images/google-home-mini/main.jpg</image>
         <link>https://btor.fr/2017/09/24/google-home-mini/</link>
         <guid isPermaLink="true">https://btor.fr/2017/09/24/google-home-mini/</guid>
@@ -2911,7 +2985,7 @@ J’attends de voir ce que razer va faire (échange ou réparation) et je vous f
 &lt;h4 id=&quot;edit-bis&quot;&gt;Edit bis&lt;/h4&gt;
 &lt;p&gt;L’ordinateur est désormais vendu, après 2 retours au SAV pour cet histoire d’écran qui scintillait et d’autres petits soucis (tactile qui s’active tout seul alors que je touche pas l’écran, problème avec l’UEFI pour installer linux etc..)&lt;/p&gt;
 </description>
-        <pubDate>Mon, 18 Sep 2017 00:00:00 -0500</pubDate>
+        <pubDate>Mon, 18 Sep 2017 00:00:00 +0200</pubDate>
         <image>https://btor.fr/assets/images/razer-stealth-blade/main.jpg</image>
         <link>https://btor.fr/2017/09/18/razer-stealth-blade/</link>
         <guid isPermaLink="true">https://btor.fr/2017/09/18/razer-stealth-blade/</guid>
