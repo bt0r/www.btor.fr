@@ -6,8 +6,8 @@
 </description>
     <link>https://btor.fr</link>
     <atom:link href="https://btor.fr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 10 Oct 2024 15:13:13 -0500</pubDate>
-    <lastBuildDate>Thu, 10 Oct 2024 15:13:13 -0500</lastBuildDate>
+    <pubDate>Sat, 25 Jan 2025 06:36:33 -0600</pubDate>
+    <lastBuildDate>Sat, 25 Jan 2025 06:36:33 -0600</lastBuildDate>
     <generator>Jekyll v3.9.1</generator>
     
       <item>
@@ -103,6 +103,80 @@
         <category>OrbStack</category>
         
         <category>Docker</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>taatoo, un SaaS pour protéger vos images</title>
+        <description>&lt;p&gt;Ceux qui me suivent sur les réseaux ou qui me connaissent personnellement savent que je passe beaucoup de temps à développer des side projects (&lt;a href=&quot;https://btor.fr/2020/04/07/noteflix-allocine-netflix/&quot; target=&quot;_blank&quot;&gt;Noteflix&lt;/a&gt; par exemple).&lt;/p&gt;
+
+&lt;p&gt;J’ai toujours eu plein d’idées en tête et toujours eu envie de faire les choses qui me passionnent : développement, sports, musique, photographie, sports extrêmes… bref.&lt;/p&gt;
+
+&lt;p&gt;Et c’est justement dans ces vieux hobbies que j’ai puisé l’envie et l’énergie de lancer &lt;a href=&quot;https://taatoo.app/&quot; target=&quot;_blank&quot;&gt;taatoo&lt;/a&gt;, un SaaS qui propose de protéger vos images en y ajoutant un filigrane invisible !&lt;/p&gt;
+
+&lt;h2 id=&quot;pourquoi-taatoo-&quot;&gt;Pourquoi taatoo ?&lt;/h2&gt;
+&lt;p&gt;On vit dans un monde où on partage tout très vite, très facilement, parfois au détriment de la protection de nos données.
+Avec taatoo, je veux proposer une solution simple pour protéger ses photos, son travail, son art.. et freiner les “leakeurs”.&lt;/p&gt;
+
+&lt;h2 id=&quot;comment-ça-marche-&quot;&gt;Comment ça marche ?&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/taatoo-app-lancement-watermark-filigrane-invisible/schema.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;
+Le fonctionnement est assez simple : l’utilisateur souhaitant protéger ses photos doit se rendre sur &lt;a href=&quot;https://taatoo.app&quot;&gt;taatoo.app&lt;/a&gt;,
+s’inscrire, puis une fois inscrit, se rendre sur “Create”.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/taatoo-app-lancement-watermark-filigrane-invisible/create.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Une fois sur la page de création de “taatoo” (tatouage), il suffit de glisser-déposer l’image que l’on souhaite sécuriser,
+lui donner un nom, et ajouter un ou plusieurs destinataires.
+Il est aussi possible de choisir l’encodage que l’on souhaite utiliser, l’encodage “strong” étant le plus résistant aux modifications
+mais aussi le plus coûteux en temps de génération de l’image (donc le plus cher).&lt;/p&gt;
+
+&lt;p&gt;Mais pour que taatoo soit efficace, une image tatouée ne doit être envoyée qu’à un seul destinataire. Pour garantir cela, taatoo met à disposition une URL unique pour pouvoir voir et télécharger l’image tatouée.
+En allant sur l’image tatouée dans le dashboard, on peut voir deux icônes :&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/taatoo-app-lancement-watermark-filigrane-invisible/recipient-links.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;L’œil : Permet de voir si une image a déjà été vue ou non&lt;/li&gt;
+  &lt;li&gt;Copie : Permet de copier l’URL de consultation de l’image&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Le destinataire désirant consulter l’image arrivera sur une page publique avec ce message :
+&lt;img src=&quot;/assets/images/taatoo-app-lancement-watermark-filigrane-invisible/view.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Après consultation de l’image, qu’elle soit téléchargée ou non, l’image ne peut plus être consultée de nouveau.
+&lt;img src=&quot;/assets/images/taatoo-app-lancement-watermark-filigrane-invisible/already-viewed.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Côté technique pur, taatoo utilise diverses techniques pour ajouter le filigrane, mais la techno principale est la stéganographie en utilisant du machine learning.&lt;/p&gt;
+
+&lt;h2 id=&quot;qui-sont-les-cibles-de-taatoo-&quot;&gt;Qui sont les cibles de taatoo ?&lt;/h2&gt;
+&lt;p&gt;Tout le monde ! Photographe amateur ou professionnel, artiste, graphiste, ou simple particulier qui veut partager des photos.
+Pour le moment, le service est uniquement disponible en web donc la cible est plus orienté professionnel mais à terme étendre l’utilisation en étant présent sur plusieurs supports (app/extension de navigateur etc)&lt;/p&gt;
+
+&lt;h2 id=&quot;comment-fonctionne-la-tarification-de-taatoo-&quot;&gt;Comment fonctionne la tarification de taatoo ?&lt;/h2&gt;
+&lt;p&gt;C’est un SaaS donc c’est une tarification à la consommation. Le tarif va dépendre de l’encodage utilisé et de la taille de l’image,
+mais le prix moyen d’un tatouage est autour des &lt;strong&gt;15 centimes d’euros&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Pour ceux qui sont arrivés jusqu’au bout de cet article (bravo déjà ! ) et qui souhaitent tester le service, &lt;strong&gt;voici un code de réduction de 10% &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;E4NJCXMQ&lt;/code&gt; !&lt;/strong&gt;
+À ajouter dans votre prochaine commande sur le site taatoo.app&lt;/p&gt;
+
+&lt;p&gt;🌎 &lt;a href=&quot;https://taatoo.app/&quot; target=&quot;_blank&quot;&gt;taatoo&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 01 Feb 2024 10:00:00 -0600</pubDate>
+        <image>https://btor.fr/assets/images/taatoo-app-lancement-watermark-filigrane-invisible/main.jpg</image>
+        <link>https://btor.fr/2024/02/01/taatoo-app-lancement-watermark-filigrane-invisible/</link>
+        <guid isPermaLink="true">https://btor.fr/2024/02/01/taatoo-app-lancement-watermark-filigrane-invisible/</guid>
+        
+        <category>taatoo</category>
+        
+        <category>SaaS</category>
+        
+        <category>Filigrane</category>
+        
+        <category>Protection des données</category>
+        
+        <category>IA</category>
+        
+        <category>Machine learning</category>
         
         
       </item>
