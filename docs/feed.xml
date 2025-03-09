@@ -6,8 +6,8 @@
 </description>
     <link>https://btor.fr</link>
     <atom:link href="https://btor.fr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 09 Mar 2025 13:35:23 +0100</pubDate>
-    <lastBuildDate>Sun, 09 Mar 2025 13:35:23 +0100</lastBuildDate>
+    <pubDate>Sun, 09 Mar 2025 13:54:40 +0100</pubDate>
+    <lastBuildDate>Sun, 09 Mar 2025 13:54:40 +0100</lastBuildDate>
     <generator>Jekyll v3.9.1</generator>
     
       <item>
@@ -98,7 +98,7 @@ mais le prix moyen d’un tatouage est autour des &lt;strong&gt;15 centimes d’
 
 &lt;p&gt;L’interface est plus travaillé que sur &lt;strong&gt;Firefox&lt;/strong&gt; tout en gardant exactement les mêmes menus (normal, c’est un Fork).&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -118,7 +118,7 @@ mais le prix moyen d’un tatouage est autour des &lt;strong&gt;15 centimes d’
 
 &lt;p&gt;🌎 &lt;a href=&quot;https://zen-browser.app/&quot; target=&quot;_blank&quot;&gt;Zen&lt;/a&gt;&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -162,7 +162,7 @@ mais le prix moyen d’un tatouage est autour des &lt;strong&gt;15 centimes d’
 &lt;h2 id=&quot;quapporte-orbstack-du-coup-&quot;&gt;Qu’apporte OrbStack du coup ?&lt;/h2&gt;
 &lt;p&gt;La &lt;strong&gt;PERFORMANCE&lt;/strong&gt; &lt;img src=&quot;/assets/images/emote/JAMY.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt; !!&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -179,7 +179,7 @@ mais le prix moyen d’un tatouage est autour des &lt;strong&gt;15 centimes d’
 
 &lt;p&gt;⚙️ Plus d’infos sur le fonctionnement interne d’OrbStack : &lt;a href=&quot;https://docs.orbstack.dev/architecture&quot; target=&quot;_blank&quot;&gt;Architecture&lt;/a&gt;&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -212,7 +212,7 @@ J’ai donc cherché un peu sur le net et le premier résultat qui sortait étai
 après 2/3 essais infructueux, j’ai décidé de m’orienter vers &lt;a href=&quot;https://github.com/iberianpig/fusuma&quot;&gt;Fusuma&lt;/a&gt;, 
 une librairie Ruby qui permet de mapper les gestes du touchpad avec des commandes/actions (globalement la même chose que ToucheGG).&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -239,7 +239,7 @@ vim ~/.config/fusuma/config.yml
 &lt;p&gt;&lt;em&gt;&lt;a href=&quot;https://github.com/iberianpig/fusuma#more-example-of-configyml&quot;&gt;Plus d’exemple sur la doc officielle&lt;/a&gt;&lt;/em&gt; - &lt;em&gt;&lt;a href=&quot;https://github.com/iberianpig/fusuma#available-gestures&quot;&gt;Liste des différentes gestuelles disponibles&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Et voilà ! Rien de plus simple ! &lt;img src=&quot;/assets/images/emote/LUL_DIDIER.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -287,7 +287,7 @@ L’OS est assez “fluide” dans son utilisation globale, on a l’impression 
 
 &lt;p&gt;Avec tous ces critères, Framework semblait être un bon compromis, mais qu’en est-il vraiment ? &lt;img src=&quot;/assets/images/emote/TUBAIZ.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -324,7 +324,7 @@ Pour le montage :&lt;/p&gt;
   &lt;li&gt;Reste plus qu’à brancher les cartes d’extensions et le tour est joué !&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -373,7 +373,7 @@ Pour l’étanchéité, il faudra repasser.&lt;/li&gt;
 Les &lt;strong&gt;3 gros points noirs&lt;/strong&gt; à corriger sont, selon moi, la &lt;strong&gt;taille/résolution d’écran&lt;/strong&gt;, la &lt;strong&gt;qualité audio&lt;/strong&gt; et le &lt;strong&gt;manque de fanless&lt;/strong&gt; côté CPU.
 Avec ces 3 points améliorés, le Framework pourrait rapidement devenir un incontournable pour les développeurs, peut-être même pour le grand public.&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -410,7 +410,7 @@ Ces alertes peuvent être envoyées par mail, sur slack &lt;a href=&quot;https:/
 &lt;p&gt;Depuis le COVID, quelques sociétés se sont mises au télétravail avec plus ou moins de succès (on vous voit &lt;img src=&quot;/assets/images/emote/KJ.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;).
 Parmi les gros changements qu’a apportés le télétravail, il y a eu l’arrivée massive de la visio : Meet, Zoom, Livestorm ou même Discord.&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -426,7 +426,7 @@ Et c’est là que tu vois le loup arriver ! Discord c’est bien, c’est prati
 
 &lt;p&gt;&lt;strong&gt;Spoiler&lt;/strong&gt; : Si tu connais déjà les webhooks, que t’es une diva du dév’ ou tout autre Apollon de la tech, tu peux directement voir la solution &lt;a href=&quot;#format-du-webhook&quot;&gt;au dernier chapitre&lt;/a&gt;&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -475,7 +475,7 @@ Chaque site/service à sa logique donc les payloads diffèrent en fonction du se
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/comment-envoyer-alertes-datadog-discord/rtfm.gif&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -518,7 +518,7 @@ Il faut donc formater notre payload Datadog pour qu’il soit conforme aux spéc
 &lt;p&gt;&lt;img src=&quot;/assets/images/comment-envoyer-alertes-datadog-discord/notification-discord.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;J’espère que ce petit tips vous aura aidé &lt;img src=&quot;/assets/images/emote/KJ.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt; &lt;img src=&quot;/assets/images/emote/BEER.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -556,7 +556,7 @@ J’ai beau tenté d’utiliser des logiciels pour me forcer à faire des pauses
 Le fait est que je passe toujours 10h assis sur une chaise (bien que ma chaise “gaming” soit très confortable).
 Avec l’arrivée du COVID, le télétravail est de plus en plus démocratisé et il est devenu nécessaire de bien s’équiper afin de travailler dans les meilleures conditions.&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -578,7 +578,7 @@ Il m’arrive souvent de rester 2h devant l’ordinateur à procrastiner alors q
 
 &lt;p&gt;&lt;img src=&quot;https://media.giphy.com/media/pDsCoECKh1Pa/giphy.gif&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -630,7 +630,7 @@ J’ai donc visser uniquement les pieds (4 vis par pieds) afin d’éviter de tr
 &lt;center&gt;&lt;i&gt;Position debout (ouais bon c'est au max, c'est peut être un peu too much ![](/assets/images/emote/LUL.png){: .emote})&lt;/i&gt;&lt;/center&gt;
 &lt;p&gt;&lt;img src=&quot;/assets/images/flexispot-bureau-assis-debout/flexispot-debout.jpg&quot; alt=&quot;Bureau position debout&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -671,7 +671,7 @@ On peut donc mettre sa chaise à la hauteur que l’on veut pour nos jambes sans
 
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/WeCT6ttmhw4&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -710,7 +710,7 @@ Ca vous évitera aussi d’avoir comme moi un cable-management digne d’un rép
   &lt;li&gt;Faites attention au plateau utilisé, un plateau Ikea fera bien l’affaire mais &lt;strong&gt;si votre plateau est en bois massif c’est mieux&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -748,7 +748,7 @@ PCAPRemote peut vous fournir un fichier .pcap mais aussi faire office de serveur
 &lt;p&gt;Ça tombe bien, j’ai du temps avec le couvre-feu actuel &lt;img src=&quot;/assets/images/emote/SAD.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;. 
 J’enfile donc mon plus beau couvre-chef et je me lance dans le sniffing de &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.btorfr&quot;&gt;ma propre application&lt;/a&gt; &lt;img src=&quot;/assets/images/emote/WINK.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -790,7 +790,7 @@ La “victime” (ici notre application) utilisera un certificat auto-signé, ce
 
 &lt;p&gt;C’est normal &lt;img src=&quot;/assets/images/emote/LUL.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -845,7 +845,7 @@ Les étapes sont exactement les mêmes qu’en sniffant de l’HTTP à la petite
 &lt;p&gt;Tada &lt;img src=&quot;/assets/images/emote/PROUD.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt; ! Nous avons bien notre appel au flux RSS de visible. 
 On peut apercevoir la couche TLS au-dessus d’HTTP, garantie que la liaison est bien chiffrée.&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -887,7 +887,7 @@ Il permet notamment de créer un proxy, capturer le trafic HTTP/HTTPS, pouvoir i
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/iBotPeaches/Apktool/&quot;&gt;APKTool&lt;/a&gt;&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -922,7 +922,7 @@ C’est simple à mettre en place et en plus on y retrouve toutes les fonctionna
 
 &lt;p&gt;Ca tombe doublement bien puisque j’ai actuellement besoin d’un outil pour logger mon extension &lt;a href=&quot;https://github.com/bt0r/NoteFlix&quot;&gt;Noteflix&lt;/a&gt; &lt;img src=&quot;/assets/images/emote/RS.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -987,7 +987,7 @@ Il est à noter qu’il est aussi possible de faire du &lt;a href=&quot;https://
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/bt0r/NoteFlix/blob/db5cd5ca33ecf84687564bd64d840c55d73bab57/src/logging/Logger.js&quot;&gt;Exemple d’intégration dans une extension&lt;/a&gt;&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -1027,7 +1027,7 @@ Et pourtant, c’est toujours pratique de pouvoir récupérer la musique que not
   &lt;li&gt;Dire à OBS d’afficher le contenu de ce fichier. C’est tout ! &lt;img src=&quot;/assets/images/emote/WINK.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -1080,7 +1080,7 @@ En utilisant ce script, vous n’avez qu’a changé votre raccourci Spotify et 
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/spotify-obs-titre-chanson/obs-apercu.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -1123,7 +1123,7 @@ Tout le monde étend ses connaissances et le partage à l’équipe.&lt;/p&gt;
 &lt;p&gt;A force de discuter des projets des uns et des autres (majoritairement axés sur du mobile, ça va de soit), je me suis dis qu’il serait temps que je me mette un peu à jour et que moi aussi je retente “l’expérience mobile”.
 Je dis “Retente” parce que oui, j’ai déjà réalisé une ou deux applications mobiles Android il y a quelques années mais n’en parlons pas … &lt;img src=&quot;/assets/images/emote/LUL.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -1198,7 +1198,7 @@ Par exemple, un composant ReactNative &lt;a href=&quot;https://reactnative.dev/d
 
 &lt;p&gt;&lt;a href=&quot;https://www.reactnative.guide/3-react-native-internals/3.1-react-native-internals.html&quot;&gt;Plus d’infos sur le fonctionnement même de ReactNative ici&lt;/a&gt;&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -1239,7 +1239,7 @@ Vous devrez vous &lt;em&gt;éjecter&lt;/em&gt; d’Expo (&lt;a href=&quot;https:
 La raison va paraitre surement farfelue mais étant donné que je me lance dans un nouveau projet, il va y avoir beaucoup de nouvelles notions à apprendre et je ne veux pas m’imposer une complexité en plus.
 Si l’envie me vient de passer l’application sur Typescript je pourrais toujours y venir plus tard, ça sera du boulot en plus mais c’est un “contrat” que je passe au début du projet.&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -1293,7 +1293,7 @@ On se retrouve avec juste un répertoire &lt;em&gt;src&lt;/em&gt; à remplir san
 Jusque-là pourquoi pas, ça prouve que la communauté est active.
 Le souci vient du fait qu’on se retrouve souvent à devoir naviguer entre les différentes documentations, officielles ou communautaires et à être constamment redirigé. Pénible x2 &lt;img src=&quot;/assets/images/emote/TUBAIZ.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -1348,7 +1348,7 @@ L’écriture du CSS passe par une abstraction sous forme d’objet Javascript m
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/react-native-retour-experience/css-react-native.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -1379,7 +1379,7 @@ En discutant avec un collègue, je me suis rendu compte que ça serait pas mal d
 J’ai commencé à utiliser &lt;a href=&quot;https://www.figma.com&quot;&gt;Figma&lt;/a&gt; et ça m’a clairement simplifier la vie !
 Je vous le recommande vivement si vous cherchez un outil pour créer vos maquettes web ou mobile.&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -1436,7 +1436,7 @@ Problème, il m’arrive souvent de tomber sur des séries un peu naze comme &lt
 &lt;p&gt;&lt;img src=&quot;https://media.giphy.com/media/l0LEIXSRRuv9QQIRNI/giphy.gif&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;
 &lt;em&gt;21h, la décision est prise: Je me lance dans le développement d’une extension firefox pour récupérer les notes &lt;a href=&quot;https://allocine.fr&quot;&gt;allociné&lt;/a&gt; afin de les intégrer à Netflix.&lt;/em&gt;&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -1556,7 +1556,7 @@ Je décide donc de regarder un peu sur google et je tombe sur le blog d’un cer
 &lt;p&gt;Malheureusement, l’article étant daté, les liens et token fournis le sont aussi. 
 Je décide donc à mon tour de regarder comment se comporte l’application mobile.&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -1610,7 +1610,7 @@ c’est un des constats dont faisait l’objet Gromez dans son article.&lt;/p&gt
 &lt;p&gt;Plus mon investigation dure, plus je me rend compte que je passe beaucoup de temps sur quelque chose qui sera amené à évoluer avec le temps. 
 Du coup, que faire ? utiliser l’API pour récupérer les data ? scraper la page ? dans les deux cas c’est soumis à modifications dans le futur…&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -1699,7 +1699,7 @@ On peut donc encore un peu plus affiner notre code afin qu’il n’accepte que 
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -1787,7 +1787,7 @@ L’inconvénient c’est que toutes les 2 secondes une partie du code est exec
 &lt;p&gt;&lt;strong&gt;Edit:&lt;/strong&gt;
 &lt;a href=&quot;https://chrome.google.com/webstore/detail/noteflix/ahoplkcmcgpbkimjhncpnnllgikapjoj?hl=fr&quot;&gt;Télécharger l’extension pour Chrome&lt;/a&gt;&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -1818,7 +1818,7 @@ L’inconvénient c’est que toutes les 2 secondes une partie du code est exec
 &lt;p&gt;Dans cet article, je tâcherai de revenir sur les principaux concepts en essayant de faire le plus simple possible.
 Si vous avez déjà un niveau avancé avec Docker, cet article n’est pas fait pour vous.&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -1860,7 +1860,7 @@ L’avantage du type 1 est qu’il permet d’avoir de meilleur performance éta
 
 &lt;p&gt;Un conteneur, c’est grossièrement la même chose qu’une machine virtuelle, notre conteneur va avoir son propre système &lt;strong&gt;SAUF&lt;/strong&gt; que celui-ci communiquera directement avec le système d’exploitation hôte et pas nécessairement avec un hyperviseur. L’intérêt ? Un gain de performance pardi !&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -1907,7 +1907,7 @@ Pour simplifier, Docker Hub est un peu le &lt;strong&gt;Github&lt;/strong&gt; de
 
 &lt;p&gt;Les images sont stockées avec des &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Tag&lt;/code&gt;, ces tags permettent de versionner les images sur le repository, par exemple si on regarde &lt;a href=&quot;https://hub.docker.com/_/debian&quot;&gt;les images disponibles pour Debian&lt;/a&gt; On s’aperçoit qu’il existe des images pour plusieurs versions de Debian (Jessie, Buster, Stretch etc..) qui sont en stable mais aussi des versions expérimentales, testing, Release candidate etc.&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -2007,7 +2007,7 @@ Successfully built 8831306e5a73
   &lt;li&gt;Le build résulte d’un message &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Successfully build 8831306e5a73&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -2193,7 +2193,7 @@ Maintenant éditons notre &lt;code class=&quot;language-plaintext highlighter-ro
 &lt;p&gt;Vous avez désormais les notions de bases de docker, vous savez comment docker fonctionne, comment récupérer/stoper/lancer/créer/pousser une image. 
 Si vous avez aimé cet article ou que vous désirez avoir plus d’informations (voir même d’autres articles dans la même veine, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker-compose&lt;/code&gt;, docker avancé, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;kubernetes&lt;/code&gt; etc..) faites le moi savoir :D&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -2219,7 +2219,7 @@ Si vous avez aimé cet article ou que vous désirez avoir plus d’informations 
 
 &lt;p&gt;N’ayant pas trouvé cette fonctionnalité sur steam, j’ai un peu cherché et voici les étapes à effectuer pour pouvoir installer des jeux windows sous linux sans se charger de faire la configuration de Wine (qui pour le coup peut être très fastidieuse)&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -2257,7 +2257,7 @@ J’ai également testé avec PUBG, sans succès le jeu se lance mais rien ne s�
 
 &lt;p&gt;Cette solution peut dépanner si le jeu est supporté et si vous disposez d’un bon matériel, néanmoins, elle ne permet pas de jouer à tous les jeux windows.&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -2293,7 +2293,7 @@ L’aller-retour pour Rome coûtait ~230€/personne, l’hôtel pour Rome (5 jo
 &lt;p&gt;&lt;img src=&quot;https://media.giphy.com/media/y8Mz1yj13s3kI/giphy.gif&quot; alt=&quot;&quot; /&gt;
 &lt;strong&gt;Let’s go to Roma !&lt;/strong&gt;&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -2320,7 +2320,7 @@ L’aller-retour pour Rome coûtait ~230€/personne, l’hôtel pour Rome (5 jo
   &lt;li&gt;&lt;a href=&quot;https://amzn.to/2CazvnR&quot;&gt;Iphone 6&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -2352,7 +2352,7 @@ Voici quelques photos des différentes places/bâtiments qu’on a pu voir.&lt;/
 &lt;p&gt;&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/pantheon/01.jpg&quot; alt=&quot;&quot; /&gt;
 &lt;img src=&quot;/assets/images/italie-cinque-terre/rome/pantheon/02.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -2372,7 +2372,7 @@ Soyons clair, c’était DÉGUEULASSE ! La salade baignait dans l’huile, ça n
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/italie-cinque-terre/rome/trevi/01.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -2389,7 +2389,7 @@ Soyons clair, c’était DÉGUEULASSE ! La salade baignait dans l’huile, ça n
 &lt;img src=&quot;/assets/images/italie-cinque-terre/rome/nourriture/04.jpg&quot; alt=&quot;&quot; /&gt;
 &lt;img src=&quot;/assets/images/italie-cinque-terre/rome/nourriture/01.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -2414,7 +2414,7 @@ L’entrée coûte 16€/personne, il y a pas mal d’espèces mais très peu d�
 &lt;img src=&quot;/assets/images/italie-cinque-terre/rome/compo-de-fiori/03.jpg&quot; alt=&quot;&quot; /&gt;
 &lt;img src=&quot;/assets/images/italie-cinque-terre/rome/compo-de-fiori/04.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -2477,7 +2477,7 @@ Seul petit bémol en bon Français râleur, les boutiques de souvenirs en intern
 &lt;img src=&quot;/assets/images/italie-cinque-terre/rome/vatican/01.jpg&quot; alt=&quot;&quot; /&gt;
 &lt;img src=&quot;/assets/images/italie-cinque-terre/rome/vatican/14.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -2507,7 +2507,7 @@ On a donc fait le tour assez vite sans trop se préoccuper des panneaux de descr
 &lt;p&gt;C’est sublime ! Je recommande vivement de visiter le Vatican et les différentes places de la ville. Pour un budget serré sur 2 ou 3 jours ça suffit amplement !
 Du coté de la nourriture, nous avons été un peu déçu, on s’attendait vraiment à mieux. Le coût du voyage à Rome a fortement augmenté avec les fameux “à coté”, prix des activités, transports etc. ça monte vite ! Pour le transport nous avons utilisé le métro avec notre pass 1 semaine, Pass qui s’est finalement avéré ne pas être si intéressant que ça. Avant de prendre ce type de pass, essayez d’estimer un maximum le nombre de fois que vous allez prendre le métro ! Par défaut nous pensions utiliser le métro tous les jours, à hauteur de 2 à 3 fois sauf qu’en réalité nous avons beaucoup marché donc le métro ne servait que dans les cas de fatigue ultime.&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -2540,7 +2540,7 @@ Pour organiser mes voyages je regarde souvent les articles du Routard ou les poi
 &lt;img src=&quot;/assets/images/italie-cinque-terre/pise/05.jpg&quot; alt=&quot;&quot; /&gt;
 &lt;img src=&quot;/assets/images/italie-cinque-terre/pise/07.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -2590,7 +2590,7 @@ On a opté pour le train, plus pratique et pas si cher que ça (16€/pers pour 
 Au final, après avoir passé 2 semaines sur Rome,Pise, Florence et les cinque terre, nous avons dépensés à peu près 1000€ chacun tout inclus. Ça peut paraître énorme pour 2 semaines mais comme je le disais plus haut il faut re-contextualiser (Appartement plutôt qu’auberge, prix des monuments, voitures avec frais de parking assez élevé, réservation 2 semaines avant, mois d’août etc).&lt;br /&gt;
 Je recommande vivement de visiter Rome et ses environs, en organisant votre voyage à l’avance vous pouvez faire pas mal d’économies.&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -2621,7 +2621,7 @@ Le système d’exploitation change, les applications aussi ! (pour la plupart).
   &lt;li&gt;Et pour Premiere Pro, je me suis mis à tester &lt;a href=&quot;https://kdenlive.org/fr/&quot;&gt;KDEnLive&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -2651,7 +2651,7 @@ Quand tout à coup, j’ai eu l’idée de refaire mon écran de chargement twit
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/kdenlive-green-screen/04.jpg&quot; alt=&quot;&quot; /&gt; &lt;img src=&quot;/assets/images/kdenlive-green-screen/05.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -2681,7 +2681,7 @@ Quand tout à coup, j’ai eu l’idée de refaire mon écran de chargement twit
 
 &lt;p&gt;Oui mais voilà, si vous regardez encore de plus près, vous pourrez remarquer que quand bien même la bordure verte a été atténuée, elle reste présente et le contour n’est pas lisse.&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -2724,7 +2724,7 @@ Quand tout à coup, j’ai eu l’idée de refaire mon écran de chargement twit
 GPG permet de chiffrer/signer des fichiers dans le but d’échanger de l’information en toute sécurité. 
 Dans cet article nous allons voir comment procéder sans utiliser d’interface graphique afin de bien comprendre le mécanisme.&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -2864,7 +2864,7 @@ pub   rsa4096/AC907F30 2018-04-16 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;
 uid        &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;  ultime &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Marlène DURAND &amp;lt;marlene.durand@gmail.com&amp;gt;
 sub   rsa4096/6969D94F 2018-04-16 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;E]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -2914,7 +2914,7 @@ Faut-il quand même utiliser cette clef ? (o/N) o
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;Un fichier message.gpg a été généré, c’est ce fichier qui sera mis à disposition de Marlène.&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -2957,7 +2957,7 @@ Ce message est à destination de marlène
 
 &lt;p&gt;&lt;strong&gt;Edit:&lt;/strong&gt; &lt;a href=&quot;https://www.clubic.com/twitch/actualite-852874-twitch-accepte-paiements-bitcoin.html&quot;&gt;Twitch à récemment arrété d’accepter les paiements par cryptomonnaie, cet article est désormais obsolète.&lt;/a&gt;&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -2971,7 +2971,7 @@ Ce message est à destination de marlène
 Le bitcoin est une cryptomonnaie, on peut acheter, vendre, échanger du bitcoin sur internet via des plateformes d’échange ou des “Wallet” (portefeuille) en ligne comme &lt;a href=&quot;https://www.coinbase.com/join/5a20090d65d98a026abb3fd2&quot;&gt;Coinbase&lt;/a&gt; , &lt;a href=&quot;https://blockchain.info&quot;&gt;Blockchain.info&lt;/a&gt;, &lt;a href=&quot;https://www.cryptonator.com/&quot;&gt;Cryptonator&lt;/a&gt;, &lt;a href=&quot;https://www.kraken.com/&quot;&gt;Kraken&lt;/a&gt; et bien d’autres.
 Il faut assimiler ces portefeuilles à un compte bancaire, ils vont vous permettre de recevoir/envoyer de l’argent à un proche, une société… Et c’est justement là que ça nous intéresse ! Si vous avez bien lu le tweet de twitch,  Twitch annonce gérer les paiements par bitcoin (via bitpay ) mais aussi via &lt;strong&gt;Coinbase&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -2991,7 +2991,7 @@ Il faut assimiler ces portefeuilles à un compte bancaire, ils vont vous permett
 
 &lt;p&gt;Pour miner il faut posséder un portefeuille de cryptomonnaie, faire parti d’un pool de minage ( j’ai volontairement évité ce sujet pour faire en sorte que ça reste simple à comprendre) et un logiciel de minage qui utilisera votre CPU ou votre(vos) GPU(s).&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -3012,7 +3012,7 @@ Nous allons utiliser notre ordinateur pour miner différentes monnaies et avoir 
 
 &lt;p&gt;Coinbase permet d’avoir un compte “non vérifié” c’est à dire que vous pourrez recevoir de l’argent ou payer via votre portefeuille &lt;strong&gt;sans déclarer votre identité réelle&lt;/strong&gt; (carte bancaire, passport, permis de conduire etc..) , dans le cas ou vous voudriez récupérer votre argent sur votre compte bancaire, il faudra forcément passer par l’étape de vérification de votre compte.&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -3044,7 +3044,7 @@ A noté que ce bouton “Mining details” n’est disponible qu’en cours de m
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/bitcoin-twitch/mining1.png&quot; alt=&quot;NiceHash application&quot; /&gt;  &lt;img src=&quot;/assets/images/bitcoin-twitch/mining2.png&quot; alt=&quot;NiceHash application&quot; /&gt;  &lt;img src=&quot;/assets/images/bitcoin-twitch/mining3.png&quot; alt=&quot;NiceHash application&quot; /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -3081,7 +3081,7 @@ A noté que ce bouton “Mining details” n’est disponible qu’en cours de m
 
 &lt;p&gt;Et voilà, vous vous êtes abonné sans même avoir dépensé 1€ (mais quelques minutes à lire et comprendre cet article … ? )&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -3141,7 +3141,7 @@ Jugez par vous même via une petite démonstration vidéo :&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://youtu.be/tyaVDoQAvlw&quot;&gt;Cliquez ici pour voir la vidéo youtube&lt;/a&gt;&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -3153,7 +3153,7 @@ Coté micro, la reconnaissance est bonne même à distance ( environ 3/4m plus l
 &lt;p&gt;Bonne question Michel ! Ayant un vieux poste radio/CD/MP3 dans ma salle de bain (que j’avais acheté plus cher que la Google Home Mini) je voulais remplacer ce poste encombrant par quelque chose de plus intelligent et qui me permettrait de faire un peu plus que de lire des CD et des radios sur les chaines hertziennes.
 Objectif accompli avec cette Home Mini qui me permet de faire Web Radio/Réveil/Minuteur/Météo/Pilotage de mes lampes etc…&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -3190,7 +3190,7 @@ Je trouve cette FAQ assez clair, mon coté méfiant me laisse imaginer les pires
 
 &lt;p&gt;Pour conclure, en dehors de l’aspect vie privé qui peut être problématique pour certains. Cette enceinte Home Mini est vraiment de bonne facture pour son prix (60€ TTC), facile d’utilisation et facile à paramétrer. C’est un must-have du geek !&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -3215,7 +3215,7 @@ Je trouve cette FAQ assez clair, mon coté méfiant me laisse imaginer les pires
 
 &lt;p&gt;Je me sers majoritairement de mon pc portable pour voyager, que ce soit en France ou à l’étranger donc je ne recherchais pas du tout un pc portable dit “gamer”, vous savez le genre de truc qui fait 20kg, avec écran full HD 17” qui pourrait éclairer une ville entière … ? Etant développeur de profession, je recherchais un ordinateur avec un bon CPU, au moins 8go de ram ( 16 étant vraiment mon idéal) et surtout un écran au moins full HD car sur le samsung c’est bien l’écran qui me posait le plus de soucis ( Avez-vous déjà essayé d’ouvrir PHPStorm sur un écran 1366x768 ? ? ). J’avais bien évidemment un budget, 1500€ environ.&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
@@ -3302,7 +3302,7 @@ Je ne ferais pas de vidéo/photo du packaging complet parce-que beaucoup le font
 &lt;p&gt;&lt;img src=&quot;/assets/images/razer-stealth-blade/7.jpg&quot; alt=&quot;&quot; /&gt;
 &lt;img src=&quot;/assets/images/razer-stealth-blade/8.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;pub&quot;&gt;
+&lt;div class=&quot;rawp&quot;&gt;
     &lt;a href=&quot;https://taatoo.app&quot; alt=&quot;taatoo.app&quot;&gt;&lt;/a&gt;
     &lt;span&gt;Publicité&lt;/span&gt;
 &lt;/div&gt;
