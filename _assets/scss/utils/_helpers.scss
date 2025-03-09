@@ -64,7 +64,14 @@
   justify-content: center;
   padding: 10px;
   min-width: 0 !important;
-  margin: 12px 0 12px 0;
+  margin: 12px 0 18px 0;
+  width: 100%;
+  position: relative;
+
+  @media screen and (max-width: 768px) {
+    width: 280px;
+    height: 280px;
+  }
 
   & * {
     min-width: 0 !important;
@@ -79,6 +86,17 @@
     border: none !important;
     box-shadow: none !important;
     -webkit-box-shadow: none !important;
+    width: 100%;
+    background: url("/assets/images/pub/taatoo-728x90.png") no-repeat ;
+    background-size: 728px 90px;
+    background-position: center;
+    min-height: 90px;
+    @media screen and (max-width: 768px) {
+      background: url("/assets/images/pub/taatoo-250x250.png") no-repeat ;
+      background-size: 250px 250px;
+      background-position: center;
+      min-height: 250px;
+    }
   }
 
   & img {
@@ -91,5 +109,8 @@
     color: rgb(107, 107, 107);
     font-size: 12px;
     margin-top: 2px;
+    position: absolute;
+    bottom: -24px;
+    right: 0;
   }
 }
