@@ -14,6 +14,8 @@ Pendant plusieurs mois j'ai recherché un remplaçant à mon ordinateur portable
 
 Je me sers majoritairement de mon pc portable pour voyager, que ce soit en France ou à l'étranger donc je ne recherchais pas du tout un pc portable dit "gamer", vous savez le genre de truc qui fait 20kg, avec écran full HD 17" qui pourrait éclairer une ville entière ... ? Etant développeur de profession, je recherchais un ordinateur avec un bon CPU, au moins 8go de ram ( 16 étant vraiment mon idéal) et surtout un écran au moins full HD car sur le samsung c'est bien l'écran qui me posait le plus de soucis ( Avez-vous déjà essayé d'ouvrir PHPStorm sur un écran 1366x768 ? ? ). J'avais bien évidemment un budget, 1500€ environ.
 
+{% include pub.html %}
+
 # 🔎 Premières recherches
 J'ai donc commencé mes recherches sur différents sites, [LDLC](https://www.ldlc.com/), [GrosBill](https://www.grosbill.com/), [RueDuCommerce](http://www.rueducommerce.fr), [Amazon](https://www.amazon.fr/) etc. puis je suis rapidement tombé sur des ordinateurs "lambda" comme la [Microsoft Surface Pro 4](https://www.amazon.fr/dp/B016K4WQ0G/ref=asc_df_B016K4WQ0G46064120), [Asus Zenbook](https://www.amazon.fr/Asus-Zenbook-UX430UA-GV341T-Ultrabook-Windows/dp/B0747DSJGW) ou encore le [Lenovo yoga 910](https://www.amazon.fr/dp/B01NBVN7ZF) qui m'a fait de l’œil pendant un bon bout de temps !
 Malheureusement, chaque laptop avait un défaut qui ne me donnait pas envie de faire chauffer la ? CB. 
@@ -64,6 +66,8 @@ Ainsi qu'un aperçu de ce que donne les traces de doigts sans avoir forcément l
 
 ![](/assets/images/razer-stealth-blade/7.jpg)
 ![](/assets/images/razer-stealth-blade/8.jpg)
+
+{% include pub.html %}
 
 # 📌 Conclusion
 En un mot, **S-A-T-I-S-F-A-C-T-I-O-N !** 

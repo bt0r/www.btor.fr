@@ -21,6 +21,8 @@ J'ai donc commencé à me renseigné sur le net afin de trouver des logiciels é
 * Pour Photoshop, j'ai trouvé ... ? ... Photoshop ! Peut être que vous ne le savez pas mais Adobe à rendu sa suite CS2 entièrement gratuite ! [Pour en savoir plus, cliquez ici](https://helpx.adobe.com/fr/creative-suite/kb/cs2-product-downloads.html?promoid=19SCDRQK) 
 * Et pour Premiere Pro, je me suis mis à tester [KDEnLive](https://kdenlive.org/fr/) 
 
+{% include pub.html %}
+
 ## 🐥 Début avec KDEnLive
 Globalement, j'ai trouvé l'interface très proche d'un première pro, la disposition des fenêtres et certains raccourcis clavier vous permettent de vous y retrouver très rapidement.
 
@@ -46,6 +48,8 @@ Sur votre vidéo fond vert, ajoutez une `transition composite` et étendez là s
 
 ![](/assets/images/kdenlive-green-screen/04.jpg) ![](/assets/images/kdenlive-green-screen/05.jpg)
 
+{% include pub.html %}
+
 ### 🐣 1ère technique
 La première technique est assez simple et connue de tout le monde, il s'agit d'utiliser le `ChromaKey` ou `Couleur Clé` sur KDEnLive.
 
@@ -70,6 +74,8 @@ Heureusement il existe une solution pour atténuer cette bordure, ajouter l'effe
 ![](/assets/images/kdenlive-green-screen/11.jpg) ![](/assets/images/kdenlive-green-screen/12.jpg) ![](/assets/images/kdenlive-green-screen/13.jpg)
 
 Oui mais voilà, si vous regardez encore de plus près, vous pourrez remarquer que quand bien même la bordure verte a été atténuée, elle reste présente et le contour n'est pas lisse.
+
+{% include pub.html %}
 
 ### 🐓 2ème technique
 Il existe une autre technique pour effectuer une incrustation de fond vert qui selon moi est plus efficace que la première (du moins avec les échantillons de vidéos que j'ai pu tester).

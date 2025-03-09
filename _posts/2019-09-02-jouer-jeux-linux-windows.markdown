@@ -16,6 +16,8 @@ Il s'agit en réalité d'un Wine modifié et intégré à steam ([Proton](https:
 
 N'ayant pas trouvé cette fonctionnalité sur steam, j'ai un peu cherché et voici les étapes à effectuer pour pouvoir installer des jeux windows sous linux sans se charger de faire la configuration de Wine (qui pour le coup peut être très fastidieuse)
 
+{% include pub.html %}
+
 ## 🏁 Prérequis 
 - Steam doit être installé
 - Vos drivers vidéos doivent être fonctionnels et à jours
@@ -42,3 +44,5 @@ J'ai pu testé avec GTA 5 sur steam, le launcher de rockstar ne s'affiche pas co
 J'ai également testé avec PUBG, sans succès le jeu se lance mais rien ne s'affiche.
 
 Cette solution peut dépanner si le jeu est supporté et si vous disposez d'un bon matériel, néanmoins, elle ne permet pas de jouer à tous les jeux windows.
+
+{% include pub.html %}

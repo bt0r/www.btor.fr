@@ -12,6 +12,8 @@ tags:
 GPG permet de chiffrer/signer des fichiers dans le but d'échanger de l'information en toute sécurité. 
 Dans cet article nous allons voir comment procéder sans utiliser d'interface graphique afin de bien comprendre le mécanisme.
 
+{% include pub.html %}
+
 # ⚙️ Fonctionnement
 Le fonctionnement est assez simple, voici l'exemple typique d'échange de données chiffrées via GPG entre 2 personnes (Marlène et Arthur).
 
@@ -142,6 +144,7 @@ pub   rsa4096/AC907F30 2018-04-16 [SC]
 uid        [  ultime ] Marlène DURAND <marlene.durand@gmail.com>
 sub   rsa4096/6969D94F 2018-04-16 [E]
 ```
+{% include pub.html %}
 
 ### ✉️ Envoie de la clef publique
 Maintenant que nos clefs sont générées, nous allons **envoyer notre clef publique à tout nos correspondants**.
@@ -192,6 +195,8 @@ faites, vous pouvez répondre oui à la prochaine question.
 Faut-il quand même utiliser cette clef ? (o/N) o
 ```
 Un fichier message.gpg a été généré, c'est ce fichier qui sera mis à disposition de Marlène.
+
+{% include pub.html %}
 
 ### 🔓 Déchiffrement
 Marlène reçoit le fichier "message.gpg" et doit le déchiffrer, rien de plus simple ! Il suffit de taper : 

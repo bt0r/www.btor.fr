@@ -2,6 +2,7 @@
 layout: post
 title: "Fusuma: Quand la gestuelle de MacOS débarque sur Linux"
 date: "2023-12-03 10:00"
+last_modified_at: "2025-03-09 13:05"
 description: "Fusuma permet de créer ses propre mapping entre des gestes sur le touchpad et des commandes à exécuter."
 image: /assets/images/comment-touchpad-macos-linux-workspace/main.jpg
 author: Thibaut BAYER
@@ -21,6 +22,8 @@ Un de mes problèmes majeurs concerne le touchpad, par défaut sur XFCE, rien n'
 J'ai donc cherché un peu sur le net et le premier résultat qui sortait était [touchegg](https://github.com/JoseExposito/touchegg), 
 après 2/3 essais infructueux, j'ai décidé de m'orienter vers [Fusuma](https://github.com/iberianpig/fusuma), 
 une librairie Ruby qui permet de mapper les gestes du touchpad avec des commandes/actions (globalement la même chose que ToucheGG).
+
+{% include pub.html %}
 
 ## Installation
 Pour installer Fusuma, rien de plus simple, il suffit d'installer les paquets suivants :
@@ -47,3 +50,4 @@ swipe: # Détermine le type de gestuelle que l'ont veut déclencher
 *[Plus d'exemple sur la doc officielle](https://github.com/iberianpig/fusuma#more-example-of-configyml)* - *[Liste des différentes gestuelles disponibles](https://github.com/iberianpig/fusuma#available-gestures)*
 
 Et voilà ! Rien de plus simple ! ![](/assets/images/emote/LUL_DIDIER.png){: .emote}
+{% include pub.html %}

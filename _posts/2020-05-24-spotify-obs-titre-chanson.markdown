@@ -26,6 +26,8 @@ Nous allons donc procéder ainsi :
 * Écrire ce titre dans un fichier.
 * Dire à OBS d'afficher le contenu de ce fichier. C'est tout ! ![](/assets/images/emote/WINK.png){: .emote}
 
+{% include pub.html %}
+
 # Installation
 La première étape consiste à installer `wmctrl` et `xdotool`, c'est grâce à ces deux commandes qu'on pourra récupérer le titre depuis la CLI.
 ```
@@ -73,3 +75,5 @@ Rendez-vous ensuite sur OBS et dans votre scène, ajouter une source texte et s�
 Et voilà ![](/assets/images/emote/KJ.png){: .emote} 
 
 ![](/assets/images/spotify-obs-titre-chanson/obs-apercu.png)
+
+{% include pub.html %}

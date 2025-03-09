@@ -22,6 +22,7 @@ L'aller-retour pour Rome coûtait ~230€/personne, l'hôtel pour Rome (5 jours)
 ![](https://media.giphy.com/media/y8Mz1yj13s3kI/giphy.gif)
 **Let's go to Roma !**
 
+{% include pub.html %}
 
 # 🛫 Description du voyage
 Je me suis chargé d'organisé le voyage, une bonne partie de la première semaine était dédiée à Rome et au Vatican puis ensuite on prenait la direction de Florence pour rejoindre notre deuxième hôtel situé vers Sarzana afin d'être proche de Florence, Pise et des Cinque Terre. La deuxième semaine était plus axée détente au soleil, je savais qu'on serait un peu fatigué à marcher dans Rome donc je voulais un petit moment de pause avant de rentrer sur Paris et de reprendre le travail.
@@ -40,6 +41,8 @@ Appareils photos :
 - [Xiaomi Redmi 3](https://www.frandroid.com/test/342976_test-xiaomi-redmi-3)
 - [Xiaomi Yi](https://amzn.to/2PsxCVj)
 - [Iphone 6](https://amzn.to/2CazvnR)
+
+{% include pub.html %}
 
 # 🇮🇹 Visite de Rome
 ## 1er jour
@@ -68,6 +71,8 @@ Voici quelques photos des différentes places/bâtiments qu'on a pu voir.
 ![](/assets/images/italie-cinque-terre/rome/pantheon/01.jpg)
 ![](/assets/images/italie-cinque-terre/rome/pantheon/02.jpg)
 
+{% include pub.html %}
+
 ### La place Navona
 Pas très loin du Panthéon se trouve la place Navona, c'est ici que nous avons décidé de déjeuner.
 On a voulu faire light en commandant des salades dans un restaurant pas très loin de la place. 
@@ -83,6 +88,8 @@ Fontaine très connue et très visitée... Un conseil, si vous voulez faire de b
 
 ![](/assets/images/italie-cinque-terre/rome/trevi/01.jpg)
 
+{% include pub.html %}
+
 ### La place de Spagna
 Place très fréquentée aussi, beaucoup de boutiques de luxe, nous avons pris un petit-déjeuner chez babingtons (salon de thé anglais, cher mais très bon) puis nous avons monté les marches pour ensuite nous diriger vers le zoo.
 
@@ -94,6 +101,8 @@ Place très fréquentée aussi, beaucoup de boutiques de luxe, nous avons pris u
 ![](/assets/images/italie-cinque-terre/rome/nourriture/03.jpg)
 ![](/assets/images/italie-cinque-terre/rome/nourriture/04.jpg)
 ![](/assets/images/italie-cinque-terre/rome/nourriture/01.jpg)
+
+{% include pub.html %}
 
 ### Le Zoo et le parc Villa Borghese
 Nous avions prévu de nous balader dans le parc Villa Borghese, à l'inverse le zoo n'était pas prévu et honnêtement je ne le recommanderai pas.
@@ -114,6 +123,8 @@ L'entrée coûte 16€/personne, il y a pas mal d'espèces mais très peu d'anim
 ![](/assets/images/italie-cinque-terre/rome/compo-de-fiori/02.jpg)
 ![](/assets/images/italie-cinque-terre/rome/compo-de-fiori/03.jpg)
 ![](/assets/images/italie-cinque-terre/rome/compo-de-fiori/04.jpg)
+
+{% include pub.html %}
 
 ### La place del Popolo
 Une des plus belles places de Rome selon moi, j'ai beaucoup aimé. Je n'ai malheureusement pas pensé à prendre plus de photos ?
@@ -172,6 +183,8 @@ Seul petit bémol en bon Français râleur, les boutiques de souvenirs en intern
 ![](/assets/images/italie-cinque-terre/rome/vatican/01.jpg)
 ![](/assets/images/italie-cinque-terre/rome/vatican/14.jpg)
 
+{% include pub.html %}
+
 ## 🏛️ 5ème jour, Colisée, Mont Palatin et Forum Romain
 Avant de partir de Rome pour rejoindre Florence, nous nous devions de faire le Colisée, le Mont Palatin et le Forum Romain.
 Nous n'avions pas réservés de billets à l'avance donc nous avons tentés de réserver le jour-J via un site internet. Réservation qui s'est avérée infructueuse puisque nous n'avons jamais reçu les billets ! (Heureusement nous avons pu déclarer le paiement en litige via paypal pour nous faire rembourser).
@@ -196,6 +209,8 @@ On a donc fait le tour assez vite sans trop se préoccuper des panneaux de descr
 ## Bilan de Rome
 C'est sublime ! Je recommande vivement de visiter le Vatican et les différentes places de la ville. Pour un budget serré sur 2 ou 3 jours ça suffit amplement !
 Du coté de la nourriture, nous avons été un peu déçu, on s'attendait vraiment à mieux. Le coût du voyage à Rome a fortement augmenté avec les fameux "à coté", prix des activités, transports etc. ça monte vite ! Pour le transport nous avons utilisé le métro avec notre pass 1 semaine, Pass qui s'est finalement avéré ne pas être si intéressant que ça. Avant de prendre ce type de pass, essayez d'estimer un maximum le nombre de fois que vous allez prendre le métro ! Par défaut nous pensions utiliser le métro tous les jours, à hauteur de 2 à 3 fois sauf qu'en réalité nous avons beaucoup marché donc le métro ne servait que dans les cas de fatigue ultime.
+
+{% include pub.html %}
 
 # 🚅 Visite de Florence
 Fin du séjour sur Rome, début du trip dans la zone de Florence/Pise et des Cinque Terre !
@@ -224,6 +239,8 @@ Pour organiser mes voyages je regarde souvent les articles du Routard ou les poi
 ![](/assets/images/italie-cinque-terre/pise/06.jpg)
 ![](/assets/images/italie-cinque-terre/pise/05.jpg)
 ![](/assets/images/italie-cinque-terre/pise/07.jpg)
+
+{% include pub.html %}
 
 # ☀️ Visite des Cinque Terre
 La meilleur partie ! Fin des visites, des rush et du mauvais temps. Place aux paysages côtiers, aux plages, au bronzage ! ?
@@ -265,3 +282,5 @@ On a opté pour le train, plus pratique et pas si cher que ça (16€/pers pour 
 J'ai vraiment adoré ! Quelque peu déçu par la nourriture (même si on a pu se rattraper via certains restaurants) Rome est clairement une ville qui dépasse Paris en termes de monuments. 
 Au final, après avoir passé 2 semaines sur Rome,Pise, Florence et les cinque terre, nous avons dépensés à peu près 1000€ chacun tout inclus. Ça peut paraître énorme pour 2 semaines mais comme je le disais plus haut il faut re-contextualiser (Appartement plutôt qu'auberge, prix des monuments, voitures avec frais de parking assez élevé, réservation 2 semaines avant, mois d’août etc).  
 Je recommande vivement de visiter Rome et ses environs, en organisant votre voyage à l'avance vous pouvez faire pas mal d'économies.
+
+{% include pub.html %}

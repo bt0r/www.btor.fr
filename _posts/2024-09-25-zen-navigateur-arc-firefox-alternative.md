@@ -2,6 +2,7 @@
 layout: post
 title: "Zen : L'alternative à Arc mais sous Firefox ?"
 date: "2024-09-25 10:00"
+last_modified_at: "2025-03-09 13:05"
 description: "Zen, un Firefox stylé, plus complet et plus rapide ?"
 image: /assets/images/zen-navigateur-arc-firefox-alternative/main.jpg
 author: Thibaut BAYER
@@ -23,6 +24,8 @@ Il y a quelques jours, je vois un tweet qui parle de **Zen**, un navigateur web 
 
 L’interface est plus travaillé que sur **Firefox** tout en gardant exactement les mêmes menus (normal, c’est un Fork).
 
+{% include pub.html %}
+
 Voici les quelques features qui font la différence selon moi :
 
 - **Interface légère**, paramétrable et avec un mode “compact”, les thèmes ne sont pas juste des thèmes de couleur mais permettent vraiment un changement d’interface du navigateur.
@@ -37,3 +40,4 @@ Après plus d’une semaine d’utilisation, j’ai totalement remplacé **Firef
 
 🌎 [Zen](https://zen-browser.app/){:target="_blank"}
 
+{% include pub.html %}

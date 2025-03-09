@@ -2,6 +2,7 @@
 layout: post
 title: "Test: Flexispot ED2, un bureau assis-debout"
 date: 2021-01-29
+last_modified_at: "2025-03-09 13:05"
 description: Test du Flexispot ED2, un bureau assis-debout (standing-desk) permettant de changer de position grâce à un boitier électronique.
 image: /assets/images/flexispot-bureau-assis-debout/main.jpg
 author: Thibaut BAYER
@@ -26,6 +27,8 @@ J'ai beau tenté d'utiliser des logiciels pour me forcer à faire des pauses (no
 Le fait est que je passe toujours 10h assis sur une chaise (bien que ma chaise "gaming" soit très confortable).
 Avec l'arrivée du COVID, le télétravail est de plus en plus démocratisé et il est devenu nécessaire de bien s'équiper afin de travailler dans les meilleures conditions.
 
+{% include pub.html %}
+
 # Standing-desk, Késako ?
 Depuis pas mal d'années je vois des articles sur les vertus des "Standing-desk" et récemment j'ai eu l'occasion d'en tester au travail et via des amis.
 Qu'est-ce qu'un Standing-desk ? C'est tout simplement un bureau qui permet de travailler debout (ne me remerciez pas pour cette explication ![](/assets/images/emote/SLT.png){: .emote}) 
@@ -40,6 +43,8 @@ Le fait d'être plus concentré dans mon travail me plait déjà beaucoup plus s
 Il m'arrive souvent de rester 2h devant l'ordinateur à procrastiner alors que je suis censé finir une tâche.
 
 ![](https://media.giphy.com/media/pDsCoECKh1Pa/giphy.gif){: .center-image}
+
+{% include pub.html %}
 
 # Flexispot ED2
 Voilà maintenant une semaine que je suis l'heureux propriétaire d'un superbe bureau "[Flexispot ED2](https://amzn.to/3p9D2qy)" qui m'a couté la modique somme de 349€ sans plateau.
@@ -84,6 +89,8 @@ J'ai donc visser uniquement les pieds (4 vis par pieds) afin d'éviter de trop t
 <center><i>Position debout (ouais bon c'est au max, c'est peut être un peu too much ![](/assets/images/emote/LUL.png){: .emote})</i></center>
 ![Bureau position debout](/assets/images/flexispot-bureau-assis-debout/flexispot-debout.jpg){: .center-image}
 
+{% include pub.html %}
+
 # Ressenti après une semaine
 J'ai testé le mode debout dès la première journée, à hauteur de 2x 45 minutes dans la journée (45 minutes le matin, idem l'après midi).
 La première journée je n'ai rien senti de particulier, par contre à partir du lendemain j'ai doublé le temps passé debout (2x 45 minutes le matin, pareil l'après midi)
@@ -120,6 +127,8 @@ Concernant le bruit des moteurs, je m'attendais à quelque chose de vraiment bru
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WeCT6ttmhw4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+{% include pub.html %}
+
 ## Un sans-faute en fait !
 Eh bien non ! Il y a bien un vice dans tout ça et je l'ai trouvé !
 Sur mon bureau j'ai deux enceintes, un écran et un petit meuble pour mettre mon Mac Mini, jusque-là tout va bien (voir les photos/vidéos du dessus).
@@ -152,3 +161,4 @@ Le plus chiant dans tous ca, c'est que la détection de collision n'est pas dés
 * **Pratique pour les grands en position assis**. C'est confortable de pouvoir gérer la hauteur de son bureau et de ne plus avoir les genoux qui touchent le plateau.
 * Faites attention au plateau utilisé, un plateau Ikea fera bien l'affaire mais **si votre plateau est en bois massif c'est mieux**.
 
+{% include pub.html %}

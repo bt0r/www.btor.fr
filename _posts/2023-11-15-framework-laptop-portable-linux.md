@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Test: Framework 13\", un pc portable modulaire sous Linux "
-date: 2023-11-15 15:30:00
+date: "2023-11-15 15:30:00"
+last_modified_at: "2025-03-09 13:05"
 description: Test du Framework 13" sous ArchLinux, la modularité en vaut-elle la chandelle ?
 image: /assets/images/framework-laptop-portable-linux/main.jpg
 author: Thibaut BAYER
@@ -29,6 +30,10 @@ L'OS est assez "fluide" dans son utilisation globale, on a l'impression que tout
 * L'envie d'avoir un ordinateur puissant, avec 32GO de RAM qui ne me coutera pas un bras (wink wink les Macbook Pro)
 
 Avec tous ces critères, Framework semblait être un bon compromis, mais qu'en est-il vraiment ? ![](/assets/images/emote/TUBAIZ.png){: .emote}
+
+
+{% include pub.html %}
+
 
 ## Déballage et montage
 J'ai donc commandé mon Framework 13" au moins de juin, pour une livraison mi-novembre. 
@@ -58,7 +63,7 @@ Pour le montage :
 * On clips tout ça dans le châssis et on visse le tout (5 vis à l'arrière, tournevis fournis)
 * Reste plus qu'à brancher les cartes d'extensions et le tour est joué !
 
-
+{% include pub.html %}
 ## Installation de l'OS
 Place à l'installation de l'OS, il n'y a rien de bien compliqué, la documentation en ligne est assez bien faite, pour Linux il faut d'abord mettre à jour le bios en version 3.03 et ensuite faire l'installation de l'OS.
 Depuis peu, j'utilise [EndeavourOS](https://endeavouros.com/), une distribution basée sur ArchLinux, que j'apprécie beaucoup pour sa simplicité et sa légèreté (XFCE for the win).
@@ -99,3 +104,5 @@ Que ce soit en termes de temps de boot ou d'utilisation générale (navigation, 
 **En résumé,** c'est un bon ordinateur de geekos, de mecs qui va aimer bidouiller, qui cherche les performances etc.
 Les **3 gros points noirs** à corriger sont, selon moi, la **taille/résolution d'écran**, la **qualité audio** et le **manque de fanless** côté CPU.
 Avec ces 3 points améliorés, le Framework pourrait rapidement devenir un incontournable pour les développeurs, peut-être même pour le grand public.
+
+{% include pub.html %}

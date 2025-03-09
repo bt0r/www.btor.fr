@@ -14,6 +14,8 @@ Régulièrement je me rends compte que certains développeurs ne sont pas à l'a
 Dans cet article, je tâcherai de revenir sur les principaux concepts en essayant de faire le plus simple possible.
 Si vous avez déjà un niveau avancé avec Docker, cet article n'est pas fait pour vous.
 
+{% include pub.html %}
+
 # ❓ C'est quoi Docker ?
 >Docker est un logiciel libre permettant facilement de lancer des applications dans des conteneurs logiciels.
 
@@ -44,6 +46,8 @@ L'avantage du type 1 est qu'il permet d'avoir de meilleur performance étant don
 Et la conteneurisation dans tout ça ?
 
 Un conteneur, c'est grossièrement la même chose qu'une machine virtuelle, notre conteneur va avoir son propre système **SAUF** que celui-ci communiquera directement avec le système d'exploitation hôte et pas nécessairement avec un hyperviseur. L’intérêt ? Un gain de performance pardi !
+
+{% include pub.html %}
 
 ### 🖥️ Platformes (win, linux, mac)
 Maintenant que l'on sait ce qu'est un hyperviseur, qu'on comprend la différence entre un conteneur et une machine virtuelle, est-ce qu'il y a une différence entre les différentes plateformes ? 
@@ -83,6 +87,8 @@ Ce même fichier est utilisé pour construire (build) l'image, l'image construit
 Pour simplifier, Docker Hub est un peu le **Github** de git, vous avez le droit à un repository privé et à autant de repository public que vous le désirez et si vous désirez avoir plus de repository privé, bah vous payez ... :)
 
 Les images sont stockées avec des `Tag`, ces tags permettent de versionner les images sur le repository, par exemple si on regarde [les images disponibles pour Debian](https://hub.docker.com/_/debian) On s'aperçoit qu'il existe des images pour plusieurs versions de Debian (Jessie, Buster, Stretch etc..) qui sont en stable mais aussi des versions expérimentales, testing, Release candidate etc.
+
+{% include pub.html %}
 
 ### ⚙️ Lancer son premier conteneur
 Récupérons une image de Debian et regardons ce qu'il se passe :
@@ -166,6 +172,8 @@ Trois choses importantes sont à noter :
 - On voit très clairement les deux étapes que docker exécute : FROM et RUN
 - Chaque étape à son propre hash `7cd9fb1ee74f` pour le FROM et `8831306e5a73` pour le RUN, chaque étape/instruction va créer un nouveau layer (une couche).
 - Le build résulte d'un message `Successfully build 8831306e5a73`
+
+{% include pub.html %}
 
 ## 📚 Les couches/layers
 Pour chaque étape ou instruction que l'ont écris dans notre Dockerfile, Docker va créer un layer avec un `hash` propre à celui ci. Chaque layer est utilisable tel quel ! Oui oui ! Vous pouvez lancer un conteneur en vous basant sur le `hash` de votre layer
@@ -342,3 +350,5 @@ Dans les deux cas, docker nous informe bien que l'image n'est pas disponible en 
 # Conclusion
 Vous avez désormais les notions de bases de docker, vous savez comment docker fonctionne, comment récupérer/stoper/lancer/créer/pousser une image. 
 Si vous avez aimé cet article ou que vous désirez avoir plus d'informations (voir même d'autres articles dans la même veine, `docker-compose`, docker avancé, `kubernetes` etc..) faites le moi savoir :D
+
+{% include pub.html %}

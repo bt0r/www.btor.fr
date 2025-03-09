@@ -37,6 +37,7 @@ Jugez par vous même via une petite démonstration vidéo :
 
 [Cliquez ici pour voir la vidéo youtube](https://youtu.be/tyaVDoQAvlw)
 
+{% include pub.html %}
 
 Comme vous l'avez vu, la Google Home Mini répond parfaitement bien à mes ordres, je suis assez bluffé de la compréhension de la synthèse vocale. J'ai beau bafouiller, chercher mes mots, prendre des tournures de phrases différentes, la Home Mini arrive toujours à comprendre ce que je lui demande. Les seules fois ou elle ne répond pas à ce que je lui demande c'est tout simplement parce qu’elle n'est pas programmer pour y répondre, comme par exemple avec la phrase "Ok Google, commande moi une pizza". La qualité sonore est plus que correct, pour une petite enceinte ça crache plutôt pas mal, par contre j'ai remarqué qu'elle grésille/saute quand le volume est au minimum. Je pense à un problème de fabrication, je testerai ça plus en détail et si le problème persiste dans les 2/3 jours à venir j'irai l'échanger.
 Coté micro, la reconnaissance est bonne même à distance ( environ 3/4m plus loin dans une autre pièce sans problème).
@@ -44,6 +45,8 @@ Coté micro, la reconnaissance est bonne même à distance ( environ 3/4m plus l
 ### ⁉️️ Oui mais à quoi ça va te servir ?
 Bonne question Michel ! Ayant un vieux poste radio/CD/MP3 dans ma salle de bain (que j'avais acheté plus cher que la Google Home Mini) je voulais remplacer ce poste encombrant par quelque chose de plus intelligent et qui me permettrait de faire un peu plus que de lire des CD et des radios sur les chaines hertziennes.
 Objectif accompli avec cette Home Mini qui me permet de faire Web Radio/Réveil/Minuteur/Météo/Pilotage de mes lampes etc...
+
+{% include pub.html %}
 
 ### 🔒 Et la vie privé dans tout ça ?
 C'est **LE** gros bémol pour moi aujourd'hui, on le sait tous, les objets connectés sont à la mode et les failles/abus qui les entourent font la une des journaux (voir [Mirai](https://fr.wikipedia.org/wiki/Mirai_(logiciel_malveillant)) . Bien que la Home Mini soit conçue par un des géants du net et que l'outil soit certainement robuste aux attaques informatique, beaucoup de questions restent en suspend dont une plus que les autres ** Que fait Google des données envoyées via ses objets connectés ?**
@@ -68,3 +71,5 @@ Tout ça pour dire que Google ne se cache pas de l'utilisation des données (en 
 Je trouve cette FAQ assez clair, mon coté méfiant me laisse imaginer les pires scénarios catastrophe possibles concernant l'utilisation de nos données privés mais pour autant, je reste un geek et partant du principe que nos informations sont déjà divulguées à grande échelles via divers équipements informatique (téléphone, ordinateur, badges, carte bancaires etc.) je me dis que dans le fond, si ils ont envie de m'écouter chanter "[La macarena](https://www.youtube.com/watch?v=anzzNp8HlVQ)" sous la douche, c'est vraiment qu'ils ont plus rien à foutre ?
 
 Pour conclure, en dehors de l'aspect vie privé qui peut être problématique pour certains. Cette enceinte Home Mini est vraiment de bonne facture pour son prix (60€ TTC), facile d'utilisation et facile à paramétrer. C'est un must-have du geek !
+
+{% include pub.html %}

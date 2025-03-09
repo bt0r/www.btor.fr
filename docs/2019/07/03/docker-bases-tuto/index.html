@@ -84,6 +84,13 @@
 <p>Dans cet article, je tâcherai de revenir sur les principaux concepts en essayant de faire le plus simple possible.
 Si vous avez déjà un niveau avancé avec Docker, cet article n’est pas fait pour vous.</p>
 
+<div class="pub">
+    <a href="https://taatoo.app">
+        <img src="/assets/images/pub/taatoo-728x90.png" alt="Taatoo" data-action="no-action" style="padding: 0 !important;margin: 0 !important;" />
+    </a>
+    <span>Publicité</span>
+</div>
+
 <h1 id="-cest-quoi-docker-">❓ C’est quoi Docker ?</h1>
 <blockquote>
   <p>Docker est un logiciel libre permettant facilement de lancer des applications dans des conteneurs logiciels.</p>
@@ -120,6 +127,13 @@ L’avantage du type 1 est qu’il permet d’avoir de meilleur performance éta
 <p>Et la conteneurisation dans tout ça ?</p>
 
 <p>Un conteneur, c’est grossièrement la même chose qu’une machine virtuelle, notre conteneur va avoir son propre système <strong>SAUF</strong> que celui-ci communiquera directement avec le système d’exploitation hôte et pas nécessairement avec un hyperviseur. L’intérêt ? Un gain de performance pardi !</p>
+
+<div class="pub">
+    <a href="https://taatoo.app">
+        <img src="/assets/images/pub/taatoo-728x90.png" alt="Taatoo" data-action="no-action" style="padding: 0 !important;margin: 0 !important;" />
+    </a>
+    <span>Publicité</span>
+</div>
 
 <h3 id="️-platformes-win-linux-mac">🖥️ Platformes (win, linux, mac)</h3>
 <p>Maintenant que l’on sait ce qu’est un hyperviseur, qu’on comprend la différence entre un conteneur et une machine virtuelle, est-ce qu’il y a une différence entre les différentes plateformes ?</p>
@@ -162,6 +176,13 @@ Pour se faire, Docker met à disposition une API simple qui attend des <strong>i
 Pour simplifier, Docker Hub est un peu le <strong>Github</strong> de git, vous avez le droit à un repository privé et à autant de repository public que vous le désirez et si vous désirez avoir plus de repository privé, bah vous payez … :)</p>
 
 <p>Les images sont stockées avec des <code class="language-plaintext highlighter-rouge">Tag</code>, ces tags permettent de versionner les images sur le repository, par exemple si on regarde <a href="https://hub.docker.com/_/debian">les images disponibles pour Debian</a> On s’aperçoit qu’il existe des images pour plusieurs versions de Debian (Jessie, Buster, Stretch etc..) qui sont en stable mais aussi des versions expérimentales, testing, Release candidate etc.</p>
+
+<div class="pub">
+    <a href="https://taatoo.app">
+        <img src="/assets/images/pub/taatoo-728x90.png" alt="Taatoo" data-action="no-action" style="padding: 0 !important;margin: 0 !important;" />
+    </a>
+    <span>Publicité</span>
+</div>
 
 <h3 id="️-lancer-son-premier-conteneur">⚙️ Lancer son premier conteneur</h3>
 <p>Récupérons une image de Debian et regardons ce qu’il se passe :</p>
@@ -257,6 +278,13 @@ Successfully built 8831306e5a73
   <li>Chaque étape à son propre hash <code class="language-plaintext highlighter-rouge">7cd9fb1ee74f</code> pour le FROM et <code class="language-plaintext highlighter-rouge">8831306e5a73</code> pour le RUN, chaque étape/instruction va créer un nouveau layer (une couche).</li>
   <li>Le build résulte d’un message <code class="language-plaintext highlighter-rouge">Successfully build 8831306e5a73</code></li>
 </ul>
+
+<div class="pub">
+    <a href="https://taatoo.app">
+        <img src="/assets/images/pub/taatoo-728x90.png" alt="Taatoo" data-action="no-action" style="padding: 0 !important;margin: 0 !important;" />
+    </a>
+    <span>Publicité</span>
+</div>
 
 <h2 id="-les-coucheslayers">📚 Les couches/layers</h2>
 <p>Pour chaque étape ou instruction que l’ont écris dans notre Dockerfile, Docker va créer un layer avec un <code class="language-plaintext highlighter-rouge">hash</code> propre à celui ci. Chaque layer est utilisable tel quel ! Oui oui ! Vous pouvez lancer un conteneur en vous basant sur le <code class="language-plaintext highlighter-rouge">hash</code> de votre layer
@@ -438,6 +466,14 @@ Maintenant éditons notre <code class="language-plaintext highlighter-rouge">scr
 <h1 id="conclusion">Conclusion</h1>
 <p>Vous avez désormais les notions de bases de docker, vous savez comment docker fonctionne, comment récupérer/stoper/lancer/créer/pousser une image. 
 Si vous avez aimé cet article ou que vous désirez avoir plus d’informations (voir même d’autres articles dans la même veine, <code class="language-plaintext highlighter-rouge">docker-compose</code>, docker avancé, <code class="language-plaintext highlighter-rouge">kubernetes</code> etc..) faites le moi savoir :D</p>
+
+<div class="pub">
+    <a href="https://taatoo.app">
+        <img src="/assets/images/pub/taatoo-728x90.png" alt="Taatoo" data-action="no-action" style="padding: 0 !important;margin: 0 !important;" />
+    </a>
+    <span>Publicité</span>
+</div>
+
 
         </div>
         <ul class="post__social">

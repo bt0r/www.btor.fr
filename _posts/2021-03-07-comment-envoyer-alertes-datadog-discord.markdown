@@ -2,6 +2,7 @@
 layout: post
 title: Comment envoyer des alertes Datadog dans Discord ?
 date: 2021-03-07
+last_modified_at: "2025-03-09 13:05"
 description: Dans cet article j'explique comment envoyer des alertes Datadog directement dans Discord en utilisant les webhooks.
 image: /assets/images/comment-envoyer-alertes-datadog-discord/main.jpg
 author: Thibaut BAYER
@@ -21,6 +22,8 @@ Ces alertes peuvent être envoyées par mail, sur slack [ou d'autres application
 Depuis le COVID, quelques sociétés se sont mises au télétravail avec plus ou moins de succès (on vous voit ![](/assets/images/emote/KJ.png){: .emote}).
 Parmi les gros changements qu'a apportés le télétravail, il y a eu l'arrivée massive de la visio : Meet, Zoom, Livestorm ou même Discord.
 
+{% include pub.html %}
+
 Pour beaucoup de travailleurs ~~du sexe~~ de la tech ![](/assets/images/emote/OUCH.png){: .emote}, ces outils sont devenus monnaie courante.
 Certaines sociétés en ont d'ailleurs profité pour (parfois) changer leurs outils de communication pour privilégier un Discord plutôt qu'un Slack, notamment pour des raisons de tarification 💸.
 Et c'est là que tu vois le loup arriver ! Discord c'est bien, c'est pratique mais c'est pas aussi bien interconnecté qu'un slack ![](/assets/images/emote/SAD.png){: .emote} notamment quand il s'agit d'envoyer des notifications Datadog sur Discord
@@ -31,6 +34,8 @@ Voyons-donc comment envoyer les alertes de nos moniteurs Datadog, directement da
 ![](https://media1.tenor.com/images/b13a03a18eb819855cd99f22e2cf4433/tenor.gif?itemid=16135073){: .center-image}
 
 **Spoiler** : Si tu connais déjà les webhooks, que t'es une diva du dév' ou tout autre Apollon de la tech, tu peux directement voir la solution [au dernier chapitre](#format-du-webhook)
+
+{% include pub.html %}
 # Les webhooks
 Si tu es développeur, tu as forcément entendu parler des webhooks. 
 Un webhook c'est un système qui permet d'envoyer (ou recevoir) des évènements à/depuis une application tierce, en général au travers d'un appel HTTP.
@@ -67,7 +72,7 @@ Chaque site/service à sa logique donc les payloads diffèrent en fonction du se
 > Mé komen kon fé pou ke Discord komprene Datadog ?
 
 ![](/assets/images/comment-envoyer-alertes-datadog-discord/rtfm.gif){: .center-image}
-
+{% include pub.html %}
 ## Format du webhook
 En temps normal quand un service intègre des webhooks, il est souvent proposé de choisir le service distant afin d'auto-formater le payload en conséquence (ou de mieux interpréter le payload qui sera reçu).
 C'est par exemple le cas avec Discord qui intègre très bien les notifications Github, comment ? Tout simplement en ajoutant `/github` à la fin de l'URL du webhook discord.
@@ -105,3 +110,4 @@ Valider votre webhook Datadog avec le payload modifié, puis rendez-vous sur vot
 ![](/assets/images/comment-envoyer-alertes-datadog-discord/notification-discord.jpg){: .center-image}
 
 J'espère que ce petit tips vous aura aidé ![](/assets/images/emote/KJ.png){: .emote} ![](/assets/images/emote/BEER.png){: .emote}
+{% include pub.html %}

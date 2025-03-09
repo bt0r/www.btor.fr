@@ -2,6 +2,7 @@
 layout: post
 title: "Rétro-ingénierie: Capturer le trafic HTTPS d'une application Android"
 date: 2020-10-24
+last_modified_at: "2025-03-09 13:05"
 description: Capturer le trafic HTTPS d'une application Android en utilisant PCAPRemote ou Burp
 image: /assets/images/retro-ingenierie-capturer-application-android/main.jpg
 author: Thibaut BAYER
@@ -26,6 +27,8 @@ PCAPRemote peut vous fournir un fichier .pcap mais aussi faire office de serveur
 
 Ça tombe bien, j'ai du temps avec le couvre-feu actuel ![](/assets/images/emote/SAD.png){: .emote}. 
 J'enfile donc mon plus beau couvre-chef et je me lance dans le sniffing de [ma propre application](https://play.google.com/store/apps/details?id=com.btorfr) ![](/assets/images/emote/WINK.png){: .emote}
+
+{% include pub.html %}
 
 # Contexte
 L'application **btor.fr** est un très bon cas d'utilisation car elle ne fait rien de complexe.
@@ -59,6 +62,8 @@ Deal ![](/assets/images/emote/SLT.png){: .emote} !
 Vous ne voyez aucune trame HTTP ? alors que vous avez bien pris le soin de cocher la case `Make HTTPS/TLS connections decryptable` ? et vous avez bien installé les certificats ?
  
  C'est normal ![](/assets/images/emote/LUL.png){: .emote}
+
+{% include pub.html %}
 
 # Les restrictions
 Depuis Android 7 Nougat (2016), Google a [ajouté une sécurité](https://android-developers.googleblog.com/2016/07/changes-to-trusted-certificate.html) afin de limiter les authorités de certifications (CA) approuvées par défaut par l'application.
@@ -108,6 +113,8 @@ Les étapes sont exactement les mêmes qu'en sniffant de l'HTTP à la petite dif
 Tada ![](/assets/images/emote/PROUD.png){: .emote} ! Nous avons bien notre appel au flux RSS de visible. 
 On peut apercevoir la couche TLS au-dessus d'HTTP, garantie que la liaison est bien chiffrée.
 
+{% include pub.html %}
+
 # Aller plus loin
 J'ai volontairement réutilisé PCAPRemote parce que son utilisation est simple mais il est à noter que **ce n'est pas un proxy**.
 PCAPRemote utilise une fonctionnalité spécifique à Android qui s'appelle [VPNService](https://developer.android.com/reference/android/net/VpnService).
@@ -142,3 +149,5 @@ Dans les cas les plus complexes, vous devrez surement utiliser APKTool directeme
 [Burp Suite](https://portswigger.net/burp/communitydownload)
 
 [APKTool](https://github.com/iBotPeaches/Apktool/)
+
+{% include pub.html %}

@@ -2,6 +2,7 @@
 layout: post
 title: "OrbStack : Un Docker Desktop for Mac sous stéroïde ?"
 date: "2024-06-22 6:30"
+last_modified_at: "2025-03-09 13:05"
 description: "OrbStack est un démon docker pour MacOS qui vise à régler les problèmes de performances de Docker Desktop for Mac. Mais est ce que ça marche vraiment ?"
 image: /assets/images/orbstack-remplacant-docker-desktop-for-mac/main.jpg
 author: Thibaut BAYER
@@ -28,6 +29,8 @@ Les **allers/retours** entre la machine hôte et les conteneurs peuvent être so
 ## Qu'apporte OrbStack du coup ?
 La **PERFORMANCE** ![](/assets/images/emote/JAMY.png){: .emote} !!
 
+{% include pub.html %}
+
 **OrbStack** va garder ce même principe de machine virtuelle mais en utilisant une **machine virtuelle ultra allégée/optimisée** et avec un kernel partagé, en plus d'utiliser d'autres technos déjà performantes sur Docker Desktop for Mac (comme **VirtioFS pour le partage de fichier**)
 
 Un autre point fort d'**OrbStack** est qu'il n'y a **aucune configuration à faire**, il suffit de supprimer correctement l'ancien démon Docker Desktop (et penser à bien purger ses images/conteneurs etc) puis d'installer et lancer OrbStack.
@@ -40,3 +43,4 @@ Et le tour est joué ![](/assets/images/emote/BEER.png){: .emote} ! Rien de plus
 
 ⚙️ Plus d’infos sur le fonctionnement interne d’OrbStack : [Architecture](https://docs.orbstack.dev/architecture){:target="_blank"}
 
+{% include pub.html %}

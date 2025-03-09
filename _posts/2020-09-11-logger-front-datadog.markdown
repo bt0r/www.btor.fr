@@ -2,6 +2,7 @@
 layout: post
 title: "Logger son front (web ou extension de navigateur) avec Datadog"
 date: 2020-09-11
+last_modified_at: "2025-03-09 13:05"
 description: Dans cet article je vous explique comment logger votre application front (ou extension de navigateur) en utilisant Datadog
 image: /assets/images/logger-front-datadog/main.jpg
 author: Thibaut BAYER
@@ -24,6 +25,8 @@ Ca tombe bien, depuis fin 2019 Datadog travaille sur [Browser-SDK](https://githu
 C'est simple à mettre en place et en plus on y retrouve toutes les fonctionnalités "classiques" de Datadog comme le fait d'avoir les attributs de GeoIP, User-Agent, Session, HTTP... directement interprété dans Datadog.
 
 Ca tombe doublement bien puisque j'ai actuellement besoin d'un outil pour logger mon extension [Noteflix](https://github.com/bt0r/NoteFlix) ![](/assets/images/emote/RS.png){: .emote} 
+
+{% include pub.html %}
 
 # Installation
 * Pour l'installation c'est simple, il vous suffira d'installer le package `browser-logs`
@@ -78,3 +81,5 @@ Vous avez désormais toutes les cartes en main pour monitorer votre application 
 [Documentation Officielle](https://docs.datadoghq.com/fr/logs/log_collection/javascript/?tab=npm)
 
 [Exemple d'intégration dans une extension](https://github.com/bt0r/NoteFlix/blob/db5cd5ca33ecf84687564bd64d840c55d73bab57/src/logging/Logger.js)
+
+{% include pub.html %}

@@ -53,3 +53,43 @@
   margin-right: 2px !important;
   margin-bottom: unset !important;
 }
+
+.pub {
+  border: 1px dashed rgb(202, 202, 202);
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  min-width: 0 !important;
+  margin: 12px 0 12px 0;
+
+  & * {
+    min-width: 0 !important;
+    max-width: none !important;
+  }
+
+  & a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+  }
+
+  & img {
+    cursor: pointer !important;
+    border-radius: 10px;
+  }
+
+  & span {
+    text-align: right;
+    color: rgb(107, 107, 107);
+    font-size: 12px;
+    margin-top: 2px;
+  }
+}

@@ -14,6 +14,8 @@ Comme vous le savez, je stream de temps en temps sur [twitch.tv](http://twitch.t
 
 **Edit:** [Twitch à récemment arrété d'accepter les paiements par cryptomonnaie, cet article est désormais obsolète.](https://www.clubic.com/twitch/actualite-852874-twitch-accepte-paiements-bitcoin.html)
 
+{% include pub.html %}
+
 ## 💸 Twitch + Gamer = Sub gratuit
 Récemment, twitch a étendu ses modes de paiement pour y intégrer ... Le Bitcoin ! ( voir [ce tweet](https://twitter.com/biiitor/status/951732767775215616) ). L'arrivée du bitcoin en tant que moyen de paiement permet à ceux qui n'ont pas trop d'argent et un pc dit "Gamer" de pouvoir générer du bitcoin et ainsi s'abonner aux chaines qu'ils décident, tout ça, sans rien faire ! ou presque ...
 **Vous n'y connaissez rien en cryptomonnaies mais vous avez un ordinateur de gamer et pas un euro en poche ? lisez la suite...**
@@ -22,6 +24,8 @@ Récemment, twitch a étendu ses modes de paiement pour y intégrer ... Le Bitco
 Je ne vais pas vous faire une description complète de ce qu'est le bitcoin et l'environnement des cryptomonnaies car c'est long, complexe et j'envisage de faire un article dessus. Par contre, nous allons revoir les bases rapidement.
 Le bitcoin est une cryptomonnaie, on peut acheter, vendre, échanger du bitcoin sur internet via des plateformes d'échange ou des "Wallet" (portefeuille) en ligne comme [Coinbase](https://www.coinbase.com/join/5a20090d65d98a026abb3fd2) , [Blockchain.info](https://blockchain.info), [Cryptonator](https://www.cryptonator.com/), [Kraken](https://www.kraken.com/) et bien d'autres.
 Il faut assimiler ces portefeuilles à un compte bancaire, ils vont vous permettre de recevoir/envoyer de l'argent à un proche, une société... Et c'est justement là que ça nous intéresse ! Si vous avez bien lu le tweet de twitch,  Twitch annonce gérer les paiements par bitcoin (via bitpay ) mais aussi via **Coinbase**. 
+
+{% include pub.html %}
 
 ## ⚙️ Comment fonctionne le bitcoin ? 
 Le bitcoin est une cryptomonnaie décentralisée qui fonctionne avec le principe de "Blockchain" (une sorte de base de données), il n'y a pas de banque centrale, pas d'organisme ou autre pour gérer les transactions du bitcoin. Ce sont les utilisateurs qui vérifient les transactions, c'est ce qu'on appelle le **mining** (minage en français). N'ayez crainte, il n'y a pas besoin de connaitre tout le principe de blockchain et du mining pour profiter de ce "bon plan", je vais simplifier au maximum.
@@ -38,6 +42,8 @@ Très bonne question ! Il suffit d'avoir une feuille et un crayon et de faire vo
 
 Pour miner il faut posséder un portefeuille de cryptomonnaie, faire parti d'un pool de minage ( j'ai volontairement évité ce sujet pour faire en sorte que ça reste simple à comprendre) et un logiciel de minage qui utilisera votre CPU ou votre(vos) GPU(s).
 
+{% include pub.html %}
+
 ### ⛓ La complexité
 Passons aux choses sérieuses, nous savons maintenant ce qu'est approximativement le bitcoin, nous savons que pour gagner des bitcoin il faut miner ! Oui mais voilà ... il y a un autre problème : **La complexité** 
 
@@ -53,6 +59,8 @@ Nous allons utiliser notre ordinateur pour miner différentes monnaies et avoir 
 Avant de miner, il est important d'avoir un compte Coinbase ([Créer un compte](https://www.coinbase.com/join/5a20090d65d98a026abb3fd2)). Nous pourrions utiliser la méthode de paiement "BitPay" sur twitch mais le soucis c'est que les frais de transactions bitcoin sont très élevés (vous allez payer plus cher de frais que d'abonnement twitch).
 
 Coinbase permet d'avoir un compte "non vérifié" c'est à dire que vous pourrez recevoir de l'argent ou payer via votre portefeuille **sans déclarer votre identité réelle** (carte bancaire, passport, permis de conduire etc..) , dans le cas ou vous voudriez récupérer votre argent sur votre compte bancaire, il faudra forcément passer par l'étape de vérification de votre compte.
+
+{% include pub.html %}
 
 ### 👤 Création du compte NiceHash
 NiceHash est une société qui propose divers services autour du mining (wallet, achat de puissance de calcul, logiciel de mining). C'est bien évidemment le logiciel de mining open source ([Github](https://github.com/nicehash))  qui nous intéresse.
@@ -81,6 +89,8 @@ A noté que ce bouton "Mining details" n'est disponible qu'en cours de minage, s
 
 ![NiceHash application](/assets/images/bitcoin-twitch/mining1.png)  ![NiceHash application](/assets/images/bitcoin-twitch/mining2.png)  ![NiceHash application](/assets/images/bitcoin-twitch/mining3.png)   
 
+{% include pub.html %}
+
 ### 🧾 Transfert vers Coinbase
 Votre mineur tourne, vous commencez à récoltez vos premiers euros et tout va pour le mieux... Cependant il y a plusieurs choses à prendre en compte (encore, oui je sais ...).
 - **L'argent que vous avez dans votre wallet n'est pas en EUROS, ce sont des Bitcoins**, ce qui veut dire que si le cours du bitcoin chute ... vous aurez moins d'argent, si le cours augmente vous aurez plus. C'est un détail que je préfère bien appuyer car il est vraiment important.
@@ -106,6 +116,8 @@ Maintenant que nous avons miner et transférer l'argent sur coinbase, il ne nous
 ![NiceHash application](/assets/images/bitcoin-twitch/twitch-subscribe.png) ![NiceHash application](/assets/images/bitcoin-twitch/twitch-paiement.png) ![NiceHash application](/assets/images/bitcoin-twitch/twitch-paiement2.png)
 
 Et voilà, vous vous êtes abonné sans même avoir dépensé 1€ (mais quelques minutes à lire et comprendre cet article ... ? )
+
+{% include pub.html %}
 
 ## 💭 A retenir
 - **Miner demande d'avoir un GPU assez performant**, oublier le mining si vous avez une GeForce 2 ca ne sera pas rentable.

@@ -28,6 +28,9 @@ Tout le monde étend ses connaissances et le partage à l'équipe.
 
 A force de discuter des projets des uns et des autres (majoritairement axés sur du mobile, ça va de soit), je me suis dis qu'il serait temps que je me mette un peu à jour et que moi aussi je retente "l'expérience mobile".
 Je dis "Retente" parce que oui, j'ai déjà réalisé une ou deux applications mobiles Android il y a quelques années mais n'en parlons pas ... ![](/assets/images/emote/LUL.png){: .emote}
+
+{% include pub.html %}
+
 # Mais pourquoi ReactNative ?
 La question qui vient *normalement* tout de suite à l'esprit c'est : **MAIS POURQUOI REACT NATIVE ?** ![](/assets/images/emote/NO.png){: .emote}
 
@@ -90,6 +93,8 @@ donnera sur Android
 
 [Plus d'infos sur le fonctionnement même de ReactNative ici](https://www.reactnative.guide/3-react-native-internals/3.1-react-native-internals.html)
 
+{% include pub.html %}
+
 # La stack
 Pour commencer un projet ReactNative vous avez le choix entre ReactNative CLI et Expo. 
 [Expo](https://expo.io/) est un kit d'outils pour développer des applications ReactNative plus rapidement, il propose des fonctionnalités en plus de ReactNative.
@@ -121,6 +126,8 @@ Une autre question à se poser en utilisant ReactNative est sur le choix du lang
 J'ai déjà eu l'occasion d'utiliser Typescript pour [un projet perso](https://github.com/bt0r/shellbot) et cette fois-ci j'ai choisi de ne pas l'utiliser ![](/assets/images/emote/WUT.png){: .emote}.
 La raison va paraitre surement farfelue mais étant donné que je me lance dans un nouveau projet, il va y avoir beaucoup de nouvelles notions à apprendre et je ne veux pas m'imposer une complexité en plus.
 Si l'envie me vient de passer l'application sur Typescript je pourrais toujours y venir plus tard, ça sera du boulot en plus mais c'est un "contrat" que je passe au début du projet.
+
+{% include pub.html %}
 
 # Bien débuter avec ReactNative
 Ne connaissant pas du tout React (et donc ReactNative par la même occasion), j'avais un peu peur de mettre 6 mois à apprendre un nouveau framework sans rien produire de concret.
@@ -171,6 +178,8 @@ J'en ai parlé dans un de mes tweet [ici](https://twitter.com/biiitor/status/125
 Jusque-là pourquoi pas, ça prouve que la communauté est active.
 Le souci vient du fait qu'on se retrouve souvent à devoir naviguer entre les différentes documentations, officielles ou communautaires et à être constamment redirigé. Pénible x2 ![](/assets/images/emote/TUBAIZ.png){: .emote}
 
+{% include pub.html %}
+
 #### Functional VS Class component
 En React il est possible d'écrire ses composants de deux manières :
 * En fonction
@@ -219,6 +228,8 @@ L'écriture du CSS passe par une abstraction sous forme d'objet Javascript mais 
 
 ![](/assets/images/react-native-retour-experience/css-react-native.png){: .center-image}
 
+{% include pub.html %}
+
 #### Rendu iOS/Android identique
 Ca peut paraitre bête comme argument mais c'est pourtant décisif quand on utilise un framework comme ReactNative.
 Après avoir travaillé intégralement sur un émulateur Android, j'ai voulu exécuter mon application sur iOS pour vérifier si le rendu/comportement était différent sur iOS.
@@ -242,6 +253,8 @@ Ca fonctionnait pas mal sauf que parfois je "bloquais" sur la création de l'int
 En discutant avec un collègue, je me suis rendu compte que ça serait pas mal de réaliser des maquettes dès le début afin que ca m'aide à la réalisation de l'application.
 J'ai commencé à utiliser [Figma](https://www.figma.com) et ça m'a clairement simplifier la vie !
 Je vous le recommande vivement si vous cherchez un outil pour créer vos maquettes web ou mobile.
+
+{% include pub.html %}
 
 # Conclusion
 En conclusion c'est très positif ! ReactNative se veut facile à prendre en main, d'autant plus si vous utiliser Expo.

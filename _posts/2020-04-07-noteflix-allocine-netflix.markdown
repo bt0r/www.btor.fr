@@ -26,6 +26,8 @@ C'est à ce moment précis qu'il me vint à l'esprit une idée de génie
 ![](https://media.giphy.com/media/l0LEIXSRRuv9QQIRNI/giphy.gif){: .center-image}
 *21h, la décision est prise: Je me lance dans le développement d'une extension firefox pour récupérer les notes [allociné](https://allocine.fr) afin de les intégrer à Netflix.*
 
+{% include pub.html %}
+
 # Les premiers balbutiements 
 Quand on commence un nouveau projet, on a toujours envie de commencer fort, d'utiliser la dernière techno à la mode, de ne pas réfléchir et "pisser du code" vite, très vite !
 
@@ -141,6 +143,8 @@ L'article est vieux (2013) mais très intéressant, il parle des différents end
 Malheureusement, l'article étant daté, les liens et token fournis le sont aussi. 
 Je décide donc à mon tour de regarder comment se comporte l'application mobile.
 
+{% include pub.html %}
+
 # Analyse de paquet
 En général quand je cherche à avoir des infos sur une API, je regarde comment l'application mobile fonctionne. 
 Pour ce faire, je me charge de capturer les paquets IP qui sortent de mon téléphone et je regarde ce qui concerne l'application.
@@ -189,6 +193,8 @@ c'est un des constats dont faisait l'objet Gromez dans son article.
 
 Plus mon investigation dure, plus je me rend compte que je passe beaucoup de temps sur quelque chose qui sera amené à évoluer avec le temps. 
 Du coup, que faire ? utiliser l'API pour récupérer les data ? scraper la page ? dans les deux cas c'est soumis à modifications dans le futur...
+
+{% include pub.html %}
 
 # La première release
 J'ai finalement pris la décision de commencer le développement de l'extension en partant sur un workflow "simple":
@@ -276,6 +282,8 @@ const findRatings = mutationsList => {
 }
 ```
 
+{% include pub.html %}
+
 ### Le cache
 Maintenant que le code se déclenche bien au bon moment je me confronte à un autre problème, celui des appels multiples à allociné.
 Chaque fois que la page est modifiée je vais devoir appeler Allociné pour récupérer les informations de la vidéo, un appel HTTP pouvant prendre du temps, ne serait-ce pas judicieux de faire un système de cache ?
@@ -359,3 +367,4 @@ J'envisage aussi de porter l'extension sur Chrome parceque tout le monde n'utili
 **Edit:**
 [Télécharger l'extension pour Chrome](https://chrome.google.com/webstore/detail/noteflix/ahoplkcmcgpbkimjhncpnnllgikapjoj?hl=fr)
 
+{% include pub.html %}
