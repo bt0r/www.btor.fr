@@ -101,6 +101,7 @@ Alors oui, le design est moche, mais c'est normal je ne lui ai rien demandé con
 
 ![](/assets/images/est-ce-que-ia-va-remplacer-tous-les-developpeurs/cocopass.png)
 ![](/assets/images/est-ce-que-ia-va-remplacer-tous-les-developpeurs/cocopass-qrcode.png)
+![](/assets/images/est-ce-que-ia-va-remplacer-tous-les-developpeurs/cocopass-commits.png)
 
 Par la suite j'ai pu itérer sur le code, lui dire de vérifier s'**il respectait mes contraintes d'architecture hexagonale**
 
