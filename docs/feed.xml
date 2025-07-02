@@ -6,13 +6,13 @@
 </description>
     <link>https://btor.fr</link>
     <atom:link href="https://btor.fr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 02 Jul 2025 23:40:27 +0200</pubDate>
-    <lastBuildDate>Wed, 02 Jul 2025 23:40:27 +0200</lastBuildDate>
+    <pubDate>Wed, 02 Jul 2025 23:56:54 +0200</pubDate>
+    <lastBuildDate>Wed, 02 Jul 2025 23:56:54 +0200</lastBuildDate>
     <generator>Jekyll v3.9.1</generator>
     
       <item>
-        <title>Est ce que l'IA va remplacer tous les développeurs ?</title>
-        <description>&lt;p&gt;Avec l’arrivée de l’IA (&lt;strong&gt;ChatGPT&lt;/strong&gt;, &lt;strong&gt;Gemini&lt;/strong&gt;, &lt;strong&gt;Perplexity&lt;/strong&gt;…) le quotidien d’énormément de personnes a évolué et depuis l’arrivée de &lt;strong&gt;GitHub Copilot&lt;/strong&gt;, c’est au tour des développeurs de voir leurs quotidiens modifiés&lt;/p&gt;
+        <title>Est-ce que l'IA va remplacer tous les développeurs ?</title>
+        <description>&lt;p&gt;Avec l’arrivée de l’IA (&lt;strong&gt;ChatGPT&lt;/strong&gt;, &lt;strong&gt;Gemini&lt;/strong&gt;, &lt;strong&gt;Perplexity&lt;/strong&gt;…) le quotidien d’énormément de personnes a évolué et depuis l’arrivée de &lt;strong&gt;GitHub Copilot&lt;/strong&gt;, c’est au tour des développeurs de voir leur quotidien modifié&lt;/p&gt;
 
 &lt;p&gt;Il y a 3 ans, GitHub Copilot sortait et devenait &lt;strong&gt;LA&lt;/strong&gt; référence de l’IA pour développeur, au programme : Un assistant IA qui permet d’&lt;strong&gt;autocompléter le code ou de générer du code&lt;/strong&gt; en lui demandant directement quoi faire&lt;/p&gt;
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Generate a function that detect if the number is a binary one&lt;/span&gt;
@@ -70,7 +70,7 @@ IA: Création du commit ... feat: Initial commit
 IA : ✅ Tout est bon !
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Et ce cas-là est évidemment le cas le plus “facile” que l’on peut faire, mais on peut aller beaucoup plus loin ! On pourrait lui dire d’&lt;strong&gt;aller lire les pull requests sur GitHub&lt;/strong&gt;, de &lt;strong&gt;créer un ticket Notion&lt;/strong&gt;, d’&lt;strong&gt;envoyer un SMS&lt;/strong&gt; quand le code est terminé d’être généré… bref on peut vraiment TOUT faire tant que l’IA est en mesure d’accéder au service distant (au travers d’une API/&lt;a href=&quot;https://fr.wikipedia.org/wiki/Model_Context_Protocol&quot;&gt;MCP&lt;/a&gt; ou en faisant une recherche sur le web)&lt;/p&gt;
+&lt;p&gt;Et ce cas-là est évidemment le cas le plus “facile” que l’on peut faire, mais on peut aller beaucoup plus loin ! On pourrait lui dire d’&lt;strong&gt;aller lire les pull requests sur GitHub&lt;/strong&gt;, de &lt;strong&gt;créer un ticket dans Notion&lt;/strong&gt;, d’&lt;strong&gt;envoyer un SMS&lt;/strong&gt; quand le code est terminé d’être généré… bref on peut vraiment TOUT faire tant que l’IA est en mesure d’accéder au service distant (au travers d’une API/&lt;a href=&quot;https://fr.wikipedia.org/wiki/Model_Context_Protocol&quot;&gt;MCP&lt;/a&gt; ou en faisant une recherche sur le web)&lt;/p&gt;
 
 &lt;h2 id=&quot;le-test-grandeur-nature&quot;&gt;Le test grandeur nature&lt;/h2&gt;
 &lt;p&gt;J’ai donc voulu en avoir le cœur net, &lt;strong&gt;est-ce que l’IA agentique est si magique que ça ?&lt;/strong&gt;
@@ -89,7 +89,7 @@ IA : ✅ Tout est bon !
 
 &lt;p&gt;Le fichier &lt;strong&gt;context.txt&lt;/strong&gt; contenait tout le &lt;strong&gt;détail business&lt;/strong&gt; de mon projet, comment mon projet fonctionne, quelle est la cible, quelle est la charte graphique etc.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;2h plus tard&lt;/strong&gt; (et après 2/3 prompts de correction), j’avais une &lt;strong&gt;stack de dev complètement fonctionnelle&lt;/strong&gt; avec un début d’architecture hexagonale plutôt “ok” (les puristes crieraient au scandale mais la séparation domain/infra était plutôt bien faite, il manquait juste des use cases et interfaces)
+&lt;p&gt;&lt;strong&gt;2h plus tard&lt;/strong&gt; (et après 2/3 prompts de correction), j’avais une &lt;strong&gt;stack de dev complètement fonctionnelle&lt;/strong&gt; avec un début d’architecture hexagonale plutôt “ok” (les puristes crieraient au scandale mais la séparation domain/infra était plutôt bien faite, il manquait juste des use cases et interfaces), une base de données avec &lt;strong&gt;Prisma&lt;/strong&gt; etc
 &lt;strong&gt;En 2h, l’IA m’avait généré des jours de travail&lt;/strong&gt;, donc j’ai continué, je me suis dit qu’au final c’était pas si compliqué de faire un bootstrap d’app pour une IA, il suffisait de tout copier d’un projet déjà existant ! 
 &lt;strong&gt;Alors je l’ai challengée&lt;/strong&gt;, je lui ai demandé :&lt;/p&gt;
 &lt;ul&gt;
@@ -106,16 +106,18 @@ Alors oui, le design est moche, mais c’est normal je ne lui ai rien demandé c
 &lt;p&gt;&lt;img src=&quot;/assets/images/est-ce-que-ia-va-remplacer-tous-les-developpeurs/cocopass.png&quot; alt=&quot;&quot; /&gt;
 &lt;img src=&quot;/assets/images/est-ce-que-ia-va-remplacer-tous-les-developpeurs/cocopass-qrcode.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Par la suite j’ai pu itérer sur le code, lui dire de vérifier s’&lt;strong&gt;il respectait mes contraintes d’architecture hexagonale&lt;/strong&gt;
-&lt;strong&gt;spoiler : non&lt;/strong&gt;
-Il a fallu lui &lt;strong&gt;demander de vérifier si l’architecture correspondait aux attentes&lt;/strong&gt;, lui dire de &lt;strong&gt;vérifier le code mort&lt;/strong&gt; ou encore les &lt;strong&gt;clés d’I18N non présentes ou non traduites&lt;/strong&gt;.
+&lt;p&gt;Par la suite j’ai pu itérer sur le code, lui dire de vérifier s’&lt;strong&gt;il respectait mes contraintes d’architecture hexagonale&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;spoiler : non&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Il a fallu lui &lt;strong&gt;demander de vérifier si l’architecture correspondait aux attentes&lt;/strong&gt;, lui dire de &lt;strong&gt;vérifier le code mort&lt;/strong&gt; ou encore les &lt;strong&gt;clés d’I18N non présentes ou non traduites&lt;/strong&gt;.
 &lt;img src=&quot;/assets/images/est-ce-que-ia-va-remplacer-tous-les-developpeurs/cocopass-architecture.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Puis je lui ai dit d’&lt;strong&gt;intégrer un système de paiement (Stripe)&lt;/strong&gt;, cette fois-ci il m’a tout créé (webhook, listener Stripe, page de création de QR Code premium etc.) sans trop de problème.&lt;/p&gt;
 
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;Ces &lt;strong&gt;IA agentique sont encore plus bluffantes&lt;/strong&gt; que ce qu’on a pu connaitre avec &lt;strong&gt;Github Copilot&lt;/strong&gt; ou &lt;strong&gt;Cursor&lt;/strong&gt; avec leurs systèmes d’autocomplétion (&lt;strong&gt;Cursor&lt;/strong&gt; propose aussi un Agent). Ca va beaucoup &lt;strong&gt;plus loin&lt;/strong&gt;, &lt;strong&gt;plus vite&lt;/strong&gt;, pour une &lt;strong&gt;somme qui est dérisoire&lt;/strong&gt; (20€/mois dans le cas de Claude). 
-Elles &lt;strong&gt;posent néanmoins des questions d’usage&lt;/strong&gt;: comment on les utilises ? plus on va vite, plus on doit review, &lt;strong&gt;si en 4h je réalise 3 semaines de boulot&lt;/strong&gt; je vais me retrouver avec &lt;strong&gt;une montagne de PR à valider&lt;/strong&gt;, le code créer par l’IA risque de passer plus facilement sous les radars, &lt;strong&gt;on risque de moins vérifier le code et donc d’être moins vigilant sur certains aspects comme la sécurité.&lt;/strong&gt;
+Elles &lt;strong&gt;posent néanmoins des questions d’usage&lt;/strong&gt;: comment on les utilise ? plus on va vite, plus on doit review, &lt;strong&gt;si en 4h je réalise 3 semaines de boulot&lt;/strong&gt; je vais me retrouver avec &lt;strong&gt;une montagne de PR à valider&lt;/strong&gt;, le code créer par l’IA risque de passer plus facilement sous les radars, &lt;strong&gt;on risque de moins vérifier le code et donc d’être moins vigilant sur certains aspects comme la sécurité.&lt;/strong&gt;
 Je vais tenter de &lt;strong&gt;rester objectif&lt;/strong&gt; et de ne pas trop succomber à la hype de l’IA pour répondre aux grosses questions qu’on se pose tous :&lt;/p&gt;
 
 &lt;h4 id=&quot;est-ce-que-cest-vraiment-fiable-&quot;&gt;Est-ce que c’est vraiment fiable ?&lt;/h4&gt;
@@ -123,7 +125,7 @@ Je vais tenter de &lt;strong&gt;rester objectif&lt;/strong&gt; et de ne pas trop
 
 &lt;p&gt;Pour illustrer mon propos, si je vous dis que j’ai faim, vous allez me donner une pomme, alors que j’aimerais peut-être manger un vrai plat (une tartiflette par exemple), l’IA c’est pareil, &lt;strong&gt;ne lui demandez pas de générer du code, dites lui comment, pourquoi etc.&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;De plus, les &lt;strong&gt;IA agentiques&lt;/strong&gt; proposent en général des &lt;strong&gt;“mémoires”&lt;/strong&gt;, sur &lt;strong&gt;Cursor on appelle ça des “rules”&lt;/strong&gt; et sur &lt;strong&gt;Claude des “memory”&lt;/strong&gt;. Des fichiers &lt;strong&gt;permettent de dire à l’IA de garder en mémoire certains éléments&lt;/strong&gt;, comme par exemple vos contraintes métiers : Écris du code SOLID, vérifie toujours que le domain ne dépend pas de l’infrastructure etc.
+&lt;p&gt;De plus, les &lt;strong&gt;IA agentiques&lt;/strong&gt; proposent en général des &lt;strong&gt;“mémoires”&lt;/strong&gt;, sur &lt;strong&gt;Cursor on appelle ça des “rules”&lt;/strong&gt; et sur &lt;strong&gt;Claude des “memory”&lt;/strong&gt;. Ces fichiers &lt;strong&gt;permettent de dire à l’IA de garder en mémoire certains éléments&lt;/strong&gt;, comme par exemple vos contraintes métiers : Écris du code SOLID, vérifie toujours que le domain ne dépend pas de l’infrastructure etc.
 C’est super important de les utiliser parce que ça changera considérablement la qualité de réponse de l’IA et ça vous évitera beaucoup d’allers/retours.&lt;/p&gt;
 
 &lt;h4 id=&quot;est-ce-que-lia-va-nous-remplacer-&quot;&gt;Est-ce que l’IA va nous remplacer ?&lt;/h4&gt;
@@ -141,7 +143,7 @@ Bien avant l’IA il existait déjà des services de création de site web, que 
 &lt;p&gt;Donc selon moi, &lt;strong&gt;nous allons tendre vers un métier de “décideur technique”&lt;/strong&gt;, &lt;strong&gt;on codera toujours&lt;/strong&gt;, parce qu’il faudra bien &lt;strong&gt;alimenter les IA&lt;/strong&gt;, mais on codera peut-être moins et surtout, on se &lt;strong&gt;concentrera uniquement sur les problématiques complexes&lt;/strong&gt;, là où l’IA bottera en touche, du moins, pour le moment…&lt;/p&gt;
 
 &lt;h4 id=&quot;est-ce-que-les-profils-juniors-sont-en-danger-&quot;&gt;Est-ce que les profils juniors sont en danger ?&lt;/h4&gt;
-&lt;p&gt;&lt;strong&gt;Dur à dire&lt;/strong&gt;, aujourd’hui le &lt;strong&gt;marché est plus tendu&lt;/strong&gt; que ce qu’on a pu connaître lors des 5 dernières années : &lt;strong&gt;Économie post-covid en berne&lt;/strong&gt;, &lt;strong&gt;moins de financement des VC **(changement de priorité suite au covid + l’IA qui tire les financements), **situation politique complexe&lt;/strong&gt; etc.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Dur à dire&lt;/strong&gt;, aujourd’hui le &lt;strong&gt;marché est plus tendu&lt;/strong&gt; que ce qu’on a pu connaître lors des 5 dernières années : &lt;strong&gt;Économie post-covid en berne&lt;/strong&gt;, &lt;strong&gt;moins de financement des VC&lt;/strong&gt; (changement de priorité suite au covid + l’IA qui tire les financements), &lt;strong&gt;situation politique complexe&lt;/strong&gt; etc.&lt;/p&gt;
 
 &lt;p&gt;Avec l’arrivée de l’IA, &lt;strong&gt;les tâches les plus faciles sont déléguées à l’IA, ce qui augmente la productivité des développeurs&lt;/strong&gt; mais pourrait limiter l’embauche de profils plus juniors.
 Je dis bien “pourrait” parce que ça va fortement dépendre de la stratégie des sociétés, &lt;strong&gt;une société qui paie 4 développeurs aujourd’hui, pourrait se retrouver avec une productivité équivalente à 5 ou 6 développeurs avec l’IA&lt;/strong&gt; (à la louche).&lt;/p&gt;
@@ -156,10 +158,11 @@ Je dis bien “pourrait” parce que ça va fortement dépendre de la stratégie
 
 &lt;p&gt;Pour le moment la tendance est plutôt sur la réduction de masse salariale (le cas de Salesforce, Duolingo etc.)&lt;/p&gt;
 
-&lt;h3 id=&quot;quels-sont-tes-recommandations-pour-appréhender-lia-en-tant-que-développeur-&quot;&gt;Quels sont tes recommandations pour appréhender l’IA en tant que développeur ?&lt;/h3&gt;
+&lt;h3 id=&quot;quelles-sont-tes-recommandations-pour-appréhender-lia-en-tant-que-développeur-&quot;&gt;Quelles sont tes recommandations pour appréhender l’IA en tant que développeur ?&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Testez-les&lt;/strong&gt; ! &lt;strong&gt;Cursor&lt;/strong&gt;, &lt;strong&gt;Claude&lt;/strong&gt;, &lt;strong&gt;Gemini&lt;/strong&gt;, &lt;strong&gt;ChatGPT&lt;/strong&gt;, peu importe ! restez à l’écoute de ce qui se fait pour trouver celles qui correspondent à vos besoins&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Utiliser au maximum les “mémoires”&lt;/strong&gt; (memory, rules etc.) pour conditionner votre IA et la restreindre à vos contraintes techniques&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Testez-les&lt;/strong&gt; ! &lt;strong&gt;Cursor&lt;/strong&gt;, &lt;strong&gt;Claude&lt;/strong&gt;, &lt;strong&gt;Gemini&lt;/strong&gt;, &lt;strong&gt;ChatGPT&lt;/strong&gt;, peu importe ! restez à l’écoute de ce qui se fait pour trouver celles qui correspondent à vos besoins.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Utilisez au maximum les “mémoires”&lt;/strong&gt; (memory, rules etc.) pour conditionner votre IA et la restreindre à vos contraintes techniques&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Utilisez les MCP !&lt;/strong&gt; Les MCP peuvent vous permettre d’aller encore plus loin avec l’IA (gérer vos cartes, appeler des API métier etc)&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Commitez régulièrement&lt;/strong&gt; ! L’IA va ajouter beaucoup de code d’un coup et vous aurez rapidement la mauvaise habitude de refaire des gros commits, vous devez garder vos bonnes pratiques et essayer un maximum de faire des commits atomiques et concis.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Ne croyez pas l’IA !&lt;/strong&gt; Gardez votre esprit critique, continuez de review vos PR, ce n’est pas parce que l’IA vous mâche le travail que vous devez omettre les bonnes pratiques de développement et votre bon sens. Et ne commitez pas du code que vous ne comprenez pas !&lt;/li&gt;
 &lt;/ul&gt;
