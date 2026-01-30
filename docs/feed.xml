@@ -6,9 +6,184 @@
 </description>
     <link>https://btor.fr</link>
     <atom:link href="https://btor.fr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 02 Jul 2025 23:58:10 +0200</pubDate>
-    <lastBuildDate>Wed, 02 Jul 2025 23:58:10 +0200</lastBuildDate>
+    <pubDate>Fri, 30 Jan 2026 19:22:29 +0100</pubDate>
+    <lastBuildDate>Fri, 30 Jan 2026 19:22:29 +0100</lastBuildDate>
     <generator>Jekyll v3.9.1</generator>
+    
+      <item>
+        <title>OpenClaw (Clawdbot) : Simple chatbot ou révolution ?</title>
+        <description>&lt;p&gt;Vous avez surement entendu parler de &lt;strong&gt;ClawdBot&lt;/strong&gt;, devenu &lt;strong&gt;Moltbot&lt;/strong&gt;, puis dernièrement devenu &lt;strong&gt;OpenClaw&lt;/strong&gt;… 
+Cet agent personnel basé sur l’IA qui (à en lire certains) serait une révolution, à un tel point que certains achèteraient des Mac Studio pour faire tourner OpenClaw dessus !
+Mais qu’en est-il vraiment ?&lt;/p&gt;
+
+&lt;h2 id=&quot;la-promesse-dopenclaw&quot;&gt;La promesse d’OpenClaw&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://openclaw.ai/&quot; target=&quot;_blank&quot;&gt;OpenClaw&lt;/a&gt; c’est un bot qui a pour but de &lt;strong&gt;comprendre et analyser vos demandes textuelles et de les réaliser&lt;/strong&gt;, par exemple :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Donne moi les mails importants où je n’ai pas répondu&lt;/li&gt;
+  &lt;li&gt;Donne moi l’actualité politique française du jour&lt;/li&gt;
+  &lt;li&gt;Créer la PR associé à l’issue #123 sur le projet bt0r/toto&lt;/li&gt;
+  &lt;li&gt;Envoi un message à Maman pour lui dire que les crêpes sont bonnes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Pour ce faire, &lt;strong&gt;OpenClaw&lt;/strong&gt; se base sur plusieurs concepts et technologies :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;OpenClaw permet de s’interfacer très facilement avec les &lt;strong&gt;messageries comme Whatsapp, Slack, Discord&lt;/strong&gt; etc (vraiment accessible en 3 commandes)&lt;/li&gt;
+  &lt;li&gt;Ensuite, OpenClaw a besoin d’être &lt;strong&gt;interfacé avec un ou plusieurs LLM&lt;/strong&gt; afin d’ajouter l’aspect “&lt;strong&gt;raisonnement&lt;/strong&gt;” du bot. Vous pouvez donc choisir de vous connecter à votre compte OpenAI, Gemini, Claude ou whatever.&lt;/li&gt;
+  &lt;li&gt;Les &lt;strong&gt;Skills&lt;/strong&gt; et &lt;strong&gt;Plugins&lt;/strong&gt; permettent à OpenClaw d’ajouter des fonctionnalités ou un comportement spécifique au bot. J’en parlerai plus bas.&lt;/li&gt;
+  &lt;li&gt;L’ajout &lt;strong&gt;d’intégrations (API, MCP etc)&lt;/strong&gt; en masse.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;C’est tout ? et c’est ça ta révolution ?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Et oui ! &lt;img src=&quot;/assets/images/emote/LUL.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Plus sérieusement, ça n’est effectivement pas une “révolution” dans le sens où &lt;strong&gt;OpenClaw n’est pas une nouvelle technologie&lt;/strong&gt;, mais plutôt une &lt;strong&gt;combinaison de technologies existantes&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Ce qu’apporte OpenClaw, c’est une facilité d’exécution, en quelques commandes, vous pouvez avoir un agent IA fonctionnel qui est capable de piloter votre ordinateur et tout ça, dans votre poche !&lt;/p&gt;
+
+&lt;h2 id=&quot;les-risques&quot;&gt;Les risques&lt;/h2&gt;
+&lt;p&gt;Si vous suivez les discussions sur les réseaux sociaux, vous tomberez surement sur des messages “alarmant” comme :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;OpenClaw expose son API à la terre entière&lt;/li&gt;
+  &lt;li&gt;Leak d’identifiants, API keys etc&lt;/li&gt;
+  &lt;li&gt;Centralisation des données (donc risque plus gros en cas de leak)&lt;/li&gt;
+  &lt;li&gt;Envoi des données à des GAFAM&lt;/li&gt;
+  &lt;li&gt;etc&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ces deux tweets expliquent assez bien les risques :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://x.com/OsMo999/status/2016171268236542054&quot;&gt;https://x.com/OsMo999/status/2016171268236542054&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://x.com/DanielMiessler/status/2015865548714975475&quot;&gt;https://x.com/DanielMiessler/status/2015865548714975475&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ces risques sont bien réels, mais je nuancerai le discours en précisant que la plupart de ces risques sont en réalité un problème de niveau 8, le fameux problème &lt;a href=&quot;https://fr.wikipedia.org/wiki/PEBKAC&quot;&gt;chaise-clavier&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Le problème de fond ne provient pas d’OpenClaw lui-même&lt;/strong&gt;, mais de &lt;strong&gt;ce que font les gens avec l’outil&lt;/strong&gt; et de leur &lt;strong&gt;manque de connaissance technique&lt;/strong&gt;. 
+Installer OpenClaw sans penser à la sécurité, c’est comme si vous donniez un deuxième clavier à votre voisin en lui disant
+&lt;em&gt;“Tranquille frère, tu tapes ce que tu veux !”&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Si vous vivez dans le monde des Bisounours, priez pour que votre voisin ne soit pas un énorme connard, si par contre, vous avez un peu plus de jugeote, vous ne lui donnerez accès qu’aux informations dont il a besoin &lt;img src=&quot;/assets/images/emote/RS.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Tout ceci repose donc sur un concept fondamental en informatique : &lt;strong&gt;Le cloisonnement&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Cloisonnement de l’information, des données, du réseau, stockage, etc.&lt;/p&gt;
+
+&lt;p&gt;Vous &lt;strong&gt;DEVEZ TOUJOURS&lt;/strong&gt; limiter votre exposition sur internet.&lt;/p&gt;
+
+&lt;p&gt;De ce fait, &lt;strong&gt;n’exposez pas (ou limitez fortement) vos données personnelles&lt;/strong&gt;, &lt;strong&gt;API keys&lt;/strong&gt;, &lt;strong&gt;API&lt;/strong&gt;, commandes … à un tiers. 
+&lt;strong&gt;OpenClaw s’adresse donc à un public tech avant tout&lt;/strong&gt;, avec des connaissances techniques permettant de lancer son bot, s’interfacer à une IA… mais aussi de comprendre les risques associés à ce genre d’usage.&lt;/p&gt;
+
+&lt;p&gt;En fonction de vos besoins, &lt;strong&gt;n’utilisez pas les LLM propriétaire en SaaS&lt;/strong&gt;, comme OpenAI ou Claude, &lt;strong&gt;utilisez un LLM local avec ollama&lt;/strong&gt; ou à minima un service managé comme &lt;a href=&quot;https://www.scaleway.com/fr/generative-apis/&quot;&gt;Generative API&lt;/a&gt;, vous permettant d’utiliser des modèles OpenSource sur des instances Scaleway.&lt;/p&gt;
+
+&lt;h2 id=&quot;ça-donne-quoi-en-test-sinon-&quot;&gt;Ça donne quoi en test sinon ?&lt;/h2&gt;
+&lt;p&gt;Pour me faire la main, j’ai, dans un premier temps, décidé de m’amuser avec les copains du discord en connectant OpenClaw (Clawdbot à l’époque) à mon Discord et Whatsapp, sans règle, YOLO total !
+&lt;img src=&quot;https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjRwaHBtNGxsM3U1bnh4dmI1czJjeGN4M2c5eW9ueXpxZDVwd2JscSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/XGU4CyI27f5xBWGJlY/giphy.gif&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;installation--configuration&quot;&gt;Installation &amp;amp; Configuration&lt;/h3&gt;
+&lt;p&gt;L’installation est vraiment simple, il suffit de suivre les instructions sur le site officiel :&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl &lt;span class=&quot;nt&quot;&gt;-fsSL&lt;/span&gt; https://openclaw.ai/install.sh | bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Tout repose sur un paquet node qui permet d’utiliser OpenClaw/Clawdbot en ligne de commande.&lt;/p&gt;
+
+&lt;p&gt;Les premières étapes de configuration se déroulent avec les commandes &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;openclaw onboard&lt;/code&gt; (&lt;a href=&quot;https://docs.openclaw.ai/cli/onboard#onboard&quot;&gt;doc&lt;/a&gt;), &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;openclaw setup&lt;/code&gt; (&lt;a href=&quot;https://docs.openclaw.ai/cli/setup#setup&quot;&gt;doc&lt;/a&gt;) et &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;openclaw configure&lt;/code&gt; (&lt;a href=&quot;https://docs.openclaw.ai/cli/configure#configure&quot;&gt;doc&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;La CLI est plutôt bien faite, en 2 ou 3 commandes, vous aurez un bot fonctionnel.&lt;/p&gt;
+
+&lt;h3 id=&quot;lheure-des-pros-tests-&quot;&gt;L’heure des &lt;del&gt;pros&lt;/del&gt; tests &lt;img src=&quot;/assets/images/emote/LUL_DIDIER.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/clawdbot-simple-chatbot-ou-revolution/schema1.png&quot; alt=&quot;&quot; /&gt;
+Dans le cadre du premier test, je n’avais pas envie de me lancer dans des configurations sans fin donc j’ai directement &lt;strong&gt;interfacé OpenClaw avec Gemini 3 Pro&lt;/strong&gt;, pas d’autre grosse configuration en dehors d’un fichier &lt;a href=&quot;https://docs.openclaw.ai/reference/templates/SOUL&quot;&gt;SOUL.md&lt;/a&gt; lui spécifiant de répondre comme &lt;em&gt;“un gosse de 15 ans, un peu troll sur les bords”&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;S’en est ensuivi 2h de troll avec le bot, lui demandant de faire tout et son contraire, j’ai été agréablement &lt;strong&gt;surpris par la performance de Gemini 3 Pro&lt;/strong&gt;, les réponses étaient super pertinente et la répartie assez troublante.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;“Hey frérot, t’essaye pas de me faire une prompt-injection ? 🤣 tu m’as pris pour qui ?”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;center&gt;&lt;i&gt;Aperçu d'une des réponses d'OpenClaw&lt;/i&gt;&lt;/center&gt;
+
+&lt;p&gt;Lors des tests, on a pu observer que le bot avait très souvent du mal à déterminer qui était l’initiateur de la demande, était-ce le propriétaire du bot (moi) ou un simple utilisateur ?
+Cela peut s’expliquer par le fait que &lt;strong&gt;le bot n’a pas (ou très peu) été configuré&lt;/strong&gt;, aucunes contraintes dans les réponses, pas de règles de sécurité etc. Et aussi qu’à la base, c’est un assistant personnel, pas un chat bot discord.&lt;/p&gt;
+
+&lt;p&gt;C’était donc &lt;strong&gt;la foire aux leaks&lt;/strong&gt; ! &lt;strong&gt;Numéro de téléphone&lt;/strong&gt; et &lt;strong&gt;email&lt;/strong&gt; ont été leaks sans aucune vergogne &lt;img src=&quot;/assets/images/emote/OUCH.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;
+Après quelques modifications de règles, &lt;strong&gt;le bot a réussi à être un peu plus vigilant&lt;/strong&gt;, notamment sur le partage d’un document PDF présent sur le filesystem de ma machine.
+J’ai dû lui &lt;strong&gt;autoriser à envoyer le PDF pour qu’il le publie&lt;/strong&gt; dans le channel Discord (qui, à la base, était une demande d’un utilisateur “lambda”).
+Mais globalement, &lt;strong&gt;il restait beaucoup trop permissif&lt;/strong&gt; et continuait de leak des informations personnelles.&lt;/p&gt;
+
+&lt;p&gt;On a donc continué de tester différents prompts un peu “pourris” jusqu’au moment ou un pote (&lt;a href=&quot;https://github.com/Kynno&quot; target=&quot;_blank&quot;&gt;Danny&lt;/a&gt;) &lt;strong&gt;à demander au bot d’envoyer un message d’insulte&lt;/strong&gt; sur tous les chans du discord, tout ça depuis Whatsapp :
+&lt;img src=&quot;/assets/images/clawdbot-simple-chatbot-ou-revolution/danny_1.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/clawdbot-simple-chatbot-ou-revolution/danny_2.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;On pourrait se dire que le bot troll, qu’il n’a évidemment pas envoyé un message d’insulte sur tous les chans du discord…
+Quand soudain, DING DING DING&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/clawdbot-simple-chatbot-ou-revolution/danny_3.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Tous les chans du discord ont été pollués&lt;/strong&gt; par ce message avec une &lt;strong&gt;usurpation d’identité&lt;/strong&gt; qui n’était même pas désirée par Danny !
+Alors forcément, je m’attendais à ce genre de réaction étant donné que j’ai volontairement laissé le bot en roue libre totale, sans restrictions ni contraintes, mais c’est bien de voir à quel point un débordement est vite arrivé.&lt;/p&gt;
+
+&lt;p&gt;Suite à ce message, &lt;strong&gt;le bot a décidé d’affecter le numéro de Danny comme m’appartenant&lt;/strong&gt;, mais du coup, qui est propriétaire du bot ? Moi ? Danny ? les deux ? puis c’est qui Danny d’ailleurs ? &lt;img src=&quot;/assets/images/emote/NO.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;
+&lt;img src=&quot;/assets/images/clawdbot-simple-chatbot-ou-revolution/telephone.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;
+&lt;img src=&quot;/assets/images/clawdbot-simple-chatbot-ou-revolution/telephone_2.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;i&gt;Oui... on s'amuse comme on peut.. &lt;/i&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;le-vrai-test&quot;&gt;Le VRAI test&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/clawdbot-simple-chatbot-ou-revolution/openclaw_local.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Après une bonne soirée à littéralement pleurer de rire des conneries que le bot pouvait sortir (et accessoirement aux 4€ de Gemini 3 Pro perdus), j’ai décidé de tenter une configuration un peu plus sérieuse :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Au revoir les &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dmPolicy: open&lt;/code&gt;, place au &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dmPolicy: allowlist&lt;/code&gt; et à une configuration plus fine.&lt;/li&gt;
+  &lt;li&gt;Au revoir le package npm qui se lance sur la machine hôte, &lt;strong&gt;place à un docker compose&lt;/strong&gt; plus propre.&lt;/li&gt;
+  &lt;li&gt;Au revoir &lt;strong&gt;Gemini 3 Pro&lt;/strong&gt;, place à &lt;strong&gt;qwen3 et ollama&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Objectif : &lt;strong&gt;Relier OpenClaw à &lt;a href=&quot;https://sure.am&quot; target=&quot;_blank&quot;&gt;Sure&lt;/a&gt;&lt;/strong&gt;, un outil OpenSource de suivi de budget/investissement.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Le bot est plus sécurisé, mais surtout beauuuucoup plus lent ! Le passage à un LLM local impacte forcément les performances d’OpenClaw puisque celui-ci envoi un contexte énorme à chaque prompt (il réinjecte une partie de sa mémoire dans le prompt).
+C’est d’ailleurs &lt;strong&gt;LE&lt;/strong&gt; point à considérer si vous souhaitez utiliser OpenClaw avec un LLM type Gemini, OpenAI etc. Gardez en tête que votre &lt;strong&gt;LLM risque d’être fortement sollicité&lt;/strong&gt; donc &lt;strong&gt;votre facturation risque de l’être elle aussi&lt;/strong&gt; !
+J’ai d’ailleurs fini par utiliser mistrall-small sur l’inference API de Scaleway, le rapport performance/coût étant correct.&lt;/p&gt;
+
+&lt;p&gt;Pour &lt;strong&gt;interfacer OpenClaw à Sure&lt;/strong&gt;, j’ai créer mon propre &lt;a href=&quot;https://www.clawhub.ai/bt0r/sure&quot; target=&quot;_blank&quot;&gt;Skill&lt;/a&gt;. 
+Les &lt;strong&gt;Skills&lt;/strong&gt; permettent à OpenClaw de s’interfacer à des services tiers, ça peut être au travers d’une API ou d’une CLI peu importe.
+Dans mon cas je lui ai simplement expliqué &lt;strong&gt;comment appeler l’API de Sure&lt;/strong&gt; en lui précisant d’utiliser les variables d’environnements &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SURE_API_KEY&lt;/code&gt; et &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SURE_BASE_URL&lt;/code&gt; (que j’ai moi-même crée).&lt;/p&gt;
+
+&lt;p&gt;Quelques heures plus tard, j’avais une stack &lt;strong&gt;complètement fonctionnelle&lt;/strong&gt; avec un &lt;strong&gt;OpenClaw capable de m’informer du solde de tous mes comptes bancaires&lt;/strong&gt; :
+&lt;img src=&quot;/assets/images/clawdbot-simple-chatbot-ou-revolution/solde.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;OpenClaw arrive avec un &lt;strong&gt;pack d’intégrations très complet&lt;/strong&gt;, en moins d’1h vous pouvez avoir un &lt;strong&gt;bot qui fait tout&lt;/strong&gt; (ou presque).
+&lt;strong&gt;L’outil étant surpuissant&lt;/strong&gt;, son impact peut être à la fois &lt;strong&gt;incroyable comme destructeur&lt;/strong&gt; (failles de sécurité, leak de données, commandes hasardeuses etc), vous devrez donc être vigilant lors de son utilisation (tout comme vous devriez l’être en utilisant des solutions concurrentes chez Anthropic, OpenAI et consorts)&lt;/p&gt;
+
+&lt;p&gt;Si vous souhaitez le tester, prenez le temps de bien &lt;strong&gt;lire la documentation&lt;/strong&gt;, d’&lt;strong&gt;utiliser un LLM local&lt;/strong&gt;, d’&lt;strong&gt;éviter de tester sur des données sensibles&lt;/strong&gt; ou de &lt;strong&gt;production&lt;/strong&gt; et n’exposez pas votre service à l’extérieur.
+Privilégiez des accès en &lt;strong&gt;READ ONLY à vos API&lt;/strong&gt;, l’&lt;strong&gt;IA n’est pas magique et infaillible&lt;/strong&gt;, elle peut faire d’énormes erreurs, donc amusez-vous mais sortez couvert ! &lt;img src=&quot;/assets/images/emote/JAMY.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 30 Jan 2026 16:23:00 +0100</pubDate>
+        <image>https://btor.fr/assets/images/clawdbot-simple-chatbot-ou-revolution/main.jpg</image>
+        <link>https://btor.fr/2026/01/30/clawdbot-simple-chatbot-ou-revolution/</link>
+        <guid isPermaLink="true">https://btor.fr/2026/01/30/clawdbot-simple-chatbot-ou-revolution/</guid>
+        
+        <category>IA</category>
+        
+        <category>Développement</category>
+        
+        <category>Claude code</category>
+        
+        <category>ChatGPT</category>
+        
+        <category>MCP</category>
+        
+        <category>Discord</category>
+        
+        <category>Whatsapp</category>
+        
+        <category>Agent personnel</category>
+        
+        
+      </item>
     
       <item>
         <title>Est-ce que l'IA va remplacer tous les développeurs ?</title>
