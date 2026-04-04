@@ -2,12 +2,12 @@
 email: admin@btor.fr
 baseurl: ""
 permalink: /:year/:month/:day/:title/
-google_analytics: 
+google_analytics: G-Z010HWV5BR
 
 name: Thibaut BAYER
 title: btor.fr
 description: >
-  CTO le jour, codeur la nuit, je partage mon quotidien de tech et d'autres trucs qui me passionnent.
+  Un gars qui code, enfin ça c'était avant.
 url: https://btor.fr
 twitter_username: biiitor
 default_img: /assets/images/seo.jpg
@@ -40,7 +40,7 @@ mailchimp_input: b_66ddf555dab480e6a8606430b_89b3ee034f
 # Author settings
 author:
   - name: Thibaut BAYER
-    bio: CTO le jour, codeur la nuit, je partage mon quotidien de tech et d'autres trucs qui me passionnent.
+    bio: Un gars qui code, enfin ça c'était avant.
     url: https://btor.fr
 
 # Pagination settings
