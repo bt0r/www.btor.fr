@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Comment réparer son robot aspirateur Neato (D3, D4, D5, D6, D7) ? | btor.fr</title>
+<meta name="description" content="Que faire de son aspirateur Neato suite à la fermeture de la marque ?">
+
+<meta itemprop="name" content="Thibaut BAYER">
+<meta itemprop="description" content="Que faire de son aspirateur Neato suite à la fermeture de la marque ?">
+<meta itemprop="image" content="https://btor.fr/assets/images/comment-reparer-robot-aspirateur-neato-d7/main.jpg">
+
+<meta property="og:url" content="https://btor.fr/2026/01/30/comment-reparer-robot-aspirateur-neato-d7/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Comment réparer son robot aspirateur Neato (D3, D4, D5, D6, D7) ? | btor.fr">
+<meta property="og:site_name" content="btor.fr">
+<meta property="og:description" content="Que faire de son aspirateur Neato suite à la fermeture de la marque ?">
+<meta property="og:image" content="https://btor.fr/assets/images/comment-reparer-robot-aspirateur-neato-d7/main.jpg">
+
+<meta name="twitter:url" content="https://btor.fr/2026/01/30/comment-reparer-robot-aspirateur-neato-d7/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Comment réparer son robot aspirateur Neato (D3, D4, D5, D6, D7) ? | btor.fr">
+<meta name="twitter:site" content="btor.fr">
+<meta name="twitter:description" content="Que faire de son aspirateur Neato suite à la fermeture de la marque ?">
+
+  <meta name="twitter:creator" content="@biiitor">
+
+<meta property="twitter:image" content="https://btor.fr/assets/images/comment-reparer-robot-aspirateur-neato-d7/main.jpg">
+
+<link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+
+<link rel="stylesheet" href="/assets/css/app.min.css">
+
+<link rel="alternate" type="application/rss+xml" title="btor.fr" href="/feed.xml">
+<link rel="canonical" href="/2026/01/30/comment-reparer-robot-aspirateur-neato-d7/">
+
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z010HWV5BR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-Z010HWV5BR');
+  </script>
+
+
+
+</head>
+<body id="comment-réparer-son-robot-aspirateur-neato-d3-d4-d5-d6-d7" class="post-layout">
+
+  <header class="header">
+  <!-- <a class="header__title" href="https://btor.fr/">btor.fr</a> -->
+  <a class="header__title" href="https://btor.fr/"><img width="75" src="/assets/images/logo/logo.dark.small.png" alt="Logo"/></a>
+
+  <nav>
+  <ul class="header__list">
+    <li><a href="/projets">💡 Mes projets</a></li>
+    <li><a href="/qui-suis-je">❓ Qui suis-je</a></li>
+  </ul>
+</nav>
+
+</header>
+
+  <main class="💈">
+    <div class="post">
+  <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post__header section-padding--double">
+      <div class="grid-small">
+        <h2 itemprop="name headline">Comment réparer son robot aspirateur Neato (D3, D4, D5, D6, D7) ?</h2>
+
+        <time class="post__date" datetime="2026-01-30T16:23:00+01:00" itemprop="datePublished">30/01/2026</time>
+      </div>
+    </div>
+
+    
+      <div class="post__img">
+        <div>
+          <figure class="absolute-bg" style="background-image: url('/assets/images/comment-reparer-robot-aspirateur-neato-d7/main.jpg');"></figure>
+        </div>
+      </div>
+    
+    <div class="post__content section-padding">
+      <div class="grid">
+        <div id="markdown" itemprop="articleBody">
+          <p>Aujourd’hui je ne parlerai pas d’IA/LLM ou de Fable 5 (dernier modèle d’anthropic) que l’on vient sauvagement de nous retirer du marché, mais plutôt
+d’un des “petits projets” que j’ai pu faire sur mon temps libre.</p>
+
+<p><strong>En Mai 2023</strong>, la société Vorwerk annonçait la <strong>fermeture définitive de Neato</strong>, la marque “star” des robots aspirateurs (enfin, star quand elle était à son apogée … <img src="/assets/images/emote/LUL.png" alt="" class="emote" />)
+Vorwerk se voulait rassurant “nous garderons les serveurs cloud actifs pendant 5 ans” mais que tchi ! En 2025 elle décide de couper l’intégralité des serveurs.</p>
+
+<p>Pour les clients Neato c’est la douche froide, on se retrouve avec des <strong>robots aspirateurs fonctionnels mécaniquement parlant mais utilisables uniquement en mode manuel</strong> (ce qui perd vachement de son intérêt) <img src="/assets/images/emote/SAD.png" alt="" class="emote" /></p>
+
+<p>Après quelques tentatives de réanimation du robot (promis je n’ai pas fait de bouche à bouche), je me suis demandé si, tout comme moi, quelqu’un s’était déjà penché sur le sujet de faire revivre ces aspirateurs.
+Rapidement je suis tombé sur <strong>le projet <a href="https://github.com/renjfk/OpenNeato">OpenNeato</a></strong> créé par le Finlandais Soner Köksal.</p>
+
+<p>Je ne vous cache pas ma joie quand j’ai vu ce projet, ni une, ni deux, j’ai commandé toutes les pièces nécessaires et je me suis lancé !</p>
+
+<h2 id="comment-ça-marche-">Comment ça marche ?</h2>
+<p><em>Pour ceux qui sont bilingues et déjà à l’aise avec tout ce qui est embarqué (Arduino/ESP etc), ce blog post ne vous servira pas à grand-chose, référez-vous directement à la documentation du projet sur Github.</em></p>
+
+<p><em>A noter: cette solution fonctionne pour les robots Neato D3 à D7 seulement</em></p>
+
+<p>Le principe est assez simple, nous allons devoir <strong>installer un programme dans une carte ESP32</strong> (carte électronique qui possède une petite mémoire, du wifi et du bluetooth).
+Ce programme va nous permettre de disposer d’une interface de contrôle du robot ET de pouvoir profiter à nouveau des fonctionnalités du robot comme le fait de pouvoir se déclencher tout seul.
+Pour ce faire, <strong>la carte</strong> devra être <strong>directement reliée au port “DEBUG” du robot</strong>. Pas d’inquiétude, tout est expliqué plus bas.</p>
+
+<h2 id="pièces-à-acheter">Pièces à acheter</h2>
+<p>Pour pouvoir réparer votre robot-aspirateur vous aurez besoin :</p>
+<ul>
+  <li>D’<strong target="_blank"><a href="https://amzn.to/4eG3m7U">une carte ESP32</a></strong> ~10€ sur amazon / 2€ sur <a href="https://fr.aliexpress.com/item/1005007468497664.html?spm=a2g0o.productlist.main.4.56040ebA0ebAB4&amp;aem_p4p_detail=202606140755163329077381155600001386229&amp;algo_pvid=e20fec76-3756-4d73-9dfa-73990cd91d01&amp;algo_exp_id=e20fec76-3756-4d73-9dfa-73990cd91d01-3&amp;pdp_ext_f=%7B%22order%22%3A%22165%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&amp;pdp_npi=6%40dis%21EUR%211.64%211.64%21%21%2112.52%2112.52%21%40211b61ae17814489166796179e4163%2112000040880478704%21sea%21FR%214713785735%21X%211%210%21n_tag%3A-29919%3Bd%3A7e9446e3%3Bm03_new_user%3A-29895&amp;curPageLogUid=jLXP6QLiRTDK&amp;utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005007468497664%7C_p_origin_prod%3A&amp;search_p4p_id=202606140755163329077381155600001386229_1" target="_blank">AliExpress</a>
+<em>Note: Vous pouvez utiliser plusieurs types de carte ESP : ESP32, ESP32-C3, ESP32-S3</em></li>
+  <li>De <strong target="_blank"><a href="https://amzn.to/4fFo5K1">connecteurs 4 pins de 2.54mm</a></strong> ~10€ sur amazon ou 3€ sur <a href="https://fr.aliexpress.com/item/1005009565578064.html?spm=a2g0o.order_list.order_list_main.17.73735e5biZGFX6&amp;gatewayAdapt=glo2fra" target="_blank">AliExpress</a> (attention à bien sélectionner 4 pins)</li>
+  <li>D’<strong target="_blank"><a href="https://amzn.to/4fFo5K1">un fer à souder</a></strong> ~20€ sur amazon/leroy merlin etc</li>
+  <li>Un <strong target="_blank"><a href="https://amzn.to/4uwrGxT">embout-rallonge torx T10 </a></strong> ~15€ sur Amazon / 1€ sur <a href="https://fr.aliexpress.com/item/1005007476988062.html?spm=a2g0o.productlist.main.2.1256E4erE4er2a&amp;algo_pvid=89a32a8f-9989-4151-9c15-e54722048ab4&amp;algo_exp_id=89a32a8f-9989-4151-9c15-e54722048ab4-1&amp;pdp_ext_f=%7B%22order%22%3A%225614%22%2C%22eval%22%3A%221%22%2C%22orig_sl_item_id%22%3A%221005007476988062%22%2C%22orig_item_id%22%3A%221005006034948251%22%2C%22fromPage%22%3A%22search%22%7D&amp;pdp_npi=6%40dis%21EUR%211.14%211.14%21%21%218.71%218.71%21%40211b813b17814493894618042e98a1%2112000040909513990%21sea%21FR%214713785735%21X%211%210%21n_tag%3A-29919%3Bd%3A7e9446e3%3Bm03_new_user%3A-29895&amp;curPageLogUid=GeI8cywScTXU&amp;utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005007476988062%7C_p_origin_prod%3A1005006034948251" target="_blank">AliExpress</a></li>
+  <li>D’étain si non fourni avec votre fer à souder</li>
+</ul>
+
+<p>et globalement c’est tout ! En fonction de l’endroit où vous commandez, vous pouvez facilement vous en tirer pour moins de 20€, l’écart de prix étant assez flagrant, j’ai fait mes achats sur AliExpress.</p>
+
+<h2 id="flashage">Flashage</h2>
+<p>Avant de démonter votre robot, commencez par installer OpenNeato sur votre carte ESP32 :</p>
+<ul>
+  <li>Téléchargez la dernière version disponible d’OpenNeato <a href="https://github.com/renjfk/OpenNeato/releases">ici</a> (normalement vous devriez cliquer sur <code class="language-plaintext highlighter-rouge">openneato-flash_Darwin_x86_64</code>)</li>
+  <li>Connectez votre carte ESP32 en USB-C avec votre ordinateur</li>
+  <li>Ouvrez un terminal, puis exécutez le fichier téléchargé, exemple :</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>btor@btor-desktop ~                                                                                                                                                                                                                              
+<span class="o">&gt;</span> <span class="nv">$ </span><span class="nb">cd </span>Téléchargements                                                                                                                                                                                                                           
+                                                                                                                                                                                                                                                             
+btor@btor-desktop ~/Téléchargements                                                                                                                                                                                                           
+<span class="o">&gt;</span> <span class="nv">$ </span><span class="nb">chmod</span> +x openneato-flash_Linux_x86_64 <span class="o">&amp;&amp;</span> ./openneato-flash_Linux_x86_64
+</code></pre></div></div>
+
+<p>Vous devriez voir quelque chose du style :</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>btor@btor-desktop ~/Téléchargements                                                                                                                                                                                                             
+<span class="o">&gt;</span> <span class="nv">$ </span><span class="nb">chmod</span> +x openneato-flash_Linux_x86_64 <span class="o">&amp;&amp;</span> ./openneato-flash_Linux_x86_64                                                                                                                                                                     
+Using port: /dev/ttyACM0
+Detecting chip type...
+Detected chip: esp32-c3
+Downloading firmware 0.13 <span class="k">for </span>esp32-c3...
+  <span class="o">(</span>0.8 MB<span class="o">)</span>
+  <span class="o">[</span><span class="c">##################################################] 100%</span>
+Verifying SHA-256 checksum of openneato-esp32-c3-full.tar.gz...
+Checksum OK.
+  bootloader.bin: 13248 bytes at 0x0000
+  partitions.bin: 3072 bytes at 0x8000
+  boot_app0.bin: 8192 bytes at 0xe000
+  firmware.bin: 1342768 bytes at 0x10000
+Flashing via /home/btor/.cache/openneato/v5.2.0/esptool...
+esptool v5.2.0
+Connected to ESP32-C3 on /dev/ttyACM0:
+Chip <span class="nb">type</span>:          ESP32-C3 <span class="o">(</span>QFN32<span class="o">)</span> <span class="o">(</span>revision v0.4<span class="o">)</span>
+Features:           Wi-Fi, BT 5 <span class="o">(</span>LE<span class="o">)</span>, Single Core, 160MHz, Embedded Flash 4MB <span class="o">(</span>XMC<span class="o">)</span>
+Crystal frequency:  40MHz
+USB mode:           USB-Serial/JTAG
+MAC:                ac:a7:04:d1:9f:cc
+
+Stub flasher running.
+Changing baud rate to 921600...
+Changed.
+
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00003fff...
+Wrote 13248 bytes <span class="o">(</span>9562 compressed<span class="o">)</span> at 0x00000000 <span class="k">in </span>0.1 seconds <span class="o">(</span>830.2 kbit/s<span class="o">)</span><span class="nb">.</span>
+Hash of data verified.
+Flash will be erased from 0x00008000 to 0x00008fff...
+Wrote 3072 bytes <span class="o">(</span>146 compressed<span class="o">)</span> at 0x00008000 <span class="k">in </span>0.0 seconds <span class="o">(</span>1048.6 kbit/s<span class="o">)</span><span class="nb">.</span>
+Hash of data verified.
+Flash will be erased from 0x0000e000 to 0x0000ffff...
+Wrote 8192 bytes <span class="o">(</span>47 compressed<span class="o">)</span> at 0x0000e000 <span class="k">in </span>0.0 seconds <span class="o">(</span>1390.7 kbit/s<span class="o">)</span><span class="nb">.</span>
+Hash of data verified.
+Flash will be erased from 0x00010000 to 0x00157fff...
+Wrote 1342768 bytes <span class="o">(</span>822175 compressed<span class="o">)</span> at 0x00010000 <span class="k">in </span>4.7 seconds <span class="o">(</span>2267.0 kbit/s<span class="o">)</span><span class="nb">.</span>
+Hash of data verified.
+
+Hard resetting via RTS pin...
+Flash <span class="nb">complete</span><span class="o">!</span>
+</code></pre></div></div>
+<p>Suivez les instructions dans votre terminal et connectez votre carte ESP32 à votre réseau wifi (obligatoire)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- Monitor on /dev/ttyACM0 at 115200 baud ---
+--- Ctrl-C to exit ---
+========================================
+  OpenNeato 0.13
+========================================
+  WiFi: btor.fr (192.168.1.30)
+  Press 'm' for menu, 's' for status
+========================================
+
+
+WiFi Status
+----------------------------------------
+Connected: Yes
+SSID: btor.fr
+IP: 192.168.1.30
+MAC: XX:XX:XX:XX:XX:XX
+RSSI: -53 dBm
+Saved SSID: btor.fr
+----------------------------------------
+
+Quick commands: [m]enu, [s]tatus
+</code></pre></div></div>
+<p>Pour être sûr que la carte est bien fonctionnelle, connectez-vous à l’adresse IP affichée http://192.168.1.30 (remplacez par votre IP)</p>
+
+<p>Vous devriez voir l’interface d’OpenNeato mais sans la connexion avec le robot (normal, on ne l’a pas encore branché.. <img src="/assets/images/emote/RS.png" alt="" class="emote" />)</p>
+
+<p>Votre carte est désormais fonctionnelle, vous pouvez la débrancher/rebrancher pour être sûr qu’elle se reconnecte bien au wifi mais normalement tout est bon pour cette partie !</p>
+<h2 id="démontage">Démontage</h2>
+<p>Commencez par retirer la batterie :
+<img src="/assets/images/comment-reparer-robot-aspirateur-neato-d7/neato-d7-vis-batterie.jpg" width="300" />
+<em>La batterie s’enlève en retirant les deux vis cruciformes, vous pourrez ensuite la déconnecter</em></p>
+
+<p>Puis continuez en enlevant TOUTES les vis torx visibles sur le carénage, vous n’aurez normalement pas besoin de dévisser les roues.
+<img src="/assets/images/comment-reparer-robot-aspirateur-neato-d7/neato-d7-vis-arriere.jpg" width="300" /></p>
+
+<p>N’essayez pas de forcer, le carénage est parfois clipsé (comme ici sur la face avant)</p>
+<iframe width="420" height="315" src="https://youtube.com/embed/PMFSPFnZjgk"></iframe>
+
+<h2 id="installation">Installation</h2>
+<p>Votre robot désossé, c’est le moment de passer aux choses sérieuses <img src="/assets/images/emote/OOPS.png" alt="" class="emote" /></p>
+
+<p>Prenez un connecteur 4-pins mâle, puis branchez-le sur le port debug
+<img src="/assets/images/comment-reparer-robot-aspirateur-neato-d7/4-pin.jpg" width="500" />
+<img src="/assets/images/comment-reparer-robot-aspirateur-neato-d7/debug.jpg" width="500" />
+<img src="/assets/images/comment-reparer-robot-aspirateur-neato-d7/debug2.jpg" width="500" /></p>
+
+<p>Maintenant, vous allez devoir souder votre carte ESP32 en respectant les instructions ci-dessous :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> [ Port Robot Botvac ] [ Module ESP32 ]
++------------------------+ +-----------------------------------------+
+| RX (réception données) | ---------------&gt; | TX (envoi données)     |
+| 3.3V(Alim)             | ---------------&gt; | 3V3 (Alim)             |
+| TX (envoi données)     | ---------------&gt; | RX (réception données) |
+| GND (Masse)            | ---------------&gt; | GND (Masse)            |
++------------------------+ +-----------------------------------------+
+</code></pre></div></div>
+<p><img src="/assets/images/comment-reparer-robot-aspirateur-neato-d7/pinout.jpg" width="500" />
+<em>Attention : chaque carte ESP32 a son propre schéma de brochage, si vous avez une autre carte (ESP32 C3 / S3 etc), référez-vous au schéma de brochage de votre carte (“pinout” sur internet)</em></p>
+
+<p>Pour que l’ESP32 ne gêne pas lors de la fermeture du carénage, je l’ai placée à cet endroit, sous la nappe noire
+<img src="/assets/images/comment-reparer-robot-aspirateur-neato-d7/fin.jpg" width="500" />
+<em>Pensez à bien la “bloquer” pour éviter qu’elle bouge</em></p>
+
+<p>Une fois le tout soudé, on remonte le tout (carénage, batterie etc) et vous devriez être en mesure de vous connecter à votre robot aspirateur !
+<img src="/assets/images/comment-reparer-robot-aspirateur-neato-d7/app.jpg" width="500" /></p>
+
+<h2 id="remerciement">Remerciement</h2>
+<p>Je voudrais juste <strong>remercier Soner Köksal</strong> pour ce projet, j’étais tellement enthousiaste à l’idée qu’un tel projet existe que j’ai donné un pourboire sur Ko-fi sans même avoir testé la solution…
+Grâce à lui je me suis évité le rachat d’un nouveau robot à 700€ alors <strong>MERCI MERCI MERCI</strong>
+Ses liens :</p>
+
+<p>Site : <a href="https://renjfk.com">renjfk.com</a></p>
+
+<p>Linkedin : <a href="https://fi.linkedin.com/in/renjfk">https://fi.linkedin.com/in/renjfk</a></p>
+
+<p>Ko-fi (tips) : <a href="https://ko-fi.com/renjfk">https://ko-fi.com/renjfk</a></p>
+
+        </div>
+        <ul class="post__social">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://btor.fr/2026/01/30/comment-reparer-robot-aspirateur-neato-d7/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+  <li><a href="https://twitter.com/intent/tweet?&text=Comment réparer son robot aspirateur Neato (D3, D4, D5, D6, D7) ?+https://btor.fr/2026/01/30/comment-reparer-robot-aspirateur-neato-d7/+by+Thibaut BAYER" target="_blank"><i class="fa fa-twitter"></i></a></li>
+  <li><a href="https://plus.google.com/share?url=https://btor.fr/2026/01/30/comment-reparer-robot-aspirateur-neato-d7/" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+  <li><a href="https://www.linkedin.com/shareArticle?mini=true&source=Comment réparer son robot aspirateur Neato (D3, D4, D5, D6, D7) ?&summary=Que faire de son aspirateur Neato suite à la fermeture de la marque ?&url=https://btor.fr/2026/01/30/comment-reparer-robot-aspirateur-neato-d7/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+  <li><a href="https://www.stumbleupon.com/badge/?url=https://btor.fr/2026/01/30/comment-reparer-robot-aspirateur-neato-d7/" target="_blank"><i class="fa fa-stumbleupon"></i></a></li>
+  <li><a href="https://www.reddit.com/submit?url=https://btor.fr/2026/01/30/comment-reparer-robot-aspirateur-neato-d7/" target="_blank"><i class="fa fa-reddit-alien"></i></a></li>
+  <li><a href="https://www.tumblr.com/share/link?url=https://btor.fr/2026/01/30/comment-reparer-robot-aspirateur-neato-d7/" target="_blank"><i class="fa fa-tumblr"></i></a></li>
+  <li><a href="https://www.pinterest.com/pin/create/link/?description=Que faire de son aspirateur Neato suite à la fermeture de la marque ?&media=https://btor.fr/assets/images/comment-reparer-robot-aspirateur-neato-d7/main.jpg&url=https://btor.fr/2026/01/30/comment-reparer-robot-aspirateur-neato-d7/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Everything inside the #author tags pulls data from the author -->
+    
+      <div class="section-padding--none">
+        <div class="grid">
+          <hr class="sep"/>
+        </div>
+      </div>
+
+      <div class="section-padding">
+        <div class="grid-small">
+          
+            
+            
+              <span class="post__author">Posté par
+            
+            <a href="https://btor.fr" title="More By Thibaut BAYER">Thibaut BAYER</a></span>
+            <p class="post__bio">Un gars qui code, enfin ça c'était avant.</p>
+          
+        </div>
+      </div>
+    
+
+    <!--
+
+If you use Disqus comments, just uncomment this block.
+The only thing you need to change is "test-apkdzgmqhj" - which
+should be replaced with your own Disqus site-id.
+
+<div class="post__comments section-padding">
+  <div class="grid-small">
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function () {
+        this.page.url = 'https://btor.fr/2026/01/30/comment-reparer-robot-aspirateur-neato-d7/';
+        this.page.identifier = 'https://btor.fr/2026/01/30/comment-reparer-robot-aspirateur-neato-d7/';
+      };
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://btor.fr.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+  </div>
+</div>
+-->
+
+    <div class="post__comments section-padding">
+    <div class="grid-small">
+        <script src="https://utteranc.es/client.js"
+                repo="bt0r/www.btor.fr"
+                issue-term="pathname"
+                label="💬 Commentaire"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+        </script>
+    </div>
+</div>
+
+
+  </article>
+</div>
+
+<!-- Links to Previous/Next posts -->
+
+
+  <section class="related section-padding">
+    <div class="grid-xlarge">
+      <h2 class="related__title"></h2>
+      <div class="related__container">
+        
+          <article class="related__post">
+            <a class="related__link" href="https://btor.fr/2026/01/30/comment-reparer-robot-aspirateur-neato-d7/">
+              
+                <figure class="related__img">
+                  <img src="/assets/images/comment-reparer-robot-aspirateur-neato-d7/main.jpg" alt="Comment réparer son robot aspirateur Neato (D3, D4, D5, D6, D7) ?"/>
+                </figure>
+              
+              <div>
+                <h2 class="related__text">Comment réparer son robot aspirateur Neato (D3, D4, D5, D6, D7) ?</h2>
+              </div>
+            </a>
+          </article>
+        
+      </div>
+    </div>
+  </section>
+
+
+  </main>
+  <!-- The footer at the very bottom of the screen -->
+<footer class="footer section-padding">
+  <div class="grid">
+    <div class="subscribe" id="subscribe">
+      <div class="subscribe__container">
+        <span class="subscribe__title">Restons en contact</span>
+
+        
+  <ul class="footer__social">
+    
+      <li><a href="https://twitter.com/biiitor" target="_blank"><i class="fa fa-twitter"></i></a></li>
+    
+      <li><a href="https://www.instagram.com/btor.fr/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+    
+      <li><a href="https://www.linkedin.com/in/thibaut-bayer//" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+    
+      <li><a href="https://github.com/bt0r" target="_blank"><i class="fa fa-github"></i></a></li>
+    
+      <li><a href="https://twitch.tv/bt0r" target="_blank"><i class="fa fa-twitch"></i></a></li>
+    
+      <li><a href="https://btor.fr/feed.xml" target="_blank"><i class="fa fa-rss"></i></a></li>
+    
+  </ul>
+
+
+      </div>
+    </div>
+
+    <hr class="sep--white"/>
+    <div class="footer__container">
+      <p>Catégories</p>
+      <ul class="footer__tags"><li><a class="footer__link" href="/tag/materiel">Materiel</a></li><li><a class="footer__link" href="/tag/test">Test</a></li><li><a class="footer__link" href="/tag/linux">Linux</a></li><li><a class="footer__link" href="/tag/javascript">Javascript</a></li><li><a class="footer__link" href="/tag/tutorial">Tutorial</a></li></ul>
+    </div>
+  </div>
+</footer>
+
+<section class="contact popup">
+  <div class="popup__close">
+    <div class="popup__exit"></div>
+  </div>
+  <div class="contact__container popup__container">
+    <div class="contact__img">
+      <figure class="absolute-bg" style="background-image: url(/assets/images/logo/logo.dark.small.png);"></figure>
+    </div>
+    <div class="contact__content">
+      <div class="contact__mast section-padding--half">
+        <div class="grid">
+          <h2>Contact</h2>
+        </div>
+      </div>
+
+      <div class="section-padding--none">
+        <hr class="sep"/>
+      </div>
+
+      <div class="contact__form section-padding--half">
+        <div class="grid-xlarge">
+          <form id="form" class="form" action="https://formcarry.com/s/HkIo0nMb7" method="POST">
+  <div class="form__subcontainer">
+    <div>
+      <label for="form-first-name">First Name</label>
+      <input type="text" name="first-name" id="form-first-name" required>
+    </div>
+    <div>
+      <label for="form-last-name">Last Name</label>
+      <input type="text" name="last-name" id="form-last-name" required>
+    </div>
+  </div>
+
+  <div>
+    <label for="form-email">E-Mail</label>
+    <input type="email" name="email" id="form-email" required>
+  </div>
+
+  <div>
+    <label for="form-message">Message</label>
+    <textarea name="message" id="form-message" rows="3"></textarea>
+  </div>
+
+  <div class="form__submit">
+    <div class="form__btn">
+      <input type="submit" value="Send">
+    </div>
+  </div>
+
+  <p class="form__message"></p>
+</form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<script src="/assets/js/app.min.js"></script>
+
+</body>
+</html>

@@ -6,9 +6,198 @@
 </description>
     <link>https://btor.fr</link>
     <atom:link href="https://btor.fr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 04 Apr 2026 13:33:45 +0200</pubDate>
-    <lastBuildDate>Sat, 04 Apr 2026 13:33:45 +0200</lastBuildDate>
+    <pubDate>Sun, 14 Jun 2026 20:13:15 +0200</pubDate>
+    <lastBuildDate>Sun, 14 Jun 2026 20:13:15 +0200</lastBuildDate>
     <generator>Jekyll v3.9.1</generator>
+    
+      <item>
+        <title>Comment réparer son robot aspirateur Neato (D3, D4, D5, D6, D7) ?</title>
+        <description>&lt;p&gt;Aujourd’hui je ne parlerai pas d’IA/LLM ou de Fable 5 (dernier modèle d’anthropic) que l’on vient sauvagement de nous retirer du marché, mais plutôt
+d’un des “petits projets” que j’ai pu faire sur mon temps libre.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;En Mai 2023&lt;/strong&gt;, la société Vorwerk annonçait la &lt;strong&gt;fermeture définitive de Neato&lt;/strong&gt;, la marque “star” des robots aspirateurs (enfin, star quand elle était à son apogée … &lt;img src=&quot;/assets/images/emote/LUL.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;)
+Vorwerk se voulait rassurant “nous garderons les serveurs cloud actifs pendant 5 ans” mais que tchi ! En 2025 elle décide de couper l’intégralité des serveurs.&lt;/p&gt;
+
+&lt;p&gt;Pour les clients Neato c’est la douche froide, on se retrouve avec des &lt;strong&gt;robots aspirateurs fonctionnels mécaniquement parlant mais utilisables uniquement en mode manuel&lt;/strong&gt; (ce qui perd vachement de son intérêt) &lt;img src=&quot;/assets/images/emote/SAD.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Après quelques tentatives de réanimation du robot (promis je n’ai pas fait de bouche à bouche), je me suis demandé si, tout comme moi, quelqu’un s’était déjà penché sur le sujet de faire revivre ces aspirateurs.
+Rapidement je suis tombé sur &lt;strong&gt;le projet &lt;a href=&quot;https://github.com/renjfk/OpenNeato&quot;&gt;OpenNeato&lt;/a&gt;&lt;/strong&gt; créé par le Finlandais Soner Köksal.&lt;/p&gt;
+
+&lt;p&gt;Je ne vous cache pas ma joie quand j’ai vu ce projet, ni une, ni deux, j’ai commandé toutes les pièces nécessaires et je me suis lancé !&lt;/p&gt;
+
+&lt;h2 id=&quot;comment-ça-marche-&quot;&gt;Comment ça marche ?&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Pour ceux qui sont bilingues et déjà à l’aise avec tout ce qui est embarqué (Arduino/ESP etc), ce blog post ne vous servira pas à grand-chose, référez-vous directement à la documentation du projet sur Github.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;A noter: cette solution fonctionne pour les robots Neato D3 à D7 seulement&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Le principe est assez simple, nous allons devoir &lt;strong&gt;installer un programme dans une carte ESP32&lt;/strong&gt; (carte électronique qui possède une petite mémoire, du wifi et du bluetooth).
+Ce programme va nous permettre de disposer d’une interface de contrôle du robot ET de pouvoir profiter à nouveau des fonctionnalités du robot comme le fait de pouvoir se déclencher tout seul.
+Pour ce faire, &lt;strong&gt;la carte&lt;/strong&gt; devra être &lt;strong&gt;directement reliée au port “DEBUG” du robot&lt;/strong&gt;. Pas d’inquiétude, tout est expliqué plus bas.&lt;/p&gt;
+
+&lt;h2 id=&quot;pièces-à-acheter&quot;&gt;Pièces à acheter&lt;/h2&gt;
+&lt;p&gt;Pour pouvoir réparer votre robot-aspirateur vous aurez besoin :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;D’&lt;strong target=&quot;_blank&quot;&gt;&lt;a href=&quot;https://amzn.to/4eG3m7U&quot;&gt;une carte ESP32&lt;/a&gt;&lt;/strong&gt; ~10€ sur amazon / 2€ sur &lt;a href=&quot;https://fr.aliexpress.com/item/1005007468497664.html?spm=a2g0o.productlist.main.4.56040ebA0ebAB4&amp;amp;aem_p4p_detail=202606140755163329077381155600001386229&amp;amp;algo_pvid=e20fec76-3756-4d73-9dfa-73990cd91d01&amp;amp;algo_exp_id=e20fec76-3756-4d73-9dfa-73990cd91d01-3&amp;amp;pdp_ext_f=%7B%22order%22%3A%22165%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&amp;amp;pdp_npi=6%40dis%21EUR%211.64%211.64%21%21%2112.52%2112.52%21%40211b61ae17814489166796179e4163%2112000040880478704%21sea%21FR%214713785735%21X%211%210%21n_tag%3A-29919%3Bd%3A7e9446e3%3Bm03_new_user%3A-29895&amp;amp;curPageLogUid=jLXP6QLiRTDK&amp;amp;utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005007468497664%7C_p_origin_prod%3A&amp;amp;search_p4p_id=202606140755163329077381155600001386229_1&quot; target=&quot;_blank&quot;&gt;AliExpress&lt;/a&gt;
+&lt;em&gt;Note: Vous pouvez utiliser plusieurs types de carte ESP : ESP32, ESP32-C3, ESP32-S3&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;De &lt;strong target=&quot;_blank&quot;&gt;&lt;a href=&quot;https://amzn.to/4fFo5K1&quot;&gt;connecteurs 4 pins de 2.54mm&lt;/a&gt;&lt;/strong&gt; ~10€ sur amazon ou 3€ sur &lt;a href=&quot;https://fr.aliexpress.com/item/1005009565578064.html?spm=a2g0o.order_list.order_list_main.17.73735e5biZGFX6&amp;amp;gatewayAdapt=glo2fra&quot; target=&quot;_blank&quot;&gt;AliExpress&lt;/a&gt; (attention à bien sélectionner 4 pins)&lt;/li&gt;
+  &lt;li&gt;D’&lt;strong target=&quot;_blank&quot;&gt;&lt;a href=&quot;https://amzn.to/4fFo5K1&quot;&gt;un fer à souder&lt;/a&gt;&lt;/strong&gt; ~20€ sur amazon/leroy merlin etc&lt;/li&gt;
+  &lt;li&gt;Un &lt;strong target=&quot;_blank&quot;&gt;&lt;a href=&quot;https://amzn.to/4uwrGxT&quot;&gt;embout-rallonge torx T10 &lt;/a&gt;&lt;/strong&gt; ~15€ sur Amazon / 1€ sur &lt;a href=&quot;https://fr.aliexpress.com/item/1005007476988062.html?spm=a2g0o.productlist.main.2.1256E4erE4er2a&amp;amp;algo_pvid=89a32a8f-9989-4151-9c15-e54722048ab4&amp;amp;algo_exp_id=89a32a8f-9989-4151-9c15-e54722048ab4-1&amp;amp;pdp_ext_f=%7B%22order%22%3A%225614%22%2C%22eval%22%3A%221%22%2C%22orig_sl_item_id%22%3A%221005007476988062%22%2C%22orig_item_id%22%3A%221005006034948251%22%2C%22fromPage%22%3A%22search%22%7D&amp;amp;pdp_npi=6%40dis%21EUR%211.14%211.14%21%21%218.71%218.71%21%40211b813b17814493894618042e98a1%2112000040909513990%21sea%21FR%214713785735%21X%211%210%21n_tag%3A-29919%3Bd%3A7e9446e3%3Bm03_new_user%3A-29895&amp;amp;curPageLogUid=GeI8cywScTXU&amp;amp;utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005007476988062%7C_p_origin_prod%3A1005006034948251&quot; target=&quot;_blank&quot;&gt;AliExpress&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;D’étain si non fourni avec votre fer à souder&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;et globalement c’est tout ! En fonction de l’endroit où vous commandez, vous pouvez facilement vous en tirer pour moins de 20€, l’écart de prix étant assez flagrant, j’ai fait mes achats sur AliExpress.&lt;/p&gt;
+
+&lt;h2 id=&quot;flashage&quot;&gt;Flashage&lt;/h2&gt;
+&lt;p&gt;Avant de démonter votre robot, commencez par installer OpenNeato sur votre carte ESP32 :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Téléchargez la dernière version disponible d’OpenNeato &lt;a href=&quot;https://github.com/renjfk/OpenNeato/releases&quot;&gt;ici&lt;/a&gt; (normalement vous devriez cliquer sur &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;openneato-flash_Darwin_x86_64&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;Connectez votre carte ESP32 en USB-C avec votre ordinateur&lt;/li&gt;
+  &lt;li&gt;Ouvrez un terminal, puis exécutez le fichier téléchargé, exemple :&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;btor@btor-desktop ~                                                                                                                                                                                                                              
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;Téléchargements                                                                                                                                                                                                                           
+                                                                                                                                                                                                                                                             
+btor@btor-desktop ~/Téléchargements                                                                                                                                                                                                           
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;chmod&lt;/span&gt; +x openneato-flash_Linux_x86_64 &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; ./openneato-flash_Linux_x86_64
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Vous devriez voir quelque chose du style :&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;btor@btor-desktop ~/Téléchargements                                                                                                                                                                                                             
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;chmod&lt;/span&gt; +x openneato-flash_Linux_x86_64 &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; ./openneato-flash_Linux_x86_64                                                                                                                                                                     
+Using port: /dev/ttyACM0
+Detecting chip type...
+Detected chip: esp32-c3
+Downloading firmware 0.13 &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;esp32-c3...
+  &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0.8 MB&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;##################################################] 100%&lt;/span&gt;
+Verifying SHA-256 checksum of openneato-esp32-c3-full.tar.gz...
+Checksum OK.
+  bootloader.bin: 13248 bytes at 0x0000
+  partitions.bin: 3072 bytes at 0x8000
+  boot_app0.bin: 8192 bytes at 0xe000
+  firmware.bin: 1342768 bytes at 0x10000
+Flashing via /home/btor/.cache/openneato/v5.2.0/esptool...
+esptool v5.2.0
+Connected to ESP32-C3 on /dev/ttyACM0:
+Chip &lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;:          ESP32-C3 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;QFN32&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;revision v0.4&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+Features:           Wi-Fi, BT 5 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;LE&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, Single Core, 160MHz, Embedded Flash 4MB &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;XMC&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+Crystal frequency:  40MHz
+USB mode:           USB-Serial/JTAG
+MAC:                ac:a7:04:d1:9f:cc
+
+Stub flasher running.
+Changing baud rate to 921600...
+Changed.
+
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00003fff...
+Wrote 13248 bytes &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;9562 compressed&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; at 0x00000000 &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;0.1 seconds &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;830.2 kbit/s&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+Hash of data verified.
+Flash will be erased from 0x00008000 to 0x00008fff...
+Wrote 3072 bytes &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;146 compressed&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; at 0x00008000 &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;0.0 seconds &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;1048.6 kbit/s&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+Hash of data verified.
+Flash will be erased from 0x0000e000 to 0x0000ffff...
+Wrote 8192 bytes &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;47 compressed&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; at 0x0000e000 &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;0.0 seconds &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;1390.7 kbit/s&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+Hash of data verified.
+Flash will be erased from 0x00010000 to 0x00157fff...
+Wrote 1342768 bytes &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;822175 compressed&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; at 0x00010000 &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;4.7 seconds &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;2267.0 kbit/s&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+Hash of data verified.
+
+Hard resetting via RTS pin...
+Flash &lt;span class=&quot;nb&quot;&gt;complete&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Suivez les instructions dans votre terminal et connectez votre carte ESP32 à votre réseau wifi (obligatoire)&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;--- Monitor on /dev/ttyACM0 at 115200 baud ---
+--- Ctrl-C to exit ---
+========================================
+  OpenNeato 0.13
+========================================
+  WiFi: btor.fr (192.168.1.30)
+  Press 'm' for menu, 's' for status
+========================================
+
+
+WiFi Status
+----------------------------------------
+Connected: Yes
+SSID: btor.fr
+IP: 192.168.1.30
+MAC: XX:XX:XX:XX:XX:XX
+RSSI: -53 dBm
+Saved SSID: btor.fr
+----------------------------------------
+
+Quick commands: [m]enu, [s]tatus
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Pour être sûr que la carte est bien fonctionnelle, connectez-vous à l’adresse IP affichée http://192.168.1.30 (remplacez par votre IP)&lt;/p&gt;
+
+&lt;p&gt;Vous devriez voir l’interface d’OpenNeato mais sans la connexion avec le robot (normal, on ne l’a pas encore branché.. &lt;img src=&quot;/assets/images/emote/RS.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;)&lt;/p&gt;
+
+&lt;p&gt;Votre carte est désormais fonctionnelle, vous pouvez la débrancher/rebrancher pour être sûr qu’elle se reconnecte bien au wifi mais normalement tout est bon pour cette partie !&lt;/p&gt;
+&lt;h2 id=&quot;démontage&quot;&gt;Démontage&lt;/h2&gt;
+&lt;p&gt;Commencez par retirer la batterie :
+&lt;img src=&quot;/assets/images/comment-reparer-robot-aspirateur-neato-d7/neato-d7-vis-batterie.jpg&quot; width=&quot;300&quot; /&gt;
+&lt;em&gt;La batterie s’enlève en retirant les deux vis cruciformes, vous pourrez ensuite la déconnecter&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Puis continuez en enlevant TOUTES les vis torx visibles sur le carénage, vous n’aurez normalement pas besoin de dévisser les roues.
+&lt;img src=&quot;/assets/images/comment-reparer-robot-aspirateur-neato-d7/neato-d7-vis-arriere.jpg&quot; width=&quot;300&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;N’essayez pas de forcer, le carénage est parfois clipsé (comme ici sur la face avant)&lt;/p&gt;
+&lt;iframe width=&quot;420&quot; height=&quot;315&quot; src=&quot;https://youtube.com/embed/PMFSPFnZjgk&quot;&gt;&lt;/iframe&gt;
+
+&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+&lt;p&gt;Votre robot désossé, c’est le moment de passer aux choses sérieuses &lt;img src=&quot;/assets/images/emote/OOPS.png&quot; alt=&quot;&quot; class=&quot;emote&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Prenez un connecteur 4-pins mâle, puis branchez-le sur le port debug
+&lt;img src=&quot;/assets/images/comment-reparer-robot-aspirateur-neato-d7/4-pin.jpg&quot; width=&quot;500&quot; /&gt;
+&lt;img src=&quot;/assets/images/comment-reparer-robot-aspirateur-neato-d7/debug.jpg&quot; width=&quot;500&quot; /&gt;
+&lt;img src=&quot;/assets/images/comment-reparer-robot-aspirateur-neato-d7/debug2.jpg&quot; width=&quot;500&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Maintenant, vous allez devoir souder votre carte ESP32 en respectant les instructions ci-dessous :&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; [ Port Robot Botvac ] [ Module ESP32 ]
++------------------------+ +-----------------------------------------+
+| RX (réception données) | ---------------&amp;gt; | TX (envoi données)     |
+| 3.3V(Alim)             | ---------------&amp;gt; | 3V3 (Alim)             |
+| TX (envoi données)     | ---------------&amp;gt; | RX (réception données) |
+| GND (Masse)            | ---------------&amp;gt; | GND (Masse)            |
++------------------------+ +-----------------------------------------+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/comment-reparer-robot-aspirateur-neato-d7/pinout.jpg&quot; width=&quot;500&quot; /&gt;
+&lt;em&gt;Attention : chaque carte ESP32 a son propre schéma de brochage, si vous avez une autre carte (ESP32 C3 / S3 etc), référez-vous au schéma de brochage de votre carte (“pinout” sur internet)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Pour que l’ESP32 ne gêne pas lors de la fermeture du carénage, je l’ai placée à cet endroit, sous la nappe noire
+&lt;img src=&quot;/assets/images/comment-reparer-robot-aspirateur-neato-d7/fin.jpg&quot; width=&quot;500&quot; /&gt;
+&lt;em&gt;Pensez à bien la “bloquer” pour éviter qu’elle bouge&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Une fois le tout soudé, on remonte le tout (carénage, batterie etc) et vous devriez être en mesure de vous connecter à votre robot aspirateur !
+&lt;img src=&quot;/assets/images/comment-reparer-robot-aspirateur-neato-d7/app.jpg&quot; width=&quot;500&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;remerciement&quot;&gt;Remerciement&lt;/h2&gt;
+&lt;p&gt;Je voudrais juste &lt;strong&gt;remercier Soner Köksal&lt;/strong&gt; pour ce projet, j’étais tellement enthousiaste à l’idée qu’un tel projet existe que j’ai donné un pourboire sur Ko-fi sans même avoir testé la solution…
+Grâce à lui je me suis évité le rachat d’un nouveau robot à 700€ alors &lt;strong&gt;MERCI MERCI MERCI&lt;/strong&gt;
+Ses liens :&lt;/p&gt;
+
+&lt;p&gt;Site : &lt;a href=&quot;https://renjfk.com&quot;&gt;renjfk.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Linkedin : &lt;a href=&quot;https://fi.linkedin.com/in/renjfk&quot;&gt;https://fi.linkedin.com/in/renjfk&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Ko-fi (tips) : &lt;a href=&quot;https://ko-fi.com/renjfk&quot;&gt;https://ko-fi.com/renjfk&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 30 Jan 2026 16:23:00 +0100</pubDate>
+        <image>https://btor.fr/assets/images/comment-reparer-robot-aspirateur-neato-d7/main.jpg</image>
+        <link>https://btor.fr/2026/01/30/comment-reparer-robot-aspirateur-neato-d7/</link>
+        <guid isPermaLink="true">https://btor.fr/2026/01/30/comment-reparer-robot-aspirateur-neato-d7/</guid>
+        
+        <category>robot aspirateur</category>
+        
+        <category>neato</category>
+        
+        <category>electronique</category>
+        
+        
+      </item>
     
       <item>
         <title>OpenClaw (Clawdbot) : Simple chatbot ou révolution ?</title>
