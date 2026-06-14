@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Comment réparer son robot aspirateur Neato (D3, D4, D5, D6, D7) ?"
-date: "2026-01-30 16:23"
-last_modified_at: "2026-01-30 16:23"
+date: "2026-06-14 20:14"
+last_modified_at: "2026-06-14 20:14"
 description: "Que faire de son aspirateur Neato suite à la fermeture de la marque ?"
 image: /assets/images/comment-reparer-robot-aspirateur-neato-d7/main.jpg 
 author: Thibaut BAYER
